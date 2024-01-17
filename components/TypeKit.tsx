@@ -1,6 +1,6 @@
-"use client"
+"use client";
 //Adobe Fontsを読み込む
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 const TypekitLoader: React.FC = () => {
   useEffect(() => {
@@ -12,11 +12,12 @@ const TypekitLoader: React.FC = () => {
       };
       const h = d.documentElement;
       const t = setTimeout(() => {
-        h.className = h.className.replace(/\bwf-loading\b/g, '') + ' wf-inactive';
+        h.className =
+          h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
       }, config.scriptTimeout);
-      const tk = d.createElement('script');
+      const tk = d.createElement("script");
 
-      h.className += 'wf-loading';
+      h.className += "wf-loading";
       tk.src = `https://use.typekit.net/${config.kitId}.js`;
       tk.async = true;
       tk.onload = function () {
@@ -29,7 +30,7 @@ const TypekitLoader: React.FC = () => {
         clearTimeout(t);
       };
 
-      const s = d.getElementsByTagName('script')[0];
+      const s = d.getElementsByTagName("script")[0];
       s.parentNode!.insertBefore(tk, s);
     })(document);
   }, []);
