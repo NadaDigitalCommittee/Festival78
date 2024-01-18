@@ -17,7 +17,7 @@ const config: Config = {
       fontFamily: {
         limelight: ["var(--font-limelight)"],
         avianosans: ["aviano-sans"],
-        zen_kaku_gothic_new: ["var(--font-zen_kaku_gothic_new)"],
+        zen_kaku_gothic_new: ["var(--font-zen-kaku-gothic-new)"],
         alte_din: ["var(--font-alte-din-1451-mittelschrift)"],
         south_amsterdam: ["var(--font-south-amsterdam-demo)"],
         times_new_roman: ["var(--font-times-new-roman)"],
