@@ -23,7 +23,15 @@ export const CountDown: FC<Props> = ({ restTime }) => {
   const minute = to2digit(Math.floor((time % 3600) / 60));
   const second = to2digit(time % 60);
 
-  const screen = window.screen.width;
+  const [screen, setScreen] = useState<number>(0);
+  useEffect(() => {
+    const handleResize = () => {
+      setScreen(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <div className="font-limelight text-7xl tracking-wide -skew-y-12">
