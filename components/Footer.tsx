@@ -22,7 +22,7 @@ export const Footer: FC = () => {
           <br />
           SCHOOL FESTIVAL
           <br />
-          ODESSEY
+          ODYSSEY
         </p>
       </div>
       <div className="my-auto">
