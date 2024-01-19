@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Limelight, Zen_Kaku_Gothic_New } from "next/font/google";
 import localFont from "next/font/local";
-import "./globals.css";
+import "@/styles/globals.scss";
 import TypekitLoader from "@/components/TypeKit";
+import { Footer } from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const limelight = Limelight({
@@ -53,7 +54,8 @@ export default function RootLayout({
           .join(" ")}`}
       >
         <TypekitLoader />
-        {children}
+        <div className="w-screen max-h-min-[100lvh]">{children}</div>
+        <Footer />
       </body>
     </html>
   );

@@ -9,11 +9,6 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
       fontFamily: {
         limelight: ["var(--font-limelight)"],
         avianosans: ["aviano-sans"],
@@ -21,6 +16,9 @@ const config: Config = {
         alte_din: ["var(--font-alte-din-1451-mittelschrift)"],
         south_amsterdam: ["var(--font-south-amsterdam-demo)"],
         times_new_roman: ["var(--font-times-new-roman)"],
+      },
+      colors: {
+        theme: "#ff4d00",
       },
     },
   },
