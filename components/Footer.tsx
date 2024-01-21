@@ -63,7 +63,7 @@ export const Footer: FC = () => {
         {(() => {
           return new Array(100).fill(0).map((_, i) => {
             return (
-              <div style={{ transform: `translateX(${i * 62 - 620}px)` }}>
+              <div key={i} style={{ transform: `translateX(${i * 62 - 620}px)` }}>
                 <p
                   className="absolute -translate-y-[60px] -skew-y-[35deg]"
                 >
