@@ -27,3 +27,5 @@ export async function generateStaticParams() {
     },
   }));
 }
+
+export const runtime = "edge"
