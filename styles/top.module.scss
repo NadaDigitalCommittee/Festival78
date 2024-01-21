@@ -1,0 +1,54 @@
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate_img {
+  transform: rotate(90deg);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes stroke {
+  0% {
+    stroke-dashoffset: 1500;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+$interval: 10s;
+
+.line {
+  stroke-dasharray: 100 2000;
+  stroke-dashoffset: 100;
+  animation: stroke $interval linear infinite;
+  filter: url(#glow);
+  filter: drop-shadow(0 0 10px #ff500c);
+  stroke: #ffffff;
+  stroke-width: 4;
+}
+//#FF500C
+
+.delay_1 {
+  animation-delay: $interval * 0.3;
+}
+.delay_2 {
+  animation-delay: $interval * 0.6;
+}
+.delay_3 {
+  animation-delay: $interval * 0.9;
+}
+.delay_4 {
+  animation-delay: $interval * 0.2;
+}
+.delay_5 {
+  animation-delay: $interval * 0.5;
+}

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Limelight, Zen_Kaku_Gothic_New } from "next/font/google";
 import localFont from "next/font/local";
 import "@/styles/globals.scss";
@@ -31,7 +31,13 @@ const times_new_roman = localFont({
 
 export const metadata: Metadata = {
   title: "第78回灘校文化祭 ODYSSEY",
-  description: "2024年5月2日・5月3日に開催される第77回灘校文化祭「ODYSSEY」の公式ウェブサイトです。",
+  description:
+    "2024年5月2日・5月3日に開催される第77回灘校文化祭「ODYSSEY」の公式ウェブサイトです。",
+};
+
+export const viewport: Viewport = {
+  width: "360",
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -54,7 +60,9 @@ export default function RootLayout({
           .join(" ")}`}
       >
         <TypekitLoader />
-        <div className="w-screen max-h-min-[100lvh]">{children}</div>
+        <div className="max-h-min-[100lvh] w-[100%] overflow-x-hidden">
+          {children}
+        </div>
         <Footer />
       </body>
     </html>
