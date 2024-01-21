@@ -13,7 +13,7 @@ import { IconContext } from "react-icons";
 
 export const Footer: FC = () => {
   return (
-    <footer className="relative overflow-hidden grid bg-[#616161] px-3 py-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+    <footer className="relative grid overflow-hidden bg-[#616161] px-3 py-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
       <div className="mx-auto flex">
         <Image width={100} height={100} src={"/img/logo1_sm.png"} alt="ロゴ" />
         <div className="mx-[20px] h-full w-[1px] bg-white" />
@@ -59,15 +59,17 @@ export const Footer: FC = () => {
           </p>
         </IconContext.Provider>
       </div>
-      <div className="font-south_amsterdam text-5xl text-white opacity-10 pointer-events-none">
+      <div className="pointer-events-none font-south_amsterdam text-5xl text-white opacity-10">
         {(() => {
           return new Array(100).fill(0).map((_, i) => {
             return (
-              <div key={i} style={{ transform: `translateX(${i * 62 - 620}px)` }}>
-                <p
-                  className="absolute -translate-y-[60px] -skew-y-[35deg]"
-                >
-                  {"ODYSSEYODYSSEYODYSSEY".slice(i) + "ODYSSEYODYSSEYODYSSEY".slice(0, i)}
+              <div
+                key={i}
+                style={{ transform: `translateX(${i * 62 - 620}px)` }}
+              >
+                <p className="absolute -translate-y-[60px] -skew-y-[35deg]">
+                  {"ODYSSEYODYSSEYODYSSEY".slice(i) +
+                    "ODYSSEYODYSSEYODYSSEY".slice(0, i)}
                 </p>
               </div>
             );

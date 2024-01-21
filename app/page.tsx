@@ -1,4 +1,5 @@
 import { CountDown } from "@/components/CountDown";
+import { Arrow1 } from "@/components/svg/Arrow1";
 import { Line2 } from "@/components/svg/Line2";
 import { MapPin } from "@/components/svg/MapPin";
 import styles from "@/styles/top.module.scss";
@@ -6,7 +7,7 @@ import Image from "next/image";
 
 export default function Home() {
   const now = new Date().getTime() + new Date().getTimezoneOffset() * 60 * 1000;
-  const festival = new Date("2024-05-02T00:30:00").getTime(); //UTC 00:30 JST 09:30
+  const festival = new Date("2024-05-02T00:00:00").getTime(); //UTC 00:30 JST 09:00
   const restTime = Math.floor((festival - now) / 1000);
   return (
     <div className="mx-auto h-full w-full max-w-[1000px] overflow-x-hidden">
@@ -71,17 +72,17 @@ export default function Home() {
         <div className="text-center text-theme md:mt-6">
           <div className="block font-alte_din tracking-wider lg:hidden">
             <p className="text-2xl md:text-4xl">2024</p>
-            <p className="text-3xl md:text-6xl">05/02 Tue ▶ 05/03 Wed</p>
-            <p className="text-3xl md:text-6xl">9:30-15:30</p>
+            <p className="text-3xl md:text-6xl">05/02 Tue <Arrow1 direction="right" /> 05/03 Wed</p>
+            <p className="text-3xl md:text-6xl">9:00-15:30</p>
           </div>
           <div className="hidden w-full items-center justify-center gap-[150px] font-alte_din tracking-wider lg:flex">
             <div>
               <p className="text-4xl">2024</p>
               <p className="text-5xl">05/02 Tue</p>
-              <p className="text-5xl">▼</p>
+              <Arrow1 direction="down" />
               <p className="text-5xl">05/03 Wed</p>
             </div>
-            <p className="text-6xl">9:30-15:30</p>
+            <p className="text-6xl">9:00-15:30</p>
           </div>
 
           <div className="mx-6 mb-24 mt-6">
@@ -125,14 +126,16 @@ export default function Home() {
               コンセプト
             </p>
             <br />
-            <div className=" flex flex-col md:flex-row text-base">
+            <div className=" flex flex-col text-base md:flex-row">
               <div>
                 <p className="mx-4 indent-4 font-zen_kaku_gothic_new">
-                  今を生きてる喜びが宇宙(そら)を駆ける　風のしらべ　川のせせらぎ　胸の鼓動のリズムで踊れ　希望の螺旋を描き青空に向け　手を伸ばせば明日(あした)があるさ　新しいキミがいるから
+                  第78回灘校文化祭テーマ <br />
+                  「Odyssey」には''長い冒険''という意味があります。
                 </p>
                 <p className="mx-4 indent-4 font-zen_kaku_gothic_new">
-                  たった100万年ほどの幸せを掴もう　輝くこの地球(ほし)に　Oh,
-              愛を刻み込もうよ　(ウパウパウパウパ)　今を生きてる大切な生命(いのち)守ろう　風のしらべ　川のせせらぎ　永遠に願う　Ah…　今を生きてる喜びが宇宙(そら)を駆ける　風のしらべ　川のせせらぎ　胸の鼓動のリズムで踊れ　希望の螺旋を描き青空に向け　手を伸ばせば明日(あした)があるさ　新しいキミがいるから
+                  私たちが作り上げる唯一無二の灘校文化祭を、羅針盤であるロゴを片手に冒険して欲しい。
+                  そして灘校文化祭での体験が、皆さんそれぞれの''Odyssey''の中の1つのターニングポイントとなって欲しい。
+                  そんな想いが込められています。
                 </p>
                 <br />
               </div>
@@ -142,7 +145,7 @@ export default function Home() {
                 alt="文化祭ロゴ"
                 width="450"
                 height="450"
-                className="mx-auto block my-auto"
+                className="mx-auto my-auto block"
               />
             </div>
           </div>
@@ -212,4 +215,4 @@ const Tweet = () => (
   </div>
 );
 
-export const runtime = "edge"
+export const runtime = "edge";
