@@ -211,3 +211,5 @@ const Tweet = () => (
     ></script>
   </div>
 );
+
+export const runtime = "edge"
