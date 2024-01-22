@@ -18,14 +18,14 @@ export default async function NewsPage({ params }: { params: { id: string } }) {
   );
 }
 
-// export async function generateStaticParams() {
-//   const news = await getNews();
+export async function generateStaticParams() {
+  const news = await getNews();
 
-//   return news.map((news) => ({
-//     params: {
-//       id: news.id,
-//     },
-//   }));
-// }
+  return news.map((news) => ({
+    params: {
+      id: news.id,
+    },
+  }));
+}
 
 export const runtime = "edge";
