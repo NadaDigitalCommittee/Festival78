@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="mx-auto h-full w-full max-w-[1000px] overflow-x-hidden">
       <main className="">
-        <div className="lg:min-h-[min(100svh,800px)]">
+        <div className="lg:min-h-[min(100svh,950px)]">
           <div className="h-[calc(min(100vw,550px))] -translate-y-[40%] translate-x-[50%]">
             <div className="relative -left-[calc(min(75vw,400px))] h-[150vw] max-h-[800px] w-[150vw] max-w-[800px]">
               <Line2 />
