@@ -1,5 +1,4 @@
 import { News, getNews } from "@/lib/cms";
-import parse from "html-react-parser";
 import "@/styles/news.scss";
 
 export default async function NewsPage({ params }: { params: { id: string } }) {
@@ -8,8 +7,9 @@ export default async function NewsPage({ params }: { params: { id: string } }) {
     <main>
       {news ? (
         <>
-          <h1>{news.title}</h1>
-          <div className="news-content">{parse(news.content)}</div>
+          <h1>タイトル:{news.title}</h1>
+          <p>投稿日時:{news.publishedAt}</p>
+          <div className="news-content" dangerouslySetInnerHTML={{__html:news.content}}></div>
         </>
       ) : (
         <h1>記事が見つかりませんでした</h1>
@@ -18,14 +18,14 @@ export default async function NewsPage({ params }: { params: { id: string } }) {
   );
 }
 
-export async function generateStaticParams() {
-  const news = await getNews();
+// export async function generateStaticParams() {
+//   const news = await getNews();
 
-  return news.map((news) => ({
-    params: {
-      id: news.id,
-    },
-  }));
-}
+//   return news.map((news) => ({
+//     params: {
+//       id: news.id,
+//     },
+//   }));
+// }
 
 export const runtime = "edge";
