@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import {
   FaFacebook,
   FaInstagram,
@@ -13,10 +13,10 @@ import { IconContext } from "react-icons";
 
 export const Footer: FC = () => {
   return (
-    <footer className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 bg-[#616161] px-3 py-8">
-      <div className="flex mx-auto">
-        <div className="w-[80px] h-[80px] bg-white logo" />
-        <div className="bg-white w-[1px] h-full mx-[20px]" />
+    <footer className="relative grid overflow-hidden bg-[#616161] px-3 py-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+      <div className="mx-auto flex">
+        <Image width={100} height={100} src={"/img/logo1_sm.png"} alt="ロゴ" />
+        <div className="mx-[20px] h-full w-[1px] bg-white" />
         <p className="font-avianosans text-white">
           78TH NADA
           <br />
@@ -26,7 +26,7 @@ export const Footer: FC = () => {
         </p>
       </div>
       <div className="my-auto">
-        <p className="font-south_amsterdam text-5xl text-center text-white mt-6">
+        <p className="mt-6 text-center font-south_amsterdam text-5xl text-white">
           Follow me
         </p>
 
@@ -58,6 +58,23 @@ export const Footer: FC = () => {
             </a>
           </p>
         </IconContext.Provider>
+      </div>
+      <div className="pointer-events-none font-south_amsterdam text-5xl text-white opacity-10">
+        {(() => {
+          return new Array(100).fill(0).map((_, i) => {
+            return (
+              <div
+                key={i}
+                style={{ transform: `translateX(${i * 62 - 620}px)` }}
+              >
+                <p className="absolute -translate-y-[60px] -skew-y-[35deg]">
+                  {"ODYSSEYODYSSEYODYSSEY".slice(i) +
+                    "ODYSSEYODYSSEYODYSSEY".slice(0, i)}
+                </p>
+              </div>
+            );
+          });
+        })()}
       </div>
     </footer>
   );

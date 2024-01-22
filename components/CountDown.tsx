@@ -1,5 +1,6 @@
 "use client";
 
+import { MediaType, useResponsive } from "@/lib/hooks/useResponsive";
 import { FC, useEffect, useState } from "react";
 
 type Props = {
@@ -15,59 +16,51 @@ export const CountDown: FC<Props> = ({ restTime }) => {
     return () => clearInterval(timer);
   }, []);
   const to2digit = (num: number) => {
-    return ("0" + Math.max(num,0)).slice(-2);
-  }
-  
+    return ("0" + Math.max(num, 0)).slice(-2);
+  };
+
   const day = to2digit(Math.floor(time / 86400));
   const hour = to2digit(Math.floor((time % 86400) / 3600));
   const minute = to2digit(Math.floor((time % 3600) / 60));
   const second = to2digit(time % 60);
 
-  const [screen, setScreen] = useState<number>(0);
-  useEffect(() => {
-    const handleResize = () => {
-      setScreen(window.innerWidth);
-    };
-    window.addEventListener("resize", handleResize);
-    handleResize();
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  const responsive = useResponsive();
 
   return (
-    <div className="font-limelight text-7xl tracking-wide -skew-y-12">
-      <p className="text-left translate-x-4">
+    <div className="-skew-y-12 font-limelight text-7xl tracking-wide">
+      <p className="translate-x-4 text-left">
         <span className="text-xl font-bold">文化祭まであと</span>
         <br />
       </p>
-      {screen > 768 ? (
+      {responsive === MediaType.Desktop ? (
         // PC
         <>
           <p>
-            <span className="w-[100px] inline-block">{day} </span>
+            <span className="inline-block w-[100px]">{day} </span>
             <span className="text-2xl font-bold">日</span>
-            <span className="w-[100px] inline-block">{hour}</span>
+            <span className="inline-block w-[100px]">{hour}</span>
             <span className="text-2xl font-bold">時間</span>
-            
-            <span className="w-[100px] inline-block">{minute}</span>
+
+            <span className="inline-block w-[100px]">{minute}</span>
             <span className="text-2xl font-bold">分 </span>
-            <span className="w-[100px] inline-block">{second}</span>
+            <span className="inline-block w-[100px]">{second}</span>
             <span className="text-2xl font-bold">秒</span>
           </p>
         </>
       ) : (
-        // スマホ
+        // スマホ タブレット
         <>
           <p>
-            <span className="w-[100px] inline-block">{day} </span>
+            <span className="inline-block w-[100px]">{day} </span>
             <span className="text-2xl font-bold">日</span>
-            <span className="w-[100px] inline-block">{hour}</span>
+            <span className="inline-block w-[100px]">{hour}</span>
             <span className="text-2xl font-bold">時間</span>
             <br />
           </p>
           <p className="translate-x-4">
-            <span className="w-[100px] inline-block">{minute}</span>
+            <span className="inline-block w-[100px]">{minute}</span>
             <span className="text-2xl font-bold">分 </span>
-            <span className="w-[100px] inline-block">{second}</span>
+            <span className="inline-block w-[100px]">{second}</span>
             <span className="text-2xl font-bold">秒</span>
           </p>
         </>
