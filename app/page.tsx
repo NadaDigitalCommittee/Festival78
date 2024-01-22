@@ -130,7 +130,7 @@ export default function Home() {
               <div>
                 <p className="mx-4 indent-4 font-zen_kaku_gothic_new">
                   第78回灘校文化祭テーマ <br />
-                  「Odyssey」には"長い冒険"という意味があります。
+                  「ODYSSEY」には"長い冒険"という意味があります。
                 </p>
                 <p className="mx-4 indent-4 font-zen_kaku_gothic_new">
                   私たちが作り上げる唯一無二の灘校文化祭を、羅針盤であるロゴを片手に冒険して欲しい。
