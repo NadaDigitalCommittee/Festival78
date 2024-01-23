@@ -19,14 +19,12 @@ export const CountDown: FC<Props> = ({ restTime }) => {
     return ("0" + Math.max(num, 0)).slice(-2);
   };
 
-  //const day = to2digit(Math.floor(time / 86400));
-  const day = Math.floor(time / 86400);
+  const day = to2digit(Math.floor(time / 86400));
   const hour = to2digit(Math.floor((time % 86400) / 3600));
   const minute = to2digit(Math.floor((time % 3600) / 60));
   const second = to2digit(time % 60);
 
   const responsive = useResponsive();
-  const isHunderd=day>=100
 
   return (
     <div className="-skew-y-12 font-limelight text-7xl tracking-wide">
@@ -38,7 +36,7 @@ export const CountDown: FC<Props> = ({ restTime }) => {
         // PC
         <>
           <p>
-            <span className={`inline-block w-[${isHunderd?150:100}px]`}>{day} </span>
+            <span className={`w-[100px]] inline-block`}>{day} </span>
             <span className="text-2xl font-bold">日</span>
             <span className="inline-block w-[100px]">{hour}</span>
             <span className="text-2xl font-bold">時間</span>
@@ -53,7 +51,7 @@ export const CountDown: FC<Props> = ({ restTime }) => {
         // スマホ タブレット
         <>
           <p>
-            <span className={`inline-block w-[${isHunderd?150:100}px]`}>{day} </span>
+            <span className={`inline-block w-[100px]`}>{day} </span>
             <span className="text-2xl font-bold">日</span>
             <span className="inline-block w-[100px]">{hour}</span>
             <span className="text-2xl font-bold">時間</span>
