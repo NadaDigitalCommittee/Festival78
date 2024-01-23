@@ -1,8 +1,8 @@
 import { FC } from "react";
 
 export const Arrow1: FC<{ direction: "right" | "down" }> = ({ direction }) => {
-    const width = "30"
-    const height = "30"
+  const width = "30";
+  const height = "30";
   return direction === "right" ? (
     <svg
       width={width}

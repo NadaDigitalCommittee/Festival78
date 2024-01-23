@@ -32,7 +32,7 @@ export default function Home() {
           </div>
           <div className="relative text-center text-theme">
             <p className="relative block font-avianosans text-6xl font-bold tracking-wider md:text-9xl">
-              ODYSSEY{" "}
+              ODYSSEY
               <Image
                 src={"/img/top/star.svg"}
                 width={50}
@@ -72,7 +72,9 @@ export default function Home() {
         <div className="text-center text-theme md:mt-6">
           <div className="block font-alte_din tracking-wider lg:hidden">
             <p className="text-2xl md:text-4xl">2024</p>
-            <p className="text-3xl md:text-6xl">05/02 Tue <Arrow1 direction="right" /> 05/03 Wed</p>
+            <p className="text-3xl md:text-6xl">
+              05/02 Tue <Arrow1 direction="right" /> 05/03 Wed
+            </p>
             <p className="text-3xl md:text-6xl">9:00-15:30</p>
           </div>
           <div className="hidden w-full items-center justify-center gap-[150px] font-alte_din tracking-wider lg:flex">
@@ -89,9 +91,16 @@ export default function Home() {
             <CountDown restTime={restTime} />
           </div>
         </div>
-        {/* <div className="w-[72vw] h-[40.5vw] max-h-full mx-auto bg-slate-200">
-            <p className="text-black">pv?</p>
-          </div> */}
+        <div className="md:w-[800px] mx-auto md:h-[450px] sm:w-screen h-[56vw]">
+          <iframe
+            width={"100%"}
+            height={"100%"}
+            src="https://www.youtube.com/embed/MiaSs1-RXK0"
+            title="【始動】2024年灘校文化祭 テーマ発表PV"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+        </div>
         <div className="mx-5">
           {/* <div className="mt-12">
             <div className="flex items-center">
