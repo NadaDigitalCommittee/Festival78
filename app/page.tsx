@@ -73,16 +73,16 @@ export default function Home() {
           <div className="block font-alte_din tracking-wider lg:hidden">
             <p className="text-2xl md:text-4xl">2024</p>
             <p className="text-3xl md:text-6xl">
-              05/02 Tue <Arrow1 direction="right" /> 05/03 Wed
+              05/02 Thu <Arrow1 direction="right" /> 05/03 Fri
             </p>
             <p className="text-3xl md:text-6xl">9:00-15:30</p>
           </div>
           <div className="hidden w-full items-center justify-center gap-[150px] font-alte_din tracking-wider lg:flex">
             <div>
               <p className="text-4xl">2024</p>
-              <p className="text-5xl">05/02 Tue</p>
+              <p className="text-5xl">05/02 Thu</p>
               <Arrow1 direction="down" />
-              <p className="text-5xl">05/03 Wed</p>
+              <p className="text-5xl">05/03 Fri</p>
             </div>
             <p className="text-6xl">9:00-15:30</p>
           </div>
