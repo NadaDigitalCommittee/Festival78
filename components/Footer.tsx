@@ -68,8 +68,8 @@ export const Footer: FC = () => {
                 style={{ transform: `translateX(${i * 62 - 620}px)` }}
               >
                 <p className="absolute -translate-y-[60px] -skew-y-[35deg]">
-                  {"ODYSSEYODYSSEYODYSSEY".slice(i) +
-                    "ODYSSEYODYSSEYODYSSEY".slice(0, i)}
+                  {"ODYSSEYODYSSEYODYSSEYODYSSEY".slice(i) +
+                    "ODYSSEYODYSSEYODYSSEYODYSSEY".slice(0, i)}
                 </p>
               </div>
             );
