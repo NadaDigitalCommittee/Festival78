@@ -27,7 +27,7 @@ export const Footer: FC = () => {
       </div>
       <div className="my-auto">
         <p className="mt-6 text-center font-south_amsterdam text-5xl text-white">
-          Follow me
+          Follow us
         </p>
 
         <IconContext.Provider
