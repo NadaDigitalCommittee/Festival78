@@ -4,7 +4,7 @@ import "@/styles/news.scss";
 export default async function NewsPage({ params }: { params: { id: string } }) {
   const news = (await getNews()).find((news) => news.id === params.id);
   return (
-    <main>
+    <main className="font-zen_kaku_gothic_new">
       {news ? (
         <>
           <h1>タイトル:{news.title}</h1>

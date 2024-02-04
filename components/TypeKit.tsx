@@ -17,12 +17,12 @@ const TypekitLoader: React.FC = () => {
       }, config.scriptTimeout);
       const tk = d.createElement("script");
 
-      h.className += "wf-loading";
+      h.className += "wf-loading ";
       tk.src = `https://use.typekit.net/${config.kitId}.js`;
       tk.async = true;
       tk.onload = function () {
         clearTimeout(t);
-        try {
+        try { 
           (window as any).Typekit.load(config);
         } catch (e) {}
       };

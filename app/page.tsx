@@ -23,11 +23,12 @@ export default function Home() {
                 style={{
                   scale: 1.3,
                 }}
-                quality={100}
+                quality={50}
                 className={styles.rotate_img}
                 priority
               />
-              <Image src={"/img/logo1.png"} alt="文化祭ロゴ" fill priority />
+              <Image src={"/img/logo1.png"} alt="文化祭ロゴ" fill priority quality={100} 
+              sizes="(max-width: 768px) 75vw, 700px" />
             </div>
           </div>
           <div className="relative text-center text-theme">
