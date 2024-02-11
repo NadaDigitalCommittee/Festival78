@@ -67,7 +67,7 @@ export async function getEvents(): Promise<Event[]> {
     .sort((a, b) => a.id - b.id);
 }
 
-export async function getNews(): Promise<News[]> {
+export async function getNews(draftKey?:string): Promise<News[]> {
   return (
     await client.getList<NewsSchema>({
       endpoint: "news",
@@ -76,6 +76,9 @@ export async function getNews(): Promise<News[]> {
           revalidate: 60,
         },
       },
+      queries:{
+        "draftKey":draftKey
+      }
     })
   ).contents;
 }

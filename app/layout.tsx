@@ -101,7 +101,7 @@ export default function RootLayout({
           .join(" ")}`}
       >
         <TypekitLoader />
-        <div className="max-h-min-[100lvh] w-[100%] overflow-x-hidden">
+        <div className="min-h-[100lvh] w-[100%] overflow-x-hidden">
           {children}
         </div>
         <Footer />

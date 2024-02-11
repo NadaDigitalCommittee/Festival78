@@ -1,19 +1,22 @@
 import { News, getNews } from "@/lib/cms";
-import "@/styles/news.scss";
+import style from "@/styles/news.module.scss";
 
-export default async function NewsPage({ params }: { params: { id: string } }) {
-  const news = (await getNews()).find((news) => news.id === params.id);
+export default async function NewsPage({ params, searchParams }:
+  { params: { id: string }, searchParams: { [key: string]: string | string[] | undefined }; }) {
+    const draftKey = searchParams.draftKey as string | undefined;
+    const news = (await getNews(draftKey)).find((news) => news.id === params.id);  
   return (
-    <main className="font-zen_kaku_gothic_new">
+    <main className="font-zen_kaku_gothic_new w-full max-w-[1000px]">
       {news ? (
-        <>
-          <h1>タイトル:{news.title}</h1>
+        <div className="mx-3">
+          <p>{draftKey&&"※これはプレビュー画面です"}</p>
+          <h1 className="font-3xl">{news.title}</h1>
           <p>投稿日時:{news.publishedAt}</p>
           <div
-            className="news-content"
+            className={style.content}
             dangerouslySetInnerHTML={{ __html: news.content }}
           ></div>
-        </>
+        </div>
       ) : (
         <h1>記事が見つかりませんでした</h1>
       )}
