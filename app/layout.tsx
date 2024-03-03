@@ -46,12 +46,12 @@ export const metadata: Metadata = {
     "festival",
   ],
   description:
-    "2024年5月2日・5月3日に開催される第77回灘校文化祭「ODYSSEY」の公式ウェブサイトです。",
+    "2024年5月2日・5月3日に開催される第78回灘校文化祭「ODYSSEY」の公式ウェブサイトです。",
   openGraph: {
     type: "website",
     title: "第78回灘校文化祭 ODYSSEY",
     description:
-      "2024年5月2日・5月3日に開催される第77回灘校文化祭「ODYSSEY」の公式ウェブサイトです。",
+      "2024年5月2日・5月3日に開催される第78回灘校文化祭「ODYSSEY」の公式ウェブサイトです。",
     url: "https://fest.nada-sc.jp",
     siteName: "第78回灘校文化祭 ODYSSEY",
     locale: "ja_JP",
