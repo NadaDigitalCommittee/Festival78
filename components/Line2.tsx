@@ -31,7 +31,7 @@ export const Line2 = () => {
       };
       context.clearRect(0, 0, width, height);
       for (let i = 0; i < N; i++) {
-        const localTimeScale = time / (1200 + 500 * waveDeterminant[i][0]);
+        const localTimeScale = time / (2400 + 500 * waveDeterminant[i][0]);
         const frequency = (1+waveDeterminant[i][1])/ 300;
         const amplitude =
           40 * (1 + Math.sin(localTimeScale / 3) * waveDeterminant[i][2]);
