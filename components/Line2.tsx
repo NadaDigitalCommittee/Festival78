@@ -27,7 +27,7 @@ export const Line2 = () => {
           (_x - width / 2) * Math.sin(_angle) +
             (_y - height / 2) * Math.cos(_angle) +
             height / 2,
-        ];
+        ] as const;
       };
       context.clearRect(0, 0, width, height);
       for (let i = 0; i < N; i++) {
