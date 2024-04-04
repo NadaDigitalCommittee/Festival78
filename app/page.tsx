@@ -1,6 +1,6 @@
 import { CountDown } from "@/components/CountDown";
 import { Arrow1 } from "@/components/svg/Arrow1";
-import { Line2 } from "@/components/svg/Line2";
+import { Line2 } from "@/components/Line2";
 import { MapPin } from "@/components/svg/MapPin";
 import styles from "@/styles/top.module.scss";
 import Image from "next/image";
