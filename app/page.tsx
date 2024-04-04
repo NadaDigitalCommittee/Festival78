@@ -97,9 +97,7 @@ export default function Home() {
             <CountDown restTime={restTime} />
           </div>
         </div>
-        <div className=" mx-auto">
           <YouTubeEmbed videoid="MiaSs1-RXK0" style="margin:auto"/>            
-        </div>
         <div className="mx-5">
           {/* <div className="mt-12">
             <div className="flex items-center">
