@@ -4,6 +4,7 @@ import "@/styles/globals.scss";
 import type { Metadata, Viewport } from "next";
 import { Inter, Limelight, Zen_Kaku_Gothic_New } from "next/font/google";
 import localFont from "next/font/local";
+import {GoogleAnalytics} from "@next/third-parties/google"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const limelight = Limelight({
@@ -101,6 +102,7 @@ export default function RootLayout({
           .join(" ")}`}
       >
         <TypekitLoader />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GAID} />
         <div className="min-h-[100lvh] w-[100%] overflow-x-hidden">
           {children}
         </div>
