@@ -5,7 +5,7 @@ import { MapPin } from "@/components/svg/MapPin";
 import styles from "@/styles/top.module.scss";
 import Image from "next/image";
 import { YouTubeEmbed } from "@next/third-parties/google";
-import Logo from "@/public/img/logo1.png"
+import Logo from "@/public/img/logo1_sm.png"
 import Line1 from "@/public/img/top/line1.png"
 import Star from "@/public/img/top/star.svg"
 import Logo3 from "@/public/img/logo3.png"
