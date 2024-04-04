@@ -39,22 +39,22 @@ export const Footer: FC = () => {
           }}
         >
           <p className="text-center">
-            <a href="https://twitter.com/nada_festival">
+            <a href="https://twitter.com/nada_festival" aria-label="twitter">
               <BsTwitterX />
             </a>
-            <a href="https://youtube.com/channel/UCLC_wHGsAxEGR8BSHcPK1SQ">
+            <a href="https://youtube.com/channel/UCLC_wHGsAxEGR8BSHcPK1SQ" aria-label="youtube">
               <FaYoutube />
             </a>
-            <a href="https://instagram.com/nada_schoolfestival/">
+            <a href="https://instagram.com/nada_schoolfestival/" aria-label="instagram">
               <FaInstagram />
             </a>
-            <a href="https://tiktok.com/@nada_onlinefestival">
+            <a href="https://tiktok.com/@nada_onlinefestival" aria-label="tiktok">
               <FaTiktok />
             </a>
-            <a href="https://facebook.com/NadaSchoolFestival/">
+            <a href="https://facebook.com/NadaSchoolFestival/" aria-label="facebook">
               <FaFacebook />
             </a>
-            <a href="https://page.line.me/?accountId=nada_festival">
+            <a href="https://page.line.me/?accountId=nada_festival" aria-label="line">
               <FaLine />
             </a>
           </p>
