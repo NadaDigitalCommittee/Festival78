@@ -4,6 +4,11 @@ import { Line2 } from "@/components/Line2";
 import { MapPin } from "@/components/svg/MapPin";
 import styles from "@/styles/top.module.scss";
 import Image from "next/image";
+import { YouTubeEmbed } from "@next/third-parties/google";
+import Logo from "@/public/img/logo1.png"
+import Line1 from "@/public/img/top/line1.png"
+import Star from "@/public/img/top/star.svg"
+import Logo3 from "@/public/img/logo3.png"
 
 export default function Home() {
   const now = new Date().getTime() + new Date().getTimezoneOffset() * 60 * 1000;
@@ -17,8 +22,8 @@ export default function Home() {
             <div className="relative -left-[calc(min(75vw,400px))] h-[150vw] max-h-[800px] w-[150vw] max-w-[800px]">
               <Line2 />
               <Image
-                src={"/img/top/line1.png"}
-                alt="文化祭ロゴ"
+                src={Line1}
+                alt="文化祭ロゴ回転する線"
                 fill
                 style={{
                   scale: 1.3,
@@ -27,7 +32,7 @@ export default function Home() {
                 className={styles.rotate_img}
                 priority
               />
-              <Image src={"/img/logo1.png"} alt="文化祭ロゴ" fill priority quality={100} 
+              <Image src={Logo} alt="文化祭ロゴ" fill priority
               sizes="(max-width: 768px) 75vw, 700px" />
             </div>
           </div>
@@ -35,7 +40,7 @@ export default function Home() {
             <p className="relative block font-avianosans text-6xl font-bold tracking-wider md:text-9xl">
               ODYSSEY
               <Image
-                src={"/img/top/star.svg"}
+                src={Star}
                 width={50}
                 height={55}
                 alt="キラキラ"
@@ -45,7 +50,7 @@ export default function Home() {
                 }}
               />
               <Image
-                src={"/img/top/star.svg"}
+                src={Star}
                 width={100}
                 height={115}
                 alt="キラキラ"
@@ -55,7 +60,7 @@ export default function Home() {
                 }}
               />
               <Image
-                src={"/img/top/star.svg"}
+                src={Star}
                 width={100}
                 height={115}
                 alt="キラキラ"
@@ -92,15 +97,8 @@ export default function Home() {
             <CountDown restTime={restTime} />
           </div>
         </div>
-        <div className="md:w-[800px] mx-auto md:h-[450px] sm:w-screen h-[56vw]">
-          <iframe
-            width={"100%"}
-            height={"100%"}
-            src="https://www.youtube.com/embed/MiaSs1-RXK0"
-            title="【始動】2024年灘校文化祭 テーマ発表PV"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>
+        <div className=" mx-auto">
+          <YouTubeEmbed videoid="MiaSs1-RXK0" style="margin:auto"/>            
         </div>
         <div className="mx-5">
           {/* <div className="mt-12">
@@ -151,7 +149,7 @@ export default function Home() {
               </div>
 
               <Image
-                src={"/img/logo3.png"}
+                src={Logo3}
                 alt="文化祭ロゴ"
                 width="450"
                 height="450"
