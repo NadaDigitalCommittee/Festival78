@@ -16,7 +16,7 @@ export const Footer: FC = () => {
   return (
     <footer className="relative grid overflow-hidden bg-[#616161] px-3 py-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
       <div className="mx-auto flex">
-        <Logo width={100} height={100}/>
+        <Logo width={100} height={100} />
         <div className="mx-[20px] h-full w-[1px] bg-white" />
         <p className="font-avianosans text-white">
           78TH NADA

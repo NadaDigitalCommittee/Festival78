@@ -1,14 +1,13 @@
 import { CountDown } from "@/components/CountDown";
-import { Arrow1 } from "@/components/svg/Arrow1";
 import { Line2 } from "@/components/Line2";
+import { Arrow1 } from "@/components/svg/Arrow1";
 import { MapPin } from "@/components/svg/MapPin";
+import Logo3 from "@/public/img/logo3.webp";
+import Line1 from "@/public/img/top/line1.webp";
+import Star from "@/public/img/top/star.svg";
 import styles from "@/styles/top.module.scss";
-import Image from "next/image";
 import { YouTubeEmbed } from "@next/third-parties/google";
-import Logo from "@/public/img/logo1_sm.png"
-import Line1 from "@/public/img/top/line1.png"
-import Star from "@/public/img/top/star.svg"
-import Logo3 from "@/public/img/logo3.png"
+import Image from "next/image";
 
 export default function Home() {
   const now = new Date().getTime() + new Date().getTimezoneOffset() * 60 * 1000;
@@ -32,8 +31,12 @@ export default function Home() {
                 className={styles.rotate_img}
                 priority
               />
-              <Image src={Logo} alt="文化祭ロゴ" fill priority
-              sizes="(max-width: 768px) 75vw, 700px" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                className="absolute bottom-0 left-0 right-0 top-0 h-full w-full"
+                srcSet="/img/logo1_900w.webp 900w,/img/logo1_600w.webp 600w, /img/logo1_450w.webp 450w"
+                alt="文化祭ロゴ"
+              />
             </div>
           </div>
           <div className="relative text-center text-theme">
@@ -97,7 +100,7 @@ export default function Home() {
             <CountDown restTime={restTime} />
           </div>
         </div>
-          <YouTubeEmbed videoid="MiaSs1-RXK0" style="margin:auto"/>            
+        <YouTubeEmbed videoid="MiaSs1-RXK0" style="margin:auto" />
         <div className="mx-5">
           {/* <div className="mt-12">
             <div className="flex items-center">
@@ -146,12 +149,13 @@ export default function Home() {
                 <br />
               </div>
 
-              <Image
-                src={Logo3}
-                alt="文化祭ロゴ"
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 width="450"
                 height="450"
+                srcSet="/img/logo3_900w.webp 900w,/img/logo3_600w.webp 600w, /img/logo3_450w.webp 450w"
                 className="mx-auto my-auto block"
+                alt="文化祭ロゴ"
               />
             </div>
           </div>
