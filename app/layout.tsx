@@ -4,6 +4,7 @@ import "@/styles/globals.scss";
 import type { Metadata, Viewport } from "next";
 import { Inter, Limelight, Zen_Kaku_Gothic_New } from "next/font/google";
 import localFont from "next/font/local";
+import {GoogleAnalytics} from "@next/third-parties/google"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const limelight = Limelight({
@@ -46,12 +47,12 @@ export const metadata: Metadata = {
     "festival",
   ],
   description:
-    "2024年5月2日・5月3日に開催される第77回灘校文化祭「ODYSSEY」の公式ウェブサイトです。",
+    "2024年5月2日・5月3日に開催される第78回灘校文化祭「ODYSSEY」の公式ウェブサイトです。",
   openGraph: {
     type: "website",
     title: "第78回灘校文化祭 ODYSSEY",
     description:
-      "2024年5月2日・5月3日に開催される第77回灘校文化祭「ODYSSEY」の公式ウェブサイトです。",
+      "2024年5月2日・5月3日に開催される第78回灘校文化祭「ODYSSEY」の公式ウェブサイトです。",
     url: "https://fest.nada-sc.jp",
     siteName: "第78回灘校文化祭 ODYSSEY",
     locale: "ja_JP",
@@ -87,7 +88,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="ja">
       <body
         className={`${[
           inter,
@@ -101,7 +102,8 @@ export default function RootLayout({
           .join(" ")}`}
       >
         <TypekitLoader />
-        <div className="max-h-min-[100lvh] w-[100%] overflow-x-hidden">
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GAID} />
+        <div className="min-h-[100lvh] w-[100%] overflow-x-hidden">
           {children}
         </div>
         <Footer />
