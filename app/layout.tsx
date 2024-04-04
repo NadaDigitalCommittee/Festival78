@@ -4,7 +4,7 @@ import "@/styles/globals.scss";
 import type { Metadata, Viewport } from "next";
 import { Inter, Limelight, Zen_Kaku_Gothic_New } from "next/font/google";
 import localFont from "next/font/local";
-import {GoogleAnalytics} from "@next/third-parties/google"
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const limelight = Limelight({
@@ -56,24 +56,24 @@ export const metadata: Metadata = {
     url: "https://fest.nada-sc.jp",
     siteName: "第78回灘校文化祭 ODYSSEY",
     locale: "ja_JP",
-    images:[
+    images: [
       {
-        "url":"https://fest.nada-sc.jp/img/ogp.png",
-        "width":2000,
-        "height":1125,
-      }
-    ]
+        url: "https://fest.nada-sc.jp/img/ogp.webp",
+        width: 2000,
+        height: 1125,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     site: "@nada_festival",
-    images:[
+    images: [
       {
-        "url":"https://fest.nada-sc.jp/img/ogp.png",
-        "width":2000,
-        "height":1125,
-      }
-    ]
+        url: "https://fest.nada-sc.jp/img/ogp.png",
+        width: 2000,
+        height: 1125,
+      },
+    ],
   },
 };
 

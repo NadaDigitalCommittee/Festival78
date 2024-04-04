@@ -16,7 +16,7 @@ export const Footer: FC = () => {
   return (
     <footer className="relative grid overflow-hidden bg-[#616161] px-3 py-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
       <div className="mx-auto flex">
-        <Logo width={100} height={100}/>
+        <Logo width={100} height={100} />
         <div className="mx-[20px] h-full w-[1px] bg-white" />
         <p className="font-avianosans text-white">
           78TH NADA
@@ -39,22 +39,22 @@ export const Footer: FC = () => {
           }}
         >
           <p className="text-center">
-            <a href="https://twitter.com/nada_festival">
+            <a href="https://twitter.com/nada_festival" aria-label="twitter">
               <BsTwitterX />
             </a>
-            <a href="https://youtube.com/channel/UCLC_wHGsAxEGR8BSHcPK1SQ">
+            <a href="https://youtube.com/channel/UCLC_wHGsAxEGR8BSHcPK1SQ" aria-label="youtube">
               <FaYoutube />
             </a>
-            <a href="https://instagram.com/nada_schoolfestival/">
+            <a href="https://instagram.com/nada_schoolfestival/" aria-label="instagram">
               <FaInstagram />
             </a>
-            <a href="https://tiktok.com/@nada_onlinefestival">
+            <a href="https://tiktok.com/@nada_onlinefestival" aria-label="tiktok">
               <FaTiktok />
             </a>
-            <a href="https://facebook.com/NadaSchoolFestival/">
+            <a href="https://facebook.com/NadaSchoolFestival/" aria-label="facebook">
               <FaFacebook />
             </a>
-            <a href="https://page.line.me/?accountId=nada_festival">
+            <a href="https://page.line.me/?accountId=nada_festival" aria-label="line">
               <FaLine />
             </a>
           </p>

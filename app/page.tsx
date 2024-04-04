@@ -1,8 +1,12 @@
 import { CountDown } from "@/components/CountDown";
-import { Arrow1 } from "@/components/svg/Arrow1";
 import { Line2 } from "@/components/Line2";
+import { Arrow1 } from "@/components/svg/Arrow1";
 import { MapPin } from "@/components/svg/MapPin";
+import Logo3 from "@/public/img/logo3.webp";
+import Line1 from "@/public/img/top/line1.webp";
+import Star from "@/public/img/top/star.svg";
 import styles from "@/styles/top.module.scss";
+import { YouTubeEmbed } from "@next/third-parties/google";
 import Image from "next/image";
 
 export default function Home() {
@@ -17,8 +21,8 @@ export default function Home() {
             <div className="relative -left-[calc(min(75vw,400px))] h-[150vw] max-h-[800px] w-[150vw] max-w-[800px]">
               <Line2 />
               <Image
-                src={"/img/top/line1.png"}
-                alt="文化祭ロゴ"
+                src={Line1}
+                alt="文化祭ロゴ回転する線"
                 fill
                 style={{
                   scale: 1.3,
@@ -27,15 +31,19 @@ export default function Home() {
                 className={styles.rotate_img}
                 priority
               />
-              <Image src={"/img/logo1.png"} alt="文化祭ロゴ" fill priority quality={100} 
-              sizes="(max-width: 768px) 75vw, 700px" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                className="absolute bottom-0 left-0 right-0 top-0 h-full w-full"
+                srcSet="/img/logo1_900w.webp 900w,/img/logo1_600w.webp 600w, /img/logo1_450w.webp 450w"
+                alt="文化祭ロゴ"
+              />
             </div>
           </div>
           <div className="relative text-center text-theme">
             <p className="relative block font-avianosans text-6xl font-bold tracking-wider md:text-9xl">
               ODYSSEY
               <Image
-                src={"/img/top/star.svg"}
+                src={Star}
                 width={50}
                 height={55}
                 alt="キラキラ"
@@ -45,7 +53,7 @@ export default function Home() {
                 }}
               />
               <Image
-                src={"/img/top/star.svg"}
+                src={Star}
                 width={100}
                 height={115}
                 alt="キラキラ"
@@ -55,7 +63,7 @@ export default function Home() {
                 }}
               />
               <Image
-                src={"/img/top/star.svg"}
+                src={Star}
                 width={100}
                 height={115}
                 alt="キラキラ"
@@ -92,16 +100,7 @@ export default function Home() {
             <CountDown restTime={restTime} />
           </div>
         </div>
-        <div className="md:w-[800px] mx-auto md:h-[450px] sm:w-screen h-[56vw]">
-          <iframe
-            width={"100%"}
-            height={"100%"}
-            src="https://www.youtube.com/embed/MiaSs1-RXK0"
-            title="【始動】2024年灘校文化祭 テーマ発表PV"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>
-        </div>
+        <YouTubeEmbed videoid="MiaSs1-RXK0" style="margin:auto" />
         <div className="mx-5">
           {/* <div className="mt-12">
             <div className="flex items-center">
@@ -150,12 +149,13 @@ export default function Home() {
                 <br />
               </div>
 
-              <Image
-                src={"/img/logo3.png"}
-                alt="文化祭ロゴ"
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 width="450"
                 height="450"
+                srcSet="/img/logo3_900w.webp 900w,/img/logo3_600w.webp 600w, /img/logo3_450w.webp 450w"
                 className="mx-auto my-auto block"
+                alt="文化祭ロゴ"
               />
             </div>
           </div>
