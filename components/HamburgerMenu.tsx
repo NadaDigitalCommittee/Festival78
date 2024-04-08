@@ -7,7 +7,7 @@ const paths = [
   { ja: "出展サークル", en: "Circles", path: "/circles" },
   { ja: "イベント", en: "Events", path: "/events" },
   { ja: "タイムテーブル", en: "Timetable", path: "/timetable" },
-  { ja: "構内マップ", en: "Maps", path: "/maps" },
+  { ja: "校内マップ", en: "Maps", path: "/maps" },
   { ja: "混雑状況", en: "Crowds", path: "/crowds" },
   { ja: "ブログ", en: "Blogs", path: "/blogs" },
   { ja: "グッズ", en: "Goods", path: "/goods" },
@@ -27,16 +27,16 @@ export const HamburgerMenu: FC = () => {
     setHovered(-1);
   };
   return (
-    <div className={`fixed z-50 right-0 ${isOpen ? "w-full h-screen backdrop-brightness-50" : ""}`}>
+    <div className={`fixed z-50 right-0 ${isOpen ? "w-full h-screen bg-white/85" : ""}`}>
       <button onClick={isOpen ? handleMenuClose : handleMenuOpen} className="absolute z-50 flex flex-col right-0 h-[4.5rem] w-[4.5rem] p-5 bg-theme justify-between items-center">
         <span
-          className={`block h-1 bg-white duration-300 ${isOpen ? "w-10 translate-y-[0.875em] rotate-[4.125turn]" : "w-8"}`}
+          className={`block h-1 bg-white duration-300 ${isOpen ? "w-10 translate-y-[0.875em] rotate-[.125turn]" : "w-8"}`}
         />
         <span
           className={`block w-8 h-1 bg-white duration-300 ${isOpen ? "opacity-0" : ""}`}
         />
         <span
-          className={`block h-1 bg-white duration-300 ${isOpen ? "w-10 -translate-y-[0.875em] -rotate-[4.125turn]" : "w-8"}`}
+          className={`block h-1 bg-white duration-300 ${isOpen ? "w-10 -translate-y-[0.875em] -rotate-[.125turn]" : "w-8"}`}
         />
       </button>
       <div className={`absolute flex flex-col justify-between h-screen w-48 md:w-72 pt-[4.5rem] md:pt-8 pb-12 bg-theme duration-300 ${isOpen ? "right-0" : "-right-48 md:-right-72"}`}>
