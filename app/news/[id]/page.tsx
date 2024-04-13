@@ -1,24 +1,15 @@
-import { getBlogs } from "@/lib/cms";
+import { News, getNews } from "@/lib/cms";
 import style from "@/styles/news.module.scss";
 
-export async function generateStaticParams() {
-  const news = await getBlogs();
-  console.log(news)
-  return news.map((news) => ({
-      id: news.id,
-  }));
-}
-
-export default async function Page({
+export default async function NewsPage({
   params,
   searchParams,
 }: {
   params: { id: string };
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
-  // const draftKey = searchParams.draftKey as string | undefined;
-  const draftKey = undefined;
-  const news = (await getBlogs(draftKey)).find((news) => news.id === params.id);
+  const draftKey = searchParams.draftKey as string | undefined;
+  const news = (await getNews(draftKey)).find((news) => news.id === params.id);
   return (
     <main className="w-full max-w-[1000px] font-zen_kaku_gothic_new">
       {news ? (
@@ -38,3 +29,14 @@ export default async function Page({
   );
 }
 
+export async function generateStaticParams() {
+  const news = await getNews();
+
+  return news.map((news) => ({
+    params: {
+      id: news.id,
+    },
+  }));
+}
+
+export const runtime = "edge";

@@ -1,4 +1,3 @@
-"use client"
 import { CountDown } from "@/components/CountDown";
 import { Line2 } from "@/components/Line2";
 import { Arrow1 } from "@/components/svg/Arrow1";
@@ -225,3 +224,5 @@ const Tweet = () => (
     ></script>
   </div>
 );
+
+export const runtime = "edge";
