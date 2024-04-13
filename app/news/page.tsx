@@ -1,8 +1,8 @@
-import { getNews } from "@/lib/cms";
+import { getBlogs } from "@/lib/cms";
 import Link from "next/link";
 
 export default async function Page() {
-  const news = await getNews();
+  const news = await getBlogs();
   return (
     <main>
       {news.map((news, i) => (
@@ -11,5 +11,3 @@ export default async function Page() {
     </main>
   );
 }
-
-export const runtime = "edge";
