@@ -1,5 +1,6 @@
 "use client";
 
+import ContentSection from "@/components/events/ContentSection";
 import { useSearchParams } from "next/navigation"
 import { useEffect } from "react";
 
@@ -12,7 +13,7 @@ export default function Page() {
     }, [id])
     return (
         <main>
-
+            <ContentSection title={""} eventId={""} comingSoon={false} content={""} />
         </main>
     )
 }
