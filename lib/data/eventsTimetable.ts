@@ -101,12 +101,6 @@ export const eventsTimetable: EventTimetable[] = [
       { day: 2, time: new Time(9, 0, 15, 0) }
     ]
   },
-  /*
-  "9：40～10：30
-11：00～11：50
-12：40～13：30
-14：00～14：50"
-  */
   {
     id: "library_event",
     time: [
