@@ -103,7 +103,7 @@ export default function RootLayout({
       >
         <TypekitLoader />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GAID} />
-        <div className="min-h-[100lvh] w-[100%] overflow-x-hidden">
+        <div className="min-h-[100lvh] w-[100%] overflow-x-clip">
           {children}
         </div>
         <Footer />
