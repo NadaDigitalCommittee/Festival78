@@ -19,6 +19,8 @@ const config: Config = {
       },
       colors: {
         theme: "#ff4d00",
+        body_text: "#2f2f2f",
+        odd_column: "#ffefe8",
       },
     },
   },

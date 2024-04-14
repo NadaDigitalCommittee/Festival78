@@ -1,8 +1,13 @@
-import { MicroCMSContentId, MicroCMSDate, createClient } from "microcms-js-sdk";
+import {
+  MicroCMSContentId,
+  MicroCMSDate,
+  MicroCMSQueries,
+  createClient,
+} from "microcms-js-sdk";
 import { Time } from "./time";
-import type { Event } from "./types";
+import type { Event, Blog } from "./types";
 
-const client = createClient({
+export const client = createClient({
   apiKey: process.env.MICROCMS_API_KEY,
   serviceDomain: process.env.MICROCMS_SERVICE_DOMAIN,
 });
@@ -82,3 +87,27 @@ export async function getNews(draftKey?: string): Promise<News[]> {
     })
   ).contents;
 }
+
+export { Blog };
+
+export const getBlogList = async (queries?: MicroCMSQueries) => {
+  const listData = await client.getList<Blog>({
+    endpoint: "blogs",
+    queries,
+  });
+
+  return listData;
+};
+
+export const getBlogDetail = async (
+  contentId: string,
+  queries?: MicroCMSQueries
+) => {
+  const detailData = await client.getListDetail<Blog>({
+    endpoint: "blogs",
+    contentId,
+    queries,
+  });
+
+  return detailData;
+};
