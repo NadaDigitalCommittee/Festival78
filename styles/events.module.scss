@@ -1,0 +1,15 @@
+$breakpoints: (
+    "xl": "screen and (min-width: 1040px)",
+) !default;
+
+@mixin bq($breakpoint) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+.contentSection_wrapper {
+    @include bq(xl) {
+        width: 1040px;
+    }
+}
