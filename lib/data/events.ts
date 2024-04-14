@@ -146,7 +146,7 @@ export const events: Event[] = [
     mapId: "biologysub",
   },
   {
-    id: "m3-2lego_event",
+    id: "lego_event",
     name: "トイブロックで灘校机椅子を制作体験",
     description: "伝統的な中学棟の机椅子とそれに座る生徒を、部員と一緒に19パーツと３パーツのミニフィギアで再現します。作った作品は持って帰ることが出来ます。",
     category: "raffle",
@@ -181,11 +181,11 @@ export const events: Event[] = [
     mapId: "earthscience",
   },
   {
-    id: "minitrainground1",
+    id: "railway_event",
     name: "ミニ電車",
     description: "鉄研で５年ぶりに復活したミニ電車は、小さな子供から大人まで楽しめる、「実際に乗れる」のが特徴の大型鉄道模型です。客車に跨って見える、新しい灘の景色を一度楽しんでみませんか？",
     category: "raffle",
-    mapId: "minitrainground1",
+    mapId: "ground1",
   },
   {
     id: "chemistry_event",
@@ -210,105 +210,105 @@ export const events: Event[] = [
   },
   {
     id: "odoriba",
-    name: "踊り場 odoriba garden",
+    name: "踊り場",
     description: "ODORIBAを見ずして灘校文化祭は語れない。爽やかイケメンから全力の女装・コスプレまで、様々な灘校生が披露する圧巻のダンスは必見です！",
     category: "garden",
     mapId: "garden"
   },
   {
     id: "mscontest",
-    name: "ミスコン mscontest garden",
+    name: "ミスコン",
     description: "ステージ企画最高級の大人気大盛り上がり企画!! 灘校一の美女を決める戦いに目が離せない⁉ みんなも推し美女を見つけて、たくさん応援して盛り上げよう！",
     category: "garden",
     mapId: "garden"
   },
   {
     id: "muscle",
-    name: "筋肉王 muscle garden",
+    name: "筋肉王",
     description: "史上最も偉大なボディビルダー、ロニーコールマンはこう言いました。「筋肉という名の衣服を日々の努力で縫い上げていくんだ」 灘校生の裸を見ることができる唯一のステージ。最高のファッションショーはこちらです。",
     category: "garden",
     mapId: "garden"
   },
   {
     id: "performance",
-    name: "パフォーマンス performance garden",
+    name: "パフォーマンス",
     description: "",
     category: "garden",
     mapId: "garden"
   },
   {
     id: "magic",
-    name: "マジック magic garden",
+    name: "マジック",
     description: "観客の皆さんをも巻き込む、一風変わったステージマジックの数々をとくとご覧あれ！！",
     category: "garden",
     mapId: "garden"
   },
   {
     id: "finale",
-    name: "フィナーレ finale garden",
+    name: "フィナーレ",
     description: "",
     category: "garden",
     mapId: "garden"
   },
   {
     id: "n1",
-    name: "N1 n1 audiovisual",
+    name: "N1",
     description: "灘校屈指のお笑いたちがコンビを組み、その笑いのセンスを武器に熱い漫才バトルをします！灘校一の漫才師の栄光を手にするのは誰だ！？",
     category: "audiovisual",
     mapId: "audiovisual"
   },
   {
     id: "ippon",
-    name: "IPPON ippon audiovisual",
+    name: "IPPON",
     description: "今年も開催！想像のナナメ上を行く本校生の回答にあなたも抱腹絶倒待ったナシ！ 灘校の大喜利championを決める熱き闘いを見逃すな！",
     category: "audiovisual",
     mapId: "audiovisual"
   },
   {
     id: "kakuzuke",
-    name: "格付け kakuzuke audiovisual",
+    name: "格付け",
     description: "灘校生が自らの感覚を駆使して問題を解き、ランク付けされていきます。 果たして最後まで正解して一流灘校生を維持できる者は現れるのか！？",
     category: "audiovisual",
     mapId: "audiovisual"
   },
   {
     id: "quiz",
-    name: "クイズ quiz audiovisual",
+    name: "クイズ",
     description: "灘、大阪星光、東大寺、西大和。 いずれも名打ての強豪校達が、今日特別に視聴覚室に集結！！普段画面の向こうでしか見られない超人達の最高峰の知力対決を見逃すな！",
     category: "audiovisual",
     mapId: "audiovisual"
   },
   {
     id: "n1consolation",
-    name: "N1敗者復活 n1consolation audiovisual",
+    name: "N1敗者復活",
     description: "ここでは終われない！舞い戻るのは俺らだ！本戦へと進むラスト1組を決める闘いを視聴覚室で！",
     category: "audiovisual",
     mapId: "audiovisual"
   },
   {
     id: "maetoato",
-    name: "灘中に入る前と後 maetoato lecture",
+    name: "灘中に入る前と後",
     description: "人気企画「新中一企画」が、内容をリニューアルして登場！ 「どんな習い事をしていた？」 「学校の授業のスピードは？」 4月に入学した中学１年生全員のアンケート結果を公開！ アンケート結果をもとに、中１生と先輩中学生の生の声をお届けします。",
     category: "lecture",
     mapId: "lecture"
   },
   {
     id: "boxing",
-    name: "ボクシンク boxing lecture",
+    name: "ボクシンク",
     description: "知の格闘技、ボクシンクが今年も開催！蝶のように論を立て、蜂のように相手を刺す選手たち。あなたはどちらの意見を選ぶ？ぜひご観戦ください！",
     category: "lecture",
     mapId: "lecture"
   },
   {
     id: "nadaju",
-    name: "灘校一受けたい授業 nadaju lecture",
+    name: "灘校一受けたい授業",
     description: "個性的なのは灘生だけじゃない！ 灘校の教師陣の授業がついに明らかとなる！！ この機会を見逃すな！",
     category: "lecture",
     mapId: "lecture"
   },
   {
     id: "aurorascience",
-    name: "オーロラサイエンス aurorascience lecture",
+    name: "オーロラサイエンス",
     description: "物理、化学、生物、地学、言語学と、様々な分野のオリンピアンが大講義室に集結！「いま地球上で起こっていること」をテーマに、それぞれの視点から多角的に解説します！！",
     category: "lecture",
     mapId: "lecture"
