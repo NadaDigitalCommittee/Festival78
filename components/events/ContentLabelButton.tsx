@@ -7,7 +7,7 @@ type ContentLabelButtonProps = {
 }
 
 export default function ContentLabelButton({children, href}: ContentLabelButtonProps) {
-    return <Link href={href} className="pt-2.5 pb-2.5 pl-4 pr-4 rounded-sm">
+    return <Link href={href} className="pt-[5px] pb-[5px] pl-[16px] pr-[16px] rounded-2xl border-border border-2 box-border">
         {children}
     </Link>
 }
