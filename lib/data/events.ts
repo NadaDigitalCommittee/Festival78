@@ -20,11 +20,6 @@ export type Event = {
   mapId: string;
 };
 
-export type EventTimetable = {
-  id: string;
-  time: { day: 1 | 2; from: Date; to: Date }[];
-};
-
 export const events: Event[] = [
   {
     id: "mathematics_event1",
