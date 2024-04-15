@@ -1,16 +1,14 @@
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
-import { notFound } from "next/navigation";
+import { getBlogDetail, getBlogList } from "@/lib/cms";
 import parse, {
-  DOMNode,
-  Element,
-  HTMLReactParserOptions,
-  domToReact,
+    DOMNode,
+    Element,
+    HTMLReactParserOptions,
+    domToReact,
 } from "html-react-parser";
-import { getBlogList, getBlogDetail } from "@/lib/cms";
 import type { Metadata } from "next";
-import { metadata } from "../page";
+import Image from "next-export-optimize-images/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
 
 export async function generateMetadata({
   params: { postId },

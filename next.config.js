@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+const withExportImages = require('next-export-optimize-images')
 const nextConfig = {
   sassOptions: {
     includePaths: [require("path").join(__dirname, "styles")],
@@ -14,4 +15,4 @@ const nextConfig = {
   output: "export"
 };
 
-module.exports = nextConfig;
+module.exports = withExportImages(nextConfig);

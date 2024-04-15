@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next-export-optimize-images",
     "start": "next start",
     "lint": "next lint",
     "format": "npx prettier . --write",
@@ -27,6 +27,7 @@
     "eslint": "8.56.0",
     "eslint-config-next": "14.0.4",
     "jimp": "^0.22.12",
+    "next-export-optimize-images": "^4.3.1",
     "postcss": "^8",
     "prettier": "^3.2.2",
     "prettier-plugin-tailwindcss": "^0.5.11",

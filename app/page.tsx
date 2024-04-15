@@ -2,12 +2,11 @@ import { CountDown } from "@/components/CountDown";
 import { Line2 } from "@/components/Line2";
 import { Arrow1 } from "@/components/svg/Arrow1";
 import { MapPin } from "@/components/svg/MapPin";
-import Logo3 from "@/public/img/logo3.webp";
 import Line1 from "@/public/img/top/line1.webp";
 import Star from "@/public/img/top/star.svg";
 import styles from "@/styles/top.module.scss";
 import { YouTubeEmbed } from "@next/third-parties/google";
-import Image from "next/image";
+import Image from "next-export-optimize-images/image";
 
 export default function Home() {
   const now = new Date().getTime() + new Date().getTimezoneOffset() * 60 * 1000;

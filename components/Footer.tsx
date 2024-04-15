@@ -1,15 +1,14 @@
 "use client";
-import Image from "next/image";
-import { FC, useEffect, useState } from "react";
-import {
-  FaFacebook,
-  FaInstagram,
-  FaLine,
-  FaTiktok,
-  FaYoutube,
-} from "react-icons/fa";
-import { BsTwitterX } from "react-icons/bs";
+import { FC } from "react";
 import { IconContext } from "react-icons";
+import { BsTwitterX } from "react-icons/bs";
+import {
+    FaFacebook,
+    FaInstagram,
+    FaLine,
+    FaTiktok,
+    FaYoutube,
+} from "react-icons/fa";
 import { Logo } from "./svg/Logo";
 
 export const Footer: FC = () => {
