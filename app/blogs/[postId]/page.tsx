@@ -139,7 +139,7 @@ export default async function StaticDetailPage({
               alt=""
               src=""
               {...attribsExcClass}
-              className={` ${classAttr || ""}`}
+              className={`mx-auto my-4 w-full lg:w-5/6 ${classAttr || ""}`}
             />
           );
         }
