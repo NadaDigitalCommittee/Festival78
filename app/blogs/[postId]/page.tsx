@@ -144,6 +144,7 @@ export default async function StaticDetailPage({
   //const documentBody = parse(post.content, options);
 
   const $ = (await import("cheerio")).load(post.content);
+
   const documentBody = $.html();
   return (
     <>
@@ -158,7 +159,7 @@ export default async function StaticDetailPage({
           {post.title}
         </h1>
       </div>
-      <div className="mx-auto my-10 w-11/12 md:text-xl">{documentBody}</div>
+      <div className="mx-auto my-10 w-11/12 md:text-xl" dangerouslySetInnerHTML={{__html: documentBody}}></div>
     </>
   );
 }
