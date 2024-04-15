@@ -2,15 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { notFound } from "next/navigation";
-import parse, {
-  DOMNode,
-  Element,
-  HTMLReactParserOptions,
-  domToReact,
-} from "html-react-parser";
 import { getBlogList, getBlogDetail } from "@/lib/cms";
 import type { Metadata } from "next";
 import { metadata } from "../page";
+import { Cheerio } from "cheerio";
 
 export async function generateMetadata({
   params: { postId },
@@ -60,7 +55,7 @@ export default async function StaticDetailPage({
     minute: publishedAtUTC.getMinutes(),
     second: publishedAtUTC.getSeconds(),
   };
-  const options: HTMLReactParserOptions = {
+  /*const options: HTMLReactParserOptions = {
     replace(domNode) {
       if (domNode instanceof Element && domNode.attribs) {
         const { name, attribs, parent, children } = domNode;
@@ -145,8 +140,11 @@ export default async function StaticDetailPage({
         }
       }
     },
-  };
-  const documentBody = parse(post.content, options);
+  };*/
+  //const documentBody = parse(post.content, options);
+
+  const $ = (await import("cheerio")).load(post.content);
+  const documentBody = $.html();
   return (
     <>
       <div className="flex justify-start border-b-2 border-b-theme">
@@ -164,3 +162,5 @@ export default async function StaticDetailPage({
     </>
   );
 }
+
+export const runtime = "edge";
