@@ -36,7 +36,7 @@ export const CountDown: FC<Props> = ({ restTime }) => {
         // PC
         <>
           <p>
-            <span className={`w-[100px]] inline-block`}>{day} </span>
+            <span className={`w-[100px] inline-block`}>{day} </span>
             <span className="text-2xl font-bold">日</span>
             <span className="inline-block w-[100px]">{hour}</span>
             <span className="text-2xl font-bold">時間</span>
