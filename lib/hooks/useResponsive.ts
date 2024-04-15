@@ -8,24 +8,25 @@ export enum MediaType {
 }
 
 export const useResponsive = () => {
-  const getSize = () => {
-    if (typeof window === "undefined") return undefined;
-    const width = window.innerWidth;
-    if (width < 768) {
-      return MediaType.Mobile;
-    } else if (width < 1024) {
-      return MediaType.Tablet;
-    } else {
-      return MediaType.Desktop;
-    }
-  };
-  const [mediaType, setMediaType] = useState<MediaType | undefined>(getSize());
+  const [mediaType, setMediaType] = useState<MediaType | undefined>(undefined);
+
   useEffect(() => {
-    const handler = () => setMediaType(getSize());
+    const currentMediaType: () => MediaType | undefined = () =>
+      typeof window === "undefined"
+        ? undefined
+        : window.innerWidth < 768
+          ? MediaType.Mobile
+          : window.innerWidth < 1024
+            ? MediaType.Tablet
+            : MediaType.Desktop;
+
+    const handler = () => setMediaType(currentMediaType());
+    handler();
+
     window.addEventListener("resize", handler);
 
     return () => window.removeEventListener("resize", handler);
-  }, []);
+  });
 
   return mediaType;
 };
