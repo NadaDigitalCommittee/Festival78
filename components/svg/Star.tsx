@@ -1,10 +1,11 @@
 export const Star1 = () => {
+  const [w, h] = [33, 38];
   return (
     <svg
       role="img"
       aria-label="キラキラ"
-      viewBox="0 0 33 38"
-      className="mb-auto mt-0 h-[calc(38px*60/128)] w-[calc(33px*60/128)] flex-shrink-0 fill-current md:h-[calc(38px*72/128)] md:w-[calc(33px*72/128)] lg:h-[calc(38px*128/128)] lg:w-[calc(33px*128/128)]"
+      viewBox={[0, 0, w, h].join(" ")}
+      className={`mb-auto mt-0 aspect-[${w}/${h}] h-auto w-5 flex-shrink-0 fill-current md:w-7 lg:w-10`}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path d="M0.543215 30.1469C6.71614 30.1469 6.71615 22.4308 6.71615 22.4308C6.71615 30.1469 12.8891 30.1469 12.8891 30.1469C6.71613 30.1469 6.71615 37.8631 6.71615 37.8631C6.71615 30.1469 0.543215 30.1469 0.543215 30.1469Z" />
@@ -13,14 +14,13 @@ export const Star1 = () => {
   );
 };
 export const Star2 = () => {
+  const [w, h] = [41, 52];
   return (
     <svg
       role="img"
       aria-label="キラキラ"
-      width="41"
-      height="52"
-      viewBox="0 0 41 52"
-      className="mb-0 mt-auto h-[calc(52px*60/128)] w-[calc(41px*60/128)] flex-shrink-0 fill-current md:h-[calc(52px*72/128)] md:w-[calc(41px*72/128)] lg:h-[calc(52px*128/128)] lg:w-[calc(41px*128/128)]"
+      viewBox={[0, 0, w, h].join(" ")}
+      className={`mb-0 mt-auto aspect-[${w}/${h}] h-auto w-6 flex-shrink-0 fill-current md:w-8 lg:w-12`}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path d="M0.734138 28.3223C19.2529 28.3223 19.2529 5.17379 19.2529 5.17379C19.2529 28.3223 37.7717 28.3223 37.7717 28.3223C19.2529 28.3223 19.2529 51.4707 19.2529 51.4707C19.2529 28.3223 0.734138 28.3223 0.734138 28.3223Z" />

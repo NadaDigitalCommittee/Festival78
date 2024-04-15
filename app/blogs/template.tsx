@@ -4,7 +4,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
   return (
     <>
       <div className="flex flex-col">
-        <div className="m-12 flex h-[calc(9rem*60/128)] justify-center text-theme md:h-[calc(9rem*72/128)] lg:h-[calc(9rem*128/128)]">
+        <div className="m-12 flex h-16 justify-center text-theme md:h-20 lg:h-36">
           <Star1 />
           <div className="mx-1 mb-0 mt-auto font-south_amsterdam text-6xl md:text-7xl lg:text-9xl">
             Blogs
