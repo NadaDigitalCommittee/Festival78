@@ -47,23 +47,7 @@ export const CircleAcordion: FC = () => {
             >
               {data.map((circle, i) => {
                 return (
-                  i < halfLength && (
-                    <Circle
-                      id={circle.id}
-                      key={circle.id}
-                      logoSrc={
-                        circle.hasLogo
-                          ? `/img/circles/${circle.id}.webp`
-                          : undefined
-                      }
-                      place={circle.place}
-                      title={circle.name}
-                      eventHref={`/events?id=${circle.id}`}
-                      mapHref={`/maps?id=${circle.id}`}
-                      articles={circle.urls}
-                      description={circle.description}
-                    />
-                  )
+                  i < halfLength && <Circle key={circle.id} circle={circle} />
                 );
               })}
             </Accordion>
@@ -79,23 +63,7 @@ export const CircleAcordion: FC = () => {
             >
               {data.map((circle, i) => {
                 return (
-                  i >= halfLength && (
-                    <Circle
-                      id={circle.id}
-                      key={circle.id}
-                      logoSrc={
-                        circle.hasLogo
-                          ? `/img/circles/${circle.id}.webp`
-                          : undefined
-                      }
-                      place={circle.place}
-                      title={circle.name}
-                      eventHref={`/events?id=${circle.id}`}
-                      mapHref={`/maps?id=${circle.id}`}
-                      articles={circle.urls}
-                      description={circle.description}
-                    />
-                  )
+                  i >= halfLength && <Circle key={circle.id} circle={circle} />
                 );
               })}
             </Accordion>
@@ -111,23 +79,7 @@ export const CircleAcordion: FC = () => {
             }}
           >
             {data.map((circle) => {
-              return (
-                <Circle
-                  id={circle.id}
-                  key={circle.id}
-                  logoSrc={
-                    circle.hasLogo
-                      ? `/img/circles/${circle.id}.webp`
-                      : undefined
-                  }
-                  place={circle.place}
-                  title={circle.name}
-                  eventHref={`/events?id=${circle.id}`}
-                  mapHref={`/maps?id=${circle.id}`}
-                  articles={circle.urls}
-                  description={circle.description}
-                />
-              );
+              return <Circle key={circle.id} circle={circle} />;
             })}
           </Accordion>
         )}

@@ -1,6 +1,7 @@
 import { MapPin } from "@/components/svg/MapPin";
 import { Place, placeString } from "@/lib/data/circles";
 import {
+  Accordion,
   AccordionButton,
   AccordionIcon,
   AccordionItem,
@@ -8,31 +9,27 @@ import {
 } from "@chakra-ui/accordion";
 import Image from "next/image";
 import { FC } from "react";
+import type { Circle as CircleType, Content } from "@/lib/data/circles";
+import Link from "next/link";
 
 type Props = {
-  id: string;
-  logoSrc?: string;
-  place: Place;
-  title: string;
-  description: string;
-  eventHref?: string;
-  mapHref?: string;
-  articles?: string[];
+  circle: CircleType;
 };
 
-export const Circle: FC<Props> = ({
-  id,
-  logoSrc,
-  place,
-  title,
-  eventHref,
-  mapHref,
-  articles,
-  description,
-}) => {
+export const Circle: FC<Props> = ({ circle }) => {
+  const id = circle.id;
+  const logoSrc = circle.hasLogo ? `/img/circles/${circle.id}.webp` : undefined;
+  const place = circle.place;
+  const title = circle.name;
+  const eventHrefs = circle.contents
+    ?.filter((c) => c.type === "events")
+    .map((c) => c.url);
+  const mapHref = `/maps?id=${circle.id}`;
+  const articles = circle.contents?.filter((c) => c.type === "article");
+  const description = circle.description;
   return (
     <AccordionItem
-      className={`min-w-[100vw] max-w-[512px] odd:bg-[#FFEFE8] even:bg-white md:min-w-[512px] lg:min-w-[512px]`}
+      className={`group min-w-[100vw] max-w-[512px] odd:bg-[#FFEFE8] even:bg-white md:min-w-[512px] lg:min-w-[512px]`}
     >
       <div id={"#" + id} className=" flex h-[60px] justify-center px-4">
         <AccordionButton className="flex">
@@ -61,7 +58,7 @@ export const Circle: FC<Props> = ({
               <MapPin className={"h-[35px] fill-white"} />
               <span className="ml-1">マップ</span>
             </a>
-            {articles?.length !== 0 && (
+            {/* {articles && (
               <a
                 href={mapHref}
                 className="inline-block bg-theme px-3 py-1 text-white"
@@ -75,11 +72,47 @@ export const Circle: FC<Props> = ({
                 />
                 <span className="ml-1">部誌・会誌</span>
               </a>
-            )}
+            )} */}
+            {articles && <Article articles={articles} />}
           </div>
         </div>
       </AccordionPanel>
     </AccordionItem>
+  );
+};
+
+const Article: FC<{
+  articles: Content[];
+}> = ({ articles }) => {
+  return (
+    <Accordion allowToggle>
+      <AccordionItem className="px-4 group-odd:bg-white group-even:bg-[#FFEFE8]">
+        <AccordionButton className="py-4">
+          <Image
+            className="mr-4 inline-block h-[35px]"
+            src={"/img/article.svg"}
+            width={25}
+            height={25}
+            alt=""
+          />
+          部誌・会誌
+          <AccordionIcon
+            fontSize={30}
+            color={"orangered"}
+            className="ml-auto"
+          />
+        </AccordionButton>
+        <AccordionPanel>
+          {articles.map((a, i) => {
+            return (
+              <div key={i}>
+                <Link href={a.url}>{a.title}</Link>
+              </div>
+            );
+          })}
+        </AccordionPanel>
+      </AccordionItem>
+    </Accordion>
   );
 };
 
@@ -101,16 +134,18 @@ const PlaceLabel: FC<{ place: Place }> = ({ place }) => {
                     : place == "M4"
                       ? "bg-[#F26DC4]"
                       : place == "East1"
-                        ? "bg-[#27B82D]"
+                        ? "bg-[#2DD4DE]"
                         : place == "Kensyu"
                           ? "bg-[#FFB82D]"
                           : place == "G1"
-                            ? "bg-[#32E1EC]"
+                            ? "bg-[#27B82D]"
                             : place == "H1"
                               ? "bg-[#3C2E90]"
                               : place == "Kyoei"
                                 ? "bg-[#D227E1]"
-                                : "bg-gray-400"
+                                : place == "Gym"
+                                  ? "bg-[#2BE127]"
+                                  : "bg-[#D2E310]"
         }`}
       >
         {placeString[place]}
