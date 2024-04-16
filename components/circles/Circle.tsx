@@ -9,7 +9,6 @@ import {
 import Image from "next/image";
 import { FC } from "react";
 
-
 type Props = {
   id: string;
   logoSrc?: string;
