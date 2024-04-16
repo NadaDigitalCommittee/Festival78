@@ -12,6 +12,8 @@
   },
   "packageManager": "yarn@4.1.1",
   "dependencies": {
+    "@chakra-ui/accordion": "^2.3.1",
+    "@chakra-ui/provider": "^2.4.2",
     "@next/third-parties": "^14.1.4",
     "clsx": "^2.1.0",
     "framer-motion": "^10.18.0",
