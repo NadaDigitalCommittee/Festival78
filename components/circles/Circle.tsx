@@ -106,7 +106,11 @@ const PlaceLabel: FC<{ place: Place }> = ({ place }) => {
                           ? "bg-[#FFB82D]"
                           : place == "G1"
                             ? "bg-[#32E1EC]"
-                            : "bg-gray-400"
+                            : place == "H1"
+                              ? "bg-[#3C2E90]"
+                              : place == "Kyoei"
+                                ? "bg-[#D227E1]"
+                                : "bg-gray-400"
         }`}
       >
         {placeString[place]}

@@ -34,8 +34,7 @@ export const CircleAcordion: FC = () => {
             (media === MediaType.Desktop ? halfLength : data.length) * 60 + 300,
         }}
       >
-        {
-        media === MediaType.Desktop ? (
+        {media === MediaType.Desktop ? (
           <>
             <Accordion
               index={index < halfLength ? index : -1}
