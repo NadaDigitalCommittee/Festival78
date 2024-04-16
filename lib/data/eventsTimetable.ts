@@ -134,8 +134,8 @@ export const eventsTimetable: EventTimetable[] = [
   {
     id: "biology_event2",
     time: [
-      { day: 1, time: new Time(9, 5, 14, 55) },
-      { day: 2, time: new Time(9, 5, 14, 55) }
+      { day: 1, time: new Time(9, 5, 15, 30) },
+      { day: 2, time: new Time(9, 5, 14, 30) }
     ]
   },
   {
