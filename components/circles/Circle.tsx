@@ -51,7 +51,7 @@ export const Circle: FC<Props> = ({
         </AccordionButton>
       </div>
       <AccordionPanel className="px-6 py-3">
-        <p className="whitespace-pre-wrap">{description}</p>
+        <p className="whitespace-pre-wrap font-medium">{description}</p>
         <div className="mt-4">
           <div>
             <a

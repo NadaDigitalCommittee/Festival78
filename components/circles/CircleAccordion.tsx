@@ -1,10 +1,10 @@
 "use client";
 import { data } from "@/lib/data/circles";
-import { useResponsive, MediaType } from "@/lib/hooks/useResponsive";
-import { FC, useEffect, useMemo, useState } from "react";
-import { Circle } from "./Circle";
+import { MediaType, useResponsive } from "@/lib/hooks/useResponsive";
 import { Accordion } from "@chakra-ui/accordion";
 import { ChakraProvider } from "@chakra-ui/provider";
+import { FC, useEffect, useMemo, useState } from "react";
+import { Circle } from "./Circle";
 
 export const CircleAcordion: FC = () => {
   const [defaultId, setDefaultId] = useState<string | null>(null);
@@ -28,13 +28,14 @@ export const CircleAcordion: FC = () => {
   return (
     <ChakraProvider>
       <div
-        className="mb-10 flex gap-8"
+        className="mb-10 flex gap-8 font-bold"
         style={{
           minHeight:
             (media === MediaType.Desktop ? halfLength : data.length) * 60 + 300,
         }}
       >
-        {media === MediaType.Desktop ? (
+        {
+        media === MediaType.Desktop ? (
           <>
             <Accordion
               index={index < halfLength ? index : -1}
@@ -60,7 +61,7 @@ export const CircleAcordion: FC = () => {
                       title={circle.name}
                       eventHref={`/events?id=${circle.id}`}
                       mapHref={`/maps?id=${circle.id}`}
-                      articles={circle.articles}
+                      articles={circle.urls}
                       description={circle.description}
                     />
                   )
@@ -92,7 +93,7 @@ export const CircleAcordion: FC = () => {
                       title={circle.name}
                       eventHref={`/events?id=${circle.id}`}
                       mapHref={`/maps?id=${circle.id}`}
-                      articles={circle.articles}
+                      articles={circle.urls}
                       description={circle.description}
                     />
                   )
@@ -124,7 +125,7 @@ export const CircleAcordion: FC = () => {
                   title={circle.name}
                   eventHref={`/events?id=${circle.id}`}
                   mapHref={`/maps?id=${circle.id}`}
-                  articles={circle.articles}
+                  articles={circle.urls}
                   description={circle.description}
                 />
               );
