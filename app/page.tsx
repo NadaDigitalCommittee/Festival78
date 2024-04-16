@@ -175,7 +175,7 @@ export default function Home() {
                 <div>
                   <p className="text-2xl font-bold">灘中学校・灘高等学校</p>
                   <p className="text-sm">
-                    <MapPin />
+                    <MapPin className="fill-[#616161]"/>
                     兵庫県神戸市東灘区魚崎北町8丁目5番1号
                   </p>
                 </div>
