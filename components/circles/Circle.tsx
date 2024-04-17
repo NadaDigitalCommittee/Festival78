@@ -73,7 +73,7 @@ export const Circle: FC<Props> = ({ circle }) => {
                 <span className="ml-1">部誌・会誌</span>
               </a>
             )} */}
-            {articles && <Article articles={articles} />}
+            {(articles&&articles.length!==0) && <Article articles={articles} />}
           </div>
         </div>
       </AccordionPanel>
@@ -106,7 +106,7 @@ const Article: FC<{
           {articles.map((a, i) => {
             return (
               <div key={i}>
-                <Link href={a.url}>{a.title}</Link>
+                <Link href={encodeURI(a.url)}>{a.title}</Link>
               </div>
             );
           })}
@@ -120,8 +120,7 @@ const PlaceLabel: FC<{ place: Place }> = ({ place }) => {
   return (
     <div className="">
       <p
-        className={`mx-4 rounded-full px-2 text-xs text-white ${
-          place == "H4"
+        className={`mx-4 rounded-full px-2 text-xs text-white ${place == "H4"
             ? "bg-[#73AFF6]"
             : place == "H3"
               ? "bg-[#518ADF]"
@@ -133,7 +132,7 @@ const PlaceLabel: FC<{ place: Place }> = ({ place }) => {
                     ? "bg-[#EA536F]"
                     : place == "M4"
                       ? "bg-[#F26DC4]"
-                      : place == "East1"
+                      : place == "East"
                         ? "bg-[#2DD4DE]"
                         : place == "Kensyu"
                           ? "bg-[#FFB82D]"
@@ -145,8 +144,10 @@ const PlaceLabel: FC<{ place: Place }> = ({ place }) => {
                                 ? "bg-[#D227E1]"
                                 : place == "Gym"
                                   ? "bg-[#2BE127]"
-                                  : "bg-[#D2E310]"
-        }`}
+                                  : place == "NewGarden"
+                                    ? "bg-[#98580D]"
+                                    : "bg-gray-400"
+          }`}
       >
         {placeString[place]}
       </p>

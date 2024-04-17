@@ -5,8 +5,7 @@ export type Place =
   | "M4"
   | "M3"
   | "M2"
-  | "East1"
-  | "EastB1"
+  | "East"
   | "Kensyu"
   | "G1"
   | "NewGarden"
@@ -25,8 +24,7 @@ export const placeString: PlaceString = {
   M4: "中学棟4F",
   M3: "中学棟3F",
   M2: "中学棟2F",
-  East1: "東館1F",
-  EastB1: "東館B1F",
+  East: "東館",
   Kyoei: "共栄館",
   Gym: "体育館",
   Kensyu: "研修館",
@@ -137,7 +135,7 @@ export const data: Circle[] = [
     name: "鉄道研究部",
     description:
       "毎年大好評のリアルに作りこまれたジオラマ、LED方向幕、車掌もできるようになった運転シミュレーターに加え、今年は5年ぶりに大阪駅のダイヤ運転も復活!「2日限りの鉄道博物館」鉄道研究部の展示をぜひご覧ください。",
-    place: "East1",
+    place: "East",
     mapId: "meeting",
     contents: [
       {
@@ -162,7 +160,7 @@ export const data: Circle[] = [
     name: "食堂",
     description:
       "ラーメン、カレーなど食事を販売しております。しっかり食べたいという方は、体育館よりこちらがオススメです。購入方法:食堂で食券をお買い求めください。( 金券は使用出来ません )",
-    place: "EastB1",
+    place: "East",
     mapId: "cafe",
   },
   {
