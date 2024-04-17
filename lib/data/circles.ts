@@ -559,7 +559,7 @@ export const data: Circle[] = [
       {
         type: "article",
         title: "地歴の部屋　2024",
-        url: "/pdf/geography/tireki_no_heya_2024.pdf",
+        url: "/pdf/geography/chireki_no_heya_2024.pdf",
       },
       {
         type: "article",
@@ -604,12 +604,12 @@ export const data: Circle[] = [
       {
         type: "article",
         title: "模試問題　EX　問題",
-        url: "/pdf/geography/r6_mosi_ex.pdf",
+        url: "/pdf/geography/r6_moshi_ex.pdf",
       },
       {
         type: "article",
         title: "模試問題　EX　解答用紙",
-        url: "/pdf/geography/r6_mosi_ex_answer.pdf",
+        url: "/pdf/geography/r6_moshi_ex_answer.pdf",
       },
       {
         type: "article",
