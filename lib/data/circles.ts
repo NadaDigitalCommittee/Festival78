@@ -141,12 +141,12 @@ export const data: Circle[] = [
       {
         type: "article",
         title: "どんこう154号",
-        url: "/pdf/railway/どんこう154号.pdf",
+        url: "/pdf/railway/donkou154号.pdf",
       },
       {
         type: "article",
         title: "どんこう155号",
-        url: "/pdf/railway/どんこう155号.pdf",
+        url: "/pdf/railway/donkou155号.pdf",
       },
       {
         type: "events",
@@ -311,7 +311,7 @@ export const data: Circle[] = [
       {
         type: "article",
         title: "2024灘囲碁部部誌",
-        url: "/pdf/igo/2024灘囲碁部部誌.pdf",
+        url: "/pdf/igo/article.pdf",
       },
     ],
   },
@@ -348,7 +348,7 @@ export const data: Circle[] = [
       {
         type: "article",
         title: "料理同好会部誌",
-        url: "料理愛好会誌.pdf",
+        url: "/pdf/studentcouncil/article.pdf",
       },
     ],
   },
@@ -392,12 +392,12 @@ export const data: Circle[] = [
       {
         type: "article",
         title: "灘的漢検",
-        url: "/pdf/literaryart/灘的漢検2024改訂版.pdf",
+        url: "/pdf/literaryart/nadatekikanken.pdf",
       },
       {
         type: "article",
         title: "灘的漢検解答",
-        url: "/pdf/literaryart/灘的漢検_解答.pdf",
+        url: "/pdf/literaryart/nadatekikanken_answer.pdf",
       },
       {
         type: "article",
@@ -437,7 +437,7 @@ export const data: Circle[] = [
       {
         type: "article",
         title: "雑誌『タラバガニ』",
-        url: "/pdf/kingcrab/雑誌「タラバガニ」創刊号.pdf",
+        url: "/pdf/kingcrab/article.pdf",
       },
     ],
   },
@@ -476,7 +476,7 @@ export const data: Circle[] = [
       {
         type: "article",
         title: "部誌",
-        url: "/pdf/origami/折り紙サークル部誌.pdf",
+        url: "/pdf/origami/article.pdf",
       },
     ],
   },
@@ -506,7 +506,7 @@ export const data: Circle[] = [
       {
         type: "article",
         title: "サークル誌",
-        url: "/pdf/escape/サークル誌.pdf",
+        url: "/pdf/escape/article.pdf",
       },
     ],
   },
@@ -521,7 +521,7 @@ export const data: Circle[] = [
       {
         type: "article",
         title: "部誌",
-        url: "/pdf/pokemon/2024_ポケモンサークル_部誌3.pdf",
+        url: "/pdf/pokemon/article.pdf",
       },
     ],
   },
@@ -559,57 +559,57 @@ export const data: Circle[] = [
       {
         type: "article",
         title: "地歴の部屋　2024",
-        url: "/pdf/geography/地歴の部屋_２０２４.pdf",
+        url: "/pdf/geography/tireki_no_heya_2024.pdf",
       },
       {
         type: "article",
         title: "模試問題　日本史　問題",
-        url: "/pdf/geography/令和6年度文化祭模試問題日本史.pdf",
+        url: "/pdf/geography/r6_moshi_nihonshi.pdf",
       },
       {
         type: "article",
-        title: "模試問題　日本史　解答",
-        url: "/pdf/geography/令和6年度文化祭模試日本史解答用.pdf",
+        title: "模試問題　日本史　解答用紙",
+        url: "/pdf/geography/r6_moshi_nihonshi_answer.pdf",
       },
       {
         type: "article",
         title: "模試問題　世界史　問題",
-        url: "/pdf/geography/令和6年度文化祭模試問題世界史.pdf",
+        url: "/pdf/geography/r6_moshi_sekaishi.pdf",
       },
       {
         type: "article",
-        title: "模試問題　世界史　解答",
-        url: "/pdf/geography/令和6年度文化祭模試世界史解答用.pdf",
+        title: "模試問題　世界史　解答用紙",
+        url: "/pdf/geography/r6_moshi_sekaishi_answer.pdf",
       },
       {
         type: "article",
         title: "模試問題　日本地理　問題",
-        url: "/pdf/geography/令和6年度文化祭模試問題_地理(日本地理).pdf",
+        url: "/pdf/geography/r6_moshi_nihonchiri.pdf",
       },
       {
         type: "article",
-        title: "模試問題　日本地理　解答",
-        url: "/pdf/geography/令和6年度文化祭模試問題_地理(日本地理)_解答用.pdf",
+        title: "模試問題　日本地理　解答用紙",
+        url: "/pdf/geography/r6_moshi_nihonchiri_answer.pdf",
       },
       {
         type: "article",
         title: "模試問題　世界地理　問題",
-        url: "/pdf/geography/令和6年度文化祭模試問題_地理(世界地理).pdf",
+        url: "/pdf/geography/r6_moshi_sekaichiri.pdf",
       },
       {
         type: "article",
-        title: "模試問題　世界地理　解答",
-        url: "/pdf/geography/令和6年度文化祭模試問題_地理(世界地理)_解答用.pdf",
+        title: "模試問題　世界地理　解答用紙",
+        url: "/pdf/geography/r6_moshi_sekaichiri_answer.pdf",
       },
       {
         type: "article",
         title: "模試問題　EX　問題",
-        url: "/pdf/geography/令和6年度文化祭模試問題EX.pdf",
+        url: "/pdf/geography/r6_mosi_ex.pdf",
       },
       {
         type: "article",
-        title: "模試問題　EX　解答",
-        url: "/pdf/geography/令和6年度文化祭模試EX解答用.pdf",
+        title: "模試問題　EX　解答用紙",
+        url: "/pdf/geography/r6_mosi_ex_answer.pdf",
       },
       {
         type: "article",
@@ -685,7 +685,7 @@ export const data: Circle[] = [
       {
         type: "article",
         title: "リードオフマン",
-        url: "/pdf/baseballfan/リードオフマン(オンライン用).pdf",
+        url: "/pdf/baseballfan/article.pdf",
       },
     ],
   },
@@ -723,12 +723,17 @@ export const data: Circle[] = [
       {
         type: "article",
         title: "クロスワード",
-        url: "/pdf/ess/クロスワード.pdf",
+        url: "/pdf/ess/crossword.pdf",
+      },
+      {
+        type:"article",
+        title:"クロスワード 解答",
+        url: "/pdf/ess/crossword_answer.pdf",
       },
       {
         type: "article",
         title: "灘高英語模試",
-        url: "/pdf/ess/灘高英語模試.pdf",
+        url: "/pdf/ess/nadakou_eigo_mosi.pdf",
       },
     ],
   },
@@ -789,17 +794,17 @@ export const data: Circle[] = [
       {
         type: "article",
         title: "入試模試",
-        url: "/pdf/mathematics/灘中入試模試.pdf",
+        url: "/pdf/mathematics/moshi.pdf",
       },
       {
         type: "article",
         title: "和田杯",
-        url: "/pdf/mathematics/和田杯.pdf",
+        url: "/pdf/mathematics/wada.pdf",
       },
       {
         type: "article",
         title: "部誌",
-        url: "/pdf/mathematics/部誌.pdf",
+        url: "/pdf/mathematics/article.pdf",
       },
       {
         type: "events",
@@ -842,7 +847,7 @@ export const data: Circle[] = [
       {
         type: "article",
         title: "部誌",
-        url: "/pdf/anime/アニメ研究会_会誌.pdf",
+        url: "/pdf/anime/article.pdf",
       },
     ],
   },
@@ -872,7 +877,7 @@ export const data: Circle[] = [
       {
         type: "article",
         title: "部誌",
-        url: "/pdf/earthscience/地学部部誌.pdf",
+        url: "/pdf/earthscience/article.pdf",
       },
       {
         type: "events",
@@ -900,7 +905,7 @@ export const data: Circle[] = [
       {
         type: "article",
         title: "部誌",
-        url: "/pdf/conan/部誌.pdf",
+        url: "/pdf/conan/article.pdf",
       },
       {
         type: "events",
