@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { createElement } from "react";
+import React, { ReactNode, createElement } from "react";
 import { notFound } from "next/navigation";
 import parse, {
   DOMNode,
@@ -62,14 +62,16 @@ export default async function StaticDetailPage({
   const options: HTMLReactParserOptions = {
     replace(domNode:DOMNode) {
       if (domNode instanceof Element && domNode.attribs) {
-        const { name, attribs, parent, children } = domNode;
-        const { classAttr, ...attribsExcClass } = attribs;
+        const { name, attribs, type, parent, children } = domNode;
+        const { class:classAttr, style:styleAttr, ...restAttribs } = attribs;
+        const styleAttrObject = Object.fromEntries((styleAttr||'').split(";").filter(Boolean).map((s:string)=>{return s.split(":").map((v)=>{return v.trim()})}))
         if (name === "a") {
           //形式上hrefなしだと静的解析に引っかかるのでダミーhrefをattribsで上書き. alt, src同様
           return (
             <Link
               href=""
-              {...attribsExcClass}
+              {...restAttribs}
+              style={styleAttrObject}
               className={`group relative inline-block text-theme transition before:absolute before:bottom-0 before:left-0 before:inline-block before:h-[2px] before:w-full before:-translate-x-full before:bg-theme before:opacity-0 before:duration-300 before:content-[''] hover:before:translate-x-0 hover:before:opacity-100 focus:before:translate-x-0 focus:before:opacity-100 focus-visible:outline-none ${classAttr || ""}`}
             >
               <span className="rounded-sm outline outline-0 outline-offset-1 outline-body_text group-focus-visible:outline-2">
@@ -80,17 +82,17 @@ export default async function StaticDetailPage({
         } else if (
           name === "u" && parent ? (parent as Element).name === "a" : false
         ) {
-          return <>{domToReact(children as DOMNode[])}</>;
+          return domToReact(children as DOMNode[]);
         }else if([...new Array(6)].map((_,i)=>{return `h${i+1}`}).includes(name)){
           const tsFontSizes=["3xl","2xl","xl","base","sm","xs"];
           return createElement(
             name,
-            { ...attribsExcClass, className:`${name[1]==="1"?"p-3 md:p-4 mx-0 my-4 flex justify-start border-b-2 border-b-theme":"py-1 my-1 ml-3 mr-1"} text-${tsFontSizes[+name[1]-1]} font-bold ${classAttr || ""}`,},
+            { ...restAttribs, style:styleAttrObject,className:`${name[1]==="1"?"p-3 md:p-4 mx-0 my-4 flex justify-start border-b-2 border-b-theme":"py-1 my-1 ml-3 mr-1"} text-${tsFontSizes[+name[1]-1]} font-bold ${classAttr || ""}`,},
             domToReact(children as DOMNode[], options)
           );
         } else if (name === "p") {
           return (
-            <p {...attribsExcClass} className={`p-1 ${classAttr || ""}`}>
+            <p {...restAttribs} style={styleAttrObject} className={`p-1 ${classAttr || ""}`}>
               {domToReact(children as DOMNode[], options)}
             </p>
           );
@@ -99,10 +101,16 @@ export default async function StaticDetailPage({
             <Image
               alt=""
               src=""
-              {...attribsExcClass}
+              {...restAttribs}
+              style={styleAttrObject}
               className={`mx-auto my-4 w-full lg:w-5/6 ${classAttr || ""}`}
             />
           );
+        } else if(type === "tag"){
+          const voidTags = ["area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"];
+          return createElement(name,
+            { ...restAttribs, style:styleAttrObject,className:classAttr || "",},
+            voidTags.includes(name.toLowerCase())?null:domToReact(children as DOMNode[], options));
         }
       }
     },

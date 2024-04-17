@@ -35,18 +35,18 @@ export default async function StaticPage() {
             >
               <Link
                 href={`/blogs/${post.id}`}
-                className="flex w-full items-center justify-start rounded-sm pl-2 outline outline-0 outline-offset-1 outline-body_text focus-visible:outline-2"
+                className="flex w-full h-full items-center justify-start rounded-sm pl-2 outline outline-0 outline-offset-1 outline-body_text focus-visible:outline-2"
               >
-                <div className="mx-2 my-4 flex w-20 flex-col justify-center font-times_new_roman font-bold text-body_text text-opacity-50">
-                  <div className="text-xl">{publishedAt.year}</div>
-                  <div className="text-4xl">
+                <div className="mx-2 my-2 flex w-20 flex-col justify-center font-times_new_roman font-bold text-body_text text-opacity-50">
+                  <div className="text-lg">{publishedAt.year}</div>
+                  <div className="text-3xl">
                     {publishedAt.month}/{publishedAt.date}
                   </div>
                 </div>
-                <div className="mx-2 my-4 line-clamp-2 overflow-hidden text-xl font-bold md:text-2xl">
+                <div className="mx-2 my-2 line-clamp-2 overflow-hidden text-xl font-bold md:text-2xl">
                   {post.title}
                 </div>
-                <div className="flex-shrink-1 mx-2 ml-auto mr-4 aspect-[3/4] h-auto w-5 text-theme md:mr-6 md:w-6">
+                <div className="flex-shrink-1 mx-2 ml-auto mr-4 aspect-[3/4] h-6 w-auto text-theme md:mr-6">
                   <ChevronRight />
                 </div>
               </Link>
