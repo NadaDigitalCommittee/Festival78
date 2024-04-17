@@ -1,18 +1,28 @@
 "use client";
-import { data } from "@/lib/data/circles";
+import { data as data_ } from "@/lib/data/circles";
 import { MediaType, useResponsive } from "@/lib/hooks/useResponsive";
 import { Accordion } from "@chakra-ui/accordion";
 import { ChakraProvider } from "@chakra-ui/provider";
 import { FC, useEffect, useMemo, useState } from "react";
-import { Circle } from "./Circle";
+import { Article } from "./Article";
 
-export const CircleAcordion: FC = () => {
+export const DownloadsAcordion: FC = () => {
   const [defaultId, setDefaultId] = useState<string | null>(null);
   const [index, setIndex] = useState(0);
   useEffect(() => {
     setDefaultId(window.location.hash.replace("#", "") ?? "");
   }, [defaultId]);
-
+  const data = useMemo(
+    () =>
+      data_
+        .filter((circle) => circle.contents !== undefined)
+        .filter(
+          (circle) =>
+            circle.contents?.filter((c) => c.type === "article").length !== 0
+        ),
+    []
+  );
+  console.log(data);
   useEffect(() => {
     if (!defaultId) return;
     setTimeout(() => {
@@ -21,10 +31,11 @@ export const CircleAcordion: FC = () => {
         ?.scrollIntoView({ behavior: "smooth" });
     }, 600);
     setIndex(data.findIndex((circle) => circle.id === defaultId));
-  }, [defaultId]);
+  }, [data, defaultId]);
 
   const media = useResponsive();
-  const halfLength = useMemo(() => Math.ceil(data.length / 2), []);
+  const halfLength = useMemo(() => Math.ceil(data.length / 2), [data.length]);
+
   return (
     <ChakraProvider>
       <div
@@ -47,7 +58,7 @@ export const CircleAcordion: FC = () => {
             >
               {data.map((circle, i) => {
                 return (
-                  i < halfLength && <Circle key={circle.id} circle={circle} />
+                  i < halfLength && <Article key={circle.id} circle={circle} />
                 );
               })}
             </Accordion>
@@ -63,7 +74,7 @@ export const CircleAcordion: FC = () => {
             >
               {data.map((circle, i) => {
                 return (
-                  i >= halfLength && <Circle key={circle.id} circle={circle} />
+                  i >= halfLength && <Article key={circle.id} circle={circle} />
                 );
               })}
             </Accordion>
@@ -79,7 +90,7 @@ export const CircleAcordion: FC = () => {
             }}
           >
             {data.map((circle) => {
-              return <Circle key={circle.id} circle={circle} />;
+              return <Article key={circle.id} circle={circle} />;
             })}
           </Accordion>
         )}

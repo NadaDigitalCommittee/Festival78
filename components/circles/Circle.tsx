@@ -73,7 +73,9 @@ export const Circle: FC<Props> = ({ circle }) => {
                 <span className="ml-1">部誌・会誌</span>
               </a>
             )} */}
-            {(articles&&articles.length!==0) && <Article articles={articles} />}
+            {articles && articles.length !== 0 && (
+              <Article articles={articles} />
+            )}
           </div>
         </div>
       </AccordionPanel>
@@ -120,7 +122,8 @@ const PlaceLabel: FC<{ place: Place }> = ({ place }) => {
   return (
     <div className="">
       <p
-        className={`mx-4 rounded-full px-2 text-xs text-white ${place == "H4"
+        className={`mx-4 rounded-full px-2 text-xs text-white ${
+          place == "H4"
             ? "bg-[#73AFF6]"
             : place == "H3"
               ? "bg-[#518ADF]"
@@ -147,7 +150,7 @@ const PlaceLabel: FC<{ place: Place }> = ({ place }) => {
                                   : place == "NewGarden"
                                     ? "bg-[#98580D]"
                                     : "bg-gray-400"
-          }`}
+        }`}
       >
         {placeString[place]}
       </p>

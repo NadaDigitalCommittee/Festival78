@@ -726,8 +726,8 @@ export const data: Circle[] = [
         url: "/pdf/ess/crossword.pdf",
       },
       {
-        type:"article",
-        title:"クロスワード 解答",
+        type: "article",
+        title: "クロスワード 解答",
         url: "/pdf/ess/crossword_answer.pdf",
       },
       {
