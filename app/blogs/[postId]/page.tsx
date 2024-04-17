@@ -8,9 +8,8 @@ import parse, {
   HTMLReactParserOptions,
   domToReact,
 } from "html-react-parser";
-import { getBlogList, getBlogDetail } from "@/lib/cms";
+import { getBlogList, getBlogDetail, Blog } from "@/lib/cms";
 import type { Metadata } from "next";
-import { metadata } from "../page";
 
 export async function generateMetadata({
   params: { postId },
@@ -31,7 +30,7 @@ export async function generateMetadata({
 export async function generateStaticParams() {
   const { contents } = await getBlogList();
 
-  const paths = contents.map((post) => {
+  const paths = contents.map((post: Blog) => {
     return {
       postId: post.id,
     };
@@ -61,7 +60,7 @@ export default async function StaticDetailPage({
     second: publishedAtUTC.getSeconds(),
   };
   const options: HTMLReactParserOptions = {
-    replace(domNode) {
+    replace(domNode:DOMNode) {
       if (domNode instanceof Element && domNode.attribs) {
         const { name, attribs, parent, children } = domNode;
         const { classAttr, ...attribsExcClass } = attribs;
@@ -164,4 +163,3 @@ export default async function StaticDetailPage({
     </>
   );
 }
-export const runtime = 'edge';
