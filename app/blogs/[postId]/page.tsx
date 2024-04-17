@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { createElement } from "react";
 import { notFound } from "next/navigation";
 import parse, {
   DOMNode,
@@ -81,50 +81,12 @@ export default async function StaticDetailPage({
           name === "u" && parent ? (parent as Element).name === "a" : false
         ) {
           return <>{domToReact(children as DOMNode[])}</>;
-        } else if (name === "h2") {
-          return (
-            <h2
-              {...attribsExcClass}
-              className={`my-1 ml-3 mr-1 text-2xl font-bold ${classAttr || ""}`}
-            >
-              {domToReact(children as DOMNode[], options)}
-            </h2>
-          );
-        } else if (name === "h3") {
-          return (
-            <h3
-              {...attribsExcClass}
-              className={`my-1 ml-3 mr-1 text-xl font-bold ${classAttr || ""}`}
-            >
-              {domToReact(children as DOMNode[], options)}
-            </h3>
-          );
-        } else if (name === "h4") {
-          return (
-            <h4
-              {...attribsExcClass}
-              className={`my-1 ml-3 mr-1 text-base font-bold ${classAttr || ""}`}
-            >
-              {domToReact(children as DOMNode[], options)}
-            </h4>
-          );
-        } else if (name === "h5") {
-          return (
-            <h5
-              {...attribsExcClass}
-              className={`my-1 ml-3 mr-1 text-sm font-bold ${classAttr || ""}`}
-            >
-              {domToReact(children as DOMNode[], options)}
-            </h5>
-          );
-        } else if (name === "h6") {
-          return (
-            <h6
-              {...attribsExcClass}
-              className={`my-1 ml-3 mr-1 text-xs font-bold ${classAttr || ""}`}
-            >
-              {domToReact(children as DOMNode[], options)}
-            </h6>
+        }else if([...new Array(6)].map((_,i)=>{return `h${i+1}`}).includes(name)){
+          const tsFontSizes=["3xl","2xl","xl","base","sm","xs"];
+          return createElement(
+            name,
+            { ...attribsExcClass, className:`${name[1]==="1"?"p-3 md:p-4 mx-0 my-4 flex justify-start border-b-2 border-b-theme":"py-1 my-1 ml-3 mr-1"} text-${tsFontSizes[+name[1]-1]} font-bold ${classAttr || ""}`,},
+            domToReact(children as DOMNode[], options)
           );
         } else if (name === "p") {
           return (
