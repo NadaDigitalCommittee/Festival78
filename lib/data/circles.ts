@@ -141,12 +141,12 @@ export const data: Circle[] = [
       {
         type: "article",
         title: "どんこう154号",
-        url: "/pdf/railway/donkou154号.pdf",
+        url: "/pdf/railway/donkou154.pdf",
       },
       {
         type: "article",
         title: "どんこう155号",
-        url: "/pdf/railway/donkou155号.pdf",
+        url: "/pdf/railway/donkou155.pdf",
       },
       {
         type: "events",
