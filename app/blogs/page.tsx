@@ -35,7 +35,7 @@ export default async function StaticPage() {
             >
               <Link
                 href={`/blogs/${post.id}`}
-                className="flex w-full h-full items-center justify-start rounded-sm pl-2 outline outline-0 outline-offset-1 outline-body_text focus-visible:outline-2"
+                className="flex h-full w-full items-center justify-start rounded-sm pl-2 outline outline-0 outline-offset-1 outline-body_text focus-visible:outline-2"
               >
                 <div className="mx-2 my-2 flex w-20 flex-col justify-center font-times_new_roman font-bold text-body_text text-opacity-50">
                   <div className="text-lg">{publishedAt.year}</div>

@@ -60,11 +60,20 @@ export default async function StaticDetailPage({
     second: publishedAtUTC.getSeconds(),
   };
   const options: HTMLReactParserOptions = {
-    replace(domNode:DOMNode) {
+    replace(domNode: DOMNode) {
       if (domNode instanceof Element && domNode.attribs) {
         const { name, attribs, type, parent, children } = domNode;
-        const { class:classAttr, style:styleAttr, ...restAttribs } = attribs;
-        const styleAttrObject = Object.fromEntries((styleAttr||'').split(";").filter(Boolean).map((s:string)=>{return s.split(":").map((v)=>{return v.trim()})}))
+        const { class: classAttr, style: styleAttr, ...restAttribs } = attribs;
+        const styleAttrObject = Object.fromEntries(
+          (styleAttr || "")
+            .split(";")
+            .filter(Boolean)
+            .map((s: string) => {
+              return s.split(":").map((v) => {
+                return v.trim();
+              });
+            })
+        );
         if (name === "a") {
           //形式上hrefなしだと静的解析に引っかかるのでダミーhrefをattribsで上書き. alt, src同様
           return (
@@ -83,16 +92,30 @@ export default async function StaticDetailPage({
           name === "u" && parent ? (parent as Element).name === "a" : false
         ) {
           return domToReact(children as DOMNode[]);
-        }else if([...new Array(6)].map((_,i)=>{return `h${i+1}`}).includes(name)){
-          const tsFontSizes=["3xl","2xl","xl","base","sm","xs"];
+        } else if (
+          [...new Array(6)]
+            .map((_, i) => {
+              return `h${i + 1}`;
+            })
+            .includes(name)
+        ) {
+          const tsFontSizes = ["3xl", "2xl", "xl", "base", "sm", "xs"];
           return createElement(
             name,
-            { ...restAttribs, style:styleAttrObject,className:`${name[1]==="1"?"p-3 md:p-4 mx-0 my-4 flex justify-start border-b-2 border-b-theme":"py-1 my-1 ml-3 mr-1"} text-${tsFontSizes[+name[1]-1]} font-bold ${classAttr || ""}`,},
+            {
+              ...restAttribs,
+              style: styleAttrObject,
+              className: `${name[1] === "1" ? "p-3 md:p-4 mx-0 my-4 flex justify-start border-b-2 border-b-theme" : "py-1 my-1 ml-3 mr-1"} text-${tsFontSizes[+name[1] - 1]} font-bold ${classAttr || ""}`,
+            },
             domToReact(children as DOMNode[], options)
           );
         } else if (name === "p") {
           return (
-            <p {...restAttribs} style={styleAttrObject} className={`p-1 ${classAttr || ""}`}>
+            <p
+              {...restAttribs}
+              style={styleAttrObject}
+              className={`p-1 ${classAttr || ""}`}
+            >
               {domToReact(children as DOMNode[], options)}
             </p>
           );
@@ -106,11 +129,34 @@ export default async function StaticDetailPage({
               className={`mx-auto my-4 w-full lg:w-5/6 ${classAttr || ""}`}
             />
           );
-        } else if(type === "tag"){
-          const voidTags = ["area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"];
-          return createElement(name,
-            { ...restAttribs, style:styleAttrObject,className:classAttr || "",},
-            voidTags.includes(name.toLowerCase())?null:domToReact(children as DOMNode[], options));
+        } else if (type === "tag") {
+          const voidTags = [
+            "area",
+            "base",
+            "br",
+            "col",
+            "embed",
+            "hr",
+            "img",
+            "input",
+            "link",
+            "meta",
+            "param",
+            "source",
+            "track",
+            "wbr",
+          ];
+          return createElement(
+            name,
+            {
+              ...restAttribs,
+              style: styleAttrObject,
+              className: classAttr || "",
+            },
+            voidTags.includes(name.toLowerCase())
+              ? null
+              : domToReact(children as DOMNode[], options)
+          );
         }
       }
     },
