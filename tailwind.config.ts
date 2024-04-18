@@ -19,6 +19,7 @@ const config: Config = {
       },
       colors: {
         theme: "#ff4d00",
+        border: "#FF500C",
       },
     },
   },
