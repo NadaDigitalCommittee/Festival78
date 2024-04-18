@@ -91,7 +91,7 @@ export default async function StaticDetailPage({
         } else if (
           name === "u" && parent ? (parent as Element).name === "a" : false
         ) {
-          return domToReact(children as DOMNode[]);
+          return <>{domToReact(children as DOMNode[])}</>;
         } else if (
           [...new Array(6)]
             .map((_, i) => {
@@ -99,13 +99,13 @@ export default async function StaticDetailPage({
             })
             .includes(name)
         ) {
-          const tsFontSizes = ["3xl", "2xl", "xl", "base", "sm", "xs"];
+          const twFontSizes = ["3xl", "2xl", "xl", "base", "sm", "xs"];
           return createElement(
             name,
             {
               ...restAttribs,
               style: styleAttrObject,
-              className: `${name[1] === "1" ? "p-3 md:p-4 mx-0 my-4 flex justify-start border-b-2 border-b-theme" : "py-1 my-1 ml-3 mr-1"} text-${tsFontSizes[+name[1] - 1]} font-bold ${classAttr || ""}`,
+              className: `${name[1] === "1" ? "p-3 md:p-4 mx-0 my-4 flex justify-start border-b-2 border-b-theme" : "py-1 my-1 ml-3 mr-1"} text-${twFontSizes[+name[1] - 1]} font-bold ${classAttr || ""}`,
             },
             domToReact(children as DOMNode[], options)
           );
