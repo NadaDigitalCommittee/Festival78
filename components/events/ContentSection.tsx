@@ -8,7 +8,7 @@ type ContentSectionProps = {
   mapId: string;
   comingSoon: boolean;
 
-  content: string;
+  content: React.ReactNode;
 };
 
 export default function ContentSection({
@@ -22,7 +22,7 @@ export default function ContentSection({
       <div className="flex justify-center px-1">
         <h1
           className={clsx(
-            "mb-[16px] pb-[16px] font-zen_kaku_gothic_new font-bold text-3xl md:text-4xl",
+            "font-zen_kaku_gothic_new mb-[16px] pb-[16px] text-3xl font-bold md:text-4xl",
             styles.stripeMarker
           )}
         >
@@ -40,7 +40,7 @@ export default function ContentSection({
                 },
               }}
             >
-              <span className="font-zen_kaku_gothic_new text-sm font-bold text-border">
+              <span className="font-zen_kaku_gothic_new text-border text-sm font-bold">
                 マップ
               </span>
             </ContentLabelButton>
@@ -52,15 +52,15 @@ export default function ContentSection({
                 },
               }}
             >
-              <span className="font-zen_kaku_gothic_new text-sm font-bold text-border">
+              <span className="font-zen_kaku_gothic_new text-border text-sm font-bold">
                 タイムテーブル
               </span>
             </ContentLabelButton>
           </div>
-          <div>
-            <span className="font-zen_kaku_gothic_new text-base font-medium">
+          <div className="px-4 text-center">
+            <p className="font-zen_kaku_gothic_new break-words break-keep text-base font-medium">
               {content}
-            </span>
+            </p>
           </div>
         </div>
       </div>
