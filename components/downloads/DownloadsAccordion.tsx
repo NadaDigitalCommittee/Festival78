@@ -10,7 +10,7 @@ import { useSearchParams } from "next/navigation";
 export const DownloadsAcordion: FC = () => {
   const [defaultId, setDefaultId] = useState<string | null>(null);
   const [index, setIndex] = useState(0);
-  const params=useSearchParams()
+  const params = useSearchParams();
   useEffect(() => {
     setDefaultId(params.get("id"));
   }, [defaultId, params]);
