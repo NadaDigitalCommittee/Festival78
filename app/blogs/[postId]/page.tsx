@@ -10,6 +10,8 @@ import parse, {
 } from "html-react-parser";
 import { getBlogList, getBlogDetail, Blog } from "@/lib/cms";
 import type { Metadata } from "next";
+import { ChevronRightIcon } from "@/components/svg/ChevronRightIcon";
+import { InlineLink } from "@/components/InlineLink";
 
 export async function generateMetadata({
   params: { postId },
@@ -84,18 +86,14 @@ export default async function StaticDetailPage({
         if (name === "a") {
           //形式上hrefなしだと静的解析に引っかかるのでダミーhrefをattribsで上書き. alt, src同様
           return (
-            <Link
+            <InlineLink
               href=""
               {...restAttribs}
               style={styleAttrObject}
-              className={`group relative inline-block text-theme transition before:absolute 
-              before:bottom-0 before:left-0 before:inline-block before:h-[2px] before:w-full before:scale-x-0 before:bg-theme  before:opacity-0 before:duration-300 before:content-[''] hover:before:scale-x-100 hover:before:opacity-100 focus-visible:outline-none
-              ${classAttr || ""}`}
+              className={`text-theme ${classAttr || ""}`}
             >
-              <span className="rounded-sm outline outline-0 outline-offset-1 outline-body_text group-focus-visible:outline-2">
-                {domToReact(children as DOMNode[], options)}
-              </span>
-            </Link>
+              {domToReact(children as DOMNode[], options)}
+            </InlineLink>
           );
         } else if (
           name === "u" && parent ? (parent as Element).name === "a" : false
@@ -184,6 +182,58 @@ export default async function StaticDetailPage({
           {post.title}
         </h1>
       </div>
+      <nav
+        aria-label="パンくずリスト"
+        className="my-2 mx-0 md:mx-2 flex h-max items-center justify-start p-0 text-sm md:text-base w-full md:w-max"
+      >
+        <ol
+          className="flex"
+          itemScope
+          itemType="https://schema.org/BreadcrumbList"
+        >
+          {[
+            ["/", "トップ"],
+            ["/blogs", "ブログ"],
+            [`/blogs/${postId}`, post.title],
+          ].map((hierarchy, index, originalArray) => {
+            const isCurrentPage = Boolean(index === originalArray.length - 1);
+            return (
+              <li
+                className="flex"
+                key={index}
+                itemProp="itemListElement"
+                itemScope
+                itemType="https://schema.org/ListItem"
+              >
+                <InlineLink
+                  {...(isCurrentPage
+                    ? { "aria-current": "page", disableLink: true }
+                    : {})}
+                  spanProps={{
+                    itemprop: "name",
+                  }}
+                  href={hierarchy[0]}
+                  className={`text-body_text ${isCurrentPage ? "" : "text-theme"}`}
+                  itemscope
+                  itemtype="https://schema.org/WebPage"
+                  itemprop="item"
+                  itemid={`https://fest.nada-sc.jp${hierarchy[0]}`}
+                >
+                  {hierarchy[1]}
+                </InlineLink>
+                {isCurrentPage ? (
+                  ""
+                ) : (
+                  <div className="mx-1 my-auto h-3 w-2 scale-75">
+                    <ChevronRightIcon />
+                  </div>
+                )}
+                <meta itemProp="position" content={String(index + 1)} />
+              </li>
+            );
+          })}
+        </ol>
+      </nav>
       <div className="mx-auto my-10 w-11/12 text-base md:text-xl">
         {documentBody}
       </div>

@@ -11,12 +11,11 @@ export default async function StaticPage() {
   if (!contents || !contents.length) {
     return <div className="text-base md:text-xl">記事はありません。</div>;
   }
-
   return (
     <>
-      <h1 className="m-8 flex items-center justify-center text-3xl font-bold text-body_text md:text-4xl">
-        記事一覧
-      </h1>
+      <div className="relative m-8 flex items-center justify-center text-3xl font-bold text-body_text md:text-4xl">
+        <h1 className="relative w-max text-center">記事一覧</h1>
+      </div>
       <ul>
         {contents.map((post: Blog) => {
           const publishedAtUTC = new Date(post.publishedAt || 0);
@@ -37,7 +36,7 @@ export default async function StaticPage() {
                 href={`/blogs/${post.id}`}
                 className="flex h-full w-full items-center justify-start rounded-sm pl-2 outline outline-0 outline-offset-1 outline-body_text focus-visible:outline-2"
               >
-                <div className="mx-2 my-2 flex w-20 flex-col justify-center font-times_new_roman font-bold text-body_text text-opacity-50">
+                <div className="mx-2 my-2 flex w-20 min-w-20 flex-col justify-center font-times_new_roman font-bold text-body_text text-opacity-50">
                   <div className="text-lg">{publishedAt.year}</div>
                   <div className="text-3xl">
                     {publishedAt.month}/{publishedAt.date}
