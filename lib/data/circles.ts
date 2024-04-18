@@ -46,7 +46,7 @@ export type Circle = {
   place: Place;
   mapId: string;
   contents?: Content[];
-  hasLogo?: boolean;
+  noLogo?: boolean;
 };
 
 export const data: Circle[] = [
@@ -72,7 +72,6 @@ export const data: Circle[] = [
     description: `今年も第1グラウンドで毎年恒例のストラックアウトとスピードガンを開催します！いつもはできないストラックアウトとスピードガンをこの機会に一度やってみませんか？何度もチャレンジできます。皆さんの参加を待っています。景品もあります。`,
     place: "G1",
     mapId: "ground1",
-    hasLogo: true,
   },
   {
     id: "yoyo",
@@ -113,6 +112,7 @@ export const data: Circle[] = [
       "大人気なBENADAが今年も第一グラウンドに出現！灘校一のフォトスポットなので一度は訪れてみてください！",
     place: "G1",
     mapId: "ground1",
+    noLogo: true,
   },
   {
     id: "classic",
@@ -178,6 +178,7 @@ export const data: Circle[] = [
       "売り切れ必至！！\n毎年人気のお茶、冷たく冷えたジュース、コーヒーなどなど10種類の飲み物をお得価格でご用意しました！！飲みたい物が必ず見つかるジュース売場へGO💨\n皆さまのお越しをお待ちしております。",
     place: "NewGarden",
     mapId: "broadcasting_juice",
+    noLogo: true,
   },
   {
     id: "nurse",
@@ -202,6 +203,7 @@ export const data: Circle[] = [
       "共栄館前でお土産を販売します！定番の瓦煎餅や三笠、紅茶に加え、新商品『ショウタニほろほろクッキー』を倉橋先生の篆書缶でご提供。『桂新堂灘校えびせんべい』はオリジナル必勝桜箱で。『灘ミント』は手のひらサイズのスライド缶入りミントタブレットです。ぜひお立ち寄りくださいませ♪",
     place: "Kyoei",
     mapId: "souvenir",
+    noLogo: true,
   },
   {
     id: "goods",
@@ -210,6 +212,7 @@ export const data: Circle[] = [
       "灘校の校章をあしらったグッズや、文化祭ロゴデザインの生徒会企画品を販売しています。定番文房具から愛らしいぬいぐるみなど、幅広い品揃えで皆さまをお待ちしています。灘校文化祭の記念に、お気に入りを見つけてください。",
     place: "Gym",
     mapId: "gym",
+    noLogo: true,
   },
   {
     id: "snack",
@@ -611,11 +614,11 @@ export const data: Circle[] = [
         title: "模試問題　EX　解答用紙",
         url: "/pdf/geography/r6_moshi_ex_answer.pdf",
       },
-      {
-        type: "article",
-        title: "クイズ　解答",
-        url: "/pdf/geography/",
-      },
+      // {
+      //   type: "article",
+      //   title: "クイズ　解答",
+      //   url: "/pdf/geography/",
+      // },
     ],
   },
   {
@@ -720,21 +723,21 @@ export const data: Circle[] = [
     place: "M3",
     mapId: "english2",
     contents: [
-      {
-        type: "article",
-        title: "クロスワード",
-        url: "/pdf/ess/crossword.pdf",
-      },
-      {
-        type: "article",
-        title: "クロスワード 解答",
-        url: "/pdf/ess/crossword_answer.pdf",
-      },
-      {
-        type: "article",
-        title: "灘高英語模試",
-        url: "/pdf/ess/nadakou_eigo_mosi.pdf",
-      },
+      // {
+      //   type: "article",
+      //   title: "クロスワード",
+      //   url: "/pdf/ess/crossword.pdf",
+      // },
+      // {
+      //   type: "article",
+      //   title: "クロスワード 解答",
+      //   url: "/pdf/ess/crossword_answer.pdf",
+      // },
+      // {
+      //   type: "article",
+      //   title: "灘高英語模試",
+      //   url: "/pdf/ess/nadakou_eigo_mosi.pdf",
+      // },
     ],
   },
   {
@@ -760,8 +763,6 @@ export const data: Circle[] = [
       "今年から灘校文化祭に暗闇迷路が登場！　文化祭史上、最もスリリングな体験がここにあり！　暗い中、勇気を振り絞って、迷路の中を進もう！　迷路の果てには何が待ち受けているのか？！　イケメンサッカー部によるおもてなしをご覧あれ！",
     place: "H4",
     mapId: "h1-4",
-
-    hasLogo: true,
   },
   {
     id: "quiz",

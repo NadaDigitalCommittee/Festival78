@@ -22,7 +22,6 @@ export const DownloadsAcordion: FC = () => {
         ),
     []
   );
-  console.log(data);
   useEffect(() => {
     if (!defaultId) return;
     setTimeout(() => {

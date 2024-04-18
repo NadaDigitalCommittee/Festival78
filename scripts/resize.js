@@ -11,7 +11,7 @@ async function main() {
 
   for (const width of widths) {
     image.resize(width, Jimp.AUTO);
-    image.write(`${pathWithoutExtension}-${width}w.webp`);
+    image.write(`${pathWithoutExtension}-${width}w.png`);
   }
 }
 

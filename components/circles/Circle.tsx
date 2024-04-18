@@ -11,6 +11,7 @@ import Image from "next/image";
 import { FC } from "react";
 import type { Circle as CircleType, Content } from "@/lib/data/circles";
 import Link from "next/link";
+import { Article } from "../svg/Article";
 
 type Props = {
   circle: CircleType;
@@ -18,7 +19,7 @@ type Props = {
 
 export const Circle: FC<Props> = ({ circle }) => {
   const id = circle.id;
-  const logoSrc = circle.hasLogo ? `/img/circles/${circle.id}.webp` : undefined;
+  const logoSrc = `/img/circles/icon/${circle.id}.webp`;
   const place = circle.place;
   const title = circle.name;
   const eventHrefs = circle.contents
@@ -26,6 +27,7 @@ export const Circle: FC<Props> = ({ circle }) => {
     .map((c) => c.url);
   const mapHref = `/maps?id=${circle.id}`;
   const articles = circle.contents?.filter((c) => c.type === "article");
+  const articleHref = articles && `/downloads?id=${id}`;
   const description = circle.description;
   return (
     <AccordionItem
@@ -33,9 +35,15 @@ export const Circle: FC<Props> = ({ circle }) => {
     >
       <div id={"#" + id} className=" flex h-[60px] justify-center px-4">
         <AccordionButton className="flex">
-          <div className="w-[30px]">
-            {logoSrc && (
-              <Image src={logoSrc} width={30} height={50} alt="サークルロゴ" />
+          <div className="w-[40px]">
+            {!circle.noLogo && (
+              <Image
+                src={logoSrc}
+                width={90}
+                height={50}
+                alt="サークルロゴ"
+                quality={100}
+              />
             )}
           </div>
           <PlaceLabel place={place} />
@@ -58,24 +66,22 @@ export const Circle: FC<Props> = ({ circle }) => {
               <MapPin className={"h-[35px] fill-white"} />
               <span className="ml-1">マップ</span>
             </a>
-            {/* {articles && (
+            {articles && articles.length !== 0 && (
               <a
-                href={mapHref}
+                href={articleHref}
                 className="inline-block bg-theme px-3 py-1 text-white"
               >
-                <Image
-                  className="inline-block h-[35px]"
-                  src={"/img/article.svg"}
+                <Article
+                  className="inline-block h-[35px] fill-white"
                   width={25}
                   height={25}
-                  alt=""
                 />
                 <span className="ml-1">部誌・会誌</span>
               </a>
-            )} */}
-            {articles && articles.length !== 0 && (
-              <Article articles={articles} />
             )}
+            {/* {articles && articles.length !== 0 && (
+              <Article articles={articles} />
+            )} */}
           </div>
         </div>
       </AccordionPanel>
@@ -83,40 +89,40 @@ export const Circle: FC<Props> = ({ circle }) => {
   );
 };
 
-const Article: FC<{
-  articles: Content[];
-}> = ({ articles }) => {
-  return (
-    <Accordion allowToggle>
-      <AccordionItem className="px-4 group-odd:bg-white group-even:bg-[#FFEFE8]">
-        <AccordionButton className="py-4">
-          <Image
-            className="mr-4 inline-block h-[35px]"
-            src={"/img/article.svg"}
-            width={25}
-            height={25}
-            alt=""
-          />
-          部誌・会誌
-          <AccordionIcon
-            fontSize={30}
-            color={"orangered"}
-            className="ml-auto"
-          />
-        </AccordionButton>
-        <AccordionPanel>
-          {articles.map((a, i) => {
-            return (
-              <div key={i}>
-                <Link href={encodeURI(a.url)}>{a.title}</Link>
-              </div>
-            );
-          })}
-        </AccordionPanel>
-      </AccordionItem>
-    </Accordion>
-  );
-};
+// const Article: FC<{
+//   articles: Content[];
+// }> = ({ articles }) => {
+//   return (
+//     <Accordion allowToggle>
+//       <AccordionItem className="px-4 group-odd:bg-white group-even:bg-[#FFEFE8]">
+//         <AccordionButton className="py-4">
+//           <Image
+//             className="mr-4 inline-block h-[35px]"
+//             src={"/img/article.svg"}
+//             width={25}
+//             height={25}
+//             alt=""
+//           />
+//           部誌・会誌
+//           <AccordionIcon
+//             fontSize={30}
+//             color={"orangered"}
+//             className="ml-auto"
+//           />
+//         </AccordionButton>
+//         <AccordionPanel>
+//           {articles.map((a, i) => {
+//             return (
+//               <div key={i}>
+//                 <Link href={encodeURI(a.url)}>{a.title}</Link>
+//               </div>
+//             );
+//           })}
+//         </AccordionPanel>
+//       </AccordionItem>
+//     </Accordion>
+//   );
+// };
 
 const PlaceLabel: FC<{ place: Place }> = ({ place }) => {
   return (
