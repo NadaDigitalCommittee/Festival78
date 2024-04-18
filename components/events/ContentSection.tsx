@@ -19,10 +19,10 @@ export default function ContentSection({
 }: ContentSectionProps) {
   return (
     <article id={`section_${eventId}`}>
-      <div className="flex justify-center">
+      <div className="flex justify-center px-1">
         <h1
           className={clsx(
-            "mb-[16px] pb-[16px] font-zen_kaku_gothic_new font-bold",
+            "mb-[16px] pb-[16px] font-zen_kaku_gothic_new font-bold text-3xl md:text-4xl",
             styles.stripeMarker
           )}
         >
@@ -30,8 +30,8 @@ export default function ContentSection({
         </h1>
       </div>
       <div className="flex justify-center pb-[100px]">
-        <div className={styles.contentSection_wrapper}>
-          <div className="flex justify-end gap-[15px] pb-[10px]">
+        <div className={clsx(styles.contentSection_wrapper, "px-3")}>
+          <div className="flex justify-end gap-[15px] pb-[20px]">
             <ContentLabelButton
               href={{
                 pathname: "/map",
