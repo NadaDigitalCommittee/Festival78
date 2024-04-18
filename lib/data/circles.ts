@@ -350,7 +350,7 @@ export const data: Circle[] = [
     contents: [
       {
         type: "article",
-        title: "料理同好会愛好誌",
+        title: "灘校料理愛好会誌",
         url: "/pdf/studentcouncil/article.pdf",
       },
     ],
