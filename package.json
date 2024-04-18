@@ -15,6 +15,7 @@
     "@chakra-ui/hooks": "^2.2.1",
     "@chakra-ui/modal": "^2.3.1",
     "@chakra-ui/provider": "^2.4.2",
+    "@chakra-ui/system": "^2.6.2",
     "@chakra-ui/theme": "^3.3.1",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
