@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Blog, getBlogList } from "@/lib/cms";
 import type { Metadata } from "next";
-import { ChevronRight } from "@/components/svg/ChevronRight";
+import { ChevronRightIcon } from "@/components/svg/ChevronRightIcon";
 
 export const metadata: Metadata = {
   title: "記事一覧 | ブログ",
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default async function StaticPage() {
   const { contents } = await getBlogList();
   if (!contents || !contents.length) {
-    return <div>記事はありません。</div>;
+    return <div className="text-base md:text-xl">記事はありません。</div>;
   }
 
   return (
@@ -47,7 +47,7 @@ export default async function StaticPage() {
                   {post.title}
                 </div>
                 <div className="flex-shrink-1 mx-2 ml-auto mr-4 aspect-[3/4] h-6 w-auto text-theme md:mr-6">
-                  <ChevronRight />
+                  <ChevronRightIcon />
                 </div>
               </Link>
             </li>

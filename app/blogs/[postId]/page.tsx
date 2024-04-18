@@ -16,12 +16,15 @@ export async function generateMetadata({
 }: {
   params: { postId: string };
 }): Promise<Metadata> {
-  if (
-    !(await generateStaticParams()).map((path) => path.postId).includes(postId)
-  ) {
-    return {};
-  }
-  const post = await getBlogDetail(postId);
+  const { contents } = await getBlogList();
+  const contentTypes = Object.fromEntries(
+    contents.map((post: Blog) => {
+      return [post.id, post.type];
+    })
+  );
+  const post = contentTypes[postId]
+    ? await getBlogDetail(contentTypes[postId], postId)
+    : { title: "記事が見つかりません" };
   return {
     title: `${post.title} | ブログ`,
   };
@@ -44,12 +47,16 @@ export default async function StaticDetailPage({
 }: {
   params: { postId: string };
 }) {
-  if (
-    !(await generateStaticParams()).map((path) => path.postId).includes(postId)
-  ) {
+  const { contents } = await getBlogList();
+  const contentTypes = Object.fromEntries(
+    contents.map((post: Blog) => {
+      return [post.id, post.type];
+    })
+  );
+  if (!contentTypes[postId]) {
     notFound();
   }
-  const post = await getBlogDetail(postId);
+  const post = await getBlogDetail(contentTypes[postId], postId);
   const publishedAtUTC = new Date(post.publishedAt || 0);
   const publishedAt = {
     year: publishedAtUTC.getFullYear(),
@@ -81,7 +88,9 @@ export default async function StaticDetailPage({
               href=""
               {...restAttribs}
               style={styleAttrObject}
-              className={`group relative inline-block text-theme transition before:absolute before:bottom-0 before:left-0 before:inline-block before:h-[2px] before:w-full before:-translate-x-full before:bg-theme before:opacity-0 before:duration-300 before:content-[''] hover:before:translate-x-0 hover:before:opacity-100 focus:before:translate-x-0 focus:before:opacity-100 focus-visible:outline-none ${classAttr || ""}`}
+              className={`group relative inline-block text-theme transition before:absolute 
+              before:bottom-0 before:left-0 before:inline-block before:h-[2px] before:w-full before:scale-x-0 before:bg-theme  before:opacity-0 before:duration-300 before:content-[''] hover:before:scale-x-100 hover:before:opacity-100 focus-visible:outline-none
+              ${classAttr || ""}`}
             >
               <span className="rounded-sm outline outline-0 outline-offset-1 outline-body_text group-focus-visible:outline-2">
                 {domToReact(children as DOMNode[], options)}
@@ -175,7 +184,9 @@ export default async function StaticDetailPage({
           {post.title}
         </h1>
       </div>
-      <div className="mx-auto my-10 w-11/12 md:text-xl">{documentBody}</div>
+      <div className="mx-auto my-10 w-11/12 text-base md:text-xl">
+        {documentBody}
+      </div>
     </>
   );
 }
