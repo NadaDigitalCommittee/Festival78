@@ -5,13 +5,15 @@ import { Accordion } from "@chakra-ui/accordion";
 import { ChakraProvider } from "@chakra-ui/provider";
 import { FC, useEffect, useMemo, useState } from "react";
 import { Article } from "./Article";
+import { useSearchParams } from "next/navigation";
 
 export const DownloadsAcordion: FC = () => {
   const [defaultId, setDefaultId] = useState<string | null>(null);
   const [index, setIndex] = useState(0);
+  const params=useSearchParams()
   useEffect(() => {
-    setDefaultId(window.location.hash.replace("#", "") ?? "");
-  }, [defaultId]);
+    setDefaultId(params.get("id"));
+  }, [defaultId, params]);
   const data = useMemo(
     () =>
       data_
