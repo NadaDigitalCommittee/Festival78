@@ -8,6 +8,7 @@ import Image from "next/image";
 import { FC } from "react";
 import type { Circle as CircleType, Content } from "@/lib/data/circles";
 import { RiDownload2Fill } from "react-icons/ri";
+import Link from "next/link";
 type Props = {
   circle: CircleType;
 };
@@ -51,10 +52,12 @@ export const Article: FC<Props> = ({ circle }) => {
             `}
           >
             <span className="mr-4">{article.title}</span>
-            <div className="ml-auto flex h-[30px] min-w-[130px] items-center justify-center gap-2 bg-theme px-2 text-center text-white">
-              <RiDownload2Fill />
-              ダウンロード
-            </div>
+            <Link href={article.url}>
+              <div className="ml-auto flex h-[30px] min-w-[130px] items-center justify-center gap-2 bg-theme px-2 text-center text-white">
+                <RiDownload2Fill />
+                ダウンロード
+              </div>
+            </Link>
           </div>
         ))}
       </AccordionPanel>
