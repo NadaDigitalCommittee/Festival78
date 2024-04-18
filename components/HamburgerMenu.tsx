@@ -3,12 +3,12 @@ import { FC, useState } from "react";
 
 const paths = [
   { ja: "ホーム", en: "Home", path: "/" },
-  { ja: "クイズラリー", en: "Quiz Rally", path: "/quiz-rally" },
+  // { ja: "クイズラリー", en: "Quiz Rally", path: "/quiz-rally" },
   { ja: "出展サークル", en: "Circles", path: "/circles" },
   { ja: "イベント", en: "Events", path: "/events" },
   { ja: "タイムテーブル", en: "Timetable", path: "/timetable" },
   { ja: "校内マップ", en: "Maps", path: "/maps" },
-  { ja: "混雑状況", en: "Crowds", path: "/crowds" },
+  // { ja: "混雑状況", en: "Crowds", path: "/crowds" },
   { ja: "ブログ", en: "Blogs", path: "/blogs" },
   { ja: "グッズ", en: "Goods", path: "/goods" },
   { ja: "ダウンロード", en: "Downloads", path: "/downloads" }
