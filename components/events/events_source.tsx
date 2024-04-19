@@ -20,7 +20,7 @@ export const EVENTS_PAGE_SOURCE: [
   EventsPageSourceTypes,
 ] = [
   {
-    color: "",
+    color: "a",
     map_id: "garden",
     events: [
       {
