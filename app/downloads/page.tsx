@@ -31,8 +31,9 @@ export default function Page() {
         <div className="h-8" />
 
         <div className="visible flex justify-center max-md:hidden">
-          <div className="h-[350px] w-[80vw] border-4 border-theme md:w-[550px]">
-            <p>表紙画像</p>
+          <div className="h-[350px] w-[80vw] border-4 border-theme md:w-[550px] flex items-center justify-center gap-6">
+            <Image src={"/img/downloads/pamphlet1.webp"} width={200} height={800} alt="表紙" />
+            <Image src={"/img/downloads/pamphlet2.webp"} width={200} height={800} alt="裏表紙" />
           </div>
           <div className="mt-auto h-[210px] w-[210px] bg-theme p-4 text-center text-sm text-white">
             <p className="mt-6">
@@ -49,8 +50,9 @@ export default function Page() {
         </div>
 
         <div className=" mx-auto flex w-[80vw] flex-col justify-center md:hidden">
-          <div className=" border-4 border-theme">
-            <p>表紙画像</p>
+          <div className=" border-4 border-theme flex items-center justify-center gap-3 py-4">
+            <Image src={"/img/downloads/pamphlet1.webp"} width={100} height={800} alt="表紙" />
+            <Image src={"/img/downloads/pamphlet2.webp"} width={100} height={800} alt="裏表紙" />
           </div>
           <div className="mt-auto flex h-[80px] w-full bg-theme p-1 text-center text-xs text-white">
             <div className="mx-auto px-3">
