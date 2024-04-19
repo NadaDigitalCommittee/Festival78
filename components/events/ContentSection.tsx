@@ -18,7 +18,7 @@ export default function ContentSection({
   content,
 }: ContentSectionProps) {
   return (
-    <article id={`section_${eventId}`} className="w-full">
+    <article id={`section_${eventId}`} className="w-screen">
       <div className="flex justify-center px-1">
         <h1
           className={clsx(
