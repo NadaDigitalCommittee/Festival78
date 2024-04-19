@@ -22,7 +22,7 @@ export default function ContentSection({
       <div className="flex justify-center px-1">
         <h1
           className={clsx(
-            "font-zen_kaku_gothic_new mb-[16px] pb-[16px] text-3xl font-bold md:text-4xl",
+            "font-zen_kaku_gothic_new mb-[16px] pb-[16px] text-3xl font-bold md:text-4xl break-all",
             styles.stripeMarker
           )}
         >
