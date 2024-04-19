@@ -160,14 +160,14 @@ export const events: Event[] = [
     mapId: "campustour",
   },
   {
-    id: "m3-3conan_event",
+    id: "conan_event",
     name: "トリック実演",
     description: "中学棟4階にて10:30と13:30から名探偵コナンで実際に使われたトリックを実演します！観覧したい方はオンライン抽選券での応募をしてください。",
     category: "raffle",
     mapId: "m3-3",
   },
   {
-    id: "h2-3car_event",
+    id: "car_event",
     name: "ペーパークラフトでミニカーを作ろう！",
     description: "ペーパークラフトでリアルなミニカーを作る企画です。メンバーがしっかりと製作のサポートをします。高校棟三階へぜひお越しください！",
     category: "raffle",
