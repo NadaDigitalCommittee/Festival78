@@ -174,9 +174,11 @@ export default function Home() {
                 <div>
                   <p className="text-2xl font-bold">灘中学校・灘高等学校</p>
                   <p className="text-sm">
-                    <MapPin />
+                    <MapPin className="fill-[#616161]" />
                     兵庫県神戸市東灘区魚崎北町8丁目5番1号
                   </p>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3279.430097231349!2d135.26561937600025!3d34.71955168220066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60008cfd8440bcc9%3A0x526d26ccfad6f4df!2z54GY5Lit5a2m5qCh44O76auY562J5a2m5qCh!5e0!3m2!1sja!2sjp!4v1713313991974!5m2!1sja!2sjp" 
+                  width="auto" height="auto" allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="my-4"/>
                 </div>
               </div>
               <div className="mx-auto grid w-[240px] grid-cols-2 place-items-center font-zen_kaku_gothic_new font-bold">

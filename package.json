@@ -8,11 +8,19 @@
     "start": "next start",
     "lint": "next lint",
     "format": "npx prettier . --write",
-    "resize": "node scripts/resize.js"
+    "resize": "node scripts/resize.js",
+    "webp": "node scripts/webp.mjs"
   },
   "packageManager": "yarn@4.1.1",
   "dependencies": {
+    "@chakra-ui/accordion": "^2.3.1",
+    "@chakra-ui/provider": "^2.4.2",
+    "@chakra-ui/system": "^2.6.2",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "@next/third-parties": "^14.1.4",
+    "clsx": "^2.1.0",
+    "framer-motion": "^10.18.0",
     "html-react-parser": "^5.1.10",
     "microcms-js-sdk": "^3.1.0",
     "next": "14.0.4",
@@ -20,12 +28,15 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@types/imagemin": "^8",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
     "eslint": "8.56.0",
     "eslint-config-next": "14.0.4",
+    "imagemin": "^8.0.1",
+    "imagemin-webp": "^8.0.0",
     "jimp": "^0.22.12",
     "next-export-optimize-images": "^4.3.1",
     "postcss": "^8",

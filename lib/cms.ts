@@ -9,26 +9,66 @@ export const client = createClient({
   serviceDomain: process.env.MICROCMS_SERVICE_DOMAIN,
 });
 
+type CategorySchema = {
+  name: string;
+};
+
+type NewsSchema = {
+  title: string;
+  content: string;
+  category: CategorySchema;
+};
+export type News = NewsSchema & MicroCMSContentId & MicroCMSDate;
+
+export async function getNews(draftKey?: string): Promise<News[]> {
+  return (
+    await client.getList<NewsSchema>({
+      endpoint: "news",
+      customRequestInit: {
+        next: {
+          revalidate: 60,
+        },
+      },
+      queries: {
+        draftKey: draftKey,
+      },
+    })
+  ).contents;
+}
+
 export { Blog };
 
 export const getBlogList = async (queries?: MicroCMSQueries) => {
-  const listData = await client.getList<Blog>({
+  const blogsListData = await client.getList<Blog>({
     endpoint: "blogs",
     queries,
   });
-
-  return listData;
+  const journeyListData = await client.getList<Blog>({
+    endpoint: "journey",
+    queries,
+  });
+  blogsListData.contents.map((post: Blog) => {
+    post.type = "blogs";
+  });
+  journeyListData.contents.map((post: Blog) => {
+    post.type = "journey";
+  });
+  const listDataAll = {
+    contents: blogsListData.contents.concat(journeyListData.contents),
+    totalCount: blogsListData.totalCount + journeyListData.totalCount,
+  };
+  return listDataAll;
 };
 
 export const getBlogDetail = async (
+  contentType: string,
   contentId: string,
   queries?: MicroCMSQueries
 ) => {
   const detailData = await client.getListDetail<Blog>({
-    endpoint: "blogs",
+    endpoint: contentType,
     contentId,
     queries,
   });
-
   return detailData;
 };

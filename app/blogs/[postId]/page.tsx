@@ -1,26 +1,32 @@
-import { getBlogDetail, getBlogList } from "@/lib/cms";
+import Image from "next/image";
+import Link from "next/link";
+import React, { ReactNode, createElement } from "react";
+import { notFound } from "next/navigation";
 import parse, {
     DOMNode,
     Element,
     HTMLReactParserOptions,
     domToReact,
 } from "html-react-parser";
+import { getBlogList, getBlogDetail, Blog } from "@/lib/cms";
 import type { Metadata } from "next";
-import Image from "next-export-optimize-images/image";
-import Link from "next/link";
-import { notFound } from "next/navigation";
+import { ChevronRightIcon } from "@/components/svg/ChevronRightIcon";
+import { InlineLink } from "@/components/InlineLink";
 
 export async function generateMetadata({
   params: { postId },
 }: {
   params: { postId: string };
 }): Promise<Metadata> {
-  if (
-    !(await generateStaticParams()).map((path) => path.postId).includes(postId)
-  ) {
-    return {};
-  }
-  const post = await getBlogDetail(postId);
+  const { contents } = await getBlogList();
+  const contentTypes = Object.fromEntries(
+    contents.map((post: Blog) => {
+      return [post.id, post.type];
+    })
+  );
+  const post = contentTypes[postId]
+    ? await getBlogDetail(contentTypes[postId], postId)
+    : { title: "記事が見つかりません" };
   return {
     title: `${post.title} | ブログ`,
   };
@@ -29,7 +35,7 @@ export async function generateMetadata({
 export async function generateStaticParams() {
   const { contents } = await getBlogList();
 
-  const paths = contents.map((post) => {
+  const paths = contents.map((post: Blog) => {
     return {
       postId: post.id,
     };
@@ -43,12 +49,16 @@ export default async function StaticDetailPage({
 }: {
   params: { postId: string };
 }) {
-  if (
-    !(await generateStaticParams()).map((path) => path.postId).includes(postId)
-  ) {
+  const { contents } = await getBlogList();
+  const contentTypes = Object.fromEntries(
+    contents.map((post: Blog) => {
+      return [post.id, post.type];
+    })
+  );
+  if (!contentTypes[postId]) {
     notFound();
   }
-  const post = await getBlogDetail(postId);
+  const post = await getBlogDetail(contentTypes[postId], postId);
   const publishedAtUTC = new Date(post.publishedAt || 0);
   const publishedAt = {
     year: publishedAtUTC.getFullYear(),
@@ -59,75 +69,60 @@ export default async function StaticDetailPage({
     second: publishedAtUTC.getSeconds(),
   };
   const options: HTMLReactParserOptions = {
-    replace(domNode) {
+    replace(domNode: DOMNode) {
       if (domNode instanceof Element && domNode.attribs) {
-        const { name, attribs, parent, children } = domNode;
-        const { classAttr, ...attribsExcClass } = attribs;
+        const { name, attribs, type, parent, children } = domNode;
+        const { class: classAttr, style: styleAttr, ...restAttribs } = attribs;
+        const styleAttrObject = Object.fromEntries(
+          (styleAttr || "")
+            .split(";")
+            .filter(Boolean)
+            .map((s: string) => {
+              return s.split(":").map((v) => {
+                return v.trim();
+              });
+            })
+        );
         if (name === "a") {
           //形式上hrefなしだと静的解析に引っかかるのでダミーhrefをattribsで上書き. alt, src同様
           return (
-            <Link
+            <InlineLink
               href=""
-              {...attribsExcClass}
-              className={`group relative inline-block text-theme transition before:absolute before:bottom-0 before:left-0 before:inline-block before:h-[2px] before:w-full before:-translate-x-full before:bg-theme before:opacity-0 before:duration-300 before:content-[''] hover:before:translate-x-0 hover:before:opacity-100 focus:before:translate-x-0 focus:before:opacity-100 focus-visible:outline-none ${classAttr || ""}`}
+              {...restAttribs}
+              style={styleAttrObject}
+              className={`text-theme ${classAttr || ""}`}
             >
-              <span className="rounded-sm outline outline-0 outline-offset-1 outline-body_text group-focus-visible:outline-2">
-                {domToReact(children as DOMNode[], options)}
-              </span>
-            </Link>
+              {domToReact(children as DOMNode[], options)}
+            </InlineLink>
           );
         } else if (
           name === "u" && parent ? (parent as Element).name === "a" : false
         ) {
           return <>{domToReact(children as DOMNode[])}</>;
-        } else if (name === "h2") {
-          return (
-            <h2
-              {...attribsExcClass}
-              className={`my-1 ml-3 mr-1 text-2xl font-bold ${classAttr || ""}`}
-            >
-              {domToReact(children as DOMNode[], options)}
-            </h2>
-          );
-        } else if (name === "h3") {
-          return (
-            <h3
-              {...attribsExcClass}
-              className={`my-1 ml-3 mr-1 text-xl font-bold ${classAttr || ""}`}
-            >
-              {domToReact(children as DOMNode[], options)}
-            </h3>
-          );
-        } else if (name === "h4") {
-          return (
-            <h4
-              {...attribsExcClass}
-              className={`my-1 ml-3 mr-1 text-base font-bold ${classAttr || ""}`}
-            >
-              {domToReact(children as DOMNode[], options)}
-            </h4>
-          );
-        } else if (name === "h5") {
-          return (
-            <h5
-              {...attribsExcClass}
-              className={`my-1 ml-3 mr-1 text-sm font-bold ${classAttr || ""}`}
-            >
-              {domToReact(children as DOMNode[], options)}
-            </h5>
-          );
-        } else if (name === "h6") {
-          return (
-            <h6
-              {...attribsExcClass}
-              className={`my-1 ml-3 mr-1 text-xs font-bold ${classAttr || ""}`}
-            >
-              {domToReact(children as DOMNode[], options)}
-            </h6>
+        } else if (
+          [...new Array(6)]
+            .map((_, i) => {
+              return `h${i + 1}`;
+            })
+            .includes(name)
+        ) {
+          const twFontSizes = ["3xl", "2xl", "xl", "base", "sm", "xs"];
+          return createElement(
+            name,
+            {
+              ...restAttribs,
+              style: styleAttrObject,
+              className: `${name[1] === "1" ? "p-3 md:p-4 mx-0 my-4 flex justify-start border-b-2 border-b-theme" : "py-1 my-1 ml-3 mr-1"} text-${twFontSizes[+name[1] - 1]} font-bold ${classAttr || ""}`,
+            },
+            domToReact(children as DOMNode[], options)
           );
         } else if (name === "p") {
           return (
-            <p {...attribsExcClass} className={`p-1 ${classAttr || ""}`}>
+            <p
+              {...restAttribs}
+              style={styleAttrObject}
+              className={`p-1 ${classAttr || ""}`}
+            >
               {domToReact(children as DOMNode[], options)}
             </p>
           );
@@ -136,9 +131,38 @@ export default async function StaticDetailPage({
             <Image
               alt=""
               src=""
-              {...attribsExcClass}
-              className={` ${classAttr || ""}`}
+              {...restAttribs}
+              style={styleAttrObject}
+              className={`mx-auto my-4 w-full lg:w-5/6 ${classAttr || ""}`}
             />
+          );
+        } else if (type === "tag") {
+          const voidTags = [
+            "area",
+            "base",
+            "br",
+            "col",
+            "embed",
+            "hr",
+            "img",
+            "input",
+            "link",
+            "meta",
+            "param",
+            "source",
+            "track",
+            "wbr",
+          ];
+          return createElement(
+            name,
+            {
+              ...restAttribs,
+              style: styleAttrObject,
+              className: classAttr || "",
+            },
+            voidTags.includes(name.toLowerCase())
+              ? null
+              : domToReact(children as DOMNode[], options)
           );
         }
       }
@@ -158,7 +182,62 @@ export default async function StaticDetailPage({
           {post.title}
         </h1>
       </div>
-      <div className="mx-auto my-10 w-11/12 md:text-xl">{documentBody}</div>
+      <nav
+        aria-label="パンくずリスト"
+        className="my-2 mx-0 md:mx-2 flex h-max items-center justify-start p-0 text-sm md:text-base w-full md:w-max"
+      >
+        <ol
+          className="flex"
+          itemScope
+          itemType="https://schema.org/BreadcrumbList"
+        >
+          {[
+            ["/", "トップ"],
+            ["/blogs", "ブログ"],
+            [`/blogs/${postId}`, post.title],
+          ].map((hierarchy, index, originalArray) => {
+            const isCurrentPage = Boolean(index === originalArray.length - 1);
+            return (
+              <li
+                className="flex"
+                key={index}
+                itemProp="itemListElement"
+                itemScope
+                itemType="https://schema.org/ListItem"
+              >
+                <InlineLink
+                  {...(isCurrentPage
+                    ? { "aria-current": "page", disableLink: true }
+                    : {})}
+                  spanProps={{
+                    itemprop: "name",
+                  }}
+                  href={hierarchy[0]}
+                  className={`text-body_text ${isCurrentPage ? "" : "text-theme"}`}
+                  itemscope
+                  itemtype="https://schema.org/WebPage"
+                  itemprop="item"
+                  itemid={`https://fest.nada-sc.jp${hierarchy[0]}`}
+                >
+                  {hierarchy[1]}
+                </InlineLink>
+                {isCurrentPage ? (
+                  ""
+                ) : (
+                  <div className="mx-1 my-auto h-3 w-2 scale-75">
+                    <ChevronRightIcon />
+                  </div>
+                )}
+                <meta itemProp="position" content={String(index + 1)} />
+              </li>
+            );
+          })}
+        </ol>
+      </nav>
+      <div className="mx-auto my-10 w-11/12 text-base md:text-xl">
+        {documentBody}
+      </div>
     </>
   );
 }
+export const dynamicParams = false;
