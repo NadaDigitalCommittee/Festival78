@@ -52,7 +52,10 @@ export const Article: FC<Props> = ({ circle }) => {
             `}
           >
             <span className="mr-4">{article.title}</span>
-            <Link href={article.url} className="ml-auto flex h-[30px] min-w-[130px] items-center justify-center gap-2 bg-theme px-2 text-center text-white">
+            <Link
+              href={article.url}
+              className="ml-auto flex h-[30px] min-w-[130px] items-center justify-center gap-2 bg-theme px-2 text-center text-white"
+            >
               <RiDownload2Fill />
               ダウンロード
             </Link>

@@ -20,7 +20,7 @@ export const InlineLink = function (props: {
     <a
       {...restProps}
       tabIndex={-1}
-      className={`relative inline-block outline-none cursor-text ${classNameAttr}`}
+      className={`relative inline-block cursor-text outline-none ${classNameAttr}`}
     >
       <span {...spanProps} className="outline-none">
         {children}
