@@ -1,14 +1,14 @@
 "use client";
 import { Selector } from "@/components/timetable/Selector";
-import { BaseTimetable } from "@/components/timetable/desktop/BaseTimetable";
-import { Cell } from "@/components/timetable/desktop/Cell";
+import { BaseTimetableDesktop } from "@/components/timetable/desktop/BaseTimetable";
+import { CellDesktop, CircleCells, StageCells } from "@/components/timetable/desktop/Cell";
 import { Category, events } from "@/lib/data/events";
 import { eventsTimetable } from "@/lib/data/eventsTimetable";
 import { Time } from "@/lib/time";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 
-const stages = [
+const stages: { eventId: Category, eventName: string }[] = [
   {
     eventId: "garden",
     eventName: "中庭ステージ",
@@ -54,6 +54,7 @@ export default function Page() {
     []
   );
 
+  // ?id={id}と来た時にそのイベントまでスクロールする
   const params = useSearchParams();
   const defaultEvent = data.find((v) => v.id === params.get("id"));
   const defaultCategory = defaultEvent?.category;
@@ -66,6 +67,7 @@ export default function Page() {
   const month = now.getMonth();
   const day = now.getDate();
   const isDay2 = month === 5 && day === 3;
+  //上のイベントまでスクロールコードについて、日付がひとつだけの場合はstateのdefault値を変更する
   const [dayIndex, setDayIndex] = useState(
     isOnlyOneDay ? (defaultEvent?.time?.[0]?.day ?? 1) - 1 : isDay2 ? 1 : 0
   );
@@ -85,26 +87,6 @@ export default function Page() {
 
   const [stageIndex, setStageIndex] = useState(defaultStageIndex ?? 0);
 
-  const eventsFromCategory = (category: Category, index: number) => {
-    const events = data.filter((v) => v.category === category);
-    return events.map((event) => {
-      return event.time
-        ?.filter((t) => t.day === dayIndex + 1)
-        .map((t, tid) => {
-          return (
-            <Cell
-              id={event.id}
-              name={event.name}
-              time={t.time}
-              index={index}
-              showTime={t.time.periodMinutes > 30}
-              key={event.id + tid}
-            />
-          );
-        });
-    });
-  };
-
   const raffleEvents = data.filter((v) => v.category === "raffle");
   const circleEvents = data.filter((v) => v.category === "others");
 
@@ -112,7 +94,7 @@ export default function Page() {
     <div className="font-zen_kaku_gothic_new font-bold">
       <div className="h-20" />
 
-      <BaseTimetable
+      <BaseTimetableDesktop
         events={
           [
             stages,
@@ -158,51 +140,17 @@ export default function Page() {
         {
           [
             <>
-              {eventsFromCategory("garden", 0)}
-              {eventsFromCategory("audiovisual", 1)}
-              {eventsFromCategory("lecture", 2)}
-              {eventsFromCategory("mainhall", 3)}
-              {eventsFromCategory("gym", 4)}
-              {eventsFromCategory("lecture_m", 5)}
-              {eventsFromCategory("lecture_h", 6)}
+              {
+                stages.map((stage, i) => <StageCells category={stage.eventId} index={i} data={data} dayIndex={dayIndex} key={i} />)
+              }
             </>,
+            <><CircleCells events={raffleEvents} dayIndex={dayIndex} /></>,
             <>
-              {raffleEvents.map((event, eventIndex) => {
-                return event.time
-                  ?.filter((t) => t.day === dayIndex + 1)
-                  .map((t, i) => {
-                    return (
-                      <Cell
-                        id={event.id}
-                        index={eventIndex}
-                        name={""}
-                        time={t.time}
-                        key={i}
-                      />
-                    );
-                  });
-              })}
-            </>,
-            <>
-              {circleEvents.map((event, eventIndex) => {
-                return event.time
-                  ?.filter((t) => t.day === dayIndex + 1)
-                  .map((t, i) => {
-                    return (
-                      <Cell
-                        id={event.id}
-                        index={eventIndex}
-                        name={""}
-                        time={t.time}
-                        key={i}
-                      />
-                    );
-                  });
-              })}
+              <CircleCells events={circleEvents} dayIndex={dayIndex} />
             </>,
           ][stageIndex]
         }
-      </BaseTimetable>
+      </BaseTimetableDesktop>
     </div>
   );
 }
