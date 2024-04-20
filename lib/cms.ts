@@ -1,4 +1,6 @@
 import {
+  MicroCMSContentId,
+  MicroCMSDate,
   MicroCMSQueries,
   createClient,
 } from "microcms-js-sdk";
@@ -72,3 +74,11 @@ export const getBlogDetail = async (
   });
   return detailData;
 };
+
+export const getImages = async ()=>{
+  const images = await client.getList({
+    endpoint: "images",
+  });
+
+  return images;
+}

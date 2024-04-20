@@ -4,7 +4,7 @@ import {
   AccordionItem,
   AccordionPanel,
 } from "@chakra-ui/accordion";
-import Image from "next/image";
+import Image from "next-export-optimize-images/image";
 import { FC } from "react";
 import type { Circle as CircleType, Content } from "@/lib/data/circles";
 import { RiDownload2Fill } from "react-icons/ri";

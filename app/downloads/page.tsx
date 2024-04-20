@@ -1,5 +1,5 @@
 import { DownloadsAcordion } from "@/components/downloads/DownloadsAccordion";
-import Image from "next/image";
+import Image from "next-export-optimize-images/image";
 import Link from "next/link";
 import { RiDownload2Fill } from "react-icons/ri";
 
@@ -32,8 +32,8 @@ export default function Page() {
 
         <div className="visible flex justify-center max-md:hidden">
           <div className="h-[350px] w-[80vw] border-4 border-theme md:w-[550px] flex items-center justify-center gap-6">
-            <Image src={"/img/downloads/pamphlet1.webp"} width={200} height={800} alt="表紙" />
-            <Image src={"/img/downloads/pamphlet2.webp"} width={200} height={800} alt="裏表紙" />
+            <Image src={"/img/downloads/pamphlet1.webp"} width={200} height={800} quality={100} alt="表紙" />
+            <Image src={"/img/downloads/pamphlet2.webp"} width={200} height={800} quality={100} alt="裏表紙" />
           </div>
           <div className="mt-auto h-[210px] w-[210px] bg-theme p-4 text-center text-sm text-white">
             <p className="mt-6">

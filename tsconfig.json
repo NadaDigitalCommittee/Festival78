@@ -29,6 +29,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "scripts/resize.js"
-  ],
+, "export-images.config.js"  ],
   "exclude": ["node_modules"]
 }
