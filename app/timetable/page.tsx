@@ -1,7 +1,7 @@
 "use client";
 import { Selector } from "@/components/timetable/Selector";
-import { BaseTimetable } from "@/components/timetable/table/BaseTimetable";
-import { Cell } from "@/components/timetable/table/Cell";
+import { BaseTimetable } from "@/components/timetable/desktop/BaseTimetable";
+import { Cell } from "@/components/timetable/desktop/Cell";
 import { Category, events } from "@/lib/data/events";
 import { eventsTimetable } from "@/lib/data/eventsTimetable";
 import { Time } from "@/lib/time";
@@ -90,7 +90,7 @@ export default function Page() {
     return events.map((event) => {
       return event.time
         ?.filter((t) => t.day === dayIndex + 1)
-        .map((t,tid) => {
+        .map((t, tid) => {
           return (
             <Cell
               id={event.id}
