@@ -1,14 +1,18 @@
 "use client";
 import { Selector } from "@/components/timetable/Selector";
 import { BaseTimetableDesktop } from "@/components/timetable/desktop/BaseTimetable";
-import { CellDesktop, CircleCells, StageCells } from "@/components/timetable/desktop/Cell";
+import {
+  CellDesktop,
+  CircleCells,
+  StageCells,
+} from "@/components/timetable/desktop/Cell";
 import { Category, events } from "@/lib/data/events";
 import { eventsTimetable } from "@/lib/data/eventsTimetable";
 import { Time } from "@/lib/time";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 
-const stages: { eventId: Category, eventName: string }[] = [
+const stages: { eventId: Category; eventName: string }[] = [
   {
     eventId: "garden",
     eventName: "中庭ステージ",
@@ -140,11 +144,19 @@ export default function Page() {
         {
           [
             <>
-              {
-                stages.map((stage, i) => <StageCells category={stage.eventId} index={i} data={data} dayIndex={dayIndex} key={i} />)
-              }
+              {stages.map((stage, i) => (
+                <StageCells
+                  category={stage.eventId}
+                  index={i}
+                  data={data}
+                  dayIndex={dayIndex}
+                  key={i}
+                />
+              ))}
             </>,
-            <><CircleCells events={raffleEvents} dayIndex={dayIndex} /></>,
+            <>
+              <CircleCells events={raffleEvents} dayIndex={dayIndex} />
+            </>,
             <>
               <CircleCells events={circleEvents} dayIndex={dayIndex} />
             </>,

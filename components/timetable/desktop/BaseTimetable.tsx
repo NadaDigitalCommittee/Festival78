@@ -13,7 +13,11 @@ type Props = {
   stickyItems?: ReactNode;
 };
 
-export const BaseTimetableDesktop: FC<Props> = ({ children, events, stickyItems }) => {
+export const BaseTimetableDesktop: FC<Props> = ({
+  children,
+  events,
+  stickyItems,
+}) => {
   const [scrollX, setScrollX] = useState(0);
   const timetableRef = useRef<HTMLDivElement>(null);
   const timeRef = useRef<HTMLDivElement>(null);

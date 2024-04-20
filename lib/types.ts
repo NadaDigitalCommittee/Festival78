@@ -18,10 +18,21 @@ export type Blog = {
 } & MicroCMSDate;
 export type TimetableData = {
   id: string;
-  category: "lecture_m" | "lecture_h" | "raffle" | "garden" | "audiovisual" | "lecture" | "mainhall" | "gym" | "others";
+  category:
+    | "lecture_m"
+    | "lecture_h"
+    | "raffle"
+    | "garden"
+    | "audiovisual"
+    | "lecture"
+    | "mainhall"
+    | "gym"
+    | "others";
   name: string;
-  time: {
-    day: 1 | 2;
-    time: Time;
-  }[] | undefined;
-}
+  time:
+    | {
+        day: 1 | 2;
+        time: Time;
+      }[]
+    | undefined;
+};

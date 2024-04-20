@@ -10,7 +10,13 @@ type Props = {
   showTime?: boolean;
 };
 
-export const CellMobile: FC<Props> = ({ id, index, time, name, showTime = true }) => {
+export const CellMobile: FC<Props> = ({
+  id,
+  index,
+  time,
+  name,
+  showTime = true,
+}) => {
   const ratioX = (60 * 60 * 1000) / 1;
   const interval =
     (time.start.getTime() - new Time(9, 0, 0, 0).start.getTime()) / ratioX;

@@ -11,7 +11,13 @@ type Props = {
   showTime?: boolean;
 };
 
-export const CellDesktop: FC<Props> = ({ id, index, time, name, showTime = true }) => {
+export const CellDesktop: FC<Props> = ({
+  id,
+  index,
+  time,
+  name,
+  showTime = true,
+}) => {
   const ratioX = (60 * 60 * 1000) / 1;
   const interval =
     (time.start.getTime() - new Time(9, 0, 0, 0).start.getTime()) / ratioX;
@@ -40,36 +46,41 @@ export const CellDesktop: FC<Props> = ({ id, index, time, name, showTime = true 
 
 type StageCellsProps = {
   category: Category;
-   index: number;
-   dayIndex: number;
-   data:TimetableData[];
+  index: number;
+  dayIndex: number;
+  data: TimetableData[];
 };
-export const StageCells:FC<StageCellsProps> = ({category,index,data,dayIndex}) => {
+export const StageCells: FC<StageCellsProps> = ({
+  category,
+  index,
+  data,
+  dayIndex,
+}) => {
   const events = data.filter((v) => v.category === category);
-    return events.map((event) => {
-      return event.time
-        ?.filter((t) => t.day === dayIndex + 1)
-        .map((t, tid) => {
-          return (
-            <CellDesktop
-              id={event.id}
-              name={event.name}
-              time={t.time}
-              index={index}
-              showTime={t.time.periodMinutes > 30}
-              key={event.id + tid}
-            />
-          );
-        });
-    });
-}
+  return events.map((event) => {
+    return event.time
+      ?.filter((t) => t.day === dayIndex + 1)
+      .map((t, tid) => {
+        return (
+          <CellDesktop
+            id={event.id}
+            name={event.name}
+            time={t.time}
+            index={index}
+            showTime={t.time.periodMinutes > 30}
+            key={event.id + tid}
+          />
+        );
+      });
+  });
+};
 
-type CircleCellsProps={
+type CircleCellsProps = {
   events: TimetableData[];
   dayIndex: number;
-}
+};
 
-export const CircleCells:FC<CircleCellsProps> = ({events,dayIndex}) => {
+export const CircleCells: FC<CircleCellsProps> = ({ events, dayIndex }) => {
   return events.map((event, eventIndex) => {
     return event.time
       ?.filter((t) => t.day === dayIndex + 1)
@@ -84,5 +95,5 @@ export const CircleCells:FC<CircleCellsProps> = ({events,dayIndex}) => {
           />
         );
       });
-  })
-}
+  });
+};
