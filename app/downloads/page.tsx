@@ -1,3 +1,4 @@
+import { Header } from "@/components/Header";
 import { DownloadsAcordion } from "@/components/downloads/DownloadsAccordion";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,15 +7,7 @@ import { RiDownload2Fill } from "react-icons/ri";
 export default function Page() {
   return (
     <main className="flex w-full flex-col items-center font-zen_kaku_gothic_new">
-      <div className="relative mb-16 mt-12 font-south_amsterdam text-6xl text-theme md:text-7xl lg:text-9xl">
-        Downloads
-        <div className="absolute left-0 top-0 w-[30px] -translate-x-full -translate-y-1/2 md:w-[60px] lg:w-[70px]">
-          <Image src={"/img/top/star.svg"} width={100} height={100} alt="" />
-        </div>
-        <div className="absolute bottom-0 right-0 w-[30px] translate-x-full translate-y-1/2 md:w-[60px] lg:w-[70px]">
-          <Image src={"/img/top/star.svg"} width={100} height={100} alt="" />
-        </div>
-      </div>
+      <Header path="/downloads">Downloads</Header>
       <div className="mb-6 w-[1200px] max-w-full px-4">
         <>
           <div className="h-14 w-0" />
