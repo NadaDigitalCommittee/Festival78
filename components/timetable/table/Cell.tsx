@@ -3,13 +3,14 @@ import { Time } from "@/lib/time";
 import { FC } from "react";
 
 type Props = {
+  id: string;
   index: number;
   time: Time;
   name: string;
   showTime?: boolean;
 };
 
-export const Cell: FC<Props> = ({ index, time, name, showTime = true }) => {
+export const Cell: FC<Props> = ({ id, index, time, name, showTime = true }) => {
   const ratioX = (60 * 60 * 1000) / 1;
   const interval =
     (time.start.getTime() - new Time(9, 0, 0, 0).start.getTime()) / ratioX;
@@ -17,6 +18,7 @@ export const Cell: FC<Props> = ({ index, time, name, showTime = true }) => {
 
   return (
     <div
+      id={id}
       className={`absolute mt-[15px] flex flex-col items-center justify-center rounded-xl bg-[#7A7A7A] text-center
       text-white
     `}
@@ -28,7 +30,9 @@ export const Cell: FC<Props> = ({ index, time, name, showTime = true }) => {
       }}
     >
       <p>{name}</p>
-      {showTime && <p className="break-words w-full">{time.toPeriodString()}</p>}    
+      {showTime && (
+        <p className="w-full break-words">{time.toPeriodString()}</p>
+      )}
     </div>
   );
 };

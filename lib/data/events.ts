@@ -162,6 +162,13 @@ export const events: Event[] = [
     mapId: "biologysub",
   },
   {
+    id: "casino_event",
+    name: "ビンゴ大会",
+    description: "...",
+    category: "others",
+    mapId: "h1-1",
+  },
+  {
     id: "lego_event",
     name: "トイブロックで灘校机椅子を制作体験",
     description:
@@ -187,6 +194,7 @@ export const events: Event[] = [
   },
   {
     id: "conan_event",
+
     name: "トリック実演",
     description:
       "中学棟4階にて10:30と13:30から名探偵コナンで実際に使われたトリックを実演します！観覧したい方はオンライン抽選券での応募をしてください。",

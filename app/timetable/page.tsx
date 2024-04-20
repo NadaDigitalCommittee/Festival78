@@ -4,35 +4,104 @@ import { BaseTimetable } from "@/components/timetable/table/BaseTimetable";
 import { Cell } from "@/components/timetable/table/Cell";
 import { Category, events } from "@/lib/data/events";
 import { eventsTimetable } from "@/lib/data/eventsTimetable";
-import { useState } from "react";
+import { Time } from "@/lib/time";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useMemo, useState } from "react";
+
+const stages = [
+  {
+    eventId: "garden",
+    eventName: "中庭ステージ",
+  },
+  {
+    eventId: "audiovisual",
+    eventName: "視聴覚ステージ",
+  },
+  {
+    eventId: "lecture",
+    eventName: "大講義ステージ",
+  },
+  {
+    eventId: "mainhall",
+    eventName: "本館ステージ",
+  },
+  {
+    eventId: "gym",
+    eventName: "体育館ステージ",
+  },
+  {
+    eventId: "lecture_m",
+    eventName: "講義教室 M3-2",
+  },
+  {
+    eventId: "lecture_h",
+    eventName: "講義教室 H3-1",
+  },
+];
 
 export default function Page() {
-  const day = 1;
-  const data = events.map((event) => {
-    const time = eventsTimetable.find((e) => e.id === event.id)?.time;
-    return {
-      category: event.category,
-      name: event.name,
-      time: time?.filter((t) => t.day === day),
-    };
-  });
+  const data = useMemo(
+    () =>
+      events.map((event) => {
+        const time = eventsTimetable.find((e) => e.id === event.id)?.time;
+        return {
+          id: event.id,
+          category: event.category,
+          name: event.name,
+          time: time,
+        };
+      }),
+    []
+  );
 
-  const [stageIndex, setStageIndex] = useState(0);
+  const params = useSearchParams();
+  const defaultEvent = data.find((v) => v.id === params.get("id"));
+  const defaultCategory = defaultEvent?.category;
+  const defaultStageIndex =
+    defaultCategory === "raffle" ? 1 : defaultCategory === "others" ? 2 : 0;
+  const isOnlyOneDay =
+    Array.from(new Set(defaultEvent?.time?.map((t) => t.day))).length === 1;
+
+  const now = Time.nowJST();
+  const month = now.getMonth();
+  const day = now.getDate();
+  const isDay2 = month === 5 && day === 3;
+  const [dayIndex, setDayIndex] = useState(
+    isOnlyOneDay ? (defaultEvent?.time?.[0]?.day ?? 1) - 1 : isDay2 ? 1 : 0
+  );
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (!defaultEvent) return;
+      const element = document.getElementById(defaultEvent.id);
+      const top = element?.getBoundingClientRect()?.top;
+      if (!top) return;
+      window.scrollTo({
+        top: top + window.scrollY - 215,
+        behavior: "smooth",
+      });
+    }, 800);
+  }, [defaultEvent]);
+
+  const [stageIndex, setStageIndex] = useState(defaultStageIndex ?? 0);
 
   const eventsFromCategory = (category: Category, index: number) => {
     const events = data.filter((v) => v.category === category);
     return events.map((event) => {
-      return event.time?.map((t) => {
-        return (
-          // eslint-disable-next-line react/jsx-key
-          <Cell
-            name={event.name}
-            time={t.time}
-            index={index}
-            showTime={t.time.periodMinutes > 30}
-          />
-        );
-      });
+      return event.time
+        ?.filter((t) => t.day === dayIndex + 1)
+        .map((t,tid) => {
+          return (
+            <Cell
+              id={event.id}
+              name={event.name}
+              time={t.time}
+              index={index}
+              showTime={t.time.periodMinutes > 30}
+              key={event.id + tid}
+            />
+          );
+        });
     });
   };
 
@@ -44,19 +113,21 @@ export default function Page() {
       <div className="h-20" />
 
       <BaseTimetable
-        eventNames={
+        events={
           [
-            [
-              "中庭ステージ",
-              "視聴覚ステージ",
-              "大講義ステージ",
-              "本館ステージ",
-              "体育館ステージ",
-              "講義教室 M3-2",
-              "講義教室 H3-1",
-            ],
-            raffleEvents.map((v) => v.name),
-            circleEvents.map((v) => v.name),
+            stages,
+            raffleEvents.map((v) => {
+              return {
+                eventName: v.name,
+                eventId: v.id,
+              };
+            }),
+            circleEvents.map((v) => {
+              return {
+                eventName: v.name,
+                eventId: v.id,
+              };
+            }),
           ][stageIndex]
         }
         stickyItems={
@@ -66,17 +137,19 @@ export default function Page() {
               <Selector
                 selects={["1日目 5/2", "2日目 5/3"]}
                 onChange={(i) => {
-                  setStageIndex(i);
+                  setDayIndex(i);
                 }}
+                defaultIndex={dayIndex}
               />
             </div>
             <div className="flex flex-col items-center">
-              <p className="text-xl mr-2">カテゴリー</p>
+              <p className="mr-2 text-xl">カテゴリー</p>
               <Selector
                 selects={["ステージ企画", "抽選企画", "サークル企画"]}
                 onChange={(i) => {
                   setStageIndex(i);
                 }}
+                defaultIndex={stageIndex}
               />
             </div>
           </div>
@@ -95,20 +168,36 @@ export default function Page() {
             </>,
             <>
               {raffleEvents.map((event, eventIndex) => {
-                return event.time?.map((t, i) => {
-                  return (
-                    <Cell index={eventIndex} name={""} time={t.time} key={i} />
-                  );
-                });
+                return event.time
+                  ?.filter((t) => t.day === dayIndex + 1)
+                  .map((t, i) => {
+                    return (
+                      <Cell
+                        id={event.id}
+                        index={eventIndex}
+                        name={""}
+                        time={t.time}
+                        key={i}
+                      />
+                    );
+                  });
               })}
             </>,
             <>
               {circleEvents.map((event, eventIndex) => {
-                return event.time?.map((t, i) => {
-                  return (
-                    <Cell index={eventIndex} name={""} time={t.time} key={i} />
-                  );
-                });
+                return event.time
+                  ?.filter((t) => t.day === dayIndex + 1)
+                  .map((t, i) => {
+                    return (
+                      <Cell
+                        id={event.id}
+                        index={eventIndex}
+                        name={""}
+                        time={t.time}
+                        key={i}
+                      />
+                    );
+                  });
               })}
             </>,
           ][stageIndex]

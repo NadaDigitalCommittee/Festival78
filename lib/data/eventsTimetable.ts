@@ -149,6 +149,15 @@ export const eventsTimetable: EventTimetable[] = [
       { day: 2, time: new Time(13, 30, 13, 45) },
     ],
   },
+  {
+    id: "casino_event",
+    time: [
+      { day: 1, time: new Time(10, 0, 10, 30) },
+      { day: 1, time: new Time(13, 0, 13, 30) },
+      { day: 2, time: new Time(10, 0, 10, 30) },
+      { day: 2, time: new Time(13, 0, 13, 30) },
+    ],
+  },
   //抽選券企画
   {
     id: "lego_event",

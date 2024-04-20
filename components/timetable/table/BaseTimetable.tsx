@@ -1,16 +1,19 @@
 "use client";
-import { ReactNode, FC, useState, useRef, useEffect } from "react";
+import { FC, ReactNode, useEffect, useRef, useState } from "react";
 import { BorderColumn } from "./BorderColumn";
 import { EventColumn } from "./EventColumn";
 import { TimeRow } from "./TimeRow";
 
 type Props = {
-  eventNames: string[];
+  events: {
+    eventId: string;
+    eventName: string;
+  }[];
   children?: ReactNode;
-  stickyItems?:ReactNode;
+  stickyItems?: ReactNode;
 };
 
-export const BaseTimetable: FC<Props> = ({ children, eventNames,stickyItems }) => {
+export const BaseTimetable: FC<Props> = ({ children, events, stickyItems }) => {
   const [scrollX, setScrollX] = useState(0);
   const timetableRef = useRef<HTMLDivElement>(null);
   const timeRef = useRef<HTMLDivElement>(null);
@@ -28,10 +31,10 @@ export const BaseTimetable: FC<Props> = ({ children, eventNames,stickyItems }) =
 
   return (
     <div className="flex">
-      <EventColumn eventNames={eventNames} stickyItems={stickyItems} />
+      <EventColumn events={events} stickyItems={stickyItems} />
       <div className="relative overflow-x-clip">
         <TimeRow ref={timeRef} />
-        <BorderColumn ref={timetableRef} eventCount={eventNames.length}>
+        <BorderColumn ref={timetableRef} eventCount={events.length}>
           <div className="absolute">{children}</div>
         </BorderColumn>
       </div>
