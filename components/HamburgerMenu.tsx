@@ -43,21 +43,22 @@ export const HamburgerMenu: FC = () => {
             className={`block h-1 bg-white duration-300 ${isOpen ? "w-10 -translate-y-[0.875em] -rotate-[.125turn]" : "w-8"}`}
           />
         </button>
-        <div className={`absolute h-[100lvh] w-48 md:w-72 pt-[4.5rem] md:pt-8 pb-12 bg-theme duration-300 ${isOpen ? "right-0" : "-right-48 md:-right-72"}`}>
-          <div className="h-[100svh] flex flex-col justify-between ">
-            {
-              paths.map(({ ja, en, path }, i) => (
-                <div key={i} className="relative flex h-[3.125rem] px-6 md:px-12">
-                  <div className="flex z-40 items-center pb-[2px] font-zen_kaku_gothic_new text-xl text-white font-bold">
-                    <a href={path} onMouseEnter={() => setHovered(i)} onMouseLeave={handleLeave}>{ja}</a>
-                  </div>
-                  <div className={`absolute flex z-30 items-center h-full pl-[5%] pr-[20%] text-right font-south_amsterdam text-theme text-[min(max(calc((100vw-15rem-1rem)/4.27),1rem),3rem)] md:text-5xl leading-none whitespace-nowrap border-theme border-l-[1rem] border-l-transparent border-b-2 transition-[right] duration-[600ms] ${hovered === i ? "border-b-theme" : "border-b-transparent"} ${isOpen ? "right-full" : "-right-full"}`}>
-                    <a href={path} onMouseEnter={() => setHovered(i)} onMouseLeave={handleLeave}>{en}</a>
-                  </div>
+        <div className={`absolute  h-[100svh] w-48 md:w-72 duration-300 ${isOpen ? "right-0" : "-right-48 md:-right-72"}`}>
+          <div className="flex flex-col justify-between bg-theme h-[100lvh] pt-[4.5rem] md:pt-8 pb-24">
+          {
+            paths.map(({ ja, en, path }, i) => (
+              <div key={i} className="relative flex h-[3.125rem] px-6 md:px-12">
+                <div className="flex z-40 items-center pb-[2px] font-zen_kaku_gothic_new text-xl text-white font-bold">
+                  <a href={path} onMouseEnter={() => setHovered(i)} onMouseLeave={handleLeave}>{ja}</a>
                 </div>
-              ))
-            }
+                <div className={`absolute flex z-30 items-center h-full pl-[5%] pr-[20%] text-right font-south_amsterdam text-theme text-[min(max(calc((100vw-15rem-1rem)/4.27),1rem),3rem)] md:text-5xl leading-none whitespace-nowrap border-theme border-l-[1rem] border-l-transparent border-b-2 transition-[right] duration-[600ms] ${hovered === i ? "border-b-theme" : "border-b-transparent"} ${isOpen ? "right-full" : "-right-full"}`}>
+                  <a href={path} onMouseEnter={() => setHovered(i)} onMouseLeave={handleLeave}>{en}</a>
+                </div>
+              </div>
+            ))
+          }
           </div>
+          
         </div>
       </div>
     </>
