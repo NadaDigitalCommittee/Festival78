@@ -164,7 +164,7 @@ export const events: Event[] = [
   {
     id: "casino_event",
     name: "ビンゴ大会",
-    description: "...",
+    description: "今年も陸上部カジノにてビンゴ大会を行います！皆さんが欲しかったあの灘校グッズなどなど豪華景品が当たるかも？！ぜひお楽しみに！",
     category: "others",
     mapId: "h1-1",
   },
