@@ -28,10 +28,10 @@ export const HamburgerMenu: FC = () => {
   };
   return (
     <>
-      <div className={`fixed w-full h-screen duration-0 ${isOpen ? "delay-0 z-50" : "delay-[600ms] -z-50"}`}>
+      <div className={`fixed w-full h-[100lvh] duration-0 ${isOpen ? "delay-0 z-50" : "delay-[600ms] -z-50"}`}>
         <div className={`size-full duration-[600ms] ${isOpen ? "bg-white/85" : "bg-transparent"}`} />
       </div>
-      <div className={`fixed z-50 right-0 transition-[background-color] duration-300 ${isOpen ? "w-full h-screen bg-white./85" : "w-0 h-0 bg-white./.0"}`}>
+      <div className={`fixed z-50 right-0 transition-[background-color] duration-300 ${isOpen ? "w-full h-[100lvh] bg-white./85" : "w-0 h-0 bg-white./.0"}`}>
         <button onClick={isOpen ? handleMenuClose : handleMenuOpen} className="absolute z-50 flex flex-col right-0 h-[4.5rem] w-[4.5rem] p-5 bg-theme justify-between items-center">
           <span
             className={`block h-1 bg-white duration-300 ${isOpen ? "w-10 translate-y-[0.875em] rotate-[.125turn]" : "w-8"}`}
@@ -43,7 +43,7 @@ export const HamburgerMenu: FC = () => {
             className={`block h-1 bg-white duration-300 ${isOpen ? "w-10 -translate-y-[0.875em] -rotate-[.125turn]" : "w-8"}`}
           />
         </button>
-        <div className={`absolute flex flex-col justify-between h-screen w-48 md:w-72 pt-[4.5rem] md:pt-8 pb-12 bg-theme duration-300 ${isOpen ? "right-0" : "-right-48 md:-right-72"}`}>
+        <div className={`absolute flex flex-col justify-between h-[100svh] w-48 md:w-72 pt-[4.5rem] md:pt-8 pb-12 bg-theme duration-300 ${isOpen ? "right-0" : "-right-48 md:-right-72"}`}>
           {
             paths.map(({ ja, en, path }, i) => (
               <div key={i} className="relative flex h-[3.125rem] px-6 md:px-12">
