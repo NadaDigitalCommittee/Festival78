@@ -169,7 +169,7 @@ export const eventsTimetable: EventTimetable[] = [
       { day: 2, time: new Time(11, 0, 11, 20) },
       { day: 2, time: new Time(11, 30, 11, 50) },
       { day: 2, time: new Time(13, 0, 13, 20) },
-      { day: 2, time: new Time(13, 30, 14, 50) },
+      { day: 2, time: new Time(13, 30, 13, 50) },
     ],
   },
   {
