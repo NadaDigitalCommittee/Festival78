@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ImageCarousel } from "./ImageCarousel";
 
 type EventsPageSourceType = {
   event_id: string;
@@ -121,80 +122,98 @@ export const EVENTS_PAGE_SOURCE: [
             灘校一の漫才師の栄光を手にするのは誰だ!?
             <br />
             <br />
-            <div className="grid grid-cols-3 gap-2 md:grid-cols-5 md:gap-4">
-              <div className="relative aspect-video">
+            <ImageCarousel options={
+              {
+                "direction":"rtl",
+                loop:true
+              }
+            } slides={
+              [
                 <Image
                   src="/img/events/n1/1.jpg"
                   alt="n1_1"
-                  fill
+                  width={500}
+                  height={500}
                   className="rounded-md object-contain"
-                />
-              </div>
-              <div className="relative aspect-video">
+                  key={0}
+                />,
                 <Image
                   src="/img/events/n1/2.jpg"
                   alt="n1_1"
-                  fill
-                  className="rounded-md object-contain "
-                />
-              </div>
-              <div className="relative aspect-video">
+                  width={500}
+                  height={500}
+                  className="rounded-md object-contain"
+                  key={1}
+                />,
                 <Image
                   src="/img/events/n1/3.jpg"
                   alt="n1_1"
-                  fill
-                  className="rounded-md object-contain "
-                />
-              </div>
-              <div className="relative aspect-video">
+                  width={500}
+                  height={500}
+                  className="rounded-md object-contain"
+                  key={2}
+                />,
                 <Image
                   src="/img/events/n1/4.jpg"
                   alt="n1_1"
-                  fill
-                  className="rounded-md object-contain "
-                />
-              </div>
-              <div className="relative aspect-video">
+                  width={500}
+                  height={500}
+                  className="rounded-md object-contain"
+                  key={3}
+                />,
                 <Image
                   src="/img/events/n1/5.jpg"
                   alt="n1_1"
-                  fill
-                  className="rounded-md object-contain "
-                />
-              </div>
-              <div className="relative aspect-video">
+                  width={500}
+                  height={500}
+                  className="rounded-md object-contain"
+                  key={4}
+                />,
+              ]
+            }/>
+            
+            <ImageCarousel options={
+              {
+                "direction":"ltr",
+                loop:true
+              }
+            } slides={
+              [
+                
                 <Image
-                  src="/img/events/n1/6.jpg"
-                  alt="n1_1"
-                  fill
-                  className="rounded-md object-contain "
-                />
-              </div>
-              <div className="relative aspect-video">
-                <Image
-                  src="/img/events/n1/7.jpg"
-                  alt="n1_1"
-                  fill
-                  className="rounded-md object-contain "
-                />
-              </div>
-              <div className="relative aspect-video">
-                <Image
-                  src="/img/events/n1/8.jpg"
-                  alt="n1_1"
-                  fill
-                  className="rounded-md object-contain "
-                />
-              </div>
-              <div className="relative aspect-video">
-                <Image
-                  src="/img/events/n1/9.jpg"
-                  alt="n1_1"
-                  fill
-                  className="rounded-md object-contain "
-                />
-              </div>
-            </div>
+                src="/img/events/n1/6.jpg"
+                alt="n1_1"
+                width={500}
+                height={500}
+                className="rounded-md object-contain"
+                key={1}
+              />,
+              <Image
+                src="/img/events/n1/7.jpg"
+                alt="n1_1"
+                width={500}
+                height={500}
+                className="rounded-md object-contain"
+                key={2}
+              />,
+              <Image
+                src="/img/events/n1/8.jpg"
+                alt="n1_1"
+                width={500}
+                height={500}
+                className="rounded-md object-contain"
+                key={3}
+              />,
+              <Image
+                src="/img/events/n1/9.jpg"
+                alt="n1_1"
+                width={500}
+                height={500}
+                className="rounded-md object-contain"
+                key={4}
+              />, 
+              ]
+            }/>
           </>
         ),
       },
