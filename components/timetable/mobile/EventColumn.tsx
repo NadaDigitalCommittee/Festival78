@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { FC, ReactNode } from "react";
 
 type Props = {
@@ -9,13 +8,13 @@ type Props = {
   stickyItems?: ReactNode;
 };
 
-export const EventColumn: FC<Props> = ({ events, stickyItems }) => {
+export const TimeColumn: FC<Props> = ({ events, stickyItems }) => {
   return (
     <div className="z-20">
-      <div className="sticky top-0 z-20 h-[200px] w-[120px] min-w-[100px] bg-white">
+      <div className="sticky top-0 z-20 h-[250px] w-[50px] bg-white">
         {stickyItems}
       </div>
-      {events.map((event, i) => {
+      {/* {events.map((event, i) => {
         return (
           <div
             key={i}
@@ -30,6 +29,11 @@ export const EventColumn: FC<Props> = ({ events, stickyItems }) => {
             </Link>
           </div>
         );
+      })} */}
+      {new Array(7).fill(0).map((_,i)=>{
+        return(<div key={i} className="h-[120px] w-[50px] flex items-center justify-end">
+            <p className="text-3xl font-limelight">{i+9}</p>
+        </div>)
       })}
     </div>
   );

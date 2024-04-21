@@ -1,5 +1,6 @@
-import { EventTimetable } from "@/lib/data/eventsTimetable";
+import { Category } from "@/lib/data/events";
 import { Time } from "@/lib/time";
+import { TimetableData } from "@/lib/types";
 import { FC } from "react";
 
 type Props = {
@@ -25,14 +26,14 @@ export const CellMobile: FC<Props> = ({
   return (
     <div
       id={id}
-      className={`absolute mt-[15px] flex flex-col items-center justify-center rounded-xl bg-[#7A7A7A] text-center
+      className={`absolute ml-[20px] flex flex-col items-center justify-center rounded-xl bg-[#7A7A7A] text-center
       text-white
     `}
       style={{
-        top: `${index * 120}px`,
-        left: `calc(${interval + 0.5}*max(160px,12vw))`,
-        width: `calc(${interval2}*max(160px,12vw))`,
-        height: "90px",
+        left: `${index * 160}px`,
+        top: `calc(${interval}*120px)`,
+        height: `calc(${interval2}*120px)`,
+        width: "120px",
       }}
     >
       <p>{name}</p>
@@ -41,4 +42,58 @@ export const CellMobile: FC<Props> = ({
       )}
     </div>
   );
+};
+
+type StageCellsProps = {
+  category: Category;
+  index: number;
+  dayIndex: number;
+  data: TimetableData[];
+};
+export const StageCellsMobile: FC<StageCellsProps> = ({
+  category,
+  index,
+  data,
+  dayIndex,
+}) => {
+  const events = data.filter((v) => v.category === category);
+  return events.map((event) => {
+    return event.time
+      ?.filter((t) => t.day === dayIndex + 1)
+      .map((t, tid) => {
+        return (
+          <CellMobile
+            id={event.id}
+            name={event.name}
+            time={t.time}
+            index={index}
+            showTime={t.time.periodMinutes > 30}
+            key={event.id + tid}
+          />
+        );
+      });
+  });
+};
+
+type CircleCellsProps = {
+  events: TimetableData[];
+  dayIndex: number;
+};
+
+export const CircleCellsMobile: FC<CircleCellsProps> = ({ events, dayIndex }) => {
+  return events.map((event, eventIndex) => {
+    return event.time
+      ?.filter((t) => t.day === dayIndex + 1)
+      .map((t, i) => {
+        return (
+          <CellMobile
+            id={event.id}
+            index={eventIndex}
+            name={""}
+            time={t.time}
+            key={i}
+          />
+        );
+      });
+  });
 };

@@ -1,22 +1,42 @@
+import { TimetableData } from "@/lib/types";
 import { forwardRef } from "react";
 
+type Props = {
+  events: {
+    eventId: string;
+    eventName: string;
+  }[];
+}
+
+
 // eslint-disable-next-line react/display-name
-export const TimeRow = forwardRef<HTMLDivElement, {}>(({}, ref) => {
+export const EventsRow = forwardRef<HTMLDivElement, Props>(({ events }, ref) => {
   return (
     <div className="sticky top-0 z-10">
       <div
         className="hidden-scrollbar sticky flex overflow-x-scroll border-b border-black bg-white "
         ref={ref}
       >
-        {Array(7)
-          .fill(0)
-          .map((_, i) => {
+        {events
+          .map((event, i) => {
             return (
               <div
                 key={i}
-                className="flex h-[200px] w-[12vw] min-w-[160px] items-end text-center"
+                className={`flex h-[250px] min-w-[160px] items-end text-center
+                even:text-white group`}
               >
-                <p className="w-full font-limelight text-3xl">{i + 9}</p>
+                <div className="h-[90px] flex flex-col justify-center w-full text-xl group-odd:bg-white group-even:bg-theme">
+                  <p className="text-base">
+                    {event.eventName}
+
+                  </p>
+                  <p>
+                    <a href={`/events?id=${event.eventId}`} className="text-xs underline">
+                      詳細・会場を確認
+                    </a>
+                  </p>
+                </div>
+
               </div>
             );
           })}

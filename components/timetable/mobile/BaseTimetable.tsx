@@ -1,9 +1,9 @@
 //mobile
 "use client";
 import { FC, ReactNode, useEffect, useRef, useState } from "react";
-import { BorderColumn } from "./BorderColumn";
-import { EventColumn } from "./EventColumn";
-import { TimeRow } from "./TimeRow";
+import { BorderRows } from "./BorderColumn";
+import { TimeColumn } from "./EventColumn";
+import { EventsRow } from "./TimeRow";
 
 type Props = {
   events: {
@@ -12,12 +12,14 @@ type Props = {
   }[];
   children?: ReactNode;
   stickyItems?: ReactNode;
+  defaultScrollX?: number;
 };
 
 export const BaseTimetableMobile: FC<Props> = ({
   children,
   events,
   stickyItems,
+  defaultScrollX = 0,
 }) => {
   const [scrollX, setScrollX] = useState(0);
   const timetableRef = useRef<HTMLDivElement>(null);
@@ -34,14 +36,25 @@ export const BaseTimetableMobile: FC<Props> = ({
     timeRef.current?.scrollTo(scrollX, 0);
   }, [scrollX]);
 
+  useEffect(()=>{
+    timeRef.current?.scrollTo({
+      left: defaultScrollX,
+      behavior: 'smooth'
+    });
+    timetableRef.current?.scrollTo({
+      left: defaultScrollX,
+      behavior: 'smooth'
+    });
+  },[defaultScrollX])
+
   return (
     <div className="flex">
-      <EventColumn events={events} stickyItems={stickyItems} />
+      <TimeColumn events={events} stickyItems={stickyItems} />
       <div className="relative overflow-x-clip">
-        <TimeRow ref={timeRef} />
-        <BorderColumn ref={timetableRef} eventCount={events.length}>
+        <EventsRow ref={timeRef} events={events} />
+        <BorderRows ref={timetableRef} eventCount={events.length}>
           <div className="absolute">{children}</div>
-        </BorderColumn>
+        </BorderRows>
       </div>
     </div>
   );
