@@ -3,10 +3,13 @@ import { Selector } from "@/components/timetable/Selector";
 import { BaseTimetableDesktop } from "@/components/timetable/desktop/BaseTimetable";
 import {
   CircleCellsDesktop,
-  StageCellsDesktop
+  StageCellsDesktop,
 } from "@/components/timetable/desktop/Cell";
 import { BaseTimetableMobile } from "@/components/timetable/mobile/BaseTimetable";
-import { CircleCellsMobile, StageCellsMobile } from "@/components/timetable/mobile/Cell";
+import {
+  CircleCellsMobile,
+  StageCellsMobile,
+} from "@/components/timetable/mobile/Cell";
 import { Category, events } from "@/lib/data/events";
 import { eventsTimetable } from "@/lib/data/eventsTimetable";
 import { MediaType, useResponsive } from "@/lib/hooks/useResponsive";
@@ -86,11 +89,11 @@ export default function Page() {
       if (!defaultEvent) return;
       const element = document.getElementById(defaultEvent.id);
       const top = element?.getBoundingClientRect()?.top;
-      const left=element?.getBoundingClientRect()?.left;
-      if (!top||!left) return;
-      setScrollX(left + window.scrollX-70)
+      const left = element?.getBoundingClientRect()?.left;
+      if (!top || !left) return;
+      setScrollX(left + window.scrollX - 70);
       window.scrollTo({
-        top: top + window.scrollY - (media===MediaType.Mobile?250:215),
+        top: top + window.scrollY - (media === MediaType.Mobile ? 250 : 215),
         behavior: "smooth",
       });
     }, 800);
@@ -101,8 +104,7 @@ export default function Page() {
   const raffleEvents = data.filter((v) => v.category === "raffle");
   const circleEvents = data.filter((v) => v.category === "others");
 
-  
-  const events_=[
+  const events_ = [
     stages,
     raffleEvents.map((v) => {
       return {
@@ -116,30 +118,32 @@ export default function Page() {
         eventId: v.id,
       };
     }),
-  ]
+  ];
 
-  const stickyItems=<div className="flex w-screen pt-16">
-  <div className="flex flex-col items-center">
-    <p className="text-xl">DAY</p>
-    <Selector
-      selects={["1日目 5/2", "2日目 5/3"]}
-      onChange={(i) => {
-        setDayIndex(i);
-      }}
-      defaultIndex={dayIndex}
-    />
-  </div>
-  <div className="flex flex-col items-center">
-    <p className="mr-2 text-xl">カテゴリー</p>
-    <Selector
-      selects={["ステージ企画", "抽選企画", "サークル企画"]}
-      onChange={(i) => {
-        setStageIndex(i);
-      }}
-      defaultIndex={stageIndex}
-    />
-  </div>
-</div>
+  const stickyItems = (
+    <div className="flex w-screen pt-16">
+      <div className="flex flex-col items-center">
+        <p className="text-xl">DAY</p>
+        <Selector
+          selects={["1日目 5/2", "2日目 5/3"]}
+          onChange={(i) => {
+            setDayIndex(i);
+          }}
+          defaultIndex={dayIndex}
+        />
+      </div>
+      <div className="flex flex-col items-center">
+        <p className="mr-2 text-xl">カテゴリー</p>
+        <Selector
+          selects={["ステージ企画", "抽選企画", "サークル企画"]}
+          onChange={(i) => {
+            setStageIndex(i);
+          }}
+          defaultIndex={stageIndex}
+        />
+      </div>
+    </div>
+  );
 
   return (
     <div className="font-zen_kaku_gothic_new font-bold">
@@ -147,7 +151,11 @@ export default function Page() {
       {media === undefined ? (
         <></>
       ) : media === MediaType.Mobile ? (
-        <BaseTimetableMobile defaultScrollX={scrollX} events={events_[stageIndex]} stickyItems={stickyItems}>
+        <BaseTimetableMobile
+          defaultScrollX={scrollX}
+          events={events_[stageIndex]}
+          stickyItems={stickyItems}
+        >
           {
             [
               <>
@@ -172,12 +180,8 @@ export default function Page() {
         </BaseTimetableMobile>
       ) : (
         <BaseTimetableDesktop
-          events={
-            events_[stageIndex]
-          }
-          stickyItems={
-            stickyItems
-          }
+          events={events_[stageIndex]}
+          stickyItems={stickyItems}
         >
           {
             [

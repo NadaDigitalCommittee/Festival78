@@ -80,7 +80,10 @@ type CircleCellsProps = {
   dayIndex: number;
 };
 
-export const CircleCellsDesktop: FC<CircleCellsProps> = ({ events, dayIndex }) => {
+export const CircleCellsDesktop: FC<CircleCellsProps> = ({
+  events,
+  dayIndex,
+}) => {
   return events.map((event, eventIndex) => {
     return event.time
       ?.filter((t) => t.day === dayIndex + 1)

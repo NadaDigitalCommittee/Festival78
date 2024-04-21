@@ -19,13 +19,13 @@ export const BorderRows = forwardRef<HTMLDivElement, Props>(
       >
         <NowBorder eventCount={eventCount} />
         {children}
-        <div className="absolute -z-10 h-[calc(120px*7)] flex">
+        <div className="absolute -z-10 flex h-[calc(120px*7)]">
           {Array(eventCount)
             .fill(0)
             .map((_, i) => (
               <div
                 key={i}
-                className="w-[160px] h-full odd:bg-[#FFEFE8] even:bg-white"
+                className="h-full w-[160px] odd:bg-[#FFEFE8] even:bg-white"
               />
             ))}
         </div>
@@ -37,7 +37,7 @@ export const BorderRows = forwardRef<HTMLDivElement, Props>(
                 key={i}
                 className={`h-[60px] border-t-[2px] border-black first:border-0 odd:border-dashed`}
                 style={{
-                  width: `calc(${eventCount}*160px)`
+                  width: `calc(${eventCount}*160px)`,
                 }}
               />
             ))}

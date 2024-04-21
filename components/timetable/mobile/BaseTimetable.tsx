@@ -36,16 +36,16 @@ export const BaseTimetableMobile: FC<Props> = ({
     timeRef.current?.scrollTo(scrollX, 0);
   }, [scrollX]);
 
-  useEffect(()=>{
+  useEffect(() => {
     timeRef.current?.scrollTo({
       left: defaultScrollX,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
     timetableRef.current?.scrollTo({
       left: defaultScrollX,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
-  },[defaultScrollX])
+  }, [defaultScrollX]);
 
   return (
     <div className="flex">

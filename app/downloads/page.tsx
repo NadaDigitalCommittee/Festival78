@@ -24,7 +24,7 @@ export default function Page() {
         <div className="h-8" />
 
         <div className="visible flex justify-center max-md:hidden">
-          <div className="flex h-[350px] w-[80vw] items-center justify-center gap-6 border-4 border-theme md:w-[550px]">
+          <div className="flex h-[350px] w-[80vw] items-center justify-center gap-6 border-4 border-theme md:w-[550px] bg-white">
             <Image
               src={"/img/downloads/pamphlet1.webp"}
               width={200}
@@ -53,7 +53,7 @@ export default function Page() {
         </div>
 
         <div className=" mx-auto flex w-[80vw] flex-col justify-center md:hidden">
-          <div className=" flex items-center justify-center gap-3 border-4 border-theme py-4">
+          <div className="bg-white flex items-center justify-center gap-3 border-4 border-theme py-4">
             <Image
               src={"/img/downloads/pamphlet1.webp"}
               width={100}

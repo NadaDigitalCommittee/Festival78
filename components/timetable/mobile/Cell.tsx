@@ -31,7 +31,7 @@ export const CellMobile: FC<Props> = ({
     `}
       style={{
         left: `${index * 160}px`,
-        top: `calc(${interval+0.5}*120px)`,
+        top: `calc(${interval + 0.5}*120px)`,
         height: `calc(${interval2}*120px)`,
         width: "120px",
       }}
@@ -80,7 +80,10 @@ type CircleCellsProps = {
   dayIndex: number;
 };
 
-export const CircleCellsMobile: FC<CircleCellsProps> = ({ events, dayIndex }) => {
+export const CircleCellsMobile: FC<CircleCellsProps> = ({
+  events,
+  dayIndex,
+}) => {
   return events.map((event, eventIndex) => {
     return event.time
       ?.filter((t) => t.day === dayIndex + 1)

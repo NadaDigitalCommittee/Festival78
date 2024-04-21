@@ -6,40 +6,40 @@ type Props = {
     eventId: string;
     eventName: string;
   }[];
-}
-
+};
 
 // eslint-disable-next-line react/display-name
-export const EventsRow = forwardRef<HTMLDivElement, Props>(({ events }, ref) => {
-  return (
-    <div className="sticky top-0 z-10">
-      <div
-        className="hidden-scrollbar sticky flex overflow-x-scroll border-b border-black bg-white "
-        ref={ref}
-      >
-        {events
-          .map((event, i) => {
+export const EventsRow = forwardRef<HTMLDivElement, Props>(
+  ({ events }, ref) => {
+    return (
+      <div className="sticky top-0 z-10">
+        <div
+          className="hidden-scrollbar sticky flex overflow-x-scroll border-b border-black bg-white "
+          ref={ref}
+        >
+          {events.map((event, i) => {
             return (
               <div
                 key={i}
-                className={`flex h-[250px] min-w-[160px] items-end text-center
-                even:text-white group`}
+                className={`group flex h-[250px] min-w-[160px] items-end
+                text-center even:text-white`}
               >
-                <div className="h-[90px] flex flex-col justify-center w-full text-xl group-odd:bg-white group-even:bg-theme">
-                  <p className="text-base">
-                    {event.eventName}
-                  </p>
+                <div className="flex h-[90px] w-full flex-col justify-center text-xl group-odd:bg-white group-even:bg-theme">
+                  <p className="text-base">{event.eventName}</p>
                   <p>
-                    <a href={`/events?id=${event.eventId}`} className="text-xs underline">
+                    <a
+                      href={`/events?id=${event.eventId}`}
+                      className="text-xs underline"
+                    >
                       詳細・会場を確認
                     </a>
                   </p>
                 </div>
-
               </div>
             );
           })}
+        </div>
       </div>
-    </div>
-  );
-});
+    );
+  }
+);
