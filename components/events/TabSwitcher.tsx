@@ -44,7 +44,7 @@ export default function TabSwitcher() {
             title={event.name}
             eventId={event.event_id}
             mapId={event.map_id ?? EVENTS_PAGE_SOURCE[index].map_id}
-            comingSoon={true}
+            comingSoon={false}
             content={event.description}
           />
         ))}
