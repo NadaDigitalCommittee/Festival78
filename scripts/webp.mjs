@@ -5,7 +5,7 @@ async function main() {
   console.log("webp <path> ...");
   const path = process.argv[2];
   console.log(`Converting images in ${path} to webp...`);
-  await imagemin([`${path}/*.{jpg,png,jpeg}`], {
+  await imagemin([`${path}/*.{jpg,png,jpeg,JPG}`], {
     destination: `${path}/webp`,
     plugins: [imageminWebp({ quality: 75 })],
   });

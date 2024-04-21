@@ -46,6 +46,7 @@ export default function TabSwitcher() {
             mapId={event.map_id ?? EVENTS_PAGE_SOURCE[index].map_id}
             comingSoon={false}
             content={event.description}
+            markerColor={event.color}
           />
         ))}
       </div>

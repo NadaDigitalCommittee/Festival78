@@ -15,9 +15,9 @@ export const ImageCarousel: React.FC<PropType> = ({ options, slides }) => {
   ])
 
   useEffect(() => {
-    if (emblaApi) {
-      console.log(emblaApi.slideNodes()) // Access API
-    }
+    // if (emblaApi) {
+    //   console.log(emblaApi.slideNodes()) // Access API
+    // }
   }, [emblaApi])
 
 

@@ -7,7 +7,7 @@ type ContentSectionProps = {
   eventId: string;
   mapId: string;
   comingSoon: boolean;
-
+  markerColor?: "red"| "blue" | "yellow" | "green" | "orange"|"pink";
   content: React.ReactNode;
 };
 
@@ -36,12 +36,21 @@ function getMapNameFromId(id: string) {
   return id;
 }
 
+const { 
+  stripeMarker_blue,
+  stripeMarker_red,
+  stripeMarker_yellow,
+  stripeMarker_green,
+  stripeMarker_orange,
+ } = styles;
+
 export default function ContentSection({
   title,
   eventId,
   mapId,
   content,
   comingSoon,
+  markerColor
 }: ContentSectionProps) {
   const mapName = getMapNameFromId(mapId);
   return (
@@ -51,7 +60,13 @@ export default function ContentSection({
           <h1
             className={clsx(
               "mb-[16px] break-all pb-[16px] font-zen_kaku_gothic_new text-3xl font-bold md:text-4xl",
-              styles.stripeMarker
+              markerColor==="red"?stripeMarker_red:
+              markerColor==="blue"?stripeMarker_blue:
+              markerColor==="yellow"?stripeMarker_yellow:
+              markerColor==="green"?stripeMarker_green:
+              markerColor==="orange"?stripeMarker_orange:
+              markerColor==="pink"?stripeMarker_red:
+              stripeMarker_blue
             )}
           >
             {title}
@@ -64,7 +79,10 @@ export default function ContentSection({
             <></>
           )}
         </div>
-        <span className="font-zen_kaku_gothic_new">{`at: ${mapName}`}</span>
+        {
+          mapName !== "本館ステージ" &&
+          <span className="font-zen_kaku_gothic_new">{`at: ${mapName}`}</span>
+        }
       </div>
       <div className="flex justify-center pb-[100px]">
         <div className={clsx(styles.contentSection_wrapper, "px-3")}>
@@ -95,9 +113,9 @@ export default function ContentSection({
             </ContentLabelButton>
           </div>
           <div className="px-4 text-center">
-            <p className="break-words break-keep font-zen_kaku_gothic_new text-base font-medium">
+            <div className="break-words break-keep font-zen_kaku_gothic_new text-base font-medium">
               {content}
-            </p>
+            </div>
           </div>
         </div>
       </div>

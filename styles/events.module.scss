@@ -22,11 +22,76 @@ $breakpoints: (
   }
 }
 
-.stripeMarker {
+.stripeMarker_blue {
   background-image: repeating-linear-gradient(
     -45deg,
     rgba(5, 0, 255, 0.45) 0,
     rgba(5, 0, 255, 0.45) 12px,
+    transparent 12px,
+    transparent 20px
+  );
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% 0.8rem;
+}
+
+.stripeMarker_red {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 0, 0, 0.45) 0,
+    rgba(255, 0, 0, 0.45) 12px,
+    transparent 12px,
+    transparent 20px
+  );
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% 0.8rem;
+}
+
+.stripeMarker_orange {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 165, 0, 0.45) 0,
+    rgba(255, 165, 0, 0.45) 12px,
+    transparent 12px,
+    transparent 20px
+  );
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% 0.8rem;
+}
+
+.stripeMarker_yellow {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 255, 0, 0.45) 0,
+    rgba(255, 255, 0, 0.45) 12px,
+    transparent 12px,
+    transparent 20px
+  );
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% 0.8rem;
+}
+
+.stripeMarker_green {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(0, 128, 0, 0.45) 0,
+    rgba(0, 128, 0, 0.45) 12px,
+    transparent 12px,
+    transparent 20px
+  );
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% 0.8rem;
+}
+
+.stripeMarker_pink {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 192, 203, 0.45) 0,
+    rgba(255, 192, 203, 0.45) 12px,
     transparent 12px,
     transparent 20px
   );
