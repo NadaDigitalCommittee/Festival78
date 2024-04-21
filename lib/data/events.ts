@@ -277,7 +277,7 @@ export const events: Event[] = [
   {
     id: "performance",
     name: "パフォーマンス",
-    description: "",
+    description: "たくさんの灘校生がパフォーマンスを披露します！\n様々なジャンルのパフォーマンスをお楽しみ下さい！",
     category: "garden",
     mapId: "garden",
   },
@@ -371,7 +371,7 @@ export const events: Event[] = [
   {
     id: "ess",
     name: "ESS",
-    description: "",
+    description: "ESSが英語で「アラジン」の劇を披露します！\n世界観に虜になること間違いなし！\n皆様是非体育館にお越しください！",
     category: "gym",
     mapId: "gym",
   },
