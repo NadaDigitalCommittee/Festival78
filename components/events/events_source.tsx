@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type EventsPageSourceType = {
   event_id: string;
   name: string;
@@ -69,7 +71,13 @@ export const EVENTS_PAGE_SOURCE: [
       {
         name: "パフォーマンス",
         event_id: "performance",
-        description: <></>,
+        description: (
+          <>
+            たくさんの灘校生がパフォーマンスを披露します!
+            <br />
+            様々なジャンルのパフォーマンスをお楽しみ下さい!
+          </>
+        ),
       },
       {
         name: "マジック",
@@ -85,7 +93,15 @@ export const EVENTS_PAGE_SOURCE: [
       {
         name: "フィナーレ",
         event_id: "finale",
-        description: <></>,
+        description: (
+          <>
+            各ステージ企画やブースの優勝者、運営を担う文化委員などが中庭ステージに集結!
+            <br />
+            更にはODORIBA, N1優勝者による実演も!
+            <br />
+            灘校文化祭ODYSSEYの最高のフィナーレを見逃すな!
+          </>
+        ),
       },
     ],
   },
@@ -103,6 +119,82 @@ export const EVENTS_PAGE_SOURCE: [
             その笑いのセンスを武器に熱い漫才バトルをします!
             <br />
             灘校一の漫才師の栄光を手にするのは誰だ!?
+            <br />
+            <br />
+            <div className="grid grid-cols-3 gap-2 md:grid-cols-5 md:gap-4">
+              <div className="relative aspect-video">
+                <Image
+                  src="/img/events/n1/1.jpg"
+                  alt="n1_1"
+                  fill
+                  className="rounded-md object-contain"
+                />
+              </div>
+              <div className="relative aspect-video">
+                <Image
+                  src="/img/events/n1/2.jpg"
+                  alt="n1_1"
+                  fill
+                  className="rounded-md object-contain "
+                />
+              </div>
+              <div className="relative aspect-video">
+                <Image
+                  src="/img/events/n1/3.jpg"
+                  alt="n1_1"
+                  fill
+                  className="rounded-md object-contain "
+                />
+              </div>
+              <div className="relative aspect-video">
+                <Image
+                  src="/img/events/n1/4.jpg"
+                  alt="n1_1"
+                  fill
+                  className="rounded-md object-contain "
+                />
+              </div>
+              <div className="relative aspect-video">
+                <Image
+                  src="/img/events/n1/5.jpg"
+                  alt="n1_1"
+                  fill
+                  className="rounded-md object-contain "
+                />
+              </div>
+              <div className="relative aspect-video">
+                <Image
+                  src="/img/events/n1/6.jpg"
+                  alt="n1_1"
+                  fill
+                  className="rounded-md object-contain "
+                />
+              </div>
+              <div className="relative aspect-video">
+                <Image
+                  src="/img/events/n1/7.jpg"
+                  alt="n1_1"
+                  fill
+                  className="rounded-md object-contain "
+                />
+              </div>
+              <div className="relative aspect-video">
+                <Image
+                  src="/img/events/n1/8.jpg"
+                  alt="n1_1"
+                  fill
+                  className="rounded-md object-contain "
+                />
+              </div>
+              <div className="relative aspect-video">
+                <Image
+                  src="/img/events/n1/9.jpg"
+                  alt="n1_1"
+                  fill
+                  className="rounded-md object-contain "
+                />
+              </div>
+            </div>
           </>
         ),
       },
@@ -294,7 +386,15 @@ export const EVENTS_PAGE_SOURCE: [
       {
         name: "ESS",
         event_id: "ess",
-        description: <></>,
+        description: (
+          <>
+            英語で「アラジン」の劇を披露します!
+            <br />
+            世界観に虜になること間違いなし!
+            <br />
+            皆様是非体育館にお越しください!
+          </>
+        ),
       },
     ],
   },
@@ -337,6 +437,32 @@ export const EVENTS_PAGE_SOURCE: [
         map_id: "m3-2",
       },
       {
+        name: "対称性を利用して合同式を得る方法",
+        event_id: "mathmatics_event3",
+        description: (
+          <>
+            ある組み合わせの問題を解き、
+            <wbr />
+            その答えが整数になることを利用して合同式を導きます。
+          </>
+        ),
+        map_id: "h3-1",
+      },
+      {
+        name: "三角形に関する2種類の操作と相似三角形の出現",
+        event_id: "mathmatics_event4",
+        description: (
+          <>
+            三角形に関する簡単な操作によって生み出される、
+            <wbr />
+            元の三角形と相似な三角形について紹介し、
+            <wbr />
+            証明します。
+          </>
+        ),
+        map_id: "h3-1",
+      },
+      {
         name: "詰めオセロをしてみよう",
         event_id: "othello_event",
         description: (
@@ -362,32 +488,6 @@ export const EVENTS_PAGE_SOURCE: [
             その中身を覗いたことはありますか?
             <br />
             中2の部員がパソコンを解体して解説します♪
-          </>
-        ),
-        map_id: "h3-1",
-      },
-      {
-        name: "対称性を利用して合同式を得る方法",
-        event_id: "mathmatics_event3",
-        description: (
-          <>
-            ある組み合わせの問題を解き、
-            <wbr />
-            その答えが整数になることを利用して合同式を導きます。
-          </>
-        ),
-        map_id: "h3-1",
-      },
-      {
-        name: "三角形に関する2種類の操作と相似三角形の出現",
-        event_id: "mathmatics_event4",
-        description: (
-          <>
-            三角形に関する簡単な操作によって生み出される、
-            <wbr />
-            元の三角形と相似な三角形について紹介し、
-            <wbr />
-            証明します。
           </>
         ),
         map_id: "h3-1",
@@ -522,7 +622,7 @@ export const EVENTS_PAGE_SOURCE: [
             </span>
           </>
         ),
-        map_id: "seminar",
+        map_id: "library",
       },
       {
         name: "Live解剖 エビ/イカ/カエル",

@@ -14,7 +14,7 @@ export default function TabSwitcher() {
         <EventsScroller setIndex={setIndex} />
       </Suspense>
       <div
-        className="grid grid-cols-2 gap-3 md:grid-cols-3 px-3"
+        className="grid grid-cols-2 gap-3 px-3 md:grid-cols-3"
         aria-label="Event Tabs"
         role="tablist"
       >
@@ -37,14 +37,14 @@ export default function TabSwitcher() {
           クラブ・サークル企画
         </TabButton>
       </div>
-      <div className="pt-10">
+      <div className="pt-16">
         {EVENTS_PAGE_SOURCE[index].events.map((event) => (
           <ContentSection
             key={event.event_id}
             title={event.name}
             eventId={event.event_id}
             mapId={event.map_id ?? EVENTS_PAGE_SOURCE[index].map_id}
-            comingSoon={false}
+            comingSoon={true}
             content={event.description}
           />
         ))}
@@ -61,12 +61,12 @@ type TabButtonProps = {
 function TabButton({ children, selected = false, ...props }: TabButtonProps) {
   return (
     <button
-      className="border-border aria-selected:bg-border group box-border rounded-md border-2 pb-[3px] pl-[16px] pr-[16px] pt-[3px]"
+      className="group box-border rounded-md border-2 border-border pb-[3px] pl-[16px] pr-[16px] pt-[3px] aria-selected:bg-border"
       aria-selected={selected}
       role="tab"
       {...props}
     >
-      <span className="font-zen_kaku_gothic_new text-border text-lg font-bold group-aria-selected:text-white">
+      <span className="font-zen_kaku_gothic_new text-lg font-bold text-border group-aria-selected:text-white">
         {children}
       </span>
     </button>
