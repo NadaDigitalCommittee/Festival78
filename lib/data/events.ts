@@ -179,7 +179,7 @@ export const events: Event[] = [
   },
   {
     id: "lego_event",
-    name: "トイブロックで灘校机椅子を制作体験",
+    name: "トイブロック",
     description:
       "伝統的な中学棟の机椅子とそれに座る生徒を、部員と一緒に19パーツと３パーツのミニフィギアで再現します。作った作品は持って帰ることが出来ます。",
     category: "lecture_m",
