@@ -28,7 +28,6 @@ export const EventsRow = forwardRef<HTMLDivElement, Props>(({ events }, ref) => 
                 <div className="h-[90px] flex flex-col justify-center w-full text-xl group-odd:bg-white group-even:bg-theme">
                   <p className="text-base">
                     {event.eventName}
-
                   </p>
                   <p>
                     <a href={`/events?id=${event.eventId}`} className="text-xs underline">

@@ -28,7 +28,7 @@ export const Selector: FC<Props> = ({
       {selects.map((select, i) => (
         <button
           key={i}
-          className={`mx-1 rounded-md border border-theme px-2 py-1 ${realIndex === i ? "bg-theme text-white" : "bg-white text-theme"}`}
+          className={`text-sm md:text-base mx-1 rounded-md border border-theme px-2 py-1 ${realIndex === i ? "bg-theme text-white" : "bg-white text-theme"}`}
           onClick={() => setIndex(i)}
         >
           {select}

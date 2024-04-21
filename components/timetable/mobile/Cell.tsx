@@ -31,7 +31,7 @@ export const CellMobile: FC<Props> = ({
     `}
       style={{
         left: `${index * 160}px`,
-        top: `calc(${interval}*120px)`,
+        top: `calc(${interval+0.5}*120px)`,
         height: `calc(${interval2}*120px)`,
         width: "120px",
       }}
