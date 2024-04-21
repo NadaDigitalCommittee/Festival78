@@ -472,6 +472,6 @@ export const eventsTimetable: EventTimetable[] = [
   },
   {
     id: "ess",
-    time: [{ day: 1, time: new Time(14, 0, 15, 30) }],
+    time: [{ day: 1, time: new Time(14, 30, 15, 30) }],
   },
 ];
