@@ -55,8 +55,8 @@ const goods: Item[] = [{
   description: '柔らかく品質のいいタオル。綿100%\n110×20cm'
 }, {
   id: [4],
-  size: 'l',
-  name: 'トートバッグ',
+  size: 'm',
+  name: 'トートバッグ\n キャンバス地',
   imageCount: 1,
   price: 800,
   description: 'ゆったりサイズ丈夫なキャンパス地\n横42×高さ38×幅13cm'
@@ -70,7 +70,7 @@ const goods: Item[] = [{
 }, {
   id: [6],
   size: 'm',
-  name: 'クリアしおり\n2枚組',
+  name: 'クリアしおり\n 2枚組',
   imageCount: 1,
   price: 100,
   description: '丈夫なプラスチック素材。透明感がかっこい。\n135×47mm'
@@ -84,7 +84,7 @@ const goods: Item[] = [{
 }, {
   id: [8, 9, 10, 11, 12, 13, 14, 15],
   size: 'l',
-  name: '文化祭ロゴ\nTシャツ',
+  name: 'Tシャツ',
   imageCount: 7,
   price: 1500,
   description: 'サイズ S、M、L、LL'
@@ -97,8 +97,8 @@ const goods: Item[] = [{
   description: '校門と本館の風景を芸術性の高いシェニール織りで表現。\n28×28cm'
 }, {
   id: [17, 18, 19, 20],
-  size: 'm',
-  name: '灘校是布扇子\n京都白竹堂製',
+  size: 'l',
+  name: '白竹堂製\n校是布扇子',
   imageCount: 6,
   price: 1300,
   description: '紺、えんじ、深緑、白地\n灘校書道教師倉橋先生による校是書字。綿製'
@@ -112,14 +112,14 @@ const goods: Item[] = [{
 }, {
   id: [23],
   size: 'l',
-  name: '灘ベア大',
+  name: '灘ベア大\n(ぬいぐるみ)',
   imageCount: 3,
   price: 2300,
   description: '約23cm\n灘校オリジナルオーダーのベアぬいぐるみ。NADAパーカー着用。背中に校章。'
 }, {
   id: [24, 25],
   size: 'l',
-  name: '灘ベア小',
+  name: '灘ベア小\n キーホルダー',
   imageCount: 2,
   price: 800,
   description: '約8cm\n紺、えんじ\n灘校オリジナルオーダーのベアストラップ。'
@@ -133,42 +133,42 @@ const goods: Item[] = [{
 }, {
   id: [27],
   size: 's',
-  name: 'デザイン\nクリアファイル\n2枚組',
+  name: 'デザイン\nクリアファイルA4\n 2枚組',
   imageCount: 4,
   price: 400,
   description: '文化祭ロゴデザインクリアファイル'
 }, {
   id: [28, 29, 30, 31, 32],
-  size: 'm',
-  name: '無地\nクリアファイル',
+  size: 's',
+  name: 'クリアファイル\nA4無地',
   imageCount: 1,
   price: 100,
   description: '使いやすい無地'
 }, {
   id: [33],
   size: 'm',
-  name: '合格五角鉛筆HB',
+  name: '合格五角鉛筆\n HB 2本組',
   imageCount: 1,
   price: 150,
   description: '縁起のいい五角形の合格鉛筆'
 }, {
   id: [34],
   size: 's',
-  name: '鉛筆\nユニスターB\n6本セット',
+  name: '三菱鉛筆\nユニスター B\n 6本組',
   imageCount: 1,
   price: 400,
   description: 'ユニスターＢ'
 }, {
   id: [35, 36, 37],
-  size: 'l',
-  name: 'ぺんてる\nスマッシュ',
+  size: 's',
+  name: 'スマッシュ\n高機能\nシャープペン',
   imageCount: 3,
   price: 900,
   description: 'ブラック、レッド、ダークグレー\n灘校生に大人気のスマッシュが灘校グッズに新登場'
 }, {
   id: [38, 39, 40],
-  size: 'l',
-  name: 'クルトガ\nKSモデル',
+  size: 'm',
+  name: 'クルトガ KS\nシャープペン',
   imageCount: 3,
   price: 500,
   description: 'ネイビー、 アイスブルー、ライトグレー\nクルトガ大人気モデル'
@@ -182,42 +182,42 @@ const goods: Item[] = [{
 }, {
   id: [45, 46, 47],
   size: 's',
-  name: 'ジェット\nストリーム\n3色ボールペン',
+  name: '3色ボール\nペン 0.5 ジェット\nストリーム',
   imageCount: 2,
   price: 500,
   description: 'ブラック、ブルーグレー、アイスブルー\n間違えずに黒を出せる'
 }, {
   id: [48, 49, 50],
-  size: 's',
-  name: 'ユニボール\nシグノRT1 0.5\n単色ボールペン',
+  size: 'm',
+  name: '単色\nボールペン 0.5',
   imageCount: 2,
   price: 150,
   description: 'スイスイ書ける単色ゲルインクボールペン。黒・赤・青'
 }, {
   id: [51, 52, 53, 54],
   size: 's',
-  name: 'ジェット\nストリーム\n多機能ペン2&1',
+  name: '多機能ペン\n ジェット\nストリーム\n',
   imageCount: 2,
   price: 700,
   description: 'ネイビー、ボルドー、ブラック、ピンク\n最も使用頻度の高い赤・黒ボールペン＆シャープペンシルの組み合わせ'
 }, {
   id: [55, 56, 57, 58],
-  size: 's',
-  name: '灘校校是\n消しゴム\nSEEDレーダー',
+  size: 'm',
+  name: '消しゴム\nSEEDレーダー',
   imageCount: 5,
   price: 150,
   description: '紺・えんじ・緑・水色\n灘校書道教師倉橋先生による校是書字デザイン'
 }, {
   id: [59],
-  size: 'l',
-  name: '蛍光ペン\n3色セット',
+  size: 's',
+  name: '蛍光ペン\n 3本組\n 灘校章ケース入',
   imageCount: 1,
   price: 400,
   description: '灘校校章ケース入り'
 }, {
   id: [60],
   size: 'l',
-  name: '15センチ定規',
+  name: '定規 15センチ',
   imageCount: 1,
   price: 300,
   description: '使いやすい15センチ定規'
@@ -231,7 +231,7 @@ const goods: Item[] = [{
 }, {
   id: [63],
   size: 'l',
-  name: '灘校てぬぐい',
+  name: '灘校手ぬぐい',
   imageCount: 1,
   price: 300,
   description: '灘中・灘校校章と校是'
@@ -243,6 +243,70 @@ const goods: Item[] = [{
   price: 100,
   description: '横270×高さ345×幅60mm\n＊無料レジ袋にかわるエコバッグの位置づけ。\n1-63の商品購入者のみ購入可'
 }];
+const souvenirs: Item[] = [{
+  id: [1],
+  size: 'l',
+  name: '灘校煎餅',
+  imageCount: 1,
+  price: 650,
+  description: '梅香堂(4枚×3袋入り)'
+}, {
+  id: [2],
+  size: 'l',
+  name: '灘校三笠\n 箱詰',
+  imageCount: 1,
+  price: 550,
+  description: '明植堂(2個入り)'
+}, {
+  id: [3],
+  size: 'l',
+  name: '灘校三笠\n 箱詰',
+  imageCount: 1,
+  price: 1350,
+  description: '明植堂(5個入り)'
+}, {
+  id: [4],
+  size: 's',
+  name: '灘校紅茶\n ロイヤルブレンド',
+  imageCount: 2,
+  price: 1000,
+  description: '神戸紅茶(ティーパック10袋入り) ベージュ缶'
+}, {
+  id: [5],
+  size: 'm',
+  name: '灘校紅茶\n トロピカル',
+  imageCount: 2,
+  price: 1000,
+  description: '神戸紅茶(ティーパック10袋入り) ホワイト缶'
+}, {
+  id: [6],
+  size: 's',
+  name: '灘校\nほろほろクッキー\n 阿波和三盆',
+  imageCount: 3,
+  price: 1250,
+  description: 'ケーキハウスショウタニ(15粒入り) ネイビー缶'
+}, {
+  id: [7],
+  size: 's',
+  name: '灘校\nほろほろクッキー\n 深煎りきなこ',
+  imageCount: 3,
+  price: 1250,
+  description: 'ケーキハウスショウタニ(15粒入り) クリームイエロー缶'
+}, {
+  id: [8],
+  size: 'm',
+  name: '灘校\nえびせんべい',
+  imageCount: 3,
+  price: 1000,
+  description: '桂新堂(6枚入り)'
+}, {
+  id: [9],
+  size: 'l',
+  name: '灘ミント',
+  imageCount: 2,
+  price: 350,
+  description: ''
+}];
 
 export default async function Page() {
   return (
@@ -250,7 +314,7 @@ export default async function Page() {
       <main className="font-alte_din p-4 md:p-8">
         <div className="flex justify-center p-6">
           <div className="relative">
-            <div className="absolute w-8 h-8">
+            <div className="absolute size-5 md:size-8">
               <Image
                 src="/img/star.svg"
                 alt="キラキラ"
@@ -258,7 +322,7 @@ export default async function Page() {
                 className="-translate-x-1/2 -translate-y-1/2"
               />
             </div>
-            <div className="absolute right-0 bottom-0 w-12 h-12">
+            <div className="absolute right-0 bottom-0 size-8 md:size-12">
               <Image
                 src="/img/star.svg"
                 alt="キラキラ"
@@ -266,12 +330,39 @@ export default async function Page() {
                 className="translate-x-full translate-y-0 rotate-180"
               />
             </div>
-            <p className="font-south_amsterdam text-theme text-8xl">Goods</p>
+            <p className="font-south_amsterdam text-theme text-6xl md:text-8xl">Goods</p>
           </div>
         </div>
-        <div className="m-4 md:m-8 grid gap-4 gap-y-[calc(1rem/cos(8deg))] grid-cols-3 md:grid-cols-4 skew-y-[4deg]">
+        <p className="m-4 md:m-8 font-zen_kaku_gothic_new text-theme text-xl md:text-2xl">画像をタップするとサンプル画像の一覧を見ることができます。</p>
+        <div className="m-4 my-8 md:m-8 md:my-16 grid gap-4 gap-y-[calc(1rem/cos(8deg))] grid-cols-3 md:grid-cols-4 skew-y-[4deg]">
           {goods.map((item, i) => (
-            <Item key={item.id[0]} item={item} isLarge={i === 0} />
+            <Frame key={item.id[0]} isGoods item={item} isLarge={i === 0} />
+          ))}
+        </div>
+        <div className="flex justify-center p-6">
+          <div className="relative">
+            <div className="absolute size-5 md:size-8">
+              <Image
+                src="/img/star.svg"
+                alt="キラキラ"
+                fill
+                className="-translate-x-1/2 -translate-y-1/2"
+              />
+            </div>
+            <div className="absolute right-0 bottom-0 size-8 md:size-12">
+              <Image
+                src="/img/star.svg"
+                alt="キラキラ"
+                fill
+                className="translate-x-full translate-y-0 rotate-180"
+              />
+            </div>
+            <p className="font-south_amsterdam text-theme text-6xl md:text-8xl">Souvenirs</p>
+          </div>
+        </div>
+        <div className="m-4 my-8 md:m-8 md:my-16 grid gap-4 gap-y-[calc(1rem/cos(8deg))] grid-cols-3 md:grid-cols-4 skew-y-[4deg]">
+          {souvenirs.map((item, i) => (
+            <Frame key={item.id[0]} item={item} isLarge={i === 0} />
           ))}
         </div>
       </main>
@@ -279,7 +370,7 @@ export default async function Page() {
   );
 }
 
-const Item: FC<{ item: Item; isLarge: boolean }> = ({ item: { id, size, name, imageCount, price, description }, isLarge = false }) => {
+const Frame: FC<{ isGoods?: boolean, item: Item; isLarge?: boolean }> = ({ isGoods = false, item: { id, size, name, imageCount, price, description }, isLarge = false }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [emblaRef, emblaApi] = useEmblaCarousel({ containScroll: false });
   const {
@@ -294,7 +385,7 @@ const Item: FC<{ item: Item; isLarge: boolean }> = ({ item: { id, size, name, im
   return (
     <div className={`relative w-full leading-none ${isLarge ? "h-[100%] row-span-2 col-span-2 text-[max(0rem,calc((100vw-6rem)/12))] md:text-[max(0rem,calc((100vw-11rem)/16))]" : "aspect-[4/5] text-[max(0rem,calc((100vw-6rem)/24))] md:text-[max(0rem,calc((100vw-11rem)/32))]"}`}>
       <div className={`absolute inset-0 ${isLarge ? "my-[calc((100%+1rem)*tan(16deg)/4)]" : ""}`}>
-        <div className={`absolute w-full -skew-y-[4deg] text-theme ${isLarge ? "aspect-[9/10]" : "aspect-[5/6]"}`}>
+        <div className={`absolute w-full -skew-y-[4deg] text-theme ${isLarge ? "aspect-[9/10]" : "aspect-[calc(1/(1+tan(12deg)))]"}`}>
           <Modal isOpen={isOpen} onClose={onClose} size="xl" >
             <ModalOverlay />
             <ModalContent>
@@ -309,7 +400,7 @@ const Item: FC<{ item: Item; isLarge: boolean }> = ({ item: { id, size, name, im
                     <div className="embla__container [backface-visibility:hidden] flex touch-pan-y ml-[calc(var(--slide-spacing)*-1)]">
                       {Array.from(Array(imageCount).keys()).map(i=>(<div className="embla__slide flex-[0_0_var(--slide-size)] min-w-0 aspect-square pl-[var(--slide-spacing)]" key={i}>
                         <div className="relative size-full p-1 border-2 border-gray-200 rounded-3xl">
-                          <Image src={`/img/items/${`0${id[0]}`.slice(-2)}_${i+1}.jpg`} alt={name} fill className="object-contain" />
+                          <Image src={`/img/items/${isGoods ? "" : "souvenirs/"}${`0${id[0]}`.slice(-2)}_${i+1}.jpg`} alt={name} fill className="object-contain" />
                         </div>
                       </div>))}
                     </div>
@@ -340,7 +431,7 @@ const Item: FC<{ item: Item; isLarge: boolean }> = ({ item: { id, size, name, im
               </ModalFooter>
             </ModalContent>
           </Modal>
-          <Image src={`/img/items/${`0${id[0]}`.slice(-2)}_1.jpg`} alt={name} fill className={`object-cover ${isLarge ? "-translate-y-[calc((tan(16deg)-tan(4deg))*(9/20)*100%)] [clipPath:polygon(0_calc((tan(16deg)-tan(4deg))*(9/10)*100%),100%_0,100%_80%,0_100%)]" : "-translate-y-[calc((tan(16deg)-tan(4deg))*(5/12)*100%)] [clipPath:polygon(0_calc((tan(16deg)-tan(4deg))*(5/6)*100%),100%_0,100%_100%,0_100%)]"}`} />
+          <Image src={`/img/items/${isGoods ? "" : "souvenirs/"}${`0${id[0]}`.slice(-2)}_1.jpg`} alt={name} fill className={`object-cover ${isLarge ? "-translate-y-[calc((tan(16deg)-tan(4deg))*(9/20)*100%)] [clipPath:polygon(0_calc((tan(16deg)-tan(4deg))*(9/10)*100%),100%_0,100%_80%,0_100%)]" : "-translate-y-[calc((tan(16deg)-tan(4deg))*(5/12)*100%)] [clipPath:polygon(0_calc((tan(16deg)-tan(4deg))*(5/6)*100%),100%_0,100%_100%,0_100%)]"}`} />
           <div className={`size-full pl-1 ${isLarge ? "translate-y-[calc((tan(16deg)-tan(4deg))*(9/20)*100%)]" : "translate-y-[calc((tan(16deg)-tan(4deg))*(5/12)*100%)]"}`}>
             <VscExpandAll />
           </div>
