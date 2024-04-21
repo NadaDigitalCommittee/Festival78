@@ -3,6 +3,7 @@ import { FC, ReactNode, useEffect, useRef, useState } from "react";
 import { BorderColumn } from "./BorderColumn";
 import { EventColumn } from "./EventColumn";
 import { TimeRow } from "./TimeRow";
+import { Now } from "./Now";
 
 type Props = {
   events: {
@@ -37,7 +38,7 @@ export const BaseTimetableDesktop: FC<Props> = ({
     <div className="flex">
       <EventColumn events={events} stickyItems={stickyItems} />
       <div className="relative overflow-x-clip">
-        <TimeRow ref={timeRef} />
+        <TimeRow ref={timeRef} />        
         <BorderColumn ref={timetableRef} eventCount={events.length}>
           <div className="absolute">{children}</div>
         </BorderColumn>

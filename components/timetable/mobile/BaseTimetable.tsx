@@ -2,8 +2,8 @@
 "use client";
 import { FC, ReactNode, useEffect, useRef, useState } from "react";
 import { BorderRows } from "./BorderColumn";
-import { TimeColumn } from "./EventColumn";
-import { EventsRow } from "./TimeRow";
+import { TimeColumn } from "./TimeColumn";
+import { EventsRow } from "./EventsRow";
 
 type Props = {
   events: {

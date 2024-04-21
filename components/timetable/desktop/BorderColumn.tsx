@@ -1,4 +1,5 @@
 import { forwardRef, ReactNode } from "react";
+import { NowBorder } from "./NowBorder";
 
 type Props = {
   children: ReactNode;
@@ -35,6 +36,7 @@ export const BorderColumn = forwardRef<HTMLDivElement, Props>(
               />
             ))}
         </div>
+        <NowBorder />
       </div>
     );
   }

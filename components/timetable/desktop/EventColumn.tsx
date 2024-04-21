@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FC, ReactNode } from "react";
+import { Now } from "./Now";
 
 type Props = {
   events: {
@@ -14,6 +15,7 @@ export const EventColumn: FC<Props> = ({ events, stickyItems }) => {
     <div className="z-20">
       <div className="sticky top-0 z-20 h-[200px] w-[120px] min-w-[100px] bg-white">
         {stickyItems}
+        <Now/>
       </div>
       {events.map((event, i) => {
         return (
