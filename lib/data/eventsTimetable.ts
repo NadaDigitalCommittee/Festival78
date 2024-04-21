@@ -80,8 +80,8 @@ export const eventsTimetable: EventTimetable[] = [
   {
     id: "shorinji_event",
     time: [
-      { day: 1, time: new Time(14, 0, 14, 15) },
-      { day: 2, time: new Time(14, 0, 14, 15) },
+      { day: 1, time: new Time(14, 15, 14, 30) },
+      { day: 2, time: new Time(14, 15, 14, 30) },
     ],
   },
   {
@@ -162,10 +162,14 @@ export const eventsTimetable: EventTimetable[] = [
   {
     id: "lego_event",
     time: [
-      { day: 1, time: new Time(11, 0, 12, 0) },
-      { day: 1, time: new Time(13, 0, 14, 0) },
-      { day: 2, time: new Time(11, 0, 12, 0) },
-      { day: 2, time: new Time(13, 0, 14, 0) },
+      { day: 1, time: new Time(11, 0, 11, 20) },
+      { day: 1, time: new Time(11, 30, 11, 50) },
+      { day: 1, time: new Time(13, 0, 13, 20) },
+      { day: 1, time: new Time(13, 30, 14, 0) },
+      { day: 2, time: new Time(11, 0, 11, 20) },
+      { day: 2, time: new Time(11, 30, 11, 50) },
+      { day: 2, time: new Time(13, 0, 13, 20) },
+      { day: 2, time: new Time(13, 30, 14, 0) },
     ],
   },
   {
@@ -192,6 +196,9 @@ export const eventsTimetable: EventTimetable[] = [
       { day: 2, time: new Time(12, 0, 12, 30) },
       { day: 2, time: new Time(12, 30, 13, 0) },
       { day: 2, time: new Time(13, 0, 13, 30) },
+      { day: 2, time: new Time(13, 30, 14, 0) },
+      { day: 2, time: new Time(14, 0, 14, 30) },
+      { day: 2, time: new Time(14, 30, 15, 0) },
     ],
   },
   {
