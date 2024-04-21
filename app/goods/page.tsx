@@ -308,6 +308,7 @@ const souvenirs: Item[] = [{
   description: ''
 }];
 
+// eslint-disable-next-line @next/next/no-async-client-component
 export default async function Page() {
   return (
     <ChakraProvider theme={theme}>
