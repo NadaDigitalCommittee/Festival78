@@ -147,7 +147,7 @@ export default function Page() {
 
   return (
     <div className="font-zen_kaku_gothic_new font-bold">
-      <div className="h-20" />
+      <div className="h-20 bg-white/50" />
       {media === undefined ? (
         <></>
       ) : media === MediaType.Mobile ? (
