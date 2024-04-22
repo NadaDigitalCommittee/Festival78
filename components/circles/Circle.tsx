@@ -31,7 +31,7 @@ export const Circle: FC<Props> = ({ circle }) => {
   const description = circle.description;
   return (
     <AccordionItem
-      className={`group min-w-[100vw] max-w-[512px] odd:bg-[#FFEFE8] even:bg-white md:min-w-[512px] lg:min-w-[512px]`}
+      className={`group min-w-[100vw] max-w-[512px] odd:bg-[#FFEFE8]/50 even:bg-white/50 md:min-w-[512px] lg:min-w-[512px]`}
     >
       <div id={"#" + id} className=" flex h-[60px] justify-center px-4">
         <AccordionButton className="flex">

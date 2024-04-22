@@ -30,7 +30,7 @@ export default async function StaticPage() {
           return (
             <li
               key={post.id}
-              className="my-1 w-full -translate-x-0 border-b-2 border-theme border-opacity-0 bg-white duration-300 focus-within:-translate-x-3 hover:-translate-x-3 hover:border-opacity-100 md:focus-within:-translate-x-4 md:hover:-translate-x-4 [&:nth-child(2n+1)]:bg-odd_column"
+              className="my-1 w-full -translate-x-0 border-b-2 border-theme border-opacity-0 bg-white/50 duration-300 focus-within:-translate-x-3 hover:-translate-x-3 hover:border-opacity-100 md:focus-within:-translate-x-4 md:hover:-translate-x-4 [&:nth-child(2n+1)]:bg-odd_column/50"
             >
               <Link
                 href={`/blogs/${post.id}`}

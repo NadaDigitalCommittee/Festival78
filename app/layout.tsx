@@ -6,6 +6,7 @@ import { Inter, Limelight, Zen_Kaku_Gothic_New } from "next/font/google";
 import localFont from "next/font/local";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { HamburgerMenu } from "@/components/HamburgerMenu";
+import { Bg } from "@/components/svg/Bg";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const limelight = Limelight({
@@ -105,8 +106,13 @@ export default function RootLayout({
         <TypekitLoader />
         <HamburgerMenu />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GAID} />
-        <div className="min-h-[100lvh] w-[100%] overflow-x-hidden">
+        <div className="relative min-h-[100lvh] w-[100%] overflow-x-clip z-0">
           {children}
+          <div className="fixed top-0 w-full -z-10">
+            <div className="flex justify-center">
+            <Bg />
+            </div>
+          </div>
         </div>
         <Footer />
       </body>
