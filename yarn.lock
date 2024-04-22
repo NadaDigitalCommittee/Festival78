@@ -2732,6 +2732,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"embla-carousel-auto-scroll@npm:^8.0.2":
+  version: 8.0.2
+  resolution: "embla-carousel-auto-scroll@npm:8.0.2"
+  peerDependencies:
+    embla-carousel: 8.0.2
+  checksum: 10c0/414d1839aa96df6b921f63c4067c655beba8c420cd7f5c2bb21b41bf2680c99789a45f4f797988103991d6453f14b551101bce1ecf918c44b150cadfb1bfbf18
+  languageName: node
+  linkType: hard
+
 "embla-carousel-react@npm:^8.0.2":
   version: 8.0.2
   resolution: "embla-carousel-react@npm:8.0.2"
@@ -2753,7 +2762,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"embla-carousel@npm:8.0.2":
+"embla-carousel@npm:8.0.2, embla-carousel@npm:^8.0.2":
   version: 8.0.2
   resolution: "embla-carousel@npm:8.0.2"
   checksum: 10c0/e63ce4e387c0e227ce211a1131f81c74dbe6c4bb32a5d072e0c1e30774305ca9a30fc86ebb042707bf8d6ec8cb57575628dfa1b18b36dd3206d4774cd34b73bc
@@ -3405,6 +3414,8 @@ __metadata:
     "@types/react-dom": "npm:^18"
     autoprefixer: "npm:^10.0.1"
     clsx: "npm:^2.1.0"
+    embla-carousel: "npm:^8.0.2"
+    embla-carousel-auto-scroll: "npm:^8.0.2"
     embla-carousel-react: "npm:^8.0.2"
     eslint: "npm:8.56.0"
     eslint-config-next: "npm:14.0.4"

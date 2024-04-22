@@ -8,8 +8,9 @@ const hrefRequired = ["Blogs"];
 
 export const Header = (props: { children: string; path?: string }) => {
   const { children } = props;
-  props.path ??= `/${children.toLowerCase()}`;
-  const { path } = props;
+  const _props = props;
+  _props.path ??= `/${children.toLowerCase()}`;
+  const { path } = _props;
   const isHrefRequired = hrefRequired.includes(children);
   return (
     <header className="flex flex-col">
