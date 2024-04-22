@@ -397,21 +397,21 @@ export const data: Circle[] = [
         title: "灘的漢検",
         url: "/pdf/literaryart/nadatekikanken.pdf",
       },
-      {
-        type: "article",
-        title: "灘的漢検解答",
-        url: "/pdf/literaryart/nadatekikanken_answer.pdf",
-      },
+      // {
+      //   type: "article",
+      //   title: "灘的漢検解答",
+      //   url: "/pdf/literaryart/nadatekikanken_answer.pdf",
+      // },
       {
         type: "article",
         title: "灘中入試国語予想問題",
         url: "/pdf/literaryart/R7_1daynyuusimosi_mondai.pdf",
       },
-      {
-        type: "article",
-        title: "灘中入試国語予想問題　解答",
-        url: "/pdf/literaryart/R7_1daynyuusimosi_kaitou.pdf",
-      },
+      // {
+      //   type: "article",
+      //   title: "灘中入試国語予想問題　解答",
+      //   url: "/pdf/literaryart/R7_1daynyuusimosi_kaitou.pdf",
+      // },
     ],
   },
   {

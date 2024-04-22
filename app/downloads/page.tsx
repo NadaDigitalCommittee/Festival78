@@ -1,3 +1,4 @@
+import { Header } from "@/components/Header";
 import { DownloadsAcordion } from "@/components/downloads/DownloadsAccordion";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,15 +7,7 @@ import { RiDownload2Fill } from "react-icons/ri";
 export default function Page() {
   return (
     <main className="flex w-full flex-col items-center font-zen_kaku_gothic_new">
-      <div className="relative mb-16 mt-12 font-south_amsterdam text-6xl text-theme md:text-7xl lg:text-9xl">
-        Downloads
-        <div className="absolute left-0 top-0 w-[30px] -translate-x-full -translate-y-1/2 md:w-[60px] lg:w-[70px]">
-          <Image src={"/img/top/star.svg"} width={100} height={100} alt="" />
-        </div>
-        <div className="absolute bottom-0 right-0 w-[30px] translate-x-full translate-y-1/2 md:w-[60px] lg:w-[70px]">
-          <Image src={"/img/top/star.svg"} width={100} height={100} alt="" />
-        </div>
-      </div>
+      <Header path="/downloads">Downloads</Header>
       <div className="mb-6 w-[1200px] max-w-full px-4">
         <>
           <div className="h-14 w-0" />
@@ -31,9 +24,19 @@ export default function Page() {
         <div className="h-8" />
 
         <div className="visible flex justify-center max-md:hidden">
-          <div className="h-[350px] w-[80vw] border-4 border-theme md:w-[550px] flex items-center justify-center gap-6">
-            <Image src={"/img/downloads/pamphlet1.webp"} width={200} height={800} alt="表紙" />
-            <Image src={"/img/downloads/pamphlet2.webp"} width={200} height={800} alt="裏表紙" />
+          <div className="flex h-[350px] w-[80vw] items-center justify-center gap-6 border-4 border-theme md:w-[550px] bg-white">
+            <Image
+              src={"/img/downloads/pamphlet1.webp"}
+              width={200}
+              height={800}
+              alt="表紙"
+            />
+            <Image
+              src={"/img/downloads/pamphlet2.webp"}
+              width={200}
+              height={800}
+              alt="裏表紙"
+            />
           </div>
           <div className="mt-auto h-[210px] w-[210px] bg-theme p-4 text-center text-sm text-white">
             <p className="mt-6">
@@ -50,9 +53,19 @@ export default function Page() {
         </div>
 
         <div className=" mx-auto flex w-[80vw] flex-col justify-center md:hidden">
-          <div className=" border-4 border-theme flex items-center justify-center gap-3 py-4">
-            <Image src={"/img/downloads/pamphlet1.webp"} width={100} height={800} alt="表紙" />
-            <Image src={"/img/downloads/pamphlet2.webp"} width={100} height={800} alt="裏表紙" />
+          <div className="bg-white flex items-center justify-center gap-3 border-4 border-theme py-4">
+            <Image
+              src={"/img/downloads/pamphlet1.webp"}
+              width={100}
+              height={800}
+              alt="表紙"
+            />
+            <Image
+              src={"/img/downloads/pamphlet2.webp"}
+              width={100}
+              height={800}
+              alt="裏表紙"
+            />
           </div>
           <div className="mt-auto flex h-[80px] w-full bg-theme p-1 text-center text-xs text-white">
             <div className="mx-auto px-3">
