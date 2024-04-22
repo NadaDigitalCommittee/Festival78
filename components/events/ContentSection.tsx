@@ -87,7 +87,7 @@ export default function ContentSection({
       <div className="flex justify-center pb-[100px]">
         <div className={clsx(styles.contentSection_wrapper, "px-3")}>
           <div className="flex justify-end gap-[15px] pb-[20px]">
-            <ContentLabelButton
+            {/* <ContentLabelButton
               href={{
                 pathname: "/map",
                 query: {
@@ -98,7 +98,7 @@ export default function ContentSection({
               <span className="font-zen_kaku_gothic_new text-sm font-bold text-border">
                 マップ
               </span>
-            </ContentLabelButton>
+            </ContentLabelButton> */}
             <ContentLabelButton
               href={{
                 pathname: "/timetable",
