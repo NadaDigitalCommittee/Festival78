@@ -23,315 +23,15 @@ import {
   usePrevNextButtons,
   useDotButton
 } from '@/components/Embla';
-
-type Item = {
-  id: number[],
-  size: 's' | 'm' | 'l',
-  name: string,
-  imageCount: number,
-  price: number,
-  description: string
-};
-const goods: Item[] = [{
-  id: [1],
-  size: 'l',
-  name: 'ルービック\nキューブ',
-  imageCount: 2,
-  price: 1700,
-  description: '台座付 インテリアにも\n正規ルービックキューブライセンスマーク入'
-}, {
-  id: [2],
-  size: 'l',
-  name: 'マグカップ',
-  imageCount: 2,
-  price: 1000,
-  description: '280ml\n文化祭ロゴマグカップ 食洗機可 日本製'
-}, {
-  id: [3],
-  size: 'l',
-  name: 'マフラー\nタオル',
-  imageCount: 2,
-  price: 1000,
-  description: '綿100% 110×20cm\n柔らかく品質のいいタオル'
-}, {
-  id: [4],
-  size: 'm',
-  name: 'トートバッグ\n キャンバス地',
-  imageCount: 1,
-  price: 800,
-  description: '横42×高さ38×幅13cm\nゆったりサイズ丈夫なキャンパス地'
-}, {
-  id: [5],
-  size: 'l',
-  name: 'アクリル\nキーホルダー',
-  imageCount: 1,
-  price: 300,
-  description: '縦約5cm\n文化祭ロゴのキーホルダー'
-}, {
-  id: [6],
-  size: 'm',
-  name: 'クリアしおり\n 2枚組',
-  imageCount: 1,
-  price: 100,
-  description: '135×47mm\n丈夫なプラスチック素材 透明感がかっこいい'
-}, {
-  id: [7],
-  size: 'l',
-  name: 'ロゴ\nステッカー',
-  imageCount: 5,
-  price: 100,
-  description: 'ハガキサイズに10カットのステッカー\nPET素材、耐水性〇'
-}, {
-  id: [8, 9, 10, 11, 12, 13, 14, 15],
-  size: 'l',
-  name: 'Tシャツ',
-  imageCount: 7,
-  price: 1500,
-  description: 'サイズ S・M・L・LL'
-}, {
-  id: [16],
-  size: 's',
-  name: 'ホットマン\nシェニール織り\nハンカチ',
-  imageCount: 2,
-  price: 2500,
-  description: '28×28cm\n校門と本館の風景を芸術性の高いシェニール織りで表現'
-}, {
-  id: [17, 18, 19, 20],
-  size: 'l',
-  name: '白竹堂製\n校是布扇子',
-  imageCount: 6,
-  price: 1300,
-  description: '紺・えんじ・深緑・白地 綿製\n灘校書道教師倉橋先生による校是書字'
-}, {
-  id: [21, 22],
-  size: 'l',
-  name: '校章チャーム',
-  imageCount: 1,
-  price: 1000,
-  description: 'ダークブラウン・紺 約3.3×3.3cm\n本革製校章チャーム 丁寧な手作りチャーム'
-}, {
-  id: [23],
-  size: 'l',
-  name: '灘ベア大\n(ぬいぐるみ)',
-  imageCount: 3,
-  price: 2300,
-  description: '約23cm\n灘校オリジナルオーダーのベアぬいぐるみ NADAパーカー着用 背中に校章'
-}, {
-  id: [24, 25],
-  size: 'l',
-  name: '灘ベア小\n キーホルダー',
-  imageCount: 2,
-  price: 800,
-  description: '紺・えんじ 約8cm\n灘校オリジナルオーダーのベアストラップ'
-}, {
-  id: [26],
-  size: 'm',
-  name: 'ワンタッチ\nファイルケース',
-  imageCount: 3,
-  price: 300,
-  description: '32.4×23cm\n収容枚数 コピー用紙60枚\nA4クリアファイルがそのまま入る プリントをすっきり整理'
-}, {
-  id: [27],
-  size: 's',
-  name: 'デザイン\nクリアファイルA4\n 2枚組',
-  imageCount: 4,
-  price: 400,
-  description: '文化祭ロゴデザインクリアファイル'
-}, {
-  id: [28, 29, 30, 31, 32],
-  size: 's',
-  name: 'クリアファイル\nA4無地',
-  imageCount: 1,
-  price: 100,
-  description: '使いやすい無地'
-}, {
-  id: [33],
-  size: 'm',
-  name: '合格五角鉛筆\n HB 2本組',
-  imageCount: 1,
-  price: 150,
-  description: '縁起のいい五角形の合格鉛筆'
-}, {
-  id: [34],
-  size: 's',
-  name: '三菱鉛筆\nユニスター B\n 6本組',
-  imageCount: 1,
-  price: 400,
-  description: ''
-}, {
-  id: [35, 36, 37],
-  size: 's',
-  name: 'スマッシュ\n高機能\nシャープペン',
-  imageCount: 3,
-  price: 900,
-  description: 'ブラック・レッド・ダークグレー\n灘校生に大人気のスマッシュが灘校グッズに新登場'
-}, {
-  id: [38, 39, 40],
-  size: 'm',
-  name: 'クルトガ KS\nシャープペン',
-  imageCount: 3,
-  price: 500,
-  description: 'ネイビー・アイスブルー・ライトグレー\nクルトガ大人気モデル'
-}, {
-  id: [41, 42, 43, 44],
-  size: 'm',
-  name: 'シャープペン\nベリーシャ楽',
-  imageCount: 2,
-  price: 100,
-  description: '黒・緑・ピンク・青\nお手頃価格だけど書き味抜群'
-}, {
-  id: [45, 46, 47],
-  size: 's',
-  name: '3色ボール\nペン 0.5 ジェット\nストリーム',
-  imageCount: 2,
-  price: 500,
-  description: 'ブラック・ブルーグレー・アイスブルー\n間違えずに黒を出せる'
-}, {
-  id: [48, 49, 50],
-  size: 'm',
-  name: '単色\nボールペン 0.5',
-  imageCount: 2,
-  price: 150,
-  description: '黒・赤・青\nスイスイ書ける単色ゲルインクボールペン'
-}, {
-  id: [51, 52, 53, 54],
-  size: 's',
-  name: '多機能ペン\n ジェット\nストリーム\n',
-  imageCount: 2,
-  price: 700,
-  description: 'ネイビー・ボルドー・ブラック・ピンク\n最も使用頻度の高い赤・黒ボールペン&シャープペンシルの組み合わせ'
-}, {
-  id: [55, 56, 57, 58],
-  size: 'm',
-  name: '消しゴム\nSEEDレーダー',
-  imageCount: 5,
-  price: 150,
-  description: '紺・えんじ・緑・水色\n灘校書道教師倉橋先生による校是書字デザイン'
-}, {
-  id: [59],
-  size: 's',
-  name: '蛍光ペン\n 3本組\n 灘校章ケース入',
-  imageCount: 1,
-  price: 400,
-  description: ''
-}, {
-  id: [60],
-  size: 'l',
-  name: '定規 15センチ',
-  imageCount: 1,
-  price: 300,
-  description: '使いやすい15センチ定規'
-}, {
-  id: [61, 62],
-  size: 'l',
-  name: '下敷き',
-  imageCount: 1,
-  price: 200,
-  description: '暗記ペン用にも便利な赤・緑'
-}, {
-  id: [63],
-  size: 'l',
-  name: '灘校手ぬぐい',
-  imageCount: 1,
-  price: 300,
-  description: '灘中・灘校校章と校是'
-}, {
-  id: [0],
-  size: 'l',
-  name: '不織布バッグ',
-  imageCount: 2,
-  price: 100,
-  description: '横270×高さ345×幅60mm\n※無料レジ袋に代わるエコバッグの位置づけ\n1-63の商品購入者のみ購入可'
-}];
-const souvenirs: Item[] = [{
-  id: [1],
-  size: 'l',
-  name: '灘校煎餅',
-  imageCount: 1,
-  price: 650,
-  description: '梅香堂(4枚×3袋入り)'
-}, {
-  id: [2],
-  size: 'l',
-  name: '灘校三笠\n 箱詰',
-  imageCount: 1,
-  price: 550,
-  description: '明植堂(2個入り)'
-}, {
-  id: [3],
-  size: 'l',
-  name: '灘校三笠\n 箱詰',
-  imageCount: 1,
-  price: 1350,
-  description: '明植堂(5個入り)'
-}, {
-  id: [4],
-  size: 's',
-  name: '灘校紅茶\n ロイヤルブレンド',
-  imageCount: 2,
-  price: 1000,
-  description: '神戸紅茶(ティーパック10袋入り) ベージュ缶'
-}, {
-  id: [5],
-  size: 'm',
-  name: '灘校紅茶\n トロピカル',
-  imageCount: 2,
-  price: 1000,
-  description: '神戸紅茶(ティーパック10袋入り) ホワイト缶'
-}, {
-  id: [6],
-  size: 's',
-  name: '灘校\nほろほろクッキー\n 阿波和三盆',
-  imageCount: 3,
-  price: 1250,
-  description: 'ケーキハウスショウタニ(15粒入り) ネイビー缶'
-}, {
-  id: [7],
-  size: 's',
-  name: '灘校\nほろほろクッキー\n 深煎りきなこ',
-  imageCount: 3,
-  price: 1250,
-  description: 'ケーキハウスショウタニ(15粒入り) クリームイエロー缶'
-}, {
-  id: [8],
-  size: 'm',
-  name: '灘校\nえびせんべい',
-  imageCount: 3,
-  price: 1000,
-  description: '桂新堂(6枚入り)'
-}, {
-  id: [9],
-  size: 'l',
-  name: '灘ミント',
-  imageCount: 2,
-  price: 350,
-  description: ''
-}];
+import { goods, Item, souvenirs } from "@/lib/data/goods";
+import { Header } from "@/components/Header";
 
 export default async function Page() {
   return (
     <ChakraProvider theme={theme}>
       <main className="font-alte_din p-4 md:p-8">
         <div className="flex justify-center p-6">
-          <div className="relative">
-            <div className="absolute size-5 md:size-8">
-              <Image
-                src="/img/star.svg"
-                alt="キラキラ"
-                fill
-                className="-translate-x-1/2 -translate-y-1/2"
-              />
-            </div>
-            <div className="absolute right-0 bottom-0 size-8 md:size-12">
-              <Image
-                src="/img/star.svg"
-                alt="キラキラ"
-                fill
-                className="translate-x-full translate-y-0 rotate-180"
-              />
-            </div>
-            <p className="font-south_amsterdam text-theme text-6xl md:text-8xl">Goods</p>
-          </div>
+          <Header path="/goods">Goods</Header>
         </div>
         <p className="m-4 md:m-8 font-zen_kaku_gothic_new text-theme text-xl md:text-2xl">画像をタップするとサンプル画像の一覧を見ることができます。</p>
         <div className="m-4 my-8 md:m-8 md:my-16 grid gap-4 gap-y-[calc(1rem/cos(8deg))] grid-cols-3 md:grid-cols-4 skew-y-[4deg]">
@@ -340,31 +40,14 @@ export default async function Page() {
           ))}
         </div>
         <div className="flex justify-center p-6">
-          <div className="relative">
-            <div className="absolute size-5 md:size-8">
-              <Image
-                src="/img/star.svg"
-                alt="キラキラ"
-                fill
-                className="-translate-x-1/2 -translate-y-1/2"
-              />
-            </div>
-            <div className="absolute right-0 bottom-0 size-8 md:size-12">
-              <Image
-                src="/img/star.svg"
-                alt="キラキラ"
-                fill
-                className="translate-x-full translate-y-0 rotate-180"
-              />
-            </div>
-            <p className="font-south_amsterdam text-theme text-6xl md:text-8xl">Souvenirs</p>
-          </div>
+          <Header path="/goods">Souvenirs</Header>
         </div>
         <div className="m-4 my-8 md:m-8 md:my-16 grid gap-4 gap-y-[calc(1rem/cos(8deg))] grid-cols-3 md:grid-cols-4 skew-y-[4deg]">
           {souvenirs.map((item, i) => (
             <Frame key={item.id[0]} item={item} isLarge={i === 0} />
           ))}
         </div>
+        <div className="h-[200px]"/>
       </main>
     </ChakraProvider>
   );
@@ -398,9 +81,9 @@ const Frame: FC<{ isGoods?: boolean, item: Item; isLarge?: boolean }> = ({ isGoo
                 <section className="embla max-w-[48rem] m-auto rounded-xl [--slide-height:19rem] [--slide-spacing:1rem] [--slide-size:80%]">
                   <div className="embla__viewport overflow-hidden" ref={emblaRef}>
                     <div className="embla__container [backface-visibility:hidden] flex touch-pan-y ml-[calc(var(--slide-spacing)*-1)]">
-                      {Array.from(Array(imageCount).keys()).map(i => (<div className="embla__slide flex-[0_0_var(--slide-size)] min-w-0 aspect-square pl-[var(--slide-spacing)]" key={i}>
-                        <div className="relative aspect-square border-2 border-theme/50">
-                          <Image src={`/img/items/${isGoods ? "" : "souvenirs/"}${`0${id[0]}`.slice(-2)}_${i + 1}.jpg`} alt={name} fill className="object-contain" />
+                      {Array.from(Array(imageCount).keys()).map(i=>(<div className="embla__slide flex-[0_0_var(--slide-size)] min-w-0 aspect-square pl-[var(--slide-spacing)]" key={i}>
+                        <div className="relative size-full p-1 border-2 border-gray-200 rounded-3xl">
+                          <Image src={`/img/items/${isGoods ? "" : "souvenirs/"}${`0${id[0]}`.slice(-2)}_${i+1}.webp`} alt={name} fill className="object-contain" />
                         </div>
                       </div>))}
                     </div>
@@ -433,7 +116,7 @@ const Frame: FC<{ isGoods?: boolean, item: Item; isLarge?: boolean }> = ({ isGoo
               </ModalFooter>
             </ModalContent>
           </Modal>
-          <Image src={`/img/items/${isGoods ? "" : "souvenirs/"}${`0${id[0]}`.slice(-2)}_1.jpg`} alt={name} fill className={`object-cover ${isLarge ? "-translate-y-[calc((tan(16deg)-tan(4deg))*(9/20)*100%)] [clipPath:polygon(0_calc((tan(16deg)-tan(4deg))*(9/10)*100%),100%_0,100%_80%,0_100%)]" : "-translate-y-[calc((tan(16deg)-tan(4deg))*(5/12)*100%)] [clipPath:polygon(0_calc((tan(16deg)-tan(4deg))*(5/6)*100%),100%_0,100%_100%,0_100%)]"}`} />
+          <Image src={`/img/items/${isGoods ? "" : "souvenirs/"}${`0${id[0]}`.slice(-2)}_1.webp`} alt={name} fill className={`object-cover ${isLarge ? "-translate-y-[calc((tan(16deg)-tan(4deg))*(9/20)*100%)] [clipPath:polygon(0_calc((tan(16deg)-tan(4deg))*(9/10)*100%),100%_0,100%_80%,0_100%)]" : "-translate-y-[calc((tan(16deg)-tan(4deg))*(5/12)*100%)] [clipPath:polygon(0_calc((tan(16deg)-tan(4deg))*(5/6)*100%),100%_0,100%_100%,0_100%)]"}`} />
           <div className={`size-full pl-1 ${isLarge ? "translate-y-[calc((tan(16deg)-tan(4deg))*(9/20)*100%)]" : "translate-y-[calc((tan(16deg)-tan(4deg))*(5/12)*100%)]"}`}>
             <VscExpandAll />
           </div>
