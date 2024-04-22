@@ -59,13 +59,13 @@ export const Circle: FC<Props> = ({ circle }) => {
         <p className="whitespace-pre-wrap font-medium">{description}</p>
         <div className="mt-4">
           <div>
-            <a
+            {/* <a
               href={mapHref}
               className="mr-2 inline-block bg-theme px-3 py-1 text-white"
             >
               <MapPin className={"h-[35px] fill-white"} />
               <span className="ml-1">マップ</span>
-            </a>
+            </a> */}
             {articles && articles.length !== 0 && (
               <a
                 href={articleHref}
