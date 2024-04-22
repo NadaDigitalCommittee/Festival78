@@ -33,7 +33,7 @@ export default async function Page() {
         <div className="flex justify-center p-6">
           <Header path="/goods">Goods</Header>
         </div>
-        <p className="m-4 md:m-8 font-zen_kaku_gothic_new text-theme text-xl md:text-2xl">画像をタップするとサンプル画像の一覧を見ることができます。</p>
+        <p className="m-4 md:m-8 font-zen_kaku_gothic_new text-theme text-xl md:text-2xl">画像をタップすると詳細とサンプル画像の一覧を見ることができます。</p>
         <div className="m-4 my-8 md:m-8 md:my-16 grid gap-4 gap-y-[calc(1rem/cos(8deg))] grid-cols-3 md:grid-cols-4 skew-y-[4deg]">
           {goods.map((item, i) => (
             <Frame key={item.id[0]} isGoods item={item} isLarge={i === 0} />
@@ -47,7 +47,7 @@ export default async function Page() {
             <Frame key={item.id[0]} item={item} isLarge={i === 0} />
           ))}
         </div>
-        <div className="h-[200px]"/>
+        <div className="h-[200px]" />
       </main>
     </ChakraProvider>
   );
@@ -81,9 +81,9 @@ const Frame: FC<{ isGoods?: boolean, item: Item; isLarge?: boolean }> = ({ isGoo
                 <section className="embla max-w-[48rem] m-auto rounded-xl [--slide-height:19rem] [--slide-spacing:1rem] [--slide-size:80%]">
                   <div className="embla__viewport overflow-hidden" ref={emblaRef}>
                     <div className="embla__container [backface-visibility:hidden] flex touch-pan-y ml-[calc(var(--slide-spacing)*-1)]">
-                      {Array.from(Array(imageCount).keys()).map(i=>(<div className="embla__slide flex-[0_0_var(--slide-size)] min-w-0 aspect-square pl-[var(--slide-spacing)]" key={i}>
-                        <div className="relative size-full p-1 border-2 border-gray-200 rounded-3xl">
-                          <Image src={`/img/items/${isGoods ? "" : "souvenirs/"}${`0${id[0]}`.slice(-2)}_${i+1}.webp`} alt={name} fill className="object-contain" />
+                      {Array.from(Array(imageCount).keys()).map(i => (<div className="embla__slide flex-[0_0_var(--slide-size)] min-w-0 aspect-square pl-[var(--slide-spacing)]" key={i}>
+                        <div className="relative aspect-square border-2 border-theme/50">
+                          <Image src={`/img/items/${isGoods ? "" : "souvenirs/"}${`0${id[0]}`.slice(-2)}_${i + 1}.webp`} alt={name} fill className="object-contain" />
                         </div>
                       </div>))}
                     </div>
