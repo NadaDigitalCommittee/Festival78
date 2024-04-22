@@ -139,16 +139,6 @@ export const data: Circle[] = [
     mapId: "meeting",
     contents: [
       {
-        type: "article",
-        title: "どんこう154号",
-        url: "/pdf/railway/donkou154.pdf",
-      },
-      {
-        type: "article",
-        title: "どんこう155号",
-        url: "/pdf/railway/donkou155.pdf",
-      },
-      {
         type: "events",
         title: "ミニ電車",
         url: "/events?id=railway_event",
