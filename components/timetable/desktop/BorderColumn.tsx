@@ -32,7 +32,7 @@ export const BorderColumn = forwardRef<HTMLDivElement, Props>(
             .map((_, i) => (
               <div
                 key={i}
-                className="h-[120px] w-full odd:bg-[#FFEFE8] even:bg-white"
+                className="h-[120px] w-full odd:bg-[#FFEFE8]/50 even:bg-white/50"
               />
             ))}
         </div>

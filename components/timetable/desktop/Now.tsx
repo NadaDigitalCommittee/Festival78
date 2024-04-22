@@ -4,9 +4,8 @@ import { FC } from "react";
 
 export const Now: FC = () => {
   const now = Time.nowJST();
-
   const interval = now.getHours() - 9 + now.getMinutes() / 60;
-  console.log(interval);
+  
   const ok = 0 <= interval && interval <= 6.5;
   return (
     <div
@@ -15,7 +14,7 @@ export const Now: FC = () => {
       style={{
         position: "absolute",
         top: 155,
-        left: `calc(calc(${interval + 0.5}*max(160px,12vw)) + 120px)`,
+        left: `calc(${interval + 0.5}*max(160px,12vw))`,
       }}
     >
       <p className="min-w-20 -translate-x-1/2 text-center text-sm text-theme">

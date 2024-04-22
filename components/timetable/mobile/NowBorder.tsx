@@ -7,9 +7,8 @@ type Props = {
 
 export const NowBorder: FC<Props> = ({ eventCount }) => {
   const now = Time.nowJST();
-
   const interval = now.getHours() - 9 + now.getMinutes() / 60;
-  console.log(interval);
+  
   const ok = 0 <= interval && interval <= 6.5;
   return (
     <div

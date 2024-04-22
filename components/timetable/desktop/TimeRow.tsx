@@ -1,4 +1,5 @@
 import { forwardRef } from "react";
+import { Now } from "./Now";
 
 // eslint-disable-next-line react/display-name
 export const TimeRow = forwardRef<HTMLDivElement, {}>(({}, ref) => {
@@ -20,6 +21,7 @@ export const TimeRow = forwardRef<HTMLDivElement, {}>(({}, ref) => {
               </div>
             );
           })}
+          <Now />
       </div>
     </div>
   );
