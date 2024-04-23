@@ -143,6 +143,16 @@ export const data: Circle[] = [
         title: "ミニ電車",
         url: "/events?id=railway_event",
       },
+      {
+        type: "article",
+        title: "どんこう154号",
+        url: "/pdf/railway/adonkou154.pdf",
+      },
+      {
+        type: "article",
+        title: "どんこう155号",
+        url: "/pdf/railway/adonkou155.pdf",
+      }
     ],
   },
   {
