@@ -143,6 +143,16 @@ export const data: Circle[] = [
         title: "ミニ電車",
         url: "/events?id=railway_event",
       },
+      {
+        type: "article",
+        title: "どんこう154号",
+        url: "/pdf/railway/donkou154.pdf",
+      },
+      {
+        type: "article",
+        title: "どんこう155号",
+        url: "/pdf/railway/donkou155.pdf",
+      }
     ],
   },
   {
@@ -525,6 +535,13 @@ export const data: Circle[] = [
       "H2-1では全国大会優勝経験者を含む将棋部員と対局でき、勝つと景品が貰えます。今年は初の試みとして、共通テストの将棋版を用意しております。また、懸賞詰将棋・ポスターの展示もしており、様々な形で将棋を堪能して頂けます。 是非お越しください！",
     place: "H3",
     mapId: "h2-1",
+    contents: [
+      {
+        type: "article",
+        title: "部誌",
+        url: "/pdf/shogi/article.pdf",
+      }
+    ]
   },
   {
     id: "chemistry",
@@ -554,56 +571,56 @@ export const data: Circle[] = [
         title: "地歴の部屋　2024",
         url: "/pdf/geography/chireki_no_heya_2024.pdf",
       },
-      {
-        type: "article",
-        title: "模試問題　日本史　問題",
-        url: "/pdf/geography/r6_moshi_nihonshi.pdf",
-      },
-      {
-        type: "article",
-        title: "模試問題　日本史　解答用紙",
-        url: "/pdf/geography/r6_moshi_nihonshi_answer.pdf",
-      },
-      {
-        type: "article",
-        title: "模試問題　世界史　問題",
-        url: "/pdf/geography/r6_moshi_sekaishi.pdf",
-      },
-      {
-        type: "article",
-        title: "模試問題　世界史　解答用紙",
-        url: "/pdf/geography/r6_moshi_sekaishi_answer.pdf",
-      },
-      {
-        type: "article",
-        title: "模試問題　日本地理　問題",
-        url: "/pdf/geography/r6_moshi_nihonchiri.pdf",
-      },
-      {
-        type: "article",
-        title: "模試問題　日本地理　解答用紙",
-        url: "/pdf/geography/r6_moshi_nihonchiri_answer.pdf",
-      },
-      {
-        type: "article",
-        title: "模試問題　世界地理　問題",
-        url: "/pdf/geography/r6_moshi_sekaichiri.pdf",
-      },
-      {
-        type: "article",
-        title: "模試問題　世界地理　解答用紙",
-        url: "/pdf/geography/r6_moshi_sekaichiri_answer.pdf",
-      },
-      {
-        type: "article",
-        title: "模試問題　EX　問題",
-        url: "/pdf/geography/r6_moshi_ex.pdf",
-      },
-      {
-        type: "article",
-        title: "模試問題　EX　解答用紙",
-        url: "/pdf/geography/r6_moshi_ex_answer.pdf",
-      },
+      // {
+      //   type: "article",
+      //   title: "模試問題　日本史　問題",
+      //   url: "/pdf/geography/r6_moshi_nihonshi.pdf",
+      // },
+      // {
+      //   type: "article",
+      //   title: "模試問題　日本史　解答用紙",
+      //   url: "/pdf/geography/r6_moshi_nihonshi_answer.pdf",
+      // },
+      // {
+      //   type: "article",
+      //   title: "模試問題　世界史　問題",
+      //   url: "/pdf/geography/r6_moshi_sekaishi.pdf",
+      // },
+      // {
+      //   type: "article",
+      //   title: "模試問題　世界史　解答用紙",
+      //   url: "/pdf/geography/r6_moshi_sekaishi_answer.pdf",
+      // },
+      // {
+      //   type: "article",
+      //   title: "模試問題　日本地理　問題",
+      //   url: "/pdf/geography/r6_moshi_nihonchiri.pdf",
+      // },
+      // {
+      //   type: "article",
+      //   title: "模試問題　日本地理　解答用紙",
+      //   url: "/pdf/geography/r6_moshi_nihonchiri_answer.pdf",
+      // },
+      // {
+      //   type: "article",
+      //   title: "模試問題　世界地理　問題",
+      //   url: "/pdf/geography/r6_moshi_sekaichiri.pdf",
+      // },
+      // {
+      //   type: "article",
+      //   title: "模試問題　世界地理　解答用紙",
+      //   url: "/pdf/geography/r6_moshi_sekaichiri_answer.pdf",
+      // },
+      // {
+      //   type: "article",
+      //   title: "模試問題　EX　問題",
+      //   url: "/pdf/geography/r6_moshi_ex.pdf",
+      // },
+      // {
+      //   type: "article",
+      //   title: "模試問題　EX　解答用紙",
+      //   url: "/pdf/geography/r6_moshi_ex_answer.pdf",
+      // },
       // {
       //   type: "article",
       //   title: "クイズ　解答",
