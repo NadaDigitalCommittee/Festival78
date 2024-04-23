@@ -799,21 +799,21 @@ export const data: Circle[] = [
     place: "H4",
     mapId: "h1-2",
     contents: [
-      {
-        type: "article",
-        title: "入試模試",
-        url: "/pdf/mathematics/moshi.pdf",
-      },
-      {
-        type: "article",
-        title: "和田杯",
-        url: "/pdf/mathematics/wada.pdf",
-      },
-      {
-        type: "article",
-        title: "部誌",
-        url: "/pdf/mathematics/article.pdf",
-      },
+      // {
+      //   type: "article",
+      //   title: "入試模試",
+      //   url: "/pdf/mathematics/moshi.pdf",
+      // },
+      // {
+      //   type: "article",
+      //   title: "和田杯",
+      //   url: "/pdf/mathematics/wada.pdf",
+      // },
+      // {
+      //   type: "article",
+      //   title: "部誌",
+      //   url: "/pdf/mathematics/article.pdf",
+      // },
       {
         type: "events",
         title: "根軸基本講座",
@@ -906,7 +906,7 @@ export const data: Circle[] = [
     id: "conan",
     name: "コナンサークル",
     description:
-      "中学棟4階にあるコナンサークルではコナンに関するペーパークイズを常に実施しています。\n初級から超級まで難易度ごとにクイズが違うのですべての人が楽しめる内容になっています。また１０時３０分、１４時からの１０分間はトリック実演を行います。",
+      "中学棟4階にあるコナンサークルではコナンに関するペーパークイズを常に実施しています。\n初級から超級まで難易度ごとにクイズが違うのですべての人が楽しめる内容になっています。また１０時３０分、１３時３０分からの１０分間はトリック実演を行います。",
     place: "M4",
     mapId: "m3-3",
     contents: [
