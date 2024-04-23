@@ -52,13 +52,14 @@ export const Article: FC<Props> = ({ circle }) => {
             `}
           >
             <span className="mr-4">{article.title}</span>
-            <Link
+            <a
               href={article.url}
               className="ml-auto flex h-[30px] min-w-[130px] items-center justify-center gap-2 bg-theme px-2 text-center text-white"
+              download
             >
               <RiDownload2Fill />
               ダウンロード
-            </Link>
+            </a>
           </div>
         ))}
       </AccordionPanel>
