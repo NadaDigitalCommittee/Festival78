@@ -23,6 +23,8 @@ export default function Page() {
         </>
         <div className="h-8" />
 
+        {/* PC */}
+
         <div className="visible flex justify-center max-md:hidden">
           <div className="flex h-[350px] w-[80vw] items-center justify-center gap-6 border-4 border-theme bg-white md:w-[550px]">
             <Image
@@ -52,6 +54,8 @@ export default function Page() {
           </div>
         </div>
 
+        {/* モバイル */}
+
         <div className=" mx-auto flex w-[80vw] flex-col justify-center md:hidden">
           <div className="flex items-center justify-center gap-3 border-4 border-theme bg-white py-4">
             <Image
@@ -67,7 +71,7 @@ export default function Page() {
               alt="裏表紙"
             />
           </div>
-          <div className="mt-auto flex h-[80px] w-full bg-theme p-1 text-center text-xs text-white">
+          <div className="mt-auto flex w-full bg-theme p-1 text-center text-xs text-white">
             <div className="mx-auto px-3">
               <p>
                 文化祭当日配布するパンフレットをダウンロードすることができます。
@@ -77,7 +81,7 @@ export default function Page() {
             <Link
               href={"/pdf/brochure.pdf"}
               download={"brochure.pdf"}
-              className="ml-auto"
+              className="my-auto ml-auto"
             >
               <div className="flex h-[70px] w-[75px] flex-col items-center justify-center gap-1 bg-white text-theme">
                 <RiDownload2Fill size={40} />

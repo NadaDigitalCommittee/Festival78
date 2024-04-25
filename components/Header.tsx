@@ -8,7 +8,7 @@ const hrefRequired = ["Blogs"];
 
 export const Header = (props: { children: string; path?: string }) => {
   const { children } = props;
-  const _props = props;
+  const _props = { ...props };
   _props.path ??= `/${children.toLowerCase()}`;
   const { path } = _props;
   const isHrefRequired = hrefRequired.includes(children);
