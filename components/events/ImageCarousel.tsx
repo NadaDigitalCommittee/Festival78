@@ -11,7 +11,12 @@ type PropType = {
   height: number;
 };
 
-export const ImageCarousel: React.FC<PropType> = ({ options, slides, width, height }) => {
+export const ImageCarousel: React.FC<PropType> = ({
+  options,
+  slides,
+  width,
+  height,
+}) => {
   // eslint-disable-next-line unused-imports/no-unused-vars
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     AutoScroll({ playOnInit: true, speed: 0.5 }),
