@@ -133,7 +133,8 @@ export const data: Circle[] = [
   {
     id: "tennis",
     name: "硬式テニス",
-    description: "文化祭といえばテニス部ですよね！勉強ばっかりしてないで運動もしていきましょう！テニス部ではストラックアウト、ミニラリー、ラリーの3 つの出し物をしています。豪華景品もありますのでぜひぜひ校門前のテニスコートに来てみてください！！",
+    description:
+      "文化祭といえばテニス部ですよね！勉強ばっかりしてないで運動もしていきましょう！テニス部ではストラックアウト、ミニラリー、ラリーの3 つの出し物をしています。豪華景品もありますのでぜひぜひ校門前のテニスコートに来てみてください！！",
     place: "Gym",
     mapId: "tennis",
   },
@@ -159,7 +160,7 @@ export const data: Circle[] = [
         type: "article",
         title: "どんこう155号",
         url: "/pdf/railway/donkou155.pdf",
-      }
+      },
     ],
   },
   {
@@ -547,8 +548,8 @@ export const data: Circle[] = [
         type: "article",
         title: "部誌",
         url: "/pdf/shogi/article.pdf",
-      }
-    ]
+      },
+    ],
   },
   {
     id: "chemistry",

@@ -27,7 +27,7 @@ export const BaseTimetableMobile: FC<Props> = ({
 
   useEffect(() => {
     if (!timetableRef.current) return;
-    timetableRef.current.addEventListener("scroll", (e) => {
+    timetableRef.current.addEventListener("scroll", () => {
       setScrollX(timetableRef.current?.scrollLeft || 0);
     });
   }, [timetableRef]);
@@ -49,7 +49,7 @@ export const BaseTimetableMobile: FC<Props> = ({
 
   return (
     <div className="flex">
-      <TimeColumn events={events} stickyItems={stickyItems} />
+      <TimeColumn stickyItems={stickyItems} />
       <div className="relative overflow-x-clip">
         <EventsRow ref={timeRef} events={events} />
         <BorderRows ref={timetableRef} eventCount={events.length}>

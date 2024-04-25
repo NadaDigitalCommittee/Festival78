@@ -106,11 +106,11 @@ export default function RootLayout({
         <TypekitLoader />
         <HamburgerMenu />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GAID} />
-        <div className="relative min-h-[100lvh] w-[100%] overflow-x-clip z-0">
+        <div className="relative z-0 min-h-[100lvh] w-[100%] overflow-x-clip">
           {children}
-          <div className="fixed top-0 w-full -z-50">
+          <div className="fixed top-0 -z-50 w-full">
             <div className="flex justify-center">
-            <Bg />
+              <Bg />
             </div>
           </div>
         </div>

@@ -1,5 +1,4 @@
 import { Time } from "../time";
-import { events } from "./events";
 
 export type EventTimetable = {
   id: string;

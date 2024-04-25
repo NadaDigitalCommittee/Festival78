@@ -6,7 +6,7 @@ export const TimeRow = forwardRef<HTMLDivElement, {}>(({}, ref) => {
   return (
     <div className="sticky top-0 z-10">
       <div
-        className="hidden-scrollbar overflow-y-clip sticky flex overflow-x-scroll border-b border-black bg-white "
+        className="hidden-scrollbar sticky flex overflow-y-clip overflow-x-scroll border-b border-black bg-white "
         ref={ref}
       >
         {Array(7)
@@ -21,7 +21,7 @@ export const TimeRow = forwardRef<HTMLDivElement, {}>(({}, ref) => {
               </div>
             );
           })}
-          <Now />
+        <Now />
       </div>
     </div>
   );

@@ -1,7 +1,5 @@
-import { MapPin } from "@/components/svg/MapPin";
 import { Place, placeString } from "@/lib/data/circles";
 import {
-  Accordion,
   AccordionButton,
   AccordionIcon,
   AccordionItem,
@@ -9,8 +7,7 @@ import {
 } from "@chakra-ui/accordion";
 import Image from "next/image";
 import { FC } from "react";
-import type { Circle as CircleType, Content } from "@/lib/data/circles";
-import Link from "next/link";
+import type { Circle as CircleType } from "@/lib/data/circles";
 import { Article } from "../svg/Article";
 
 type Props = {
