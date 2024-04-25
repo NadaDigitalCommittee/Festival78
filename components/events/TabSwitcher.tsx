@@ -4,9 +4,12 @@ import { ButtonHTMLAttributes, Suspense, useState } from "react";
 import ContentSection from "./ContentSection";
 import { EVENTS_PAGE_SOURCE } from "@/components/events/events_source";
 import EventsScroller from "./EventsScroller";
+import { useSearchParams } from "next/navigation";
 
 export default function TabSwitcher() {
-  const [index, setIndex] = useState<number>(0);
+  const id=useSearchParams().get("id");
+  const eventPage=EVENTS_PAGE_SOURCE.findIndex((e)=>e.map_id===id);
+  const [index, setIndex] = useState<number>(!id?0:eventPage===-1?5:eventPage);
 
   return (
     <>

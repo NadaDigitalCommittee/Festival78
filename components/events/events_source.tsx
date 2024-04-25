@@ -585,7 +585,7 @@ export const EVENTS_PAGE_SOURCE: [
       },
       {
         name: "根軸基本講座",
-        event_id: "mathmatics_event1",
+        event_id: "mathematics_event1",
         description: (
           <>根軸とは何か、どういったものなのかについて優しく説明します。</>
         ),
@@ -593,7 +593,7 @@ export const EVENTS_PAGE_SOURCE: [
       },
       {
         name: "円に内接する六角形についての小噺",
-        event_id: "mathmatics_event2",
+        event_id: "mathematics_event2",
         description: (
           <>
             円(二次曲線)に内接する六角形について、
@@ -605,7 +605,7 @@ export const EVENTS_PAGE_SOURCE: [
       },
       {
         name: "対称性を利用して合同式を得る方法",
-        event_id: "mathmatics_event3",
+        event_id: "mathematics_event3",
         description: (
           <>
             ある組み合わせの問題を解き、
@@ -617,7 +617,7 @@ export const EVENTS_PAGE_SOURCE: [
       },
       {
         name: "三角形に関する2種類の操作と相似三角形の出現",
-        event_id: "mathmatics_event4",
+        event_id: "mathematics_event4",
         description: (
           <>
             三角形に関する簡単な操作によって生み出される、
@@ -663,7 +663,7 @@ export const EVENTS_PAGE_SOURCE: [
       },
       {
         name: "入試模試解説",
-        event_id: "mathmatics_event5",
+        event_id: "mathematics_event5",
         description: (
           <>
             灘中入試模試の作問者が問題作成の背景とともに詳しく、
