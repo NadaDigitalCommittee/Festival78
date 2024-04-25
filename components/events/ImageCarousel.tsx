@@ -7,9 +7,11 @@ import AutoScroll from "embla-carousel-auto-scroll";
 type PropType = {
   slides: ReactNode[];
   options?: EmblaOptionsType;
+  width: number;
+  height: number;
 };
 
-export const ImageCarousel: React.FC<PropType> = ({ options, slides }) => {
+export const ImageCarousel: React.FC<PropType> = ({ options, slides, width, height }) => {
   // eslint-disable-next-line unused-imports/no-unused-vars
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     AutoScroll({ playOnInit: true, speed: 0.5 }),
@@ -28,7 +30,7 @@ export const ImageCarousel: React.FC<PropType> = ({ options, slides }) => {
       >
         {slides.map((slide, i) => (
           <div
-            className="min-w-0 flex-shrink-0 flex-grow-0  basis-[calc(min(300px,80vw))]"
+            className={`min-w-0 flex-shrink-0 flex-grow-0  basis-[calc(min(${width}px,80vw))] h-[${height}px]`}
             key={i}
           >
             <div>{slide}</div>

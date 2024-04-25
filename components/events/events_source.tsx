@@ -60,6 +60,8 @@ export const EVENTS_PAGE_SOURCE: [
                 direction: "rtl",
                 loop: true,
               }}
+              width={350}
+              height={500}
               slides={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map((i) => (
                 <Image
                   src={`/img/events/mscontest/${i}.webp`}
@@ -100,6 +102,8 @@ export const EVENTS_PAGE_SOURCE: [
                 direction: "rtl",
                 loop: true,
               }}
+              width={350}
+              height={500}
               slides={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map((i) => (
                 <Image
                   src={`/img/events/muscle/${i}.webp`}
@@ -181,6 +185,8 @@ export const EVENTS_PAGE_SOURCE: [
                 direction: "rtl",
                 loop: true,
               }}
+              width={300}
+              height={190}
               slides={[1, 2, 3, 4, 5].map((i) => (
                 <Image
                   src={`/img/events/n1/${i}.webp`}
@@ -196,6 +202,8 @@ export const EVENTS_PAGE_SOURCE: [
                 direction: "ltr",
                 loop: true,
               }}
+              width={300}
+              height={190}
               slides={[6, 7, 8, 9].map((i) => (
                 <Image
                   src={`/img/events/n1/${i}.webp`}
