@@ -32,13 +32,13 @@ export const BaseTimetableMobile: FC<Props> = ({
     });
   }, [timetableRef]);
 
-  useEffect(()=>{
-    if(!timeRef.current) return;
-    
-    timeRef.current.addEventListener("scroll",()=>{
-      timeRef.current?.scrollTo(scrollX || 0,0);
-    })
-  },[scrollX, timeRef])
+  useEffect(() => {
+    if (!timeRef.current) return;
+
+    timeRef.current.addEventListener("scroll", () => {
+      timeRef.current?.scrollTo(scrollX || 0, 0);
+    });
+  }, [scrollX, timeRef]);
 
   useEffect(() => {
     timeRef.current?.scrollTo(scrollX, 0);

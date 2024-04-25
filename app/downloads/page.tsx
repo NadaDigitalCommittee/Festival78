@@ -23,7 +23,6 @@ export default function Page() {
         </>
         <div className="h-8" />
 
-
         {/* PC */}
 
         <div className="visible flex justify-center max-md:hidden">
@@ -82,7 +81,7 @@ export default function Page() {
             <Link
               href={"/pdf/brochure.pdf"}
               download={"brochure.pdf"}
-              className="ml-auto my-auto"
+              className="my-auto ml-auto"
             >
               <div className="flex h-[70px] w-[75px] flex-col items-center justify-center gap-1 bg-white text-theme">
                 <RiDownload2Fill size={40} />
