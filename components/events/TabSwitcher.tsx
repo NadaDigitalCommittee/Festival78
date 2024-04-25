@@ -9,6 +9,7 @@ import { useSearchParams } from "next/navigation";
 export default function TabSwitcher() {
   const id=useSearchParams().get("id");
   const eventPage=EVENTS_PAGE_SOURCE.findIndex((e)=>e.map_id===id);
+  //idがありつつ、eventPageが-1の場合は、idがクラブサークルであると判断
   const [index, setIndex] = useState<number>(!id?0:eventPage===-1?5:eventPage);
 
   return (
