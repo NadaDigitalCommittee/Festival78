@@ -29,6 +29,13 @@ export const BaseTimetableDesktop: FC<Props> = ({
     });
   }, [timetableRef]);
 
+  useEffect(()=>{
+    if(!timeRef.current) return;
+    timeRef.current.addEventListener("scroll",()=>{
+      timetableRef.current?.scrollTo(timeRef.current?.scrollLeft || 0,0);
+    })
+  },[timeRef])
+
   useEffect(() => {
     timeRef.current?.scrollTo(scrollX, 0);
   }, [scrollX]);
