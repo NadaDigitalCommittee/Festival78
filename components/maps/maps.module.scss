@@ -1,0 +1,32 @@
+.arrow {
+  stroke-width: 0.75px;
+}
+.boxFill {
+  fill: #717171;
+  transform: translate(0px, 0px);
+}
+.boxStroke {
+  stroke: #221714;
+  stroke-width: 1.26px;
+}
+.attention {
+  fill: tomato !important;
+  animation: attention 2s ease-in 0s infinite reverse forwards running;
+}
+.fillNone {
+  fill: none;
+}
+.strokeNone {
+  stroke: none;
+}
+@keyframes attention {
+  0% {
+    filter: drop-shadow(0 0 0px tomato);
+  }
+  50% {
+    filter: drop-shadow(0 0 10px tomato);
+  }
+  100% {
+    filter: drop-shadow(0 0 0px tomato);
+  }
+}
