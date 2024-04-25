@@ -52,9 +52,9 @@ export type Circle = {
 export const data: Circle[] = [
   {
     id: "superball",
-    name: "スーパーボール",
+    name: "スーパーボールすくい",
     description:
-      "毎年大人気のスーパーボールすくいに加え、今年はフリースローチャレンジも開催します！小さなお子さんから大人の方まで大歓迎！バスケ部員たちと景品をかけて勝負する機会があるかも！？是非第1グラウンドまで足を運んでください！",
+      "毎年大人気のスーパーボールすくいを今年も開催します！小さなお子さんから大人の方まで大歓迎！バスケ部員たちと景品をかけて勝負する機会があるかも！？是非第一グラウンドまで足を運んでください！",
     place: "G1",
     mapId: "ground1",
   },
@@ -131,6 +131,14 @@ export const data: Circle[] = [
     mapId: "ground1",
   },
   {
+    id: "tennis",
+    name: "硬式テニス",
+    description:
+      "文化祭といえばテニス部ですよね！勉強ばっかりしてないで運動もしていきましょう！テニス部ではストラックアウト、ミニラリー、ラリーの3 つの出し物をしています。豪華景品もありますのでぜひぜひ校門前のテニスコートに来てみてください！！",
+    place: "Gym",
+    mapId: "tennis",
+  },
+  {
     id: "railway",
     name: "鉄道研究部",
     description:
@@ -152,7 +160,7 @@ export const data: Circle[] = [
         type: "article",
         title: "どんこう155号",
         url: "/pdf/railway/donkou155.pdf",
-      }
+      },
     ],
   },
   {
@@ -540,8 +548,8 @@ export const data: Circle[] = [
         type: "article",
         title: "部誌",
         url: "/pdf/shogi/article.pdf",
-      }
-    ]
+      },
+    ],
   },
   {
     id: "chemistry",
@@ -799,21 +807,21 @@ export const data: Circle[] = [
     place: "H4",
     mapId: "h1-2",
     contents: [
-      {
-        type: "article",
-        title: "入試模試",
-        url: "/pdf/mathematics/moshi.pdf",
-      },
-      {
-        type: "article",
-        title: "和田杯",
-        url: "/pdf/mathematics/wada.pdf",
-      },
-      {
-        type: "article",
-        title: "部誌",
-        url: "/pdf/mathematics/article.pdf",
-      },
+      // {
+      //   type: "article",
+      //   title: "入試模試",
+      //   url: "/pdf/mathematics/moshi.pdf",
+      // },
+      // {
+      //   type: "article",
+      //   title: "和田杯",
+      //   url: "/pdf/mathematics/wada.pdf",
+      // },
+      // {
+      //   type: "article",
+      //   title: "部誌",
+      //   url: "/pdf/mathematics/article.pdf",
+      // },
       {
         type: "events",
         title: "根軸基本講座",
@@ -906,7 +914,7 @@ export const data: Circle[] = [
     id: "conan",
     name: "コナンサークル",
     description:
-      "中学棟4階にあるコナンサークルではコナンに関するペーパークイズを常に実施しています。\n初級から超級まで難易度ごとにクイズが違うのですべての人が楽しめる内容になっています。また１０時３０分、１４時からの１０分間はトリック実演を行います。",
+      "中学棟4階にあるコナンサークルではコナンに関するペーパークイズを常に実施しています。\n初級から超級まで難易度ごとにクイズが違うのですべての人が楽しめる内容になっています。また１０時３０分、１３時３０分からの１０分間はトリック実演を行います。",
     place: "M4",
     mapId: "m3-3",
     contents: [

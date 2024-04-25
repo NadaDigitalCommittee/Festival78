@@ -2,68 +2,68 @@ import React, {
   PropsWithChildren,
   useCallback,
   useEffect,
-  useState
-} from 'react'
-import { EmblaCarouselType } from 'embla-carousel'
+  useState,
+} from "react";
+import { EmblaCarouselType } from "embla-carousel";
 
 type UsePrevNextButtonsType = {
-  prevBtnDisabled: boolean
-  nextBtnDisabled: boolean
-  onPrevButtonClick: () => void
-  onNextButtonClick: () => void
-}
+  prevBtnDisabled: boolean;
+  nextBtnDisabled: boolean;
+  onPrevButtonClick: () => void;
+  onNextButtonClick: () => void;
+};
 
 export const usePrevNextButtons = (
   emblaApi: EmblaCarouselType | undefined
 ): UsePrevNextButtonsType => {
-  const [prevBtnDisabled, setPrevBtnDisabled] = useState(true)
-  const [nextBtnDisabled, setNextBtnDisabled] = useState(true)
+  const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
+  const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
 
   const onPrevButtonClick = useCallback(() => {
-    if (!emblaApi) return
-    emblaApi.scrollPrev()
-  }, [emblaApi])
+    if (!emblaApi) return;
+    emblaApi.scrollPrev();
+  }, [emblaApi]);
 
   const onNextButtonClick = useCallback(() => {
-    if (!emblaApi) return
-    emblaApi.scrollNext()
-  }, [emblaApi])
+    if (!emblaApi) return;
+    emblaApi.scrollNext();
+  }, [emblaApi]);
 
   const onSelect = useCallback((emblaApi: EmblaCarouselType) => {
-    setPrevBtnDisabled(!emblaApi.canScrollPrev())
-    setNextBtnDisabled(!emblaApi.canScrollNext())
-  }, [])
+    setPrevBtnDisabled(!emblaApi.canScrollPrev());
+    setNextBtnDisabled(!emblaApi.canScrollNext());
+  }, []);
 
   useEffect(() => {
-    if (!emblaApi) return
+    if (!emblaApi) return;
 
-    onSelect(emblaApi)
-    emblaApi.on('reInit', onSelect)
-    emblaApi.on('select', onSelect)
-  }, [emblaApi, onSelect])
+    onSelect(emblaApi);
+    emblaApi.on("reInit", onSelect);
+    emblaApi.on("select", onSelect);
+  }, [emblaApi, onSelect]);
 
   return {
     prevBtnDisabled,
     nextBtnDisabled,
     onPrevButtonClick,
-    onNextButtonClick
-  }
-}
+    onNextButtonClick,
+  };
+};
 
 type PropType = PropsWithChildren<
   React.DetailedHTMLProps<
     React.ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   >
->
+>;
 
 export const PrevButton: React.FC<PropType> = (props) => {
-  const { children, ...restProps } = props
+  const { children, ...restProps } = props;
 
   return (
     <div>
       <button
-        className="flex items-center justify-center size-[3.6rem] rounded-[50%] disabled:text-theme/50"
+        className="flex size-[3.6rem] items-center justify-center rounded-[50%] disabled:text-theme/50"
         type="button"
         {...restProps}
       >
@@ -76,72 +76,72 @@ export const PrevButton: React.FC<PropType> = (props) => {
         {children}
       </button>
     </div>
-  )
-}
+  );
+};
 
 export const NextButton: React.FC<PropType> = (props) => {
-  const { children, ...restProps } = props
+  const { children, ...restProps } = props;
 
   return (
     <div>
-    <button
-      className="flex items-center justify-center size-[3.6rem] rounded-[50%] disabled:text-theme/50"
-      type="button"
-      {...restProps}
-    >
-      <svg className="size-[35%]" viewBox="0 0 532 532">
-        <path
-          fill="currentColor"
-          d="M176.34 520.646c-13.793 13.805-36.208 13.805-50.001 0-13.785-13.804-13.785-36.238 0-50.034L330.78 266 126.34 61.391c-13.785-13.805-13.785-36.239 0-50.044 13.793-13.796 36.208-13.796 50.002 0 22.928 22.947 206.395 206.507 229.332 229.454a35.065 35.065 0 0 1 10.326 25.126c0 9.2-3.393 18.26-10.326 25.2-45.865 45.901-206.404 206.564-229.332 229.52Z"
-        />
-      </svg>
-      {children}
-    </button>
+      <button
+        className="flex size-[3.6rem] items-center justify-center rounded-[50%] disabled:text-theme/50"
+        type="button"
+        {...restProps}
+      >
+        <svg className="size-[35%]" viewBox="0 0 532 532">
+          <path
+            fill="currentColor"
+            d="M176.34 520.646c-13.793 13.805-36.208 13.805-50.001 0-13.785-13.804-13.785-36.238 0-50.034L330.78 266 126.34 61.391c-13.785-13.805-13.785-36.239 0-50.044 13.793-13.796 36.208-13.796 50.002 0 22.928 22.947 206.395 206.507 229.332 229.454a35.065 35.065 0 0 1 10.326 25.126c0 9.2-3.393 18.26-10.326 25.2-45.865 45.901-206.404 206.564-229.332 229.52Z"
+          />
+        </svg>
+        {children}
+      </button>
     </div>
-  )
-}
+  );
+};
 
 type UseDotButtonType = {
-  selectedIndex: number
-  scrollSnaps: number[]
-  onDotButtonClick: (index: number) => void
-}
+  selectedIndex: number;
+  scrollSnaps: number[];
+  onDotButtonClick: (index: number) => void;
+};
 
 export const useDotButton = (
   emblaApi: EmblaCarouselType | undefined
 ): UseDotButtonType => {
-  const [selectedIndex, setSelectedIndex] = useState(0)
-  const [scrollSnaps, setScrollSnaps] = useState<number[]>([])
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
 
   const onDotButtonClick = useCallback(
     (index: number) => {
-      if (!emblaApi) return
-      emblaApi.scrollTo(index)
+      if (!emblaApi) return;
+      emblaApi.scrollTo(index);
     },
     [emblaApi]
-  )
+  );
 
   const onInit = useCallback((emblaApi: EmblaCarouselType) => {
-    setScrollSnaps(emblaApi.scrollSnapList())
-  }, [])
+    setScrollSnaps(emblaApi.scrollSnapList());
+  }, []);
 
   const onSelect = useCallback((emblaApi: EmblaCarouselType) => {
-    setSelectedIndex(emblaApi.selectedScrollSnap())
-  }, [])
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, []);
 
   useEffect(() => {
-    if (!emblaApi) return
+    if (!emblaApi) return;
 
-    onInit(emblaApi)
-    onSelect(emblaApi)
-    emblaApi.on('reInit', onInit)
-    emblaApi.on('reInit', onSelect)
-    emblaApi.on('select', onSelect)
-  }, [emblaApi, onInit, onSelect])
+    onInit(emblaApi);
+    onSelect(emblaApi);
+    emblaApi.on("reInit", onInit);
+    emblaApi.on("reInit", onSelect);
+    emblaApi.on("select", onSelect);
+  }, [emblaApi, onInit, onSelect]);
 
   return {
     selectedIndex,
     scrollSnaps,
-    onDotButtonClick
-  }
-}
+    onDotButtonClick,
+  };
+};

@@ -6,9 +6,8 @@ import {
 } from "@chakra-ui/accordion";
 import Image from "next/image";
 import { FC } from "react";
-import type { Circle as CircleType, Content } from "@/lib/data/circles";
+import type { Circle as CircleType } from "@/lib/data/circles";
 import { RiDownload2Fill } from "react-icons/ri";
-import Link from "next/link";
 type Props = {
   circle: CircleType;
 };

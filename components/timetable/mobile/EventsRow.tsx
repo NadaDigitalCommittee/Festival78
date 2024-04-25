@@ -1,4 +1,3 @@
-import { TimetableData } from "@/lib/types";
 import { forwardRef } from "react";
 
 type Props = {

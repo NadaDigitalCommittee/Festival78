@@ -3,7 +3,6 @@ import { FC, ReactNode, useEffect, useRef, useState } from "react";
 import { BorderColumn } from "./BorderColumn";
 import { EventColumn } from "./EventColumn";
 import { TimeRow } from "./TimeRow";
-import { Now } from "./Now";
 
 type Props = {
   events: {
@@ -25,10 +24,17 @@ export const BaseTimetableDesktop: FC<Props> = ({
 
   useEffect(() => {
     if (!timetableRef.current) return;
-    timetableRef.current.addEventListener("scroll", (e) => {
+    timetableRef.current.addEventListener("scroll", () => {
       setScrollX(timetableRef.current?.scrollLeft || 0);
     });
   }, [timetableRef]);
+
+  useEffect(()=>{
+    if(!timeRef.current) return;
+    timeRef.current.addEventListener("scroll",()=>{
+      timeRef.current?.scrollTo(scrollX || 0,0);
+    })
+  },[timeRef,scrollX])
 
   useEffect(() => {
     timeRef.current?.scrollTo(scrollX, 0);

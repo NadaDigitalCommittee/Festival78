@@ -1,6 +1,5 @@
 "use client";
 import { FC, useEffect, useMemo, useState } from "react";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 type Props = {
   selects: string[];

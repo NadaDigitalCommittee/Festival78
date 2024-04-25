@@ -1,4 +1,5 @@
 "use client";
+import { Header } from "@/components/Header";
 import { Selector } from "@/components/timetable/Selector";
 import { BaseTimetableDesktop } from "@/components/timetable/desktop/BaseTimetable";
 import {
@@ -147,6 +148,7 @@ export default function Page() {
 
   return (
     <div className="font-zen_kaku_gothic_new font-bold">
+      <Header path="/timetable">Timetable</Header>
       <div className="h-20 bg-white" />
       {media === undefined ? (
         <></>

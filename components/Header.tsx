@@ -25,7 +25,7 @@ export const Header = (props: { children: string; path?: string }) => {
           },
           <>
             <Star1 />
-            <div className="mx-1 mb-0 mt-auto font-south_amsterdam text-6xl md:text-7xl lg:text-9xl">
+            <div className="mx-1 mb-0 mt-auto font-south_amsterdam text-6xl font-normal md:text-7xl lg:text-9xl">
               {children}
             </div>
             <Star2 />

@@ -2,14 +2,10 @@ import { FC, ReactNode } from "react";
 import { Now } from "./Now";
 
 type Props = {
-  events: {
-    eventId: string;
-    eventName: string;
-  }[];
   stickyItems?: ReactNode;
 };
 
-export const TimeColumn: FC<Props> = ({ events, stickyItems }) => {
+export const TimeColumn: FC<Props> = ({ stickyItems }) => {
   return (
     <div className="relative z-20">
       <div className="sticky top-0 z-20 h-[250px] w-[70px] bg-white">

@@ -1,11 +1,10 @@
 import { Time } from "@/lib/time";
 import { FC } from "react";
-import { IoTriangleOutline } from "react-icons/io5";
 
 export const NowBorder: FC = () => {
   const now = Time.nowJST();
   const interval = now.getHours() - 9 + now.getMinutes() / 60;
-  
+
   const ok = 0 <= interval && interval <= 6.5;
   return (
     <div
