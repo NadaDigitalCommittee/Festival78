@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from "react";
+import { ReactNode } from "react";
 import { EmblaOptionsType } from "embla-carousel";
 import React from "react";
 import useEmblaCarousel from "embla-carousel-react";
@@ -10,15 +10,16 @@ type PropType = {
 };
 
 export const ImageCarousel: React.FC<PropType> = ({ options, slides }) => {
+  // eslint-disable-next-line unused-imports/no-unused-vars
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     AutoScroll({ playOnInit: true, speed: 0.5 }),
   ]);
 
-  useEffect(() => {
-    // if (emblaApi) {
-    //   console.log(emblaApi.slideNodes()) // Access API
-    // }
-  }, [emblaApi]);
+  // useEffect(() => {
+  //   if (emblaApi) {
+  //     console.log(emblaApi.slideNodes())
+  //   }
+  // }, [emblaApi]);
 
   return (
     <div className="overflow-hidden" ref={emblaRef}>

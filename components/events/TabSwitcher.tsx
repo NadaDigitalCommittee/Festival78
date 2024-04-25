@@ -68,7 +68,7 @@ type TabButtonProps = {
 function TabButton({ children, selected = false, ...props }: TabButtonProps) {
   return (
     <button
-      className="group box-border rounded-md border-2 border-border pb-[3px] pl-[16px] pr-[16px] pt-[3px] aria-selected:bg-border"
+      className="group box-border rounded-md border-2 border-border pb-[3px] pl-[16px] pr-[16px] pt-[3px] aria-selected:bg-border bg-white"
       aria-selected={selected}
       role="tab"
       {...props}
