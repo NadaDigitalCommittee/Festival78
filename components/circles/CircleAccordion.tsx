@@ -9,11 +9,17 @@ import { Circle } from "./Circle";
 export const CircleAcordion: FC = () => {
   const [defaultId, setDefaultId] = useState<string | null>(null);
   const [index, setIndex] = useState(0);
+  const media = useResponsive();
   useEffect(() => {
     setDefaultId(window.location.hash.replace("#", "") ?? "");
   }, [defaultId]);
 
-  const data=useMemo(()=>arrayOddAndEven(data_),[])
+  const data=useMemo(()=>{
+    if(media===MediaType.Desktop){
+      return arrayOddAndEven(data_);
+    }  
+    return data_; 
+  },[media])
 
   useEffect(() => {
     if (!defaultId) return;
@@ -25,7 +31,7 @@ export const CircleAcordion: FC = () => {
     setIndex(data.findIndex((circle) => circle.id === defaultId));
   }, [data, defaultId]);
 
-  const media = useResponsive();
+  
   const halfLength = useMemo(() => Math.ceil(data.length / 2), []);
   return (
     <ChakraProvider>
