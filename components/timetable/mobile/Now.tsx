@@ -10,10 +10,11 @@ export const Now: FC = () => {
   const ok = 0 <= interval && interval <= 6.5;
   return (
     <div
-      className={`${ok ? "absolute" : "hidden"} w-12 
+      className={`${ok ? "absolute" : "hidden"} w-12 z-40 
     `}
       style={{
-        top: `calc(calc(${interval + 0.5}*120px) + 235px)`,
+        top: `calc(calc(${interval + 0.5}*120px) - 20px)`,
+        left: "10px",
       }}
     >
       <div className="flex items-center">

@@ -11,7 +11,7 @@ export const BorderRows = forwardRef<HTMLDivElement, Props>(
   ({ children, eventCount }, ref) => {
     return (
       <div
-        className={`relative overflow-y-hidden overflow-x-scroll`}
+        className={`relative overflow-y-hidden overflow-x-visible`}
         style={{
           height: 120 * 7 + 100,
         }}

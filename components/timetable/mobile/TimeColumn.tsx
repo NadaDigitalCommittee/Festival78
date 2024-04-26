@@ -7,10 +7,7 @@ type Props = {
 
 export const TimeColumn: FC<Props> = ({ stickyItems }) => {
   return (
-    <div className="relative z-20">
-      <div className="sticky top-0 z-20 h-[250px] w-[70px] bg-white">
-        {stickyItems}
-      </div>
+    <div className="sticky left-0 z-20 mt-[105px] min-w-[60px]">
       {/* {events.map((event, i) => {
         return (
           <div
@@ -28,11 +25,12 @@ export const TimeColumn: FC<Props> = ({ stickyItems }) => {
         );
       })} */}
       <Now />
+      <div className="h-[120px] w-[60px] -mt-[120px]  bg-white" />
       {new Array(7).fill(0).map((_, i) => {
         return (
           <div
             key={i}
-            className="flex h-[120px] w-full items-center justify-end"
+            className="flex h-[120px] w-full items-center justify-end bg-white relative z-10"
           >
             <p className="font-limelight text-2xl">{i + 9}</p>
           </div>

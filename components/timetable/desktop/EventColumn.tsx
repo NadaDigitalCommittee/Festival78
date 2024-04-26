@@ -11,10 +11,7 @@ type Props = {
 
 export const EventColumn: FC<Props> = ({ events, stickyItems }) => {
   return (
-    <div className="z-20">
-      <div className="sticky top-0 z-20 h-[200px] w-[120px] min-w-[100px] bg-white">
-        {stickyItems}
-      </div>
+    <div className="z-20 sticky left-0 mt-[50px]">
       {events.map((event, i) => {
         return (
           <div

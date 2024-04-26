@@ -112,7 +112,6 @@ export const data: Circle[] = [
       "大人気なBENADAが今年も第一グラウンドに出現！灘校一のフォトスポットなので一度は訪れてみてください！",
     place: "G1",
     mapId: "ground1",
-    noLogo: true,
   },
   {
     id: "classic",
@@ -186,7 +185,6 @@ export const data: Circle[] = [
       "売り切れ必至！！\n毎年人気のお茶、冷たく冷えたジュース、コーヒーなどなど10種類の飲み物をお得価格でご用意しました！！飲みたい物が必ず見つかるジュース売場へGO💨\n皆さまのお越しをお待ちしております。",
     place: "NewGarden",
     mapId: "broadcasting_juice",
-    noLogo: true,
   },
   {
     id: "nurse",
@@ -220,7 +218,6 @@ export const data: Circle[] = [
       "灘校の校章をあしらったグッズや、文化祭ロゴデザインの生徒会企画品を販売しています。定番文房具から愛らしいぬいぐるみなど、幅広い品揃えで皆さまをお待ちしています。灘校文化祭の記念に、お気に入りを見つけてください。",
     place: "Gym",
     mapId: "gym",
-    noLogo: true,
   },
   {
     id: "snack",

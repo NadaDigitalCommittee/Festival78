@@ -40,11 +40,11 @@ export default function Page() {
               alt="裏表紙"
             />
           </div>
-          <div className="mt-auto h-[210px] w-[210px] bg-theme p-4 text-center text-sm text-white">
+          <div className="mt-auto w-[210px] bg-theme p-4 text-center text-sm text-white">
             <p className="mt-6">
               文化祭当日配布するパンフレットをダウンロードすることができます。
             </p>
-            <p>※事前の予告なく公開を停止することがございます。</p>
+            <p>※事前の予告なく公開を停止したり、一部のページに黒塗りまたは差し替えがされていることがございます。</p>
             <a href={"/pdf/brochure.pdf"} download>
               <div className="mx-auto mt-4 flex h-6 w-[140px] justify-center bg-white text-theme">
                 <RiDownload2Fill size={20} />
@@ -76,7 +76,7 @@ export default function Page() {
               <p>
                 文化祭当日配布するパンフレットをダウンロードすることができます。
               </p>
-              <p>※事前の予告なく公開を停止することがございます。</p>
+              <p>※事前の予告なく公開を停止したり、一部のページに黒塗りまたは差し替えがされていることがございます。</p>
             </div>
             <Link
               href={"/pdf/brochure.pdf"}
