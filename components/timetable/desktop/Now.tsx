@@ -13,7 +13,7 @@ export const Now: FC = () => {
     `}
       style={{
         position: "absolute",
-        top: 155,
+        top: 0,
         left: `calc(${interval + 0.5}*max(160px,12vw))`,
       }}
     >

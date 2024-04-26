@@ -147,9 +147,9 @@ export default function Page() {
   );
 
   return (
-    <div className="font-zen_kaku_gothic_new font-bold">
+    <div className="font-zen_kaku_gothic_new font-bold overflow-y-clip">
       <Header path="/timetable">Timetable</Header>
-      <div className="h-20 bg-white" />
+      {stickyItems}
       {media === undefined ? (
         <></>
       ) : media === MediaType.Mobile ? (

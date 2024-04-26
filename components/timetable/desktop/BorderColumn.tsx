@@ -11,9 +11,10 @@ export const BorderColumn = forwardRef<HTMLDivElement, Props>(
   ({ children, eventCount }, ref) => {
     return (
       <div
-        className={`relative flex overflow-y-hidden overflow-x-scroll`}
+        className={`relative flex`}
         style={{
-          height: 120 * eventCount + 100,
+          top: 50,
+          height: 120 * eventCount,
         }}
         ref={ref}
       >
