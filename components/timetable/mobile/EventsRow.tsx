@@ -13,14 +13,14 @@ export const EventsRow = forwardRef<HTMLDivElement, Props>(
     return (
       <div className="sticky top-0 z-10">
         <div
-          className="hidden-scrollbar sticky flex overflow-x-scroll border-b border-black bg-white "
+          className="flex border-b border-black bg-white "
           ref={ref}
         >
           {events.map((event, i) => {
             return (
               <div
                 key={i}
-                className={`group flex h-[250px] min-w-[160px] items-end
+                className={`group flex h-[80px] min-w-[160px] items-end
                 text-center even:text-white`}
               >
                 <div className="flex h-[90px] w-full flex-col justify-center text-xl group-odd:bg-white group-even:bg-theme">

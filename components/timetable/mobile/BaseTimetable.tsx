@@ -21,28 +21,28 @@ export const BaseTimetableMobile: FC<Props> = ({
   stickyItems,
   defaultScrollX = 0,
 }) => {
-  const [scrollX, setScrollX] = useState(0);
+  // const [scrollX, setScrollX] = useState(0);
   const timetableRef = useRef<HTMLDivElement>(null);
   const timeRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (!timetableRef.current) return;
-    timetableRef.current.addEventListener("scroll", () => {
-      setScrollX(timetableRef.current?.scrollLeft || 0);
-    });
-  }, [timetableRef]);
+  // useEffect(() => {
+  //   if (!timetableRef.current) return;
+  //   timetableRef.current.addEventListener("scroll", () => {
+  //     setScrollX(timetableRef.current?.scrollLeft || 0);
+  //   });
+  // }, [timetableRef]);
 
-  useEffect(() => {
-    if (!timeRef.current) return;
+  // useEffect(() => {
+  //   if (!timeRef.current) return;
 
-    timeRef.current.addEventListener("scroll", () => {
-      timeRef.current?.scrollTo(scrollX || 0, 0);
-    });
-  }, [scrollX, timeRef]);
+  //   timeRef.current.addEventListener("scroll", () => {
+  //     timeRef.current?.scrollTo(scrollX || 0, 0);
+  //   });
+  // }, [scrollX, timeRef]);
 
-  useEffect(() => {
-    timeRef.current?.scrollTo(scrollX, 0);
-  }, [scrollX]);
+  // useEffect(() => {
+  //   timeRef.current?.scrollTo(scrollX, 0);
+  // }, [scrollX]);
 
   useEffect(() => {
     timeRef.current?.scrollTo({
@@ -56,13 +56,19 @@ export const BaseTimetableMobile: FC<Props> = ({
   }, [defaultScrollX]);
 
   return (
-    <div className="flex">
-      <TimeColumn stickyItems={stickyItems} />
-      <div className="relative overflow-x-clip">
-        <EventsRow ref={timeRef} events={events} />
-        <BorderRows ref={timetableRef} eventCount={events.length}>
-          <div className="absolute">{children}</div>
-        </BorderRows>
+    <div className="overflow-x-scroll relative mt-4">
+
+      <div className="absolute h-[101px] w-[60px] z-40 bg-white" />
+      <div className="flex overflow-y-scroll h-screen">
+
+        <TimeColumn stickyItems={stickyItems} />
+
+        <div className="relative">
+          <EventsRow ref={timeRef} events={events} />
+          <BorderRows ref={timetableRef} eventCount={events.length}>
+            <div className="absolute">{children}</div>
+          </BorderRows>
+        </div>
       </div>
     </div>
   );
