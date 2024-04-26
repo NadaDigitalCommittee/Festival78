@@ -1,6 +1,6 @@
 //mobile
 "use client";
-import { FC, ReactNode, useEffect, useRef, useState } from "react";
+import { FC, ReactNode, useEffect, useRef } from "react";
 import { BorderRows } from "./BorderColumn";
 import { TimeColumn } from "./TimeColumn";
 import { EventsRow } from "./EventsRow";
