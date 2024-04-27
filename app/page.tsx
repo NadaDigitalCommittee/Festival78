@@ -226,6 +226,10 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          <p className="font-zen_kaku_gothic_new text-black/70 w-[70vw] text-center mx-auto mb-8 max-w-[800px]">
+            第78回灘校文化祭「ODYSSEY」に関するお問い合わせや疑問点等は以下の公式Xアカウント、FacebookアカウントおよびLINEアカウントへのダイレクトメッセージにお願いします。
+          </p>
         </div>
       </main>
     </div>
