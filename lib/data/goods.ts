@@ -4,7 +4,8 @@ export type Item = {
   name: string,
   imageCount: number,
   price: number,
-  description: string
+  description: string,
+  types?: string[]
 };
 export const goods: Item[] = [{
   id: [1],
@@ -61,7 +62,8 @@ export const goods: Item[] = [{
   name: 'Tシャツ',
   imageCount: 7,
   price: 1500,
-  description: 'サイズ S・M・L・LL'
+  description: 'S・M・L・LL\n白・黒',
+  types: ['S白', 'S黒', 'M白', 'M黒', 'L白', 'L黒', 'LL白', 'LL黒']
 }, {
   id: [16],
   size: 's',
@@ -75,14 +77,16 @@ export const goods: Item[] = [{
   name: '白竹堂製\n校是布扇子',
   imageCount: 6,
   price: 1300,
-  description: '紺・えんじ・深緑・白地 綿製\n灘校書道教師倉橋先生による校是書字'
+  description: '紺・えんじ・深緑・白 綿製\n灘校書道教師倉橋先生による校是書字',
+  types: ['紺', 'えんじ', '深緑', '白']
 }, {
   id: [21, 22],
   size: 'l',
   name: '校章チャーム',
   imageCount: 1,
   price: 1000,
-  description: 'ダークブラウン・紺 約3.3×3.3cm\n本革製校章チャーム 丁寧な手作りチャーム'
+  description: 'ダークブラウン・紺 約3.3×3.3cm\n本革製校章チャーム 丁寧な手作りチャーム',
+  types: ['ダークブラウン', '紺']
 }, {
   id: [23],
   size: 'l',
@@ -96,7 +100,8 @@ export const goods: Item[] = [{
   name: '灘ベア小\n キーホルダー',
   imageCount: 2,
   price: 800,
-  description: '紺・えんじ 約8cm\n灘校オリジナルオーダーのベアストラップ'
+  description: '紺・えんじ 約8cm\n灘校オリジナルオーダーのベアストラップ',
+  types: ['紺', 'えんじ']
 }, {
   id: [26],
   size: 'm',
@@ -117,7 +122,8 @@ export const goods: Item[] = [{
   name: 'クリアファイル\nA4無地',
   imageCount: 1,
   price: 100,
-  description: '使いやすい無地'
+  description: '白・青・黄・緑・ピンク\n使いやすい無地',
+  types: ['白', '青', '黄', '緑', 'ピンク']
 }, {
   id: [33],
   size: 'm',
@@ -138,49 +144,56 @@ export const goods: Item[] = [{
   name: 'スマッシュ\n高機能\nシャープペン',
   imageCount: 3,
   price: 900,
-  description: 'ブラック・レッド・ダークグレー\n灘校生に大人気のスマッシュが灘校グッズに新登場'
+  description: 'ブラック・レッド・ダークグレー\n灘校生に大人気のスマッシュが灘校グッズに新登場',
+  types: ['ブラック', 'レッド', 'ダークグレー']
 }, {
   id: [38, 39, 40],
   size: 'm',
   name: 'クルトガ KS\nシャープペン',
   imageCount: 3,
   price: 500,
-  description: 'ネイビー・アイスブルー・ライトグレー\nクルトガ大人気モデル'
+  description: 'ネイビー・アイスブルー・ライトグレー\nクルトガ大人気モデル',
+  types: ['ネイビー', 'アイスブルー', 'ライトグレー']
 }, {
   id: [41, 42, 43, 44],
   size: 'm',
   name: 'シャープペン\nベリーシャ楽',
   imageCount: 2,
   price: 100,
-  description: '黒・緑・ピンク・青\nお手頃価格だけど書き味抜群'
+  description: '黒・緑・ピンク・青\nお手頃価格だけど書き味抜群',
+  types: ['黒', '緑', 'ピンク', '青']
 }, {
   id: [45, 46, 47],
   size: 's',
   name: '3色ボール\nペン 0.5 ジェット\nストリーム',
   imageCount: 2,
   price: 500,
-  description: 'ブラック・ブルーグレー・アイスブルー\n間違えずに黒を出せる'
+  description: 'ブラック・ブルーグレー・アイスブルー\n間違えずに黒を出せる',
+  types: ['ブラック', 'ブルーグレー', 'アイスブルー']
 }, {
   id: [48, 49, 50],
   size: 'm',
   name: '単色\nボールペン 0.5',
   imageCount: 2,
   price: 150,
-  description: '黒・赤・青\nスイスイ書ける単色ゲルインクボールペン'
+  description: '黒・赤・青\nスイスイ書ける単色ゲルインクボールペン',
+  types: ['黒', '赤', '青']
 }, {
   id: [51, 52, 53, 54],
   size: 's',
   name: '多機能ペン\n ジェット\nストリーム\n',
   imageCount: 2,
   price: 700,
-  description: 'ネイビー・ボルドー・ブラック・ピンク\n最も使用頻度の高い赤・黒ボールペン&シャープペンシルの組み合わせ'
+  description: 'ネイビー・ボルドー・ブラック・ピンク\n最も使用頻度の高い赤・黒ボールペン&シャープペンシルの組み合わせ',
+  types: ['ネイビー', 'ボルドー', 'ブラック', 'ピンク']
 }, {
   id: [55, 56, 57, 58],
   size: 'm',
   name: '消しゴム\nSEEDレーダー',
   imageCount: 5,
   price: 150,
-  description: '紺・えんじ・緑・水色\n灘校書道教師倉橋先生による校是書字デザイン'
+  description: '紺・えんじ・緑・水色\n灘校書道教師倉橋先生による校是書字デザイン',
+  types: ['紺', 'えんじ', '緑', '水色']
 }, {
   id: [59],
   size: 's',
@@ -201,7 +214,8 @@ export const goods: Item[] = [{
   name: '下敷き',
   imageCount: 1,
   price: 200,
-  description: '暗記ペン用にも便利な赤・緑'
+  description: '暗記ペン用にも便利な赤・緑',
+  types: ['赤', '緑']
 }, {
   id: [63],
   size: 'l',
