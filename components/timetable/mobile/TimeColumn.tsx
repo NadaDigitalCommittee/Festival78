@@ -7,25 +7,8 @@ type Props = {
 
 export const TimeColumn: FC<Props> = ({ stickyItems }) => {
   return (
-    <div className="sticky left-0 z-20 mt-[105px] min-w-[60px]">
-      {/* {events.map((event, i) => {
-        return (
-          <div
-            key={i}
-            className={`flex h-[120px]  w-[120px] flex-col items-center
-        justify-center gap-3  border-r-2
-        border-black text-center text-theme 
-        odd:bg-white even:bg-theme even:text-white`}
-          >
-            <p>{event.eventName}</p>
-            <Link href={`/events?id=${event.eventId}`}>
-              <p className="text-xs underline">詳細・会場を確認</p>
-            </Link>
-          </div>
-        );
-      })} */}
+    <div className="sticky left-0 z-20 mt-[85px] min-w-[60px]">
       <Now />
-      <div className="h-[120px] w-[60px] -mt-[120px]  bg-white" />
       {new Array(7).fill(0).map((_, i) => {
         return (
           <div

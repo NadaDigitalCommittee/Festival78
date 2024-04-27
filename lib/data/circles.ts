@@ -945,6 +945,11 @@ export const data: Circle[] = [
         title: "ロボットプログラミング講習",
         url: "/events?id=amateurradio_event2",
       },
+      {
+        type: "article",
+        title: "部誌",
+        url: "/pdf/amateurradio/article.pdf"
+      }
     ],
   },
 ];

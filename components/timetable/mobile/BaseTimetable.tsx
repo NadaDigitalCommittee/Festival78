@@ -21,34 +21,9 @@ export const BaseTimetableMobile: FC<Props> = ({
   stickyItems,
   defaultScrollX = 0,
 }) => {
-  // const [scrollX, setScrollX] = useState(0);
   const timetableRef = useRef<HTMLDivElement>(null);
-  const timeRef = useRef<HTMLDivElement>(null);
-
-  // useEffect(() => {
-  //   if (!timetableRef.current) return;
-  //   timetableRef.current.addEventListener("scroll", () => {
-  //     setScrollX(timetableRef.current?.scrollLeft || 0);
-  //   });
-  // }, [timetableRef]);
-
-  // useEffect(() => {
-  //   if (!timeRef.current) return;
-
-  //   timeRef.current.addEventListener("scroll", () => {
-  //     timeRef.current?.scrollTo(scrollX || 0, 0);
-  //   });
-  // }, [scrollX, timeRef]);
-
-  // useEffect(() => {
-  //   timeRef.current?.scrollTo(scrollX, 0);
-  // }, [scrollX]);
 
   useEffect(() => {
-    timeRef.current?.scrollTo({
-      left: defaultScrollX,
-      behavior: "smooth",
-    });
     timetableRef.current?.scrollTo({
       left: defaultScrollX,
       behavior: "smooth",
@@ -57,15 +32,12 @@ export const BaseTimetableMobile: FC<Props> = ({
 
   return (
     <div className="overflow-x-scroll relative mt-4">
-
-      <div className="absolute h-[101px] w-[60px] z-40 bg-white" />
-      <div className="flex overflow-y-scroll h-screen">
-
+      <div className="absolute h-[81px] w-[60px] z-40 bg-white" />
+      <div className="flex overflow-y-scroll h-screen" ref={timetableRef}>
         <TimeColumn stickyItems={stickyItems} />
-
         <div className="relative">
-          <EventsRow ref={timeRef} events={events} />
-          <BorderRows ref={timetableRef} eventCount={events.length}>
+          <EventsRow events={events} />
+          <BorderRows eventCount={events.length}>
             <div className="absolute">{children}</div>
           </BorderRows>
         </div>

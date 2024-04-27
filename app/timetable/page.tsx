@@ -94,7 +94,7 @@ export default function Page() {
       if (!top || !left) return;
       setScrollX(left + window.scrollX - 70);
       window.scrollTo({
-        top: top + window.scrollY - (media === MediaType.Mobile ? 250 : 215),
+        top: top + window.scrollY - (media === MediaType.Mobile ? -300 : 215),
         behavior: "smooth",
       });
     }, 800);
@@ -147,7 +147,7 @@ export default function Page() {
   );
 
   return (
-    <div className="font-zen_kaku_gothic_new font-bold overflow-y-clip">
+    <div className="font-zen_kaku_gothic_new font-bold overflow-y-clip mb-[100px]">
       <Header path="/timetable">Timetable</Header>
       {stickyItems}
       {media === undefined ? (
