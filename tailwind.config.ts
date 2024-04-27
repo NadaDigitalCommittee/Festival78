@@ -1,4 +1,3 @@
-import { Limelight } from "next/font/google";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -16,6 +15,7 @@ const config: Config = {
         alte_din: ["var(--font-alte-din-1451-mittelschrift)"],
         south_amsterdam: ["var(--font-south-amsterdam-demo)"],
         times_new_roman: ["var(--font-times-new-roman)"],
+        futura_pt: ["futura-pt"],
       },
       colors: {
         theme: "#ff4d00",

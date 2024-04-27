@@ -16,6 +16,7 @@ export const EventsRow = forwardRef<HTMLDivElement, Props>(
           className="flex border-b border-black bg-white "
           ref={ref}
         >
+          <div/>
           {events.map((event, i) => {
             return (
               <div

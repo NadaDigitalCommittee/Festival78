@@ -98,7 +98,22 @@ export default function Home() {
           <div className="mx-6 mb-24 mt-6">
             <CountDown restTime={restTime} />
           </div>
+
+          {
+            (-(1830 * 60) < restTime) && <div className="text-[#FF0C0C] font-zen_kaku_gothic_new my-8 max-w-[600px] md:w-[80vw] w-[90vw] mx-auto">
+              <p className="font-bold text-2xl tracking-[0.5em] ml-[0.5em] my-4">～お願い～</p>
+              <div className="border border-[#FF0C0C] bg-white font-bold p-2">
+                <p className="text-center text-xl">
+                  当日は、午前<span className="text-6xl font-futura_pt">9</span>時以降にお越しください。
+                </p>
+                <p>
+                  文化祭の開催時間は両日共に9:00~15:30です。スムーズにご来場いただくために、ご理解・ご協力のほどよろしくお願いします。
+                </p>
+              </div>
+            </div>
+          }
         </div>
+
         <YouTubeEmbed videoid="MiaSs1-RXK0" style="margin:auto" />
         <div className="mx-5">
           {/* <div className="mt-12">
@@ -142,7 +157,7 @@ export default function Home() {
                 </p>
                 <p className="mx-4 indent-4 font-zen_kaku_gothic_new">
                   私たちが作り上げる唯一無二の灘校文化祭を、羅針盤であるロゴを片手に冒険して欲しい。
-                  そして灘校文化祭での体験が、皆さんそれぞれの"Odyssey"の中の1つのターニングポイントとなって欲しい。
+                  そして灘校文化祭での体験が、皆さんそれぞれの"ODYSSEY"の中の1つのターニングポイントとなって欲しい。
                   そんな想いが込められています。
                 </p>
                 <br />

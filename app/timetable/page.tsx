@@ -82,21 +82,24 @@ export default function Page() {
     isOnlyOneDay ? (defaultEvent?.time?.[0]?.day ?? 1) - 1 : isDay2 ? 1 : 0
   );
 
-  const [scrollX, setScrollX] = useState(0);
   const media = useResponsive();
+  const [scrollX,setScrollX]=useState(0);
+  const [scrollY,setScrollY]=useState(0);
 
   useEffect(() => {
     setTimeout(() => {
       if (!defaultEvent) return;
-      const element = document.getElementById(defaultEvent.id);
-      const top = element?.getBoundingClientRect()?.top;
-      const left = element?.getBoundingClientRect()?.left;
-      if (!top || !left) return;
-      setScrollX(left + window.scrollX - 70);
+      const element=document.getElementById(defaultEvent.id);
+      if(!element)return;
+      const rect=element.getBoundingClientRect();
+      const top=rect.top+window.scrollY;
+      const left=rect.left+window.scrollX;
+      setScrollX(left-70)
+      setScrollY(top-390)
       window.scrollTo({
-        top: top + window.scrollY - (media === MediaType.Mobile ? 250 : 215),
+        top: (media === MediaType.Mobile ? 320 : 15),
         behavior: "smooth",
-      });
+      })
     }, 800);
   }, [defaultEvent, media]);
 
@@ -147,7 +150,7 @@ export default function Page() {
   );
 
   return (
-    <div className="font-zen_kaku_gothic_new font-bold overflow-y-clip">
+    <div className="font-zen_kaku_gothic_new font-bold overflow-y-clip mb-[100px]">
       <Header path="/timetable">Timetable</Header>
       {stickyItems}
       {media === undefined ? (
@@ -155,6 +158,7 @@ export default function Page() {
       ) : media === MediaType.Mobile ? (
         <BaseTimetableMobile
           defaultScrollX={scrollX}
+          defaultScrollY={scrollY}
           events={events_[stageIndex]}
           stickyItems={stickyItems}
         >
