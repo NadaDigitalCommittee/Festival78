@@ -4,15 +4,13 @@ import Image from "next/image";
 import { VscExpandAll } from "react-icons/vsc";
 import { FC } from "react";
 import { useDisclosure } from "@chakra-ui/hooks";
-import { Button } from "@chakra-ui/button";
 import { ChakraProvider } from "@chakra-ui/provider";
 import { theme } from "@chakra-ui/theme";
 import {
   Modal,
   ModalOverlay,
   ModalContent,
-  ModalBody,
-  ModalCloseButton
+  ModalBody
 } from "@chakra-ui/modal";
 import useEmblaCarousel from "embla-carousel-react";
 import {
@@ -23,6 +21,7 @@ import {
 } from '@/components/Embla';
 import { goods, Item, souvenirs } from "@/lib/data/goods";
 import { Header } from "@/components/Header";
+import { AFew, Few, No } from "@/components/svg/Stock";
 
 export default async function Page() {
   return (
@@ -112,20 +111,18 @@ const Frame: FC<{ isGoods?: boolean, item: Item; isLarge?: boolean }> = ({ isGoo
                   </div>
                 </section>
                 <div className="md:border-[1px] border-black" />
-                <div className="flex flex-col gap-6 md:w-[33%] p-8 pt-4 md:pr-4 font-zen_kaku_gothic_new">
+                <div className="flex flex-col gap-6 md:w-[33%] p-8 pt-4 md:pr-4 font-zen_kaku_gothic_new font-medium">
                   <p className="text-3xl md:text-2xl font-bold">{id.length === 1 ? id : `${id[0]}-${id[id.length - 1]}`}. {name.split('\n').join('')}</p>
-                  <p className="">{description.split('\n').map((x, i) => (<span key={i} className="block">{x}</span>))}</p>
-                  <p className="flex justify-end items-end text-5xl font-bold">{price.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,')}<span className="text-xl pl-2">円</span></p>
+                  <p>{description.split('\n').map((x, i) => (<span key={i} className="block">{x}</span>))}</p>
+                  <p className="flex justify-end items-end text-5xl font-bold">{price.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,')}<span className="text-2xl pl-2">円</span></p>
                   {types ?
                     <table className="w-full mt-2">
-                      <tbody className="">
+                      <tbody>
                         {types.map((type, i) => (
-                          <tr key={i} className="">
-                            <td className="pl-4 border-black border-[1px]">{type}</td>
-                            <td className="size-4 p-2 border-black border-[1px]">
-                              <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="10" cy="10" r="8.5" stroke="#00BA13" stroke-width="3" />
-                              </svg>
+                          <tr key={i}>
+                            <td className="pl-4 border-black border-[1.25px]">{id[i]}. {type}</td>
+                            <td className="size-4 p-2 border-black border-[1.25px]">
+                              <AFew />
                             </td>
                           </tr>
                         ))}
@@ -149,7 +146,7 @@ const Frame: FC<{ isGoods?: boolean, item: Item; isLarge?: boolean }> = ({ isGoo
           </div>
           <div className={`absolute size-full bg-theme ${isLarge ? "[clip-path:polygon(0_80%,100%_30%,100%_100%,0_100%)]" : "[clip-path:polygon(0_80%,100%_40%,100%_100%,0_100%)]"}`} />
           <div className={`absolute bottom-0 right-0 p-[0.4em] text-white text-right ${size === 's' ? "text-[85%]" : size === 'm' ? "text-[100%]" : "text-[110%]"}`}>
-            <p>¥{price.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,')}</p>
+            <p><span className="text-[75%]">¥</span>{price.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,')}</p>
             <p className="font-zen_kaku_gothic_new font-bold leading-tight">{name.split('\n').map((x, i) => (<span key={i} className="block">{x}</span>))}</p>
           </div>
         </div>
