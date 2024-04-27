@@ -1,7 +1,5 @@
-import { MapPin } from "@/components/svg/MapPin";
 import { Place, placeString } from "@/lib/data/circles";
 import {
-  Accordion,
   AccordionButton,
   AccordionIcon,
   AccordionItem,
@@ -9,8 +7,7 @@ import {
 } from "@chakra-ui/accordion";
 import Image from "next/image";
 import { FC } from "react";
-import type { Circle as CircleType, Content } from "@/lib/data/circles";
-import Link from "next/link";
+import type { Circle as CircleType } from "@/lib/data/circles";
 import { Article } from "../svg/Article";
 
 type Props = {
@@ -31,7 +28,7 @@ export const Circle: FC<Props> = ({ circle }) => {
   const description = circle.description;
   return (
     <AccordionItem
-      className={`group min-w-[100vw] max-w-[512px] odd:bg-[#FFEFE8] even:bg-white md:min-w-[512px] lg:min-w-[512px]`}
+      className={`group min-w-[100vw] max-w-[512px] odd:bg-[#FFEFE8]/50 even:bg-white/50 md:min-w-[512px] lg:min-w-[512px]`}
     >
       <div id={"#" + id} className=" flex h-[60px] justify-center px-4">
         <AccordionButton className="flex">
@@ -59,13 +56,13 @@ export const Circle: FC<Props> = ({ circle }) => {
         <p className="whitespace-pre-wrap font-medium">{description}</p>
         <div className="mt-4">
           <div>
-            <a
+            {/* <a
               href={mapHref}
               className="mr-2 inline-block bg-theme px-3 py-1 text-white"
             >
               <MapPin className={"h-[35px] fill-white"} />
               <span className="ml-1">マップ</span>
-            </a>
+            </a> */}
             {articles && articles.length !== 0 && (
               <a
                 href={articleHref}

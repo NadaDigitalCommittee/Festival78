@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { CircleAcordion } from "@/components/circles/CircleAccordion";
 import { Header } from "@/components/Header";
 

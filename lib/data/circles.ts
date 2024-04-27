@@ -52,9 +52,9 @@ export type Circle = {
 export const data: Circle[] = [
   {
     id: "superball",
-    name: "スーパーボール",
+    name: "スーパーボールすくい",
     description:
-      "毎年大人気のスーパーボールすくいに加え、今年はフリースローチャレンジも開催します！小さなお子さんから大人の方まで大歓迎！バスケ部員たちと景品をかけて勝負する機会があるかも！？是非第1グラウンドまで足を運んでください！",
+      "毎年大人気のスーパーボールすくいを今年も開催します！小さなお子さんから大人の方まで大歓迎！バスケ部員たちと景品をかけて勝負する機会があるかも！？是非第一グラウンドまで足を運んでください！",
     place: "G1",
     mapId: "ground1",
   },
@@ -112,7 +112,6 @@ export const data: Circle[] = [
       "大人気なBENADAが今年も第一グラウンドに出現！灘校一のフォトスポットなので一度は訪れてみてください！",
     place: "G1",
     mapId: "ground1",
-    noLogo: true,
   },
   {
     id: "classic",
@@ -131,6 +130,14 @@ export const data: Circle[] = [
     mapId: "ground1",
   },
   {
+    id: "tennis",
+    name: "硬式テニス",
+    description:
+      "文化祭といえばテニス部ですよね！勉強ばっかりしてないで運動もしていきましょう！テニス部ではストラックアウト、ミニラリー、ラリーの3 つの出し物をしています。豪華景品もありますのでぜひぜひ校門前のテニスコートに来てみてください！！",
+    place: "Gym",
+    mapId: "tennis",
+  },
+  {
     id: "railway",
     name: "鉄道研究部",
     description:
@@ -138,6 +145,11 @@ export const data: Circle[] = [
     place: "East",
     mapId: "meeting",
     contents: [
+      {
+        type: "events",
+        title: "ミニ電車",
+        url: "/events?id=railway_event",
+      },
       {
         type: "article",
         title: "どんこう154号",
@@ -147,11 +159,6 @@ export const data: Circle[] = [
         type: "article",
         title: "どんこう155号",
         url: "/pdf/railway/donkou155.pdf",
-      },
-      {
-        type: "events",
-        title: "ミニ電車",
-        url: "/events?id=railway_event",
       },
     ],
   },
@@ -178,7 +185,6 @@ export const data: Circle[] = [
       "売り切れ必至！！\n毎年人気のお茶、冷たく冷えたジュース、コーヒーなどなど10種類の飲み物をお得価格でご用意しました！！飲みたい物が必ず見つかるジュース売場へGO💨\n皆さまのお越しをお待ちしております。",
     place: "NewGarden",
     mapId: "broadcasting_juice",
-    noLogo: true,
   },
   {
     id: "nurse",
@@ -212,7 +218,6 @@ export const data: Circle[] = [
       "灘校の校章をあしらったグッズや、文化祭ロゴデザインの生徒会企画品を販売しています。定番文房具から愛らしいぬいぐるみなど、幅広い品揃えで皆さまをお待ちしています。灘校文化祭の記念に、お気に入りを見つけてください。",
     place: "Gym",
     mapId: "gym",
-    noLogo: true,
   },
   {
     id: "snack",
@@ -397,21 +402,21 @@ export const data: Circle[] = [
         title: "灘的漢検",
         url: "/pdf/literaryart/nadatekikanken.pdf",
       },
-      {
-        type: "article",
-        title: "灘的漢検解答",
-        url: "/pdf/literaryart/nadatekikanken_answer.pdf",
-      },
+      // {
+      //   type: "article",
+      //   title: "灘的漢検解答",
+      //   url: "/pdf/literaryart/nadatekikanken_answer.pdf",
+      // },
       {
         type: "article",
         title: "灘中入試国語予想問題",
         url: "/pdf/literaryart/R7_1daynyuusimosi_mondai.pdf",
       },
-      {
-        type: "article",
-        title: "灘中入試国語予想問題　解答",
-        url: "/pdf/literaryart/R7_1daynyuusimosi_kaitou.pdf",
-      },
+      // {
+      //   type: "article",
+      //   title: "灘中入試国語予想問題　解答",
+      //   url: "/pdf/literaryart/R7_1daynyuusimosi_kaitou.pdf",
+      // },
     ],
   },
   {
@@ -535,6 +540,13 @@ export const data: Circle[] = [
       "H2-1では全国大会優勝経験者を含む将棋部員と対局でき、勝つと景品が貰えます。今年は初の試みとして、共通テストの将棋版を用意しております。また、懸賞詰将棋・ポスターの展示もしており、様々な形で将棋を堪能して頂けます。 是非お越しください！",
     place: "H3",
     mapId: "h2-1",
+    contents: [
+      {
+        type: "article",
+        title: "部誌",
+        url: "/pdf/shogi/article.pdf",
+      },
+    ],
   },
   {
     id: "chemistry",
@@ -564,56 +576,56 @@ export const data: Circle[] = [
         title: "地歴の部屋　2024",
         url: "/pdf/geography/chireki_no_heya_2024.pdf",
       },
-      {
-        type: "article",
-        title: "模試問題　日本史　問題",
-        url: "/pdf/geography/r6_moshi_nihonshi.pdf",
-      },
-      {
-        type: "article",
-        title: "模試問題　日本史　解答用紙",
-        url: "/pdf/geography/r6_moshi_nihonshi_answer.pdf",
-      },
-      {
-        type: "article",
-        title: "模試問題　世界史　問題",
-        url: "/pdf/geography/r6_moshi_sekaishi.pdf",
-      },
-      {
-        type: "article",
-        title: "模試問題　世界史　解答用紙",
-        url: "/pdf/geography/r6_moshi_sekaishi_answer.pdf",
-      },
-      {
-        type: "article",
-        title: "模試問題　日本地理　問題",
-        url: "/pdf/geography/r6_moshi_nihonchiri.pdf",
-      },
-      {
-        type: "article",
-        title: "模試問題　日本地理　解答用紙",
-        url: "/pdf/geography/r6_moshi_nihonchiri_answer.pdf",
-      },
-      {
-        type: "article",
-        title: "模試問題　世界地理　問題",
-        url: "/pdf/geography/r6_moshi_sekaichiri.pdf",
-      },
-      {
-        type: "article",
-        title: "模試問題　世界地理　解答用紙",
-        url: "/pdf/geography/r6_moshi_sekaichiri_answer.pdf",
-      },
-      {
-        type: "article",
-        title: "模試問題　EX　問題",
-        url: "/pdf/geography/r6_moshi_ex.pdf",
-      },
-      {
-        type: "article",
-        title: "模試問題　EX　解答用紙",
-        url: "/pdf/geography/r6_moshi_ex_answer.pdf",
-      },
+      // {
+      //   type: "article",
+      //   title: "模試問題　日本史　問題",
+      //   url: "/pdf/geography/r6_moshi_nihonshi.pdf",
+      // },
+      // {
+      //   type: "article",
+      //   title: "模試問題　日本史　解答用紙",
+      //   url: "/pdf/geography/r6_moshi_nihonshi_answer.pdf",
+      // },
+      // {
+      //   type: "article",
+      //   title: "模試問題　世界史　問題",
+      //   url: "/pdf/geography/r6_moshi_sekaishi.pdf",
+      // },
+      // {
+      //   type: "article",
+      //   title: "模試問題　世界史　解答用紙",
+      //   url: "/pdf/geography/r6_moshi_sekaishi_answer.pdf",
+      // },
+      // {
+      //   type: "article",
+      //   title: "模試問題　日本地理　問題",
+      //   url: "/pdf/geography/r6_moshi_nihonchiri.pdf",
+      // },
+      // {
+      //   type: "article",
+      //   title: "模試問題　日本地理　解答用紙",
+      //   url: "/pdf/geography/r6_moshi_nihonchiri_answer.pdf",
+      // },
+      // {
+      //   type: "article",
+      //   title: "模試問題　世界地理　問題",
+      //   url: "/pdf/geography/r6_moshi_sekaichiri.pdf",
+      // },
+      // {
+      //   type: "article",
+      //   title: "模試問題　世界地理　解答用紙",
+      //   url: "/pdf/geography/r6_moshi_sekaichiri_answer.pdf",
+      // },
+      // {
+      //   type: "article",
+      //   title: "模試問題　EX　問題",
+      //   url: "/pdf/geography/r6_moshi_ex.pdf",
+      // },
+      // {
+      //   type: "article",
+      //   title: "模試問題　EX　解答用紙",
+      //   url: "/pdf/geography/r6_moshi_ex_answer.pdf",
+      // },
       // {
       //   type: "article",
       //   title: "クイズ　解答",
@@ -792,21 +804,21 @@ export const data: Circle[] = [
     place: "H4",
     mapId: "h1-2",
     contents: [
-      {
-        type: "article",
-        title: "入試模試",
-        url: "/pdf/mathematics/moshi.pdf",
-      },
-      {
-        type: "article",
-        title: "和田杯",
-        url: "/pdf/mathematics/wada.pdf",
-      },
-      {
-        type: "article",
-        title: "部誌",
-        url: "/pdf/mathematics/article.pdf",
-      },
+      // {
+      //   type: "article",
+      //   title: "入試模試",
+      //   url: "/pdf/mathematics/moshi.pdf",
+      // },
+      // {
+      //   type: "article",
+      //   title: "和田杯",
+      //   url: "/pdf/mathematics/wada.pdf",
+      // },
+      // {
+      //   type: "article",
+      //   title: "部誌",
+      //   url: "/pdf/mathematics/article.pdf",
+      // },
       {
         type: "events",
         title: "根軸基本講座",
@@ -899,7 +911,7 @@ export const data: Circle[] = [
     id: "conan",
     name: "コナンサークル",
     description:
-      "中学棟4階にあるコナンサークルではコナンに関するペーパークイズを常に実施しています。\n初級から超級まで難易度ごとにクイズが違うのですべての人が楽しめる内容になっています。また１０時３０分、１４時からの１０分間はトリック実演を行います。",
+      "中学棟4階にあるコナンサークルではコナンに関するペーパークイズを常に実施しています。\n初級から超級まで難易度ごとにクイズが違うのですべての人が楽しめる内容になっています。また１０時３０分、１３時３０分からの１０分間はトリック実演を行います。",
     place: "M4",
     mapId: "m3-3",
     contents: [
@@ -933,6 +945,11 @@ export const data: Circle[] = [
         title: "ロボットプログラミング講習",
         url: "/events?id=amateurradio_event2",
       },
+      {
+        type: "article",
+        title: "部誌",
+        url: "/pdf/amateurradio/article.pdf"
+      }
     ],
   },
 ];

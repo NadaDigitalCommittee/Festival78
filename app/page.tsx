@@ -2,7 +2,6 @@ import { CountDown } from "@/components/CountDown";
 import { Line2 } from "@/components/Line2";
 import { Arrow1 } from "@/components/svg/Arrow1";
 import { MapPin } from "@/components/svg/MapPin";
-import Logo3 from "@/public/img/logo3.webp";
 import Line1 from "@/public/img/top/line1.webp";
 import Star from "@/public/img/top/star.svg";
 import styles from "@/styles/top.module.scss";
@@ -99,7 +98,22 @@ export default function Home() {
           <div className="mx-6 mb-24 mt-6">
             <CountDown restTime={restTime} />
           </div>
+
+          {
+            (-(1830 * 60) < restTime) && <div className="text-[#FF0C0C] font-zen_kaku_gothic_new my-8 max-w-[600px] md:w-[80vw] w-[90vw] mx-auto">
+              <p className="font-bold text-2xl tracking-[0.5em] ml-[0.5em] my-4">～お願い～</p>
+              <div className="border border-[#FF0C0C] bg-white font-bold p-2">
+                <p className="text-center text-xl">
+                  当日は、午前<span className="text-6xl font-futura_pt">9</span>時以降にお越しください。
+                </p>
+                <p>
+                  文化祭の開催時間は両日共に9:00~15:30です。スムーズにご来場いただくために、ご理解・ご協力のほどよろしくお願いします。
+                </p>
+              </div>
+            </div>
+          }
         </div>
+
         <YouTubeEmbed videoid="MiaSs1-RXK0" style="margin:auto" />
         <div className="mx-5">
           {/* <div className="mt-12">
@@ -143,7 +157,7 @@ export default function Home() {
                 </p>
                 <p className="mx-4 indent-4 font-zen_kaku_gothic_new">
                   私たちが作り上げる唯一無二の灘校文化祭を、羅針盤であるロゴを片手に冒険して欲しい。
-                  そして灘校文化祭での体験が、皆さんそれぞれの"Odyssey"の中の1つのターニングポイントとなって欲しい。
+                  そして灘校文化祭での体験が、皆さんそれぞれの"ODYSSEY"の中の1つのターニングポイントとなって欲しい。
                   そんな想いが込められています。
                 </p>
                 <br />
@@ -178,8 +192,15 @@ export default function Home() {
                     <MapPin className="fill-[#616161]" />
                     兵庫県神戸市東灘区魚崎北町8丁目5番1号
                   </p>
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3279.430097231349!2d135.26561937600025!3d34.71955168220066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60008cfd8440bcc9%3A0x526d26ccfad6f4df!2z54GY5Lit5a2m5qCh44O76auY562J5a2m5qCh!5e0!3m2!1sja!2sjp!4v1713313991974!5m2!1sja!2sjp" 
-                  width="auto" height="auto" allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="my-4"/>
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3279.430097231349!2d135.26561937600025!3d34.71955168220066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60008cfd8440bcc9%3A0x526d26ccfad6f4df!2z54GY5Lit5a2m5qCh44O76auY562J5a2m5qCh!5e0!3m2!1sja!2sjp!4v1713313991974!5m2!1sja!2sjp"
+                    width="auto"
+                    height="auto"
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="my-4"
+                  />
                 </div>
               </div>
               <div className="mx-auto grid w-[240px] grid-cols-2 place-items-center font-zen_kaku_gothic_new font-bold">
@@ -205,6 +226,10 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          <p className="font-zen_kaku_gothic_new text-black/70 w-[70vw] text-center mx-auto mb-8 max-w-[800px]">
+            第78回灘校文化祭「ODYSSEY」に関するお問い合わせや疑問点等は以下の公式Xアカウント、FacebookアカウントおよびLINEアカウントへのダイレクトメッセージにお願いします。
+          </p>
         </div>
       </main>
     </div>
