@@ -2,8 +2,8 @@
 "use client";
 import { FC, ReactNode, useEffect, useRef } from "react";
 import { BorderRows } from "./BorderColumn";
-import { TimeColumn } from "./TimeColumn";
 import { EventsRow } from "./EventsRow";
+import { TimeColumn } from "./TimeColumn";
 
 type Props = {
   events: {
@@ -13,6 +13,7 @@ type Props = {
   children?: ReactNode;
   stickyItems?: ReactNode;
   defaultScrollX?: number;
+  defaultScrollY?: number;
 };
 
 export const BaseTimetableMobile: FC<Props> = ({
@@ -20,11 +21,13 @@ export const BaseTimetableMobile: FC<Props> = ({
   events,
   stickyItems,
   defaultScrollX = 0,
+  defaultScrollY = 0,
 }) => {
   const timetableRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     timetableRef.current?.scrollTo({
+      top: defaultScrollY,
       left: defaultScrollX,
       behavior: "smooth",
     });
