@@ -235,7 +235,8 @@ const mapSvgAll = [
         transform="translate(322 275)"
         writingMode="tb"
       >
-        <tspan x="0" y="0">
+        <tspan x="0" y="0"textLength={30}
+        lengthAdjust={"spacing"}>
           ジュース
         </tspan>
       </text>
@@ -262,7 +263,8 @@ const mapSvgAll = [
         transform="translate(335.5 601)"
         writingMode="tb"
       >
-        <tspan x="0" y="0">
+        <tspan x="0" y="0"textLength={45}
+        lengthAdjust={"spacing"}>
           お土産販売
         </tspan>
       </text>
@@ -286,7 +288,8 @@ const mapSvgAll = [
         transform="translate(128.56 371.05)"
         writingMode="tb"
       >
-        <tspan x="0" y="0">
+        <tspan x="0" y="-2"textLength={35}
+        lengthAdjust={"spacing"}>
           図書委員会
         </tspan>
       </text>
@@ -297,7 +300,8 @@ const mapSvgAll = [
         transform="translate(56.21 457.96)"
         writingMode="tb"
       >
-        <tspan x="0" y="0">
+        <tspan x="0" y="0"textLength={65}
+        lengthAdjust={"spacing"}>
           食堂地下１階へ
         </tspan>
       </text>
@@ -308,7 +312,8 @@ const mapSvgAll = [
         transform="translate(79.54 447)"
         writingMode="tb"
       >
-        <tspan x="0" y="0">
+        <tspan x="0" y="0" textLength={70}
+        lengthAdjust={"spacing"}>
           鉄道研究部
         </tspan>
       </text>
@@ -319,7 +324,8 @@ const mapSvgAll = [
         transform="translate(25.62 452.96)"
         writingMode="tb"
       >
-        <tspan x="0" y="0">
+        <tspan x="0" y="0"textLength={70}
+        lengthAdjust={"spacing"}>
           鉄道研究部
         </tspan>
       </text>
@@ -500,7 +506,8 @@ const mapSvgAll = [
         transform="translate(274.6 286)"
         writingMode="tb"
       >
-        <tspan x="0" y="0">
+        <tspan x="0" y="0"textLength={66}
+        lengthAdjust={"spacing"}>
           スロープ１階へ
         </tspan>
       </text>
@@ -513,10 +520,11 @@ const mapSvgAll = [
         fill="#fff"
         fontSize="13"
         glyphOrientationVertical="0deg"
-        transform="translate(316 103)"
+        transform="translate(316 83)"
         writingMode="tb"
       >
-        <tspan x="0" y="0">
+        <tspan x="0" y="0"textLength={70}
+        lengthAdjust={"spacing"}>
           職員室
         </tspan>
       </text>
@@ -524,10 +532,11 @@ const mapSvgAll = [
         fill="#fff"
         fontSize="13"
         glyphOrientationVertical="0deg"
-        transform="translate(22 313)"
+        transform="translate(22 300)"
         writingMode="tb"
       >
-        <tspan x="0" y="0">
+        <tspan x="0" y="0"textLength={110}
+        lengthAdjust={"spacing"}>
           視聴覚ステージ
         </tspan>
       </text>
@@ -580,7 +589,8 @@ const mapSvgAll = [
         transform="translate(63 188)"
         writingMode="tb"
       >
-        <tspan x="0" y="0">
+        <tspan x="0" y="0"textLength={32}
+        lengthAdjust={"spacing"}>
           タラバガニ
         </tspan>
       </text>
@@ -646,7 +656,8 @@ const mapSvgAll = [
         transform="translate(110 188)"
         writingMode="tb"
       >
-        <tspan x="0" y="0">
+        <tspan x="0" y="0"textLength={32}
+        lengthAdjust={"spacing"}>
           生徒会の間
         </tspan>
       </text>
@@ -657,7 +668,8 @@ const mapSvgAll = [
         transform="translate(90.6 188)"
         writingMode="tb"
       >
-        <tspan x="0" y="0">
+        <tspan x="0" y="0"textLength={32}
+        lengthAdjust={"spacing"}>
           東北企画
         </tspan>
       </text>
@@ -735,7 +747,8 @@ const mapSvgAll = [
         transform="translate(360 80)"
         writingMode="tb"
       >
-        <tspan x="0" y="0">
+        <tspan x="0" y="-20"textLength={105}
+        lengthAdjust={"spacing"}>
           化学研究部
         </tspan>
       </text>
@@ -793,10 +806,12 @@ const mapSvgAll = [
         transform="translate(237.08 18)"
         writingMode="tb"
       >
-        <tspan x="0" y="0">
+        <tspan x="0" y="-5"textLength={45}
+        lengthAdjust={"spacing"}>
           ポケモン
         </tspan>
-        <tspan x="-8.63" y="0">
+        <tspan x="-8.63" y="-5"textLength={45}
+        lengthAdjust={"spacing"}>
           サークル
         </tspan>
       </text>
@@ -807,10 +822,12 @@ const mapSvgAll = [
         transform="translate(211 13.5)"
         writingMode="tb"
       >
-        <tspan x="0" y="0">
+        <tspan x="0" y="0"textLength={50}
+        lengthAdjust={"spacing"}>
           文化祭からの
         </tspan>
-        <tspan x="-12" y="14.5">
+        <tspan x="-12" y="6.5"textLength={35}
+        lengthAdjust={"spacing"}>
           脱出
         </tspan>
       </text>
@@ -860,7 +877,8 @@ const mapSvgAll = [
         transform="translate(181 17)"
         writingMode="tb"
       >
-        <tspan x="0" y="0">
+        <tspan x="0" y="0"textLength={45}
+        lengthAdjust={"spacing"}>
           にこやか
         </tspan>
       </text>
@@ -879,10 +897,11 @@ const mapSvgAll = [
         fill="#fff"
         fontSize="10"
         glyphOrientationVertical="0deg"
-        transform="translate(142.84 23)"
+        transform="translate(142.84 15)"
         writingMode="tb"
       >
-        <tspan x="0" y="0">
+        <tspan x="0" y="0"textLength={45}
+        lengthAdjust={"spacing"}>
           折り紙
         </tspan>
       </text>
@@ -893,7 +912,8 @@ const mapSvgAll = [
         transform="translate(217 185)"
         writingMode="tb"
       >
-        <tspan x="0" y="0">
+        <tspan x="0" y="-6"textLength={40}
+        lengthAdjust={"spacing"}>
           パズル
         </tspan>
       </text>
@@ -904,10 +924,12 @@ const mapSvgAll = [
         transform="translate(246 182)"
         writingMode="tb"
       >
-        <tspan x="0" y="0">
+        <tspan x="0" y="0"textLength={39}
+        lengthAdjust={"spacing"}>
           ドラえもん
         </tspan>
-        <tspan x="-8.63" y="7.19">
+        <tspan x="-8.63" y="1.19"textLength={35}
+        lengthAdjust={"spacing"}>
           同好会
         </tspan>
       </text>
@@ -964,7 +986,8 @@ const mapSvgAll = [
         writingMode="tb"
         fontSize="13px"
       >
-        <tspan x="0" y="0">
+        <tspan x="0" y="0"textLength={69}
+        lengthAdjust={"spacing"}>
           物理研究部
         </tspan>
       </text>
@@ -1033,10 +1056,12 @@ const mapSvgAll = [
         text-orientation="upright"
         writingMode="tb"
       >
-        <tspan x="1" y="4">
+        <tspan x="1" y="0"textLength={35}
+        lengthAdjust={"spacing"}>
           コナン
         </tspan>
-        <tspan x="-8" y="1">
+        <tspan x="-8" y="1"textLength={39}
+        lengthAdjust={"spacing"}>
           サークル
         </tspan>
       </text>
@@ -1067,7 +1092,7 @@ export const Maps: FC<Props> = ({ mapIdList, className, floorNumber }) => {
   useFocusMap(mapIdList);
   return mapSvgAll.map((mapSvg) => {
     return cloneElement(mapSvg, {
-      className: `font-zen_kaku_gothic_new font-bold ${className}`,
+      className: `font-zen_kaku_gothic_new ${className}`,
     });
   })[floorNumber - 1];
 };
