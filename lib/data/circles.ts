@@ -350,7 +350,7 @@ export const data: Circle[] = [
     description:
       "灘校生徒会を大解剖！！数十年前の灘校新聞から、文化祭用特別号まで。生徒会機関誌「Agora」とは?組織図の展示も！\np.s. 灘校料理愛好会ともコラボして、灘校生秘伝メニューも紹介しています！(*^-^)",
     place: "M2",
-    mapId: "m1-4",
+    mapId: "studentcouncil",
     contents: [
       {
         type: "article",
@@ -365,7 +365,7 @@ export const data: Circle[] = [
     description:
       "灘校生が震災の被害を受けた東北現地に直接足を運び、そこで聞いたこと、学んだこと、感じたことなどをまとめたポスターや写真の展示をしたり、文化祭当日に直接お話したりします！地震についてより深く知り、共に地震を乗り越えていきましょう！",
     place: "M2",
-    mapId: "m1-4",
+    mapId: "tohoku",
   },
   {
     id: "information1",
@@ -470,7 +470,7 @@ export const data: Circle[] = [
     description:
       "我々にこやか自転車整理軍は、我々自身を含めた人々の心の中にある放置自転車を整理回収し、それらを、分解し、融かし、鋳型に入れ、愛すべき無用の長距離砲として再生産する。すなわちくそなぞなぞの制作・展示である。\nガラガラな銭湯な生き物、なーんだ?",
     place: "H3",
-    mapId: "h2-3",
+    mapId: "nikoyaka",
   },
   {
     id: "origami",
@@ -478,7 +478,7 @@ export const data: Circle[] = [
     description:
       "灘校ありそうで無かったクラブ第一位、今年新設の折り紙サークルです！！部員たちの丹精込めて折った折り紙作品の展示や部誌の配布をしています。なかには人間サイズの大型作品も！是非お立ち寄りください。お待ちしてます！",
     place: "H3",
-    mapId: "h2-3",
+    mapId: "origami",
     contents: [
       {
         type: "article",
@@ -493,7 +493,7 @@ export const data: Circle[] = [
     description:
       "今年初めて出展する車サークルです。\nトミカを棒で釣って点数を競うトミカ釣りや子供から大人まで楽しめる車クイズ、ペーパークラフトでミニカーを作る企画をやっています。ぜひ高校棟3階へお越しください。",
     place: "H3",
-    mapId: "h2-3",
+    mapId: "car",
     contents: [
       {
         type: "events",
@@ -508,7 +508,7 @@ export const data: Circle[] = [
     description:
       "灘校内を探索し、隠された宝を発見せよ！\n今年の文化祭からの脱出サークルは新形式。去年までの教室内での謎解きから校内全体に謎が広がる。校内を自由に駆け巡り隠された謎を解き明かせ！\n※参加される際は事前に筆記用具をご用意ください。",
     place: "H3",
-    mapId: "h2-2",
+    mapId: "escape",
     contents: [
       {
         type: "article",
@@ -523,7 +523,7 @@ export const data: Circle[] = [
     description:
       "ポケモンサークルでは、ポケモンに関することを部員が自由に書いた部誌の配布や、初級、中級、上級のポケモンのクイズとその採点をしています。ポケモンが好きでゲームをしたり、アニメを見たりしている方はお気軽にどうぞ。",
     place: "H3",
-    mapId: "h2-2",
+    mapId: "pokemon",
     contents: [
       {
         type: "article",
@@ -568,7 +568,7 @@ export const data: Circle[] = [
     description:
       "地歴部は文化祭で、以下の3つの活動をしています。\n①部誌：各部員が研究したことをまとめ、部誌として発表します。\n②文化祭模試・クイズ：地歴部員自作の模試・クイズに挑戦できます(景品あり)。\n③壁展示：ブース壁面に、大型の展示をします。",
     place: "M3",
-    mapId: "socialstudies2",
+    mapId: "geography",
     contents: [
       {
         type: "article",
@@ -638,7 +638,7 @@ export const data: Circle[] = [
     description:
       "何このサークル...と思われた方も多いのではないでしょうか?ゆるい交通・建築系サークルです！\n文化祭来場者がどこから来たのかの調査や、クイズ・部誌の頒布を行っています！西ゾーン2階の第二社会科教室までお越しください！",
     place: "M3",
-    mapId: "socialstudies2",
+    mapId: "urbandevelopment",
   },
   {
     id: "biology",
@@ -678,7 +678,7 @@ export const data: Circle[] = [
     description:
       "こんにちは〜！ドラえもん同好会です！ドラえもん同好会では部誌とドラえもん検定を用意しています！ドラえもんのことについて自信があるという方向けのものからドラえもんをあまり知らない方向けのものまであります。展示もありますのでぜひお越しください！",
     place: "M3",
-    mapId: "m2-1",
+    mapId: "doraemon",
   },
   {
     id: "puzzle",
@@ -686,7 +686,7 @@ export const data: Circle[] = [
     description:
       "今年はじめてのサークルです。普段から様々なパズルを作成し解いていて、有名どころのパズルから自作のパズルまで、数多く取り揃えています。景品も用意してありますのでぜひぜひ一度、足を運んでみてください！！！",
     place: "M3",
-    mapId: "m2-1",
+    mapId: "puzzle",
   },
   {
     id: "baseballfan",
@@ -884,7 +884,7 @@ export const data: Circle[] = [
     description:
       "灘校地学研究部です！今年は日本プラネタリウム協議会公認でプラネタリウム100周年記念展示を行います。毎年大好評の、砂金を持って帰れる砂金掘り体験もあります！また、部員自作のプラネタリウムでは満天の星空をお届けします。ぜひ今年は中学棟4階へ！",
     place: "M4",
-    mapId: "m3-1, m1open, earthscience",
+    mapId: "m3-1, m3open, earthscience",
     contents: [
       {
         type: "article",
