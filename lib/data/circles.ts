@@ -56,7 +56,7 @@ export const data: Circle[] = [
     description:
       "毎年大人気のスーパーボールすくいを今年も開催します！小さなお子さんから大人の方まで大歓迎！バスケ部員たちと景品をかけて勝負する機会があるかも！？是非第一グラウンドまで足を運んでください！",
     place: "G1",
-    mapId: "ground1",
+    mapId: "superball"
   },
   {
     id: "shooting",

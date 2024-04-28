@@ -9,6 +9,7 @@ import Image from "next/image";
 import { FC } from "react";
 import type { Circle as CircleType } from "@/lib/data/circles";
 import { Article } from "../svg/Article";
+import { MapPin } from "../svg/MapPin";
 
 type Props = {
   circle: CircleType;
@@ -56,13 +57,13 @@ export const Circle: FC<Props> = ({ circle }) => {
         <p className="whitespace-pre-wrap font-medium">{description}</p>
         <div className="mt-4">
           <div>
-            {/* <a
+            <a
               href={mapHref}
               className="mr-2 inline-block bg-theme px-3 py-1 text-white"
             >
               <MapPin className={"h-[35px] fill-white"} />
               <span className="ml-1">マップ</span>
-            </a> */}
+            </a>
             {articles && articles.length !== 0 && (
               <a
                 href={articleHref}
@@ -76,9 +77,6 @@ export const Circle: FC<Props> = ({ circle }) => {
                 <span className="ml-1">部誌・会誌</span>
               </a>
             )}
-            {/* {articles && articles.length !== 0 && (
-              <Article articles={articles} />
-            )} */}
           </div>
         </div>
       </AccordionPanel>
