@@ -58,8 +58,14 @@ export class Time {
       Date.now() + (new Date().getTimezoneOffset() + 9 * 60) * 60 * 1000
     );
   }
-  public isTimeOut() {
-    return this.start.getTime() - 15 * 60 * 1000 < Time.nowJST().getTime();
+  public isNotStarted(){
+    return Time.nowJST().getTime() < this.start.getTime();
+  }
+  public isHolding(){
+    return this.start.getTime() < Time.nowJST().getTime() && Time.nowJST().getTime() < this.end.getTime();
+  }
+  public isEnd(){
+    return this.end.getTime() < Time.nowJST().getTime();
   }
   private to2Digits(num: number) {
     return num.toString().length === 1 ? `0${num.toString()}` : num.toString();

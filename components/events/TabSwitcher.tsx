@@ -5,6 +5,9 @@ import ContentSection from "./ContentSection";
 import { EVENTS_PAGE_SOURCE } from "@/components/events/events_source";
 import EventsScroller from "./EventsScroller";
 import { useSearchParams } from "next/navigation";
+import { eventsTimetable } from "@/lib/data/eventsTimetable";
+import { Time } from "@/lib/time";
+import { data } from "@/lib/data/circles";
 
 export default function TabSwitcher() {
   const id = useSearchParams().get("id");
@@ -50,9 +53,11 @@ export default function TabSwitcher() {
             title={event.name}
             eventId={event.event_id}
             mapId={event.map_id ?? EVENTS_PAGE_SOURCE[index].map_id}
-            comingSoon={false}
+            comingSoon={isComingSoon(event.event_id)}
             content={event.description}
             markerColor={event.color}
+            logoSrc={event.hasLogo ? `/img/events/${event.event_id}/logo.webp` : undefined}
+            circleName={data.find(d=>d.id===event.event_id.split("_")?.[0])?.name}
           />
         ))}
       </div>
@@ -78,4 +83,16 @@ function TabButton({ children, selected = false, ...props }: TabButtonProps) {
       </span>
     </button>
   );
+}
+
+function isComingSoon(eventId: string) {
+  return eventsTimetable.find((e) => e.id === eventId)?.time
+  .filter(t=>t.day===Time.nowJST().getDate())
+  .map(t => {
+    if(!t.time.isNotStarted()){
+      return false;
+    }
+    const interval=t.time.start.getTime()-Time.nowJST().getTime()
+    return interval<15*60*1000
+  }).includes(true) ?? false;
 }
