@@ -9,6 +9,7 @@ type Props = {
   time: Time;
   name: string;
   showTime?: boolean;
+  timeId: number;
 };
 
 export const CellMobile: FC<Props> = ({
@@ -17,6 +18,7 @@ export const CellMobile: FC<Props> = ({
   time,
   name,
   showTime = true,
+  timeId,
 }) => {
   const ratioX = (60 * 60 * 1000) / 1;
   const interval =
@@ -25,7 +27,7 @@ export const CellMobile: FC<Props> = ({
 
   return (
     <div
-      id={id}
+      id={id+"-"+timeId}
       className={`absolute ml-[20px] flex flex-col items-center justify-center rounded-xl bg-[#7A7A7A] text-center
       text-white
     `}
@@ -69,6 +71,7 @@ export const StageCellsMobile: FC<StageCellsProps> = ({
             index={index}
             showTime={t.time.periodMinutes > 30}
             key={event.id + tid}
+            timeId={tid}
           />
         );
       });
@@ -95,6 +98,7 @@ export const CircleCellsMobile: FC<CircleCellsProps> = ({
             name={""}
             time={t.time}
             key={i}
+            timeId={i}
           />
         );
       });

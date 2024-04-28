@@ -89,7 +89,8 @@ export default function Page() {
   useEffect(() => {
     setTimeout(() => {
       if (!defaultEvent) return;
-      const element=document.getElementById(defaultEvent.id);
+      const i=defaultEvent.time?.findIndex(t=>t.time.isNotStarted())
+      const element=document.getElementById(defaultEvent.id+"-"+i);
       if(!element)return;
       const rect=element.getBoundingClientRect();
       const top=rect.top+window.scrollY;
@@ -97,7 +98,7 @@ export default function Page() {
       setScrollX(left-70)
       setScrollY(top-390)
       window.scrollTo({
-        top: (media === MediaType.Mobile ? 320 : 15),
+        top: (media === MediaType.Mobile ? 320 : 245),
         behavior: "smooth",
       })
     }, 800);
