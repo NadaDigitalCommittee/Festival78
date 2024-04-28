@@ -1,0 +1,41 @@
+.arrow {
+  fill: none;
+  stroke: #221714;
+  stroke-width: 0.75px;
+}
+.boxFill {
+  fill: #717171;
+  transform: translate(0px, 0px);
+}
+.boxStroke {
+  stroke: #221714;
+  stroke-width: 1.25px;
+}
+.boxStrokeThin {
+  stroke: #221714;
+  stroke-width: 0.6px;
+}
+.attention {
+  fill: #ff4d00 !important;
+  animation: attention 2s ease-in 0s infinite reverse forwards running;
+}
+.fillNone {
+  fill: none;
+}
+.strokeNone {
+  stroke: none;
+}
+.dashed {
+  stroke-dasharray: 0 0 4 4;
+}
+@keyframes attention {
+  0% {
+    filter: drop-shadow(0 0 0px tomato);
+  }
+  50% {
+    filter: drop-shadow(0 0 5px tomato);
+  }
+  100% {
+    filter: drop-shadow(0 0 0px tomato);
+  }
+}

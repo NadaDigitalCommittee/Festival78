@@ -9,6 +9,7 @@ import Image from "next/image";
 import { FC } from "react";
 import type { Circle as CircleType } from "@/lib/data/circles";
 import { Article } from "../svg/Article";
+import { MapPin } from "../svg/MapPin";
 
 type Props = {
   circle: CircleType;
@@ -19,10 +20,9 @@ export const Circle: FC<Props> = ({ circle }) => {
   const logoSrc = `/img/circles/icon/${circle.id}.webp`;
   const place = circle.place;
   const title = circle.name;
-  const eventHrefs = circle.contents
-    ?.filter((c) => c.type === "events")
-    .map((c) => c.url);
-  const mapHref = `/maps?id=${circle.id}`;
+  const event = circle.contents?.filter((c) => c.type === "events").at(0);
+
+  const mapHref = `/maps?id=${circle.mapId}`;
   const articles = circle.contents?.filter((c) => c.type === "article");
   const articleHref = articles && `/downloads?id=${id}`;
   const description = circle.description;
@@ -55,14 +55,14 @@ export const Circle: FC<Props> = ({ circle }) => {
       <AccordionPanel className="px-6 py-3">
         <p className="whitespace-pre-wrap font-medium">{description}</p>
         <div className="mt-4">
-          <div>
-            {/* <a
+          <div className="flex text-sm">
+            <a
               href={mapHref}
-              className="mr-2 inline-block bg-theme px-3 py-1 text-white"
+              className="mr-2 flex items-center bg-theme px-3 py-1 text-white"
             >
               <MapPin className={"h-[35px] fill-white"} />
               <span className="ml-1">マップ</span>
-            </a> */}
+            </a>
             {articles && articles.length !== 0 && (
               <a
                 href={articleHref}
@@ -76,9 +76,14 @@ export const Circle: FC<Props> = ({ circle }) => {
                 <span className="ml-1">部誌・会誌</span>
               </a>
             )}
-            {/* {articles && articles.length !== 0 && (
-              <Article articles={articles} />
-            )} */}
+            {event && (
+              <a
+                href={event.url}
+                className="ml-2 flex min-w-[60px] max-w-[140px] items-center bg-theme  py-1 text-white"
+              >
+                <Image src={"/img/star_sm.svg"} alt="" width={100} height={40}/>
+              </a>
+            )}
           </div>
         </div>
       </AccordionPanel>

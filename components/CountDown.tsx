@@ -19,9 +19,9 @@ export const CountDown: FC<Props> = ({ restTime }) => {
     return ("0" + Math.max(num, 0)).slice(-2);
   };
 
-  const isNotStarted = time > 0
-  const isOpening = -(1830 * 60) < time && time <= 0
-  const isEnd = time <= (-1830 * 60)
+  const isNotStarted = time > 0;
+  const isOpening = -(1830 * 60) < time && time <= 0;
+  const isEnd = time <= -1830 * 60;
 
   const day = to2digit(Math.floor(time / 86400));
   const hour = to2digit(Math.floor((time % 86400) / 3600));
@@ -32,12 +32,14 @@ export const CountDown: FC<Props> = ({ restTime }) => {
 
   return (
     <div className="-skew-y-12 font-limelight text-7xl tracking-wide">
-      {isNotStarted && <p className="translate-x-4 text-left">
-        <span className="text-xl font-bold">文化祭まであと</span>
-        <br />
-      </p>}
       {isNotStarted && (
-        responsive === MediaType.Desktop ? (
+        <p className="translate-x-4 text-left">
+          <span className="text-xl font-bold">文化祭まであと</span>
+          <br />
+        </p>
+      )}
+      {isNotStarted &&
+        (responsive === MediaType.Desktop ? (
           // PC
           <>
             <p>
@@ -70,10 +72,16 @@ export const CountDown: FC<Props> = ({ restTime }) => {
             </p>
           </>
         ))}
-      {isOpening && <p className="md:text-6xl text-3xl tracking-[0.2em] ml-[0.4em] mt-24 font-bold">
-        ただいま開催中！
-      </p>}
-      {isEnd && <p className="md:text-6xl text-3xl tracking-[0.2em] ml-[0.4em] mt-24 font-bold">お越しいただきありがとうございました！</p>}
+      {isOpening && (
+        <p className="ml-[0.4em] mt-24 text-3xl font-bold tracking-[0.2em] md:text-6xl">
+          ただいま開催中！
+        </p>
+      )}
+      {isEnd && (
+        <p className="ml-[0.4em] mt-24 text-3xl font-bold tracking-[0.2em] md:text-6xl">
+          お越しいただきありがとうございました！
+        </p>
+      )}
     </div>
   );
 };

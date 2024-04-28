@@ -14,6 +14,7 @@ export type Place =
   | "H1";
 
 type PlaceString = {
+  // eslint-disable-next-line unused-imports/no-unused-vars
   [key in Place]: string;
 };
 
@@ -56,7 +57,7 @@ export const data: Circle[] = [
     description:
       "毎年大人気のスーパーボールすくいを今年も開催します！小さなお子さんから大人の方まで大歓迎！バスケ部員たちと景品をかけて勝負する機会があるかも！？是非第一グラウンドまで足を運んでください！",
     place: "G1",
-    mapId: "ground1",
+    mapId: "superball",
   },
   {
     id: "shooting",
@@ -64,14 +65,14 @@ export const data: Circle[] = [
     description:
       "灘校バレーボール部です！一昨年から始まった射的をグレードアップして今年も第1グラウンドで開催します！\nオリジナルの景品を用意していますので、小さなお子様から大人まで奮ってご参加ください！",
     place: "G1",
-    mapId: "ground1",
+    mapId: "shooting",
   },
   {
     id: "baseball",
     name: "野球",
     description: `今年も第一グラウンドで毎年恒例のストラックアウトとスピードガンを開催します！いつもはできないストラックアウトとスピードガンをこの機会に一度やってみませんか？何度もチャレンジできます。皆さんの参加を待っています。景品もあります。`,
     place: "G1",
-    mapId: "ground1",
+    mapId: "baseball",
   },
   {
     id: "yoyo",
@@ -79,7 +80,7 @@ export const data: Circle[] = [
     description:
       "今年もやります、ヨーヨー釣りです。例年通り柔道部員とソフトテニス部員の合同で行います！ヨーヨーの取れた数に応じてもらえる個数も決まります。いくつ取れるか、限界に挑戦してみませんか？ぜひ第1グラウンドまでお越しください！",
     place: "G1",
-    mapId: "ground1",
+    mapId: "yoyo",
   },
   {
     id: "kicktarget",
@@ -87,8 +88,7 @@ export const data: Circle[] = [
     description:
       "昨年に続き老若男女問わず楽しめるキックターゲットが爆誕！自分でボールを選び、決まった距離から的を狙ってシュート！あなたは何枚撃ち抜くことができるのか?！チャレンジャーは是非お越しください！",
     place: "G1",
-
-    mapId: "ground1",
+    mapId: "kicktarget",
   },
   {
     id: "minitrain",
@@ -96,12 +96,12 @@ export const data: Circle[] = [
     description:
       "2019年以来5年ぶりに復活したミニ電車は、人が跨って実際に乗れる鉄道模型で、小さなお子さんでも楽しめるのが特徴です。一周はなんと150メートルもあり、ミニ電車ならではの灘の新たな景色も見られるかもしれません！皆さん是非お越しください。",
     place: "G1",
-    mapId: "ground1",
+    mapId: "minitrain",
     contents: [
       {
         type: "events",
         title: "ミニ電車",
-        url: "/events?id=railway_event",
+        url: "/events?id=minitrain",
       },
     ],
   },
@@ -111,7 +111,7 @@ export const data: Circle[] = [
     description:
       "大人気なBENADAが今年も第一グラウンドに出現！灘校一のフォトスポットなので一度は訪れてみてください！",
     place: "G1",
-    mapId: "ground1",
+    mapId: "benada",
   },
   {
     id: "classic",
@@ -127,7 +127,7 @@ export const data: Circle[] = [
     description:
       "毎年恒例の古本屋をやっている剣道部です。今年も新中庭で開催しています。そしてなんと今年は剣道場が使用可能になりました！ということでコロナ禍以来の剣道体験を剣道場にて行います！部員一同、二つの会場でご来場お待ちしております。",
     place: "NewGarden",
-    mapId: "ground1",
+    mapId: "newgarden",
   },
   {
     id: "tennis",
@@ -148,7 +148,7 @@ export const data: Circle[] = [
       {
         type: "events",
         title: "ミニ電車",
-        url: "/events?id=railway_event",
+        url: "/events?id=minitrain",
       },
       {
         type: "article",
@@ -233,7 +233,7 @@ export const data: Circle[] = [
     description:
       "校舎に入って右手の扉から行くことができる研修館にて、卓球台の貸し出しとミニ縁日を行っています。ミニ縁日ではピンポン玉を使った、景品付きのピンボールが遊べます。利用状況によっては事前予約が必要な場合がありますのでご注意ください。",
     place: "Kensyu",
-    mapId: "training",
+    mapId: "tabletennis",
   },
   {
     id: "shorinji",
@@ -241,7 +241,7 @@ export const data: Circle[] = [
     description:
       "少林寺拳法同好会は、研修館3階にて、ダイナミックな演舞を披露します。突き、蹴りから投げ、武器まで、幅広い技術を駆使した迫力ある演舞をお楽しみください。力強い動きと美しい形を通して、少林寺拳法の魅力をご堪能いただけます。",
     place: "Kensyu",
-    mapId: "training",
+    mapId: "shorinji",
     contents: [
       {
         type: "events",
@@ -256,7 +256,7 @@ export const data: Circle[] = [
     description:
       "かるた班:百人一首の札を使ったミニゲームをしたり、競技かるたを実際に体験したりすることができます！ミニゲームでは豪華景品がもらえるかも...?\n能楽班:能の仕舞をいくつか上演します！\n研修館2階でお待ちしています！",
     place: "Kensyu",
-    mapId: "training",
+    mapId: "classicculture",
     contents: [
       {
         type: "events",
@@ -271,7 +271,14 @@ export const data: Circle[] = [
     description:
       "以下のイベントが行われます。\n・パソコン解体\n・対称性を利用して合同式を得る方法\n・三角形に関する2種類の操作と相似三角形の出現\n・入試模試解説\n・ハッキング実演\n・物理実験ショー\n詳しくは下の「イベント」をご覧ください。",
     place: "H2",
-    mapId: "lecture_h",
+    mapId: "h3-1",
+    contents: [
+      {
+        type: "events",
+        title: "",
+        url: "/events?id=circles",
+      },
+    ],
   },
   {
     id: "npca",
@@ -299,12 +306,12 @@ export const data: Circle[] = [
     description:
       "今年制作したばかりの大型作品から、様々なメディアで取り上げられた過去作品、小さくともアイデアに富んだ個人作品まで様々なレゴが皆さんを迎えます。ここに来ずして灘の文化祭は語れません！ぜひお越しください！",
     place: "H2",
-    mapId: "h3-34",
+    mapId: "lego",
     contents: [
       {
         type: "events",
         title: "トイブロックで灘校机椅子を制作体験",
-        url: "/event?id=lego_event",
+        url: "/events?id=lego_event",
       },
     ],
   },
@@ -351,7 +358,7 @@ export const data: Circle[] = [
     description:
       "灘校生徒会を大解剖！！数十年前の灘校新聞から、文化祭用特別号まで。生徒会機関誌「Agora」とは?組織図の展示も！\np.s. 灘校料理愛好会ともコラボして、灘校生秘伝メニューも紹介しています！(*^-^)",
     place: "M2",
-    mapId: "m1-4",
+    mapId: "studentcouncil",
     contents: [
       {
         type: "article",
@@ -366,7 +373,7 @@ export const data: Circle[] = [
     description:
       "灘校生が震災の被害を受けた東北現地に直接足を運び、そこで聞いたこと、学んだこと、感じたことなどをまとめたポスターや写真の展示をしたり、文化祭当日に直接お話したりします！地震についてより深く知り、共に地震を乗り越えていきましょう！",
     place: "M2",
-    mapId: "m1-4",
+    mapId: "tohoku",
   },
   {
     id: "information1",
@@ -471,7 +478,7 @@ export const data: Circle[] = [
     description:
       "我々にこやか自転車整理軍は、我々自身を含めた人々の心の中にある放置自転車を整理回収し、それらを、分解し、融かし、鋳型に入れ、愛すべき無用の長距離砲として再生産する。すなわちくそなぞなぞの制作・展示である。\nガラガラな銭湯な生き物、なーんだ?",
     place: "H3",
-    mapId: "h2-3",
+    mapId: "nikoyaka",
   },
   {
     id: "origami",
@@ -479,7 +486,7 @@ export const data: Circle[] = [
     description:
       "灘校ありそうで無かったクラブ第一位、今年新設の折り紙サークルです！！部員たちの丹精込めて折った折り紙作品の展示や部誌の配布をしています。なかには人間サイズの大型作品も！是非お立ち寄りください。お待ちしてます！",
     place: "H3",
-    mapId: "h2-3",
+    mapId: "origami",
     contents: [
       {
         type: "article",
@@ -494,7 +501,7 @@ export const data: Circle[] = [
     description:
       "今年初めて出展する車サークルです。\nトミカを棒で釣って点数を競うトミカ釣りや子供から大人まで楽しめる車クイズ、ペーパークラフトでミニカーを作る企画をやっています。ぜひ高校棟3階へお越しください。",
     place: "H3",
-    mapId: "h2-3",
+    mapId: "car",
     contents: [
       {
         type: "events",
@@ -509,7 +516,7 @@ export const data: Circle[] = [
     description:
       "灘校内を探索し、隠された宝を発見せよ！\n今年の文化祭からの脱出サークルは新形式。去年までの教室内での謎解きから校内全体に謎が広がる。校内を自由に駆け巡り隠された謎を解き明かせ！\n※参加される際は事前に筆記用具をご用意ください。",
     place: "H3",
-    mapId: "h2-2",
+    mapId: "escape",
     contents: [
       {
         type: "article",
@@ -524,7 +531,7 @@ export const data: Circle[] = [
     description:
       "ポケモンサークルでは、ポケモンに関することを部員が自由に書いた部誌の配布や、初級、中級、上級のポケモンのクイズとその採点をしています。ポケモンが好きでゲームをしたり、アニメを見たりしている方はお気軽にどうぞ。",
     place: "H3",
-    mapId: "h2-2",
+    mapId: "pokemon",
     contents: [
       {
         type: "article",
@@ -559,7 +566,7 @@ export const data: Circle[] = [
       {
         type: "events",
         title: "化学マジック",
-        url: "/events?id=chemistry",
+        url: "/events?id=chemistry_event",
       },
     ],
   },
@@ -569,7 +576,7 @@ export const data: Circle[] = [
     description:
       "地歴部は文化祭で、以下の3つの活動をしています。\n①部誌：各部員が研究したことをまとめ、部誌として発表します。\n②文化祭模試・クイズ：地歴部員自作の模試・クイズに挑戦できます(景品あり)。\n③壁展示：ブース壁面に、大型の展示をします。",
     place: "M3",
-    mapId: "socialstudies2",
+    mapId: "geography",
     contents: [
       {
         type: "article",
@@ -639,7 +646,7 @@ export const data: Circle[] = [
     description:
       "何このサークル...と思われた方も多いのではないでしょうか?ゆるい交通・建築系サークルです！\n文化祭来場者がどこから来たのかの調査や、クイズ・部誌の頒布を行っています！西ゾーン2階の第二社会科教室までお越しください！",
     place: "M3",
-    mapId: "socialstudies2",
+    mapId: "urbandevelopment",
   },
   {
     id: "biology",
@@ -651,7 +658,7 @@ export const data: Circle[] = [
       {
         type: "events",
         title: "Live解剖 エビ/イカ/カエル",
-        url: "/events?id=biology_event",
+        url: "/events?id=biology_event1",
       },
       {
         type: "events",
@@ -679,7 +686,7 @@ export const data: Circle[] = [
     description:
       "こんにちは〜！ドラえもん同好会です！ドラえもん同好会では部誌とドラえもん検定を用意しています！ドラえもんのことについて自信があるという方向けのものからドラえもんをあまり知らない方向けのものまであります。展示もありますのでぜひお越しください！",
     place: "M3",
-    mapId: "m2-1",
+    mapId: "doraemon",
   },
   {
     id: "puzzle",
@@ -687,7 +694,7 @@ export const data: Circle[] = [
     description:
       "今年はじめてのサークルです。普段から様々なパズルを作成し解いていて、有名どころのパズルから自作のパズルまで、数多く取り揃えています。景品も用意してありますのでぜひぜひ一度、足を運んでみてください！！！",
     place: "M3",
-    mapId: "m2-1",
+    mapId: "puzzle",
   },
   {
     id: "baseballfan",
@@ -848,6 +855,13 @@ export const data: Circle[] = [
       "こんにちは灘校陸上部です！今年も大人気のカジノをやります！皆さんも自分の運を試してみませんか?初心者でも大歓迎なのでぜひ遊びに来てください！",
     place: "H4",
     mapId: "h1-1",
+    contents: [
+      {
+        type: "events",
+        title: "ビンゴ大会",
+        url: "/events?id=casino_event",
+      },
+    ],
   },
   {
     id: "anime",
@@ -885,7 +899,7 @@ export const data: Circle[] = [
     description:
       "灘校地学研究部です！今年は日本プラネタリウム協議会公認でプラネタリウム100周年記念展示を行います。毎年大好評の、砂金を持って帰れる砂金掘り体験もあります！また、部員自作のプラネタリウムでは満天の星空をお届けします。ぜひ今年は中学棟4階へ！",
     place: "M4",
-    mapId: "earthscience",
+    mapId: "m3-1, m3open, earthscience",
     contents: [
       {
         type: "article",
@@ -903,9 +917,16 @@ export const data: Circle[] = [
     id: "lecture_m",
     name: "講義教室",
     description:
-      "以下のイベントが行われます。\n・トイブロックで灘校机椅子を制作体験\n・根軸基本講座\n・円に内接する六角形についての小噺\n・詰めオセロをしてみよう\n詳しくは下の「イベント」をご覧ください。",
+      "以下のイベントが行われます。\n・トイブロックで灘校机椅子を制作体験\n・根軸基本講座\n・円に内接する六角形についての小噺\n・オセロ対抗戦 灘vs京大\n詳しくは下の「イベント」をご覧ください。",
     place: "M4",
     mapId: "m3-2",
+    contents: [
+      {
+        type: "events",
+        title: "",
+        url: "/events?id=circles",
+      },
+    ],
   },
   {
     id: "conan",
@@ -913,7 +934,7 @@ export const data: Circle[] = [
     description:
       "中学棟4階にあるコナンサークルではコナンに関するペーパークイズを常に実施しています。\n初級から超級まで難易度ごとにクイズが違うのですべての人が楽しめる内容になっています。また１０時３０分、１３時３０分からの１０分間はトリック実演を行います。",
     place: "M4",
-    mapId: "m3-3",
+    mapId: "conan",
     contents: [
       {
         type: "article",
@@ -933,7 +954,7 @@ export const data: Circle[] = [
     description:
       "アマチュア無線研究部では部員が作った電子工作やゲームの作品を展示しています。\nまた作品展示の他にも電子工作教室やロボット講習、アマチュア無線の体験ブースなども\nご用意しております。楽しめること間違いなしなので是非お立ち寄りください。",
     place: "M4",
-    mapId: "m3-4",
+    mapId: "amateurradio",
     contents: [
       {
         type: "events",
@@ -948,8 +969,8 @@ export const data: Circle[] = [
       {
         type: "article",
         title: "部誌",
-        url: "/pdf/amateurradio/article.pdf"
-      }
+        url: "/pdf/amateurradio/article.pdf",
+      },
     ],
   },
 ];

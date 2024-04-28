@@ -5,10 +5,7 @@ import { Now } from "./Now";
 export const TimeRow = forwardRef<HTMLDivElement, {}>(({}, ref) => {
   return (
     <div className="sticky top-0 z-30 h-0">
-      <div
-        className="flex border-b border-black bg-white "
-        ref={ref}
-      >
+      <div className="flex border-b border-black bg-white " ref={ref}>
         {Array(7)
           .fill(0)
           .map((_, i) => {

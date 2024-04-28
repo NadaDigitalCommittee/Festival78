@@ -1,12 +1,12 @@
 import { Footer } from "@/components/Footer";
+import { HamburgerMenu } from "@/components/HamburgerMenu";
+import { Bg } from "@/components/svg/Bg";
 import TypekitLoader from "@/components/TypeKit";
 import "@/styles/globals.scss";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata, Viewport } from "next";
 import { Inter, Limelight, Zen_Kaku_Gothic_New } from "next/font/google";
 import localFont from "next/font/local";
-import { GoogleAnalytics } from "@next/third-parties/google";
-import { HamburgerMenu } from "@/components/HamburgerMenu";
-import { Bg } from "@/components/svg/Bg";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const limelight = Limelight({
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     locale: "ja_JP",
     images: [
       {
-        url: "https://fest.nada-sc.jp/img/ogp.webp",
+        url: "https://fest.nada-sc.jp/img/ogp.png",
         width: 2000,
         height: 1125,
       },
