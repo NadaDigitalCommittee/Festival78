@@ -30,7 +30,7 @@ export default async function Page() {
         <div className="flex justify-center p-6">
           <Header path="/goods">Goods</Header>
         </div>
-        <p className="m-4 md:m-8 font-zen_kaku_gothic_new text-theme text-xl md:text-2xl">画像をタップすると詳細とサンプル画像の一覧を見ることができます。</p>
+        <p className="m-4 md:m-8 font-zen_kaku_gothic_new text-theme text-xl md:text-2xl">画像をタップすると説明やサンプル画像の一覧、在庫状況を見ることができます。</p>
         <div className="m-4 my-8 md:m-8 md:my-16 grid gap-4 gap-y-[calc(1rem/cos(8deg))] grid-cols-3 md:grid-cols-4 skew-y-[4deg]">
           {goods.map((item, i) => (
             <Frame key={item.id[0]} isGoods item={item} isLarge={i === 0} />
@@ -63,7 +63,7 @@ const Frame: FC<{ isGoods?: boolean, item: Item; isLarge?: boolean }> = ({ isGoo
     useDotButton(emblaApi);
 
   return (
-    <div className={`relative w-full leading-none ${isLarge ? "h-[100%] row-span-2 col-span-2 text-[max(0rem,calc((100vw-6rem)/12))] md:text-[max(0rem,calc((100vw-11rem)/16))]" : "aspect-[4/5] text-[max(0rem,calc((100vw-6rem)/24))] md:text-[max(0rem,calc((100vw-11rem)/32))]"}`}>
+    <div className={`relative w-full leading-none ${isLarge ? "[--frame-width:calc((100vw-6rem)*2/3)] md:[--frame-width:calc((100vw-11rem)/2)] h-[100%] row-span-2 col-span-2 text-[max(0rem,calc(var(--frame-width)/8))]" : "[--frame-width:calc((100vw-6rem)/3)] md:[--frame-width:calc((100vw-11rem)/4)] aspect-[4/5] text-[max(0rem,calc(var(--frame-width)/8))]"}`}>
       <div className={`absolute inset-0 ${isLarge ? "my-[calc((100%+1rem)*tan(16deg)/4)]" : ""}`}>
         <div className={`absolute w-full -skew-y-[4deg] text-theme ${isLarge ? "aspect-[9/10]" : "aspect-[calc(1/(1+tan(12deg)))]"}`}>
           <Modal isOpen={isOpen/*isGoods && id[0] === 35*/} onClose={onClose} size={{ base: "sm", md: "4xl" }} isCentered >
@@ -116,18 +116,22 @@ const Frame: FC<{ isGoods?: boolean, item: Item; isLarge?: boolean }> = ({ isGoo
                   <p>{description.split('\n').map((x, i) => (<span key={i} className="block">{x}</span>))}</p>
                   <p className="flex justify-end items-end text-5xl font-bold">{price.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,')}<span className="text-2xl pl-2">円</span></p>
                   {types ?
-                    <table className="w-full mt-2">
-                      <tbody>
-                        {types.map((type, i) => (
-                          <tr key={i}>
-                            <td className="pl-4 border-black border-[1.25px]">{id[i]}. {type}</td>
-                            <td className="size-4 p-2 border-black border-[1.25px]">
-                              <AFew />
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table> : null}
+                    <div>
+                      <table className="w-full my-2">
+                        <tbody>
+                          {types.map((type, i) => (
+                            <tr key={i}>
+                              <td className="pl-4 border-black border-[1.25px]">{id[i]}. {type}</td>
+                              <td className="size-4 p-2 border-black border-[1.25px]">
+                                <AFew />
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                      <p><AFew className="inline-block align-middle" />:在庫あり <Few className="inline-block" />:在庫わずか <No className="inline-block" />:在庫なし</p>
+                      <p>※実際の販売状況の反映には時間がかかる場合があります。</p>
+                    </div> : null}
                 </div>
               </ModalBody>
             </ModalContent>
@@ -150,6 +154,9 @@ const Frame: FC<{ isGoods?: boolean, item: Item; isLarge?: boolean }> = ({ isGoo
             <p className="font-zen_kaku_gothic_new font-bold leading-tight">{name.split('\n').map((x, i) => (<span key={i} className="block">{x}</span>))}</p>
           </div>
         </div>
+      </div>
+      <div className={`${true ? "hidden" : ""} z-40 absolute flex justify-center items-center size-fit inset-0 m-auto px-2 pt-[calc(var(--frame-width)/12.8)] pb-0 skew-y-[-4deg] rotate-[20deg] bg-white border-[#FF0C0C] text-center text-[calc((var(--frame-width)-1rem)/3.2)] ${isLarge ? "border-[8px]" : "border-4"} tracking-tighter text-[#FF0C0C] font-ltc_broadway`}>
+        <p>SOLD<br />OUT</p>
       </div>
     </div>
   );

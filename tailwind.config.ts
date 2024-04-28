@@ -16,6 +16,7 @@ const config: Config = {
         alte_din: ["var(--font-alte-din-1451-mittelschrift)"],
         south_amsterdam: ["var(--font-south-amsterdam-demo)"],
         times_new_roman: ["var(--font-times-new-roman)"],
+        ltc_broadway: ["ltc-broadway"],
       },
       colors: {
         theme: "#ff4d00",

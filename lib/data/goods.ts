@@ -62,8 +62,8 @@ export const goods: Item[] = [{
   name: 'Tシャツ',
   imageCount: 7,
   price: 1500,
-  description: 'S・M・L・LL\n白・黒',
-  types: ['S白', 'S黒', 'M白', 'M黒', 'L白', 'L黒', 'LL白', 'LL黒']
+  description: 'ライトグレー・ダークグレー\nS・M・L・XL',
+  types: ['ライトグレーS', 'ライトグレーM', 'ライトグレーL', 'ライトグレーXL', 'ダークグレーS', 'ダークグレーM', 'ダークグレーL', 'ダークグレーXL']
 }, {
   id: [16],
   size: 's',
@@ -122,8 +122,8 @@ export const goods: Item[] = [{
   name: 'クリアファイル\nA4無地',
   imageCount: 1,
   price: 100,
-  description: '白・青・黄・緑・ピンク\n使いやすい無地',
-  types: ['白', '青', '黄', '緑', 'ピンク']
+  description: '透明・青・緑・黄・ピンク\n使いやすい無地',
+  types: ['透明', '青', '緑', '黄', 'ピンク']
 }, {
   id: [33],
   size: 'm',
@@ -184,8 +184,8 @@ export const goods: Item[] = [{
   name: '多機能ペン\n ジェット\nストリーム\n',
   imageCount: 2,
   price: 700,
-  description: 'ネイビー・ボルドー・ブラック・ピンク\n最も使用頻度の高い赤・黒ボールペン&シャープペンシルの組み合わせ',
-  types: ['ネイビー', 'ボルドー', 'ブラック', 'ピンク']
+  description: '0.7 ネイビー・0.7 ボルドー・0.5 ブラック・0.5 ピンク\n最も使用頻度の高い赤・黒ボールペン&シャープペンシルの組み合わせ',
+  types: ['0.7ネイビー', '0.7ボルドー', '0.5ブラック', '0.5ピンク']
 }, {
   id: [55, 56, 57, 58],
   size: 'm',
