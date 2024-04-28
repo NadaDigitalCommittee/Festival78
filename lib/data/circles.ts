@@ -100,7 +100,7 @@ export const data: Circle[] = [
       {
         type: "events",
         title: "ミニ電車",
-        url: "/events?id=railway_event",
+        url: "/events?id=minitrain",
       },
     ],
   },
@@ -147,7 +147,7 @@ export const data: Circle[] = [
       {
         type: "events",
         title: "ミニ電車",
-        url: "/events?id=railway_event",
+        url: "/events?id=minitrain",
       },
       {
         type: "article",
@@ -271,6 +271,11 @@ export const data: Circle[] = [
       "以下のイベントが行われます。\n・パソコン解体\n・対称性を利用して合同式を得る方法\n・三角形に関する2種類の操作と相似三角形の出現\n・入試模試解説\n・ハッキング実演\n・物理実験ショー\n詳しくは下の「イベント」をご覧ください。",
     place: "H2",
     mapId: "lecture_h",
+    contents:[{
+      type:"events",
+      title:"",
+      url:"/events?id=circles"
+    }]
   },
   {
     id: "npca",
@@ -303,7 +308,7 @@ export const data: Circle[] = [
       {
         type: "events",
         title: "トイブロックで灘校机椅子を制作体験",
-        url: "/event?id=lego_event",
+        url: "/events?id=lego_event",
       },
     ],
   },
@@ -558,7 +563,7 @@ export const data: Circle[] = [
       {
         type: "events",
         title: "化学マジック",
-        url: "/events?id=chemistry",
+        url: "/events?id=chemistry_event",
       },
     ],
   },
@@ -650,7 +655,7 @@ export const data: Circle[] = [
       {
         type: "events",
         title: "Live解剖 エビ/イカ/カエル",
-        url: "/events?id=biology_event",
+        url: "/events?id=biology_event1",
       },
       {
         type: "events",
@@ -847,6 +852,11 @@ export const data: Circle[] = [
       "こんにちは灘校陸上部です！今年も大人気のカジノをやります！皆さんも自分の運を試してみませんか?初心者でも大歓迎なのでぜひ遊びに来てください！",
     place: "H4",
     mapId: "h1-1",
+    contents:[{
+      type:"events",
+      title:"ビンゴ大会",
+      url:"/events?id=casino_event"
+    }]
   },
   {
     id: "anime",
@@ -902,9 +912,14 @@ export const data: Circle[] = [
     id: "lecture_m",
     name: "講義教室",
     description:
-      "以下のイベントが行われます。\n・トイブロックで灘校机椅子を制作体験\n・根軸基本講座\n・円に内接する六角形についての小噺\n・詰めオセロをしてみよう\n詳しくは下の「イベント」をご覧ください。",
+      "以下のイベントが行われます。\n・トイブロックで灘校机椅子を制作体験\n・根軸基本講座\n・円に内接する六角形についての小噺\n・オセロ対抗戦 灘vs京大\n詳しくは下の「イベント」をご覧ください。",
     place: "M4",
     mapId: "m3-2",
+    contents:[{
+      type:"events",
+      title:"",
+      url:"/events?id=circles"
+    }]
   },
   {
     id: "conan",

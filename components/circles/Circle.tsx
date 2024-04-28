@@ -10,6 +10,7 @@ import { FC } from "react";
 import type { Circle as CircleType } from "@/lib/data/circles";
 import { Article } from "../svg/Article";
 import { MapPin } from "../svg/MapPin";
+import { Star1 } from "../svg/Star";
 
 type Props = {
   circle: CircleType;
@@ -20,9 +21,9 @@ export const Circle: FC<Props> = ({ circle }) => {
   const logoSrc = `/img/circles/icon/${circle.id}.webp`;
   const place = circle.place;
   const title = circle.name;
-  const eventHrefs = circle.contents
-    ?.filter((c) => c.type === "events")
-    .map((c) => c.url);
+  const event = circle.contents
+    ?.filter((c) => c.type === "events").at(0)
+
   const mapHref = `/maps?id=${circle.mapId}`;
   const articles = circle.contents?.filter((c) => c.type === "article");
   const articleHref = articles && `/downloads?id=${id}`;
@@ -56,10 +57,10 @@ export const Circle: FC<Props> = ({ circle }) => {
       <AccordionPanel className="px-6 py-3">
         <p className="whitespace-pre-wrap font-medium">{description}</p>
         <div className="mt-4">
-          <div>
+          <div className="flex">
             <a
               href={mapHref}
-              className="mr-2 inline-block bg-theme px-3 py-1 text-white"
+              className="mr-2 flex items-center bg-theme px-3 py-1 text-white"
             >
               <MapPin className={"h-[35px] fill-white"} />
               <span className="ml-1">マップ</span>
@@ -77,6 +78,15 @@ export const Circle: FC<Props> = ({ circle }) => {
                 <span className="ml-1">部誌・会誌</span>
               </a>
             )}
+            {event &&
+              <a
+              href={event.url}
+              className="ml-2 min-w-[90px] flex items-center bg-theme px-3 py-1 text-white"
+            >
+              <Star1/>
+              <span className="ml-1">イベント</span>
+            </a>
+            }
           </div>
         </div>
       </AccordionPanel>
@@ -123,8 +133,7 @@ const PlaceLabel: FC<{ place: Place }> = ({ place }) => {
   return (
     <div className="">
       <p
-        className={`mx-4 rounded-full px-2 text-xs text-white ${
-          place == "H4"
+        className={`mx-4 rounded-full px-2 text-xs text-white ${place == "H4"
             ? "bg-[#73AFF6]"
             : place == "H3"
               ? "bg-[#518ADF]"
@@ -151,7 +160,7 @@ const PlaceLabel: FC<{ place: Place }> = ({ place }) => {
                                   : place == "NewGarden"
                                     ? "bg-[#98580D]"
                                     : "bg-gray-400"
-        }`}
+          }`}
       >
         {placeString[place]}
       </p>

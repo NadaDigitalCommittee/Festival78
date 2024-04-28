@@ -121,7 +121,7 @@ export default function ContentSection({
                 translate: "calc(100% + 20px)"
               }}
             >
-              <div className={clsx("bg-red-400 h-1 w-[10vw]", borderColor)} style={{
+              <div className={clsx("h-1 w-[10vw]", borderColor)} style={{
                 width: "calc(30vw - 50% - 20px)",
               }} />
             </div>
