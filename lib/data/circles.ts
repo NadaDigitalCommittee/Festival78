@@ -56,7 +56,7 @@ export const data: Circle[] = [
     description:
       "毎年大人気のスーパーボールすくいを今年も開催します！小さなお子さんから大人の方まで大歓迎！バスケ部員たちと景品をかけて勝負する機会があるかも！？是非第一グラウンドまで足を運んでください！",
     place: "G1",
-    mapId: "superball"
+    mapId: "superball",
   },
   {
     id: "shooting",
@@ -64,14 +64,14 @@ export const data: Circle[] = [
     description:
       "灘校バレーボール部です！一昨年から始まった射的をグレードアップして今年も第1グラウンドで開催します！\nオリジナルの景品を用意していますので、小さなお子様から大人まで奮ってご参加ください！",
     place: "G1",
-    mapId: "ground1",
+    mapId: "shooting",
   },
   {
     id: "baseball",
     name: "野球",
     description: `今年も第一グラウンドで毎年恒例のストラックアウトとスピードガンを開催します！いつもはできないストラックアウトとスピードガンをこの機会に一度やってみませんか？何度もチャレンジできます。皆さんの参加を待っています。景品もあります。`,
     place: "G1",
-    mapId: "ground1",
+    mapId: "baseball",
   },
   {
     id: "yoyo",
@@ -79,7 +79,7 @@ export const data: Circle[] = [
     description:
       "今年もやります、ヨーヨー釣りです。例年通り柔道部員とソフトテニス部員の合同で行います！ヨーヨーの取れた数に応じてもらえる個数も決まります。いくつ取れるか、限界に挑戦してみませんか？ぜひ第1グラウンドまでお越しください！",
     place: "G1",
-    mapId: "ground1",
+    mapId: "yoyo",
   },
   {
     id: "kicktarget",
@@ -87,8 +87,7 @@ export const data: Circle[] = [
     description:
       "昨年に続き老若男女問わず楽しめるキックターゲットが爆誕！自分でボールを選び、決まった距離から的を狙ってシュート！あなたは何枚撃ち抜くことができるのか?！チャレンジャーは是非お越しください！",
     place: "G1",
-
-    mapId: "ground1",
+    mapId: "kicktarget",
   },
   {
     id: "minitrain",
@@ -96,7 +95,7 @@ export const data: Circle[] = [
     description:
       "2019年以来5年ぶりに復活したミニ電車は、人が跨って実際に乗れる鉄道模型で、小さなお子さんでも楽しめるのが特徴です。一周はなんと150メートルもあり、ミニ電車ならではの灘の新たな景色も見られるかもしれません！皆さん是非お越しください。",
     place: "G1",
-    mapId: "ground1",
+    mapId: "minitrain",
     contents: [
       {
         type: "events",
@@ -111,7 +110,7 @@ export const data: Circle[] = [
     description:
       "大人気なBENADAが今年も第一グラウンドに出現！灘校一のフォトスポットなので一度は訪れてみてください！",
     place: "G1",
-    mapId: "ground1",
+    mapId: "benada",
   },
   {
     id: "classic",
@@ -127,7 +126,7 @@ export const data: Circle[] = [
     description:
       "毎年恒例の古本屋をやっている剣道部です。今年も新中庭で開催しています。そしてなんと今年は剣道場が使用可能になりました！ということでコロナ禍以来の剣道体験を剣道場にて行います！部員一同、二つの会場でご来場お待ちしております。",
     place: "NewGarden",
-    mapId: "ground1",
+    mapId: "newgarden",
   },
   {
     id: "tennis",
@@ -233,7 +232,7 @@ export const data: Circle[] = [
     description:
       "校舎に入って右手の扉から行くことができる研修館にて、卓球台の貸し出しとミニ縁日を行っています。ミニ縁日ではピンポン玉を使った、景品付きのピンボールが遊べます。利用状況によっては事前予約が必要な場合がありますのでご注意ください。",
     place: "Kensyu",
-    mapId: "training",
+    mapId: "tabletennis",
   },
   {
     id: "shorinji",
@@ -241,7 +240,7 @@ export const data: Circle[] = [
     description:
       "少林寺拳法同好会は、研修館3階にて、ダイナミックな演舞を披露します。突き、蹴りから投げ、武器まで、幅広い技術を駆使した迫力ある演舞をお楽しみください。力強い動きと美しい形を通して、少林寺拳法の魅力をご堪能いただけます。",
     place: "Kensyu",
-    mapId: "training",
+    mapId: "shorinji",
     contents: [
       {
         type: "events",
@@ -256,7 +255,7 @@ export const data: Circle[] = [
     description:
       "かるた班:百人一首の札を使ったミニゲームをしたり、競技かるたを実際に体験したりすることができます！ミニゲームでは豪華景品がもらえるかも...?\n能楽班:能の仕舞をいくつか上演します！\n研修館2階でお待ちしています！",
     place: "Kensyu",
-    mapId: "training",
+    mapId: "classicculture",
     contents: [
       {
         type: "events",
@@ -299,7 +298,7 @@ export const data: Circle[] = [
     description:
       "今年制作したばかりの大型作品から、様々なメディアで取り上げられた過去作品、小さくともアイデアに富んだ個人作品まで様々なレゴが皆さんを迎えます。ここに来ずして灘の文化祭は語れません！ぜひお越しください！",
     place: "H2",
-    mapId: "h3-34",
+    mapId: "lego",
     contents: [
       {
         type: "events",
@@ -885,7 +884,7 @@ export const data: Circle[] = [
     description:
       "灘校地学研究部です！今年は日本プラネタリウム協議会公認でプラネタリウム100周年記念展示を行います。毎年大好評の、砂金を持って帰れる砂金掘り体験もあります！また、部員自作のプラネタリウムでは満天の星空をお届けします。ぜひ今年は中学棟4階へ！",
     place: "M4",
-    mapId: "earthscience",
+    mapId: "m3-1, m1open, earthscience",
     contents: [
       {
         type: "article",
@@ -913,7 +912,7 @@ export const data: Circle[] = [
     description:
       "中学棟4階にあるコナンサークルではコナンに関するペーパークイズを常に実施しています。\n初級から超級まで難易度ごとにクイズが違うのですべての人が楽しめる内容になっています。また１０時３０分、１３時３０分からの１０分間はトリック実演を行います。",
     place: "M4",
-    mapId: "m3-3",
+    mapId: "conan",
     contents: [
       {
         type: "article",
@@ -933,7 +932,7 @@ export const data: Circle[] = [
     description:
       "アマチュア無線研究部では部員が作った電子工作やゲームの作品を展示しています。\nまた作品展示の他にも電子工作教室やロボット講習、アマチュア無線の体験ブースなども\nご用意しております。楽しめること間違いなしなので是非お立ち寄りください。",
     place: "M4",
-    mapId: "m3-4",
+    mapId: "amateurradio",
     contents: [
       {
         type: "events",
@@ -948,8 +947,8 @@ export const data: Circle[] = [
       {
         type: "article",
         title: "部誌",
-        url: "/pdf/amateurradio/article.pdf"
-      }
+        url: "/pdf/amateurradio/article.pdf",
+      },
     ],
   },
 ];
