@@ -22,6 +22,7 @@ import {
 import { goods, Item, souvenirs } from "@/lib/data/goods";
 import { Header } from "@/components/Header";
 import { AFew, Few, No } from "@/components/svg/Stock";
+import useSWR from "swr";
 
 export default async function Page() {
   return (
@@ -51,6 +52,14 @@ export default async function Page() {
 }
 
 const Frame: FC<{ isGoods?: boolean, item: Item; isLarge?: boolean }> = ({ isGoods = false, item: { id, size, name, imageCount, price, description, types }, isLarge = false }) => {
+  const fetcher = async (key: string) => {
+    return await fetch(key).then((res) => res.json());
+  }
+  const { data, error, isLoading } = useSWR<{
+    statuses: boolean[];
+  }>("/api/goods", fetcher, {
+		refreshInterval: 60000,
+	});
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [emblaRef, emblaApi] = useEmblaCarousel({ containScroll: false });
   const {
@@ -87,7 +96,7 @@ const Frame: FC<{ isGoods?: boolean, item: Item; isLarge?: boolean }> = ({ isGoo
                       <div className="[backface-visibility:hidden] flex touch-pan-y h-full w-[calc(100%+var(--slide-spacing))] ml-[calc(var(--slide-spacing)*-1)]">
                         {Array.from(Array(imageCount).keys()).map(i => (<div className="flex-[0_0_var(--slide-size)] min-w-0 pl-[var(--slide-spacing)]" key={i}>
                           <div className="relative size-full">
-                            <Image src={`/img/items/${isGoods ? "" : "souvenirs/"}${`0${id[0]}`.slice(-2)}_${i + 1}.webp`} alt={name} fill className="object-contain" />
+                            <Image src={`/img/items/${isGoods ? "" : "souvenirs/"}${`0${id[0]}`.slice(-2)}_${i + 1}.webp`} alt={name} fill sizes="" className="object-contain" />
                           </div>
                         </div>))}
                       </div>
@@ -116,22 +125,25 @@ const Frame: FC<{ isGoods?: boolean, item: Item; isLarge?: boolean }> = ({ isGoo
                   <p>{description.split('\n').map((x, i) => (<span key={i} className="block">{x}</span>))}</p>
                   <p className="flex justify-end items-end text-5xl font-bold">{price.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,')}<span className="text-2xl pl-2">円</span></p>
                   {types ?
-                    <div>
-                      <table className="w-full my-2">
-                        <tbody>
-                          {types.map((type, i) => (
-                            <tr key={i}>
-                              <td className="pl-4 border-black border-[1.25px]">{id[i]}. {type}</td>
-                              <td className="size-4 p-2 border-black border-[1.25px]">
-                                <AFew />
-                              </td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                      <p><AFew className="inline-block align-middle" />:在庫あり <Few className="inline-block" />:在庫わずか <No className="inline-block" />:在庫なし</p>
-                      <p>※実際の販売状況の反映には時間がかかる場合があります。</p>
-                    </div> : null}
+                    (isLoading || !data) ? <p>読み込み中...</p>
+                      : error ? <p>読み込みに失敗しました</p>
+                        : <div>
+                          <table className="w-full my-2">
+                            <tbody>
+                              {types.map((type, i) => (
+                                <tr key={i}>
+                                  <td className="pl-4 border-black border-[1.25px]">{id[i]}. {type}</td>
+                                  <td className="size-4 p-2 border-black border-[1.25px]">
+                                    {data.statuses[id[i]] ? <No /> : <AFew />}
+                                  </td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                          <p><AFew className="inline-block align-middle" />:在庫あり <No className="inline-block" />:在庫なし</p>
+                          <p>※実際の販売状況の反映には時間がかかる場合があります。</p>
+                        </div>
+                    : null}
                 </div>
               </ModalBody>
             </ModalContent>
@@ -155,7 +167,7 @@ const Frame: FC<{ isGoods?: boolean, item: Item; isLarge?: boolean }> = ({ isGoo
           </div>
         </div>
       </div>
-      <div className={`${true ? "hidden" : ""} z-40 absolute flex justify-center items-center size-fit inset-0 m-auto px-2 pt-[calc(var(--frame-width)/12.8)] pb-0 skew-y-[-4deg] rotate-[20deg] bg-white border-[#FF0C0C] text-center text-[calc((var(--frame-width)-1rem)/3.2)] ${isLarge ? "border-[8px]" : "border-4"} tracking-tighter text-[#FF0C0C] font-ltc_broadway`}>
+      <div className={`${!isGoods || isLoading || !data || id.find(i => !data.statuses[i]) ? "hidden" : ""} z-40 absolute flex justify-center items-center size-fit inset-0 m-auto px-2 pt-[calc(var(--frame-width)/12.8)] pb-0 skew-y-[-4deg] rotate-[20deg] bg-white border-[#FF0C0C] text-center text-[calc((var(--frame-width)-1rem)/3.2)] ${isLarge ? "border-[8px]" : "border-4"} tracking-tighter text-[#FF0C0C] font-ltc_broadway`}>
         <p>SOLD<br />OUT</p>
       </div>
     </div>
