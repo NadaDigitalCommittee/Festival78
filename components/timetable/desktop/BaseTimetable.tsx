@@ -20,11 +20,11 @@ export const BaseTimetableDesktop: FC<Props> = ({
 }) => {
   return (
     <div className="">
-      <div className="flex overflow-y-scroll w-screen h-[700px]">
+      <div className="flex h-[700px] w-screen overflow-y-scroll">
         <EventColumn events={events} stickyItems={stickyItems} />
         <div>
           <div className="absolute">
-            <div className="bg-white w-[153px] h-[51px] relative z-40 -translate-x-[99%]"/>
+            <div className="relative z-40 h-[51px] w-[153px] -translate-x-[99%] bg-white" />
           </div>
           <TimeRow />
           <BorderColumn eventCount={events.length}>

@@ -10,7 +10,7 @@ export const Now: FC = () => {
   const ok = 0 <= interval && interval <= 6.5;
   return (
     <div
-      className={`${ok ? "absolute" : "hidden"} w-12 z-40 
+      className={`${ok ? "absolute" : "hidden"} z-40 w-12 
     `}
       style={{
         top: `calc(calc(${interval + 0.5}*120px) - 20px)`,

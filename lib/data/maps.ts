@@ -54,7 +54,7 @@ const mapIdAll = [
     "viewing",
     "socialstudies1",
     "literaryart",
-    "seminar",    
+    "seminar",
     "kingcrab",
     "syodo",
     "mainhall",

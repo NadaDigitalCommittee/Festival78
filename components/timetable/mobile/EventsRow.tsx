@@ -12,11 +12,8 @@ export const EventsRow = forwardRef<HTMLDivElement, Props>(
   ({ events }, ref) => {
     return (
       <div className="sticky top-0 z-10">
-        <div
-          className="flex border-b border-black bg-white "
-          ref={ref}
-        >
-          <div/>
+        <div className="flex border-b border-black bg-white " ref={ref}>
+          <div />
           {events.map((event, i) => {
             return (
               <div

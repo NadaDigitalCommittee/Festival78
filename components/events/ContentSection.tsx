@@ -56,74 +56,102 @@ export default function ContentSection({
   comingSoon,
   markerColor,
   logoSrc,
-  circleName
+  circleName,
 }: ContentSectionProps) {
   const mapName = getMapNameFromId(mapId);
-  const stripeMarkerColor = markerColor === "red"
-    ? stripeMarker_red
-    : markerColor === "blue"
-      ? stripeMarker_blue
-      : markerColor === "yellow"
-        ? stripeMarker_yellow
-        : markerColor === "green"
-          ? stripeMarker_green
-          : markerColor === "orange"
-            ? stripeMarker_orange
-            : markerColor === "pink"
-              ? stripeMarker_pink
-              : stripeMarker_blue;
-  const borderColor = markerColor === "red"
-    ? "bg-red-400"
-    : markerColor === "blue"
-      ? "bg-[#0400FF]/45"
-      : markerColor === "yellow"
-        ? "bg-yellow-400"
-        : markerColor === "green"
-          ? "bg-[#008000]/45"
-          : markerColor === "orange"
-            ? "bg-[#FFC500]/45"
-            : markerColor === "pink"
-              ? "bg-[#d45888]/45"
-              : "bg-[#0400FF]/45";
+  const stripeMarkerColor =
+    markerColor === "red"
+      ? stripeMarker_red
+      : markerColor === "blue"
+        ? stripeMarker_blue
+        : markerColor === "yellow"
+          ? stripeMarker_yellow
+          : markerColor === "green"
+            ? stripeMarker_green
+            : markerColor === "orange"
+              ? stripeMarker_orange
+              : markerColor === "pink"
+                ? stripeMarker_pink
+                : stripeMarker_blue;
+  const borderColor =
+    markerColor === "red"
+      ? "bg-red-400"
+      : markerColor === "blue"
+        ? "bg-[#0400FF]/45"
+        : markerColor === "yellow"
+          ? "bg-yellow-400"
+          : markerColor === "green"
+            ? "bg-[#008000]/45"
+            : markerColor === "orange"
+              ? "bg-[#FFC500]/45"
+              : markerColor === "pink"
+                ? "bg-[#d45888]/45"
+                : "bg-[#0400FF]/45";
 
   return (
     <article id={`section_${eventId}`} className="w-screen">
       <div className="flex flex-col items-center px-1">
         <div className="relative">
           <div className="w-full translate-x-[50%]">
-            {logoSrc&&<Image src={logoSrc} alt="" width={100} height={100} className="-translate-x-1/2"/>}
+            {logoSrc && (
+              <Image
+                src={logoSrc}
+                alt=""
+                width={100}
+                height={100}
+                className="-translate-x-1/2"
+              />
+            )}
           </div>
           <div className="md:hidden">
-            <div className={clsx("absolute h-1 z-0 translate-y-[45px]", borderColor)}
+            <div
+              className={clsx(
+                "absolute z-0 h-1 translate-y-[45px]",
+                borderColor
+              )}
               style={{
                 width: "calc(45vw - 50% - 20px)",
-                translate: "calc(-100% - 20px)"
-              }} />
-            <div className="absolute w-full h-1 z-0 translate-y-[45px]"
+                translate: "calc(-100% - 20px)",
+              }}
+            />
+            <div
+              className="absolute z-0 h-1 w-full translate-y-[45px]"
               style={{
-                translate: "calc(100% + 20px)"
+                translate: "calc(100% + 20px)",
               }}
             >
-              <div className={clsx("h-1 w-[10vw]", borderColor)} style={{
-                width: "calc(45vw - 50% - 20px)",
-              }} />
+              <div
+                className={clsx("h-1 w-[10vw]", borderColor)}
+                style={{
+                  width: "calc(45vw - 50% - 20px)",
+                }}
+              />
             </div>
           </div>
 
           <div className="max-md:hidden">
-            <div className={clsx("absolute h-1 z-0 translate-y-[45px]", borderColor)}
+            <div
+              className={clsx(
+                "absolute z-0 h-1 translate-y-[45px]",
+                borderColor
+              )}
               style={{
                 width: "calc(30vw - 50% - 20px)",
-                translate: "calc(-100% - 20px)"
-              }} />
-            <div className="absolute w-full h-1 z-0 translate-y-[45px]"
+                translate: "calc(-100% - 20px)",
+              }}
+            />
+            <div
+              className="absolute z-0 h-1 w-full translate-y-[45px]"
               style={{
-                translate: "calc(100% + 20px)"
+                translate: "calc(100% + 20px)",
               }}
             >
-              <div className={clsx("h-1 w-[10vw]", borderColor)} style={{
-                width: "calc(30vw - 50% - 20px)",
-              }} />
+              <div
+                className={clsx("h-1 w-[10vw]", borderColor)}
+                style={{
+                  width: "calc(30vw - 50% - 20px)",
+                }}
+              />
             </div>
           </div>
 
@@ -145,7 +173,7 @@ export default function ContentSection({
           )}
         </div>
         {mapName !== "本館ステージ" && (
-          <span className="font-zen_kaku_gothic_new">{`at: ${mapName} ${circleName?`(${circleName})`:""}`}</span>
+          <span className="font-zen_kaku_gothic_new">{`at: ${mapName} ${circleName ? `(${circleName})` : ""}`}</span>
         )}
       </div>
       <div className="flex justify-center pb-[100px]">

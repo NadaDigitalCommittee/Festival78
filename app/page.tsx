@@ -99,19 +99,22 @@ export default function Home() {
             <CountDown restTime={restTime} />
           </div>
 
-          {
-            (-(1830 * 60) < restTime) && <div className="text-[#FF0C0C] font-zen_kaku_gothic_new my-8 max-w-[600px] md:w-[80vw] w-[90vw] mx-auto">
-              <p className="font-bold text-2xl tracking-[0.5em] ml-[0.5em] my-4">～お願い～</p>
-              <div className="border border-[#FF0C0C] bg-white font-bold p-2">
+          {-(1830 * 60) < restTime && (
+            <div className="mx-auto my-8 w-[90vw] max-w-[600px] font-zen_kaku_gothic_new text-[#FF0C0C] md:w-[80vw]">
+              <p className="my-4 ml-[0.5em] text-2xl font-bold tracking-[0.5em]">
+                ～お願い～
+              </p>
+              <div className="border border-[#FF0C0C] bg-white p-2 font-bold">
                 <p className="text-center text-xl">
-                  当日は、午前<span className="text-6xl font-futura_pt">9</span>時以降にお越しください。
+                  当日は、午前<span className="font-futura_pt text-6xl">9</span>
+                  時以降にお越しください。
                 </p>
                 <p>
                   文化祭の開催時間は両日共に9:00~15:30です。スムーズにご来場いただくために、ご理解・ご協力のほどよろしくお願いします。
                 </p>
               </div>
             </div>
-          }
+          )}
         </div>
 
         <YouTubeEmbed videoid="MiaSs1-RXK0" style="margin:auto" />
@@ -227,7 +230,7 @@ export default function Home() {
             </div>
           </div>
 
-          <p className="font-zen_kaku_gothic_new text-black/70 w-[70vw] text-center mx-auto mb-8 max-w-[800px]">
+          <p className="mx-auto mb-8 w-[70vw] max-w-[800px] text-center font-zen_kaku_gothic_new text-black/70">
             第78回灘校文化祭「ODYSSEY」に関するお問い合わせや疑問点等は以下の公式Xアカウント、FacebookアカウントおよびLINEアカウントへのダイレクトメッセージにお願いします。
           </p>
         </div>

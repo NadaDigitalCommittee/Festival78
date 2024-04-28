@@ -30,7 +30,7 @@ export const EVENTS_PAGE_SOURCE: [
         color: "red",
         name: "ODORIBA",
         event_id: "odoriba",
-        hasLogo:true,
+        hasLogo: true,
         description: (
           <>
             ODORIBAを見ずして灘校文化祭は語れない。
@@ -45,7 +45,7 @@ export const EVENTS_PAGE_SOURCE: [
         color: "blue",
         name: "Ms.灘コンテスト",
         event_id: "mscontest",
-        hasLogo:true,
+        hasLogo: true,
         description: (
           <>
             ステージ企画最高級の大人気大盛り上がり企画!!
@@ -81,7 +81,7 @@ export const EVENTS_PAGE_SOURCE: [
         color: "red",
         name: "筋肉王",
         event_id: "muscle",
-        hasLogo:true,
+        hasLogo: true,
         description: (
           <>
             史上最も偉大なボディビルダー、 ロニーコールマンはこう言いました。
@@ -160,7 +160,7 @@ export const EVENTS_PAGE_SOURCE: [
         color: "orange",
         name: "N1グランプリ2024",
         event_id: "n1",
-        hasLogo:true,
+        hasLogo: true,
         description: (
           <>
             灘校屈指のお笑いたちがコンビを組み、
@@ -211,7 +211,7 @@ export const EVENTS_PAGE_SOURCE: [
         color: "orange",
         name: "IPPONグランプリ",
         event_id: "ippon",
-        hasLogo:true,
+        hasLogo: true,
         description: (
           <>
             今年も開催!
@@ -226,7 +226,7 @@ export const EVENTS_PAGE_SOURCE: [
         color: "red",
         name: "灘校生格付けチェック",
         event_id: "kakuzuke",
-        hasLogo:true,
+        hasLogo: true,
         description: (
           <>
             灘校生が自らの感覚を駆使して問題を解き、
@@ -275,7 +275,7 @@ export const EVENTS_PAGE_SOURCE: [
         color: "orange",
         name: "灘中に入る前と後",
         event_id: "maetoato",
-        hasLogo:true,
+        hasLogo: true,
         description: (
           <>
             人気企画「新中一企画」が、内容をリニューアルして登場!
@@ -309,7 +309,7 @@ export const EVENTS_PAGE_SOURCE: [
       {
         color: "green",
         name: "灘校一受けたい授業",
-        hasLogo:true,
+        hasLogo: true,
         event_id: "nadaju",
         description: (
           <>
@@ -326,7 +326,7 @@ export const EVENTS_PAGE_SOURCE: [
         color: "pink",
         name: "オーロラサイエンス",
         event_id: "aurorascience",
-        hasLogo:true,
+        hasLogo: true,
         description: (
           <>
             物理、化学、生物、地学、言語学と、
@@ -596,9 +596,9 @@ export const EVENTS_PAGE_SOURCE: [
         event_id: "othello_event",
         description: (
           <>
-          昨年に続き2度目の開催となる京大対抗戦！
-          <br/>
-          日本トップレベルの実力をもつ京大オセロサークルKIJINに灘オセロサークルNSOCは勝つことができるのか…⁉︎
+            昨年に続き2度目の開催となる京大対抗戦！
+            <br />
+            日本トップレベルの実力をもつ京大オセロサークルKIJINに灘オセロサークルNSOCは勝つことができるのか…⁉︎
           </>
         ),
         map_id: "m3-2",

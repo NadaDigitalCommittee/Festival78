@@ -271,11 +271,13 @@ export const data: Circle[] = [
       "以下のイベントが行われます。\n・パソコン解体\n・対称性を利用して合同式を得る方法\n・三角形に関する2種類の操作と相似三角形の出現\n・入試模試解説\n・ハッキング実演\n・物理実験ショー\n詳しくは下の「イベント」をご覧ください。",
     place: "H2",
     mapId: "h3-1",
-    contents:[{
-      type:"events",
-      title:"",
-      url:"/events?id=circles"
-    }]
+    contents: [
+      {
+        type: "events",
+        title: "",
+        url: "/events?id=circles",
+      },
+    ],
   },
   {
     id: "npca",
@@ -852,11 +854,13 @@ export const data: Circle[] = [
       "こんにちは灘校陸上部です！今年も大人気のカジノをやります！皆さんも自分の運を試してみませんか?初心者でも大歓迎なのでぜひ遊びに来てください！",
     place: "H4",
     mapId: "h1-1",
-    contents:[{
-      type:"events",
-      title:"ビンゴ大会",
-      url:"/events?id=casino_event"
-    }]
+    contents: [
+      {
+        type: "events",
+        title: "ビンゴ大会",
+        url: "/events?id=casino_event",
+      },
+    ],
   },
   {
     id: "anime",
@@ -915,11 +919,13 @@ export const data: Circle[] = [
       "以下のイベントが行われます。\n・トイブロックで灘校机椅子を制作体験\n・根軸基本講座\n・円に内接する六角形についての小噺\n・オセロ対抗戦 灘vs京大\n詳しくは下の「イベント」をご覧ください。",
     place: "M4",
     mapId: "m3-2",
-    contents:[{
-      type:"events",
-      title:"",
-      url:"/events?id=circles"
-    }]
+    contents: [
+      {
+        type: "events",
+        title: "",
+        url: "/events?id=circles",
+      },
+    ],
   },
   {
     id: "conan",

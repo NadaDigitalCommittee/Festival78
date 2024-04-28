@@ -14,12 +14,12 @@ export const CircleAcordion: FC = () => {
     setDefaultId(window.location.hash.replace("#", "") ?? "");
   }, [defaultId]);
 
-  const data=useMemo(()=>{
-    if(media===MediaType.Desktop){
+  const data = useMemo(() => {
+    if (media === MediaType.Desktop) {
       return arrayOddAndEven(data_);
-    }  
-    return data_; 
-  },[media])
+    }
+    return data_;
+  }, [media]);
 
   useEffect(() => {
     if (!defaultId) return;
@@ -31,7 +31,6 @@ export const CircleAcordion: FC = () => {
     setIndex(data.findIndex((circle) => circle.id === defaultId));
   }, [data, defaultId]);
 
-  
   const halfLength = useMemo(() => Math.ceil(data.length / 2), []);
   return (
     <ChakraProvider>
@@ -97,12 +96,11 @@ export const CircleAcordion: FC = () => {
 };
 
 function arrayOddAndEven<T>(array: T[]): T[] {
-  const a:T[][]=[[], []]
-  return array.reduce(
-    (acc, cur, i) => {
+  const a: T[][] = [[], []];
+  return array
+    .reduce((acc, cur, i) => {
       acc[i % 2].push(cur);
       return acc;
-    },
-    a
-  ).flat();
+    }, a)
+    .flat();
 }

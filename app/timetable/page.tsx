@@ -83,24 +83,24 @@ export default function Page() {
   );
 
   const media = useResponsive();
-  const [scrollX,setScrollX]=useState(0);
-  const [scrollY,setScrollY]=useState(0);
+  const [scrollX, setScrollX] = useState(0);
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     setTimeout(() => {
       if (!defaultEvent) return;
-      const i=defaultEvent.time?.findIndex(t=>t.time.isNotStarted())
-      const element=document.getElementById(defaultEvent.id+"-"+i);
-      if(!element)return;
-      const rect=element.getBoundingClientRect();
-      const top=rect.top+window.scrollY;
-      const left=rect.left+window.scrollX;
-      setScrollX(left-70)
-      setScrollY(top-390)
+      const i = defaultEvent.time?.findIndex((t) => t.time.isNotStarted());
+      const element = document.getElementById(defaultEvent.id + "-" + i);
+      if (!element) return;
+      const rect = element.getBoundingClientRect();
+      const top = rect.top + window.scrollY;
+      const left = rect.left + window.scrollX;
+      setScrollX(left - 70);
+      setScrollY(top - 390);
       window.scrollTo({
-        top: (media === MediaType.Mobile ? 320 : 245),
+        top: media === MediaType.Mobile ? 320 : 245,
         behavior: "smooth",
-      })
+      });
     }, 800);
   }, [defaultEvent, media]);
 
@@ -151,7 +151,7 @@ export default function Page() {
   );
 
   return (
-    <div className="font-zen_kaku_gothic_new font-bold overflow-y-clip mb-[100px]">
+    <div className="mb-[100px] overflow-y-clip font-zen_kaku_gothic_new font-bold">
       <Header path="/timetable">Timetable</Header>
       {stickyItems}
       {media === undefined ? (

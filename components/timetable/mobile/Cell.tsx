@@ -27,7 +27,7 @@ export const CellMobile: FC<Props> = ({
 
   return (
     <div
-      id={id+"-"+timeId}
+      id={id + "-" + timeId}
       className={`absolute ml-[20px] flex flex-col items-center justify-center rounded-xl bg-[#7A7A7A] text-center
       text-white
     `}

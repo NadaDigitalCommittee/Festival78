@@ -58,13 +58,16 @@ export class Time {
       Date.now() + (new Date().getTimezoneOffset() + 9 * 60) * 60 * 1000
     );
   }
-  public isNotStarted(){
+  public isNotStarted() {
     return Time.nowJST().getTime() < this.start.getTime();
   }
-  public isHolding(){
-    return this.start.getTime() < Time.nowJST().getTime() && Time.nowJST().getTime() < this.end.getTime();
+  public isHolding() {
+    return (
+      this.start.getTime() < Time.nowJST().getTime() &&
+      Time.nowJST().getTime() < this.end.getTime()
+    );
   }
-  public isEnd(){
+  public isEnd() {
     return this.end.getTime() < Time.nowJST().getTime();
   }
   private to2Digits(num: number) {

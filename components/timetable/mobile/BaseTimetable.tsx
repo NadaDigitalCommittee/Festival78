@@ -34,9 +34,9 @@ export const BaseTimetableMobile: FC<Props> = ({
   }, [defaultScrollX]);
 
   return (
-    <div className="overflow-x-scroll relative mt-4">
-      <div className="absolute h-[81px] w-[60px] z-40 bg-white" />
-      <div className="flex overflow-y-scroll h-screen" ref={timetableRef}>
+    <div className="relative mt-4 overflow-x-scroll">
+      <div className="absolute z-40 h-[81px] w-[60px] bg-white" />
+      <div className="flex h-screen overflow-y-scroll" ref={timetableRef}>
         <TimeColumn stickyItems={stickyItems} />
         <div className="relative">
           <EventsRow events={events} />

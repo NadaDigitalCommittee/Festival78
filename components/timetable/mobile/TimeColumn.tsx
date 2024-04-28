@@ -13,7 +13,7 @@ export const TimeColumn: FC<Props> = ({ stickyItems }) => {
         return (
           <div
             key={i}
-            className="flex h-[120px] w-full items-center justify-end bg-white relative z-10"
+            className="relative z-10 flex h-[120px] w-full items-center justify-end bg-white"
           >
             <p className="font-limelight text-2xl">{i + 9}</p>
           </div>
