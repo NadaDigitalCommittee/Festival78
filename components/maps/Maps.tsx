@@ -17,14 +17,6 @@ const useFocusMap = function (mapIdList: string[] | undefined) {
   });
 };
 
-const expandChildren = (elm: JSX.Element) => {
-  if (Array.isArray(elm?.props?.children)) {
-    return elm.props.children.map(expandChildren);
-  } else {
-    return elm;
-  }
-};
-
 type Props = {
   floorNumber: number;
   className?: string;
@@ -66,7 +58,16 @@ const mapSvgAll = [
     <path className={boxFS} d="M1.4 444.13 h 48.44 v 81.29 h -48.44 z" id="cafe" />
     <path className={boxFS} d="M230 590H276.56v25H230v-25z" id="campustour" />
     <path className={boxFS} d="M168.59 467.66h86.37v29.21h-86.37z" id="garden" />
-    <path className={boxFS} d="M192.597 39.816h58.107V61.58h-58.107zM65.5 60.12h77.23v21.64H65.5zM65.5 87.26h77.23v21.64H65.5zM45.7 113.53h33.11v21.64H45.7zM301.89 31.06h77.23V52.7h-77.23zM301.89 62.34h77.23v21.64h-77.23zM301.89 95.19h77.23v21.64h-77.23zM77.22 22.38 h 76 a 16 16 0 0 1 0 32 h -76.02 a 16 16 0 0 1 0 -32z" id="ground1" />
+    <g id="ground1" className={boxFS}>
+      <path d="M 192.597 39.816 h 58.107 v 21.764 h -58.107 v -21.764 z" id="benada"/>
+      <path d="M 65.5 60.12 h 77.23 v 21.64 h -77.23 v -21.64 z" id="yoyo"/>
+      <path d="M 65.5 87.26 h 77.23 v 21.64 h -77.23 v -21.64 z" id="superball"/>
+      <path d="M 301.89 62.34 h 77.23 v 21.64 h -77.23 v -21.64 z" id="shooting"/>
+      <path d="M 301.89 95.19 h 77.23 v 21.64 h -77.23 v -21.64 z" id="baseball"/>
+      <path d="M 301.89 31.06 h 77.23 v 21.64 h -77.23 v -21.64 z" id="kicktarget"/>
+      <path d="M 77.22 22.38 h 76 a 16 16 0 0 1 0 32 h -76.02 a 16 16 0 0 1 0 -32 z" id="minitrain"/>
+      <path d="M 45.7 113.53 h 33.11 v 21.64 h -33.11 v -21.64 z" id="ticket"/>
+    </g>
     <path className={boxFS} d="M59.33 680.95h163.03v81.29H59.33z" id="gym" />
     <path className={boxFS} d="M116.9 368.93h22.82v36.7H116.9z" id="library" />
     <path className={boxFS} d="M62.56 444.13 h 33.97 v 71.02 h -33.97 z M1.4 444.13 h 48.44 v 81.29 h -48.44 z" id="meeting" />
@@ -235,7 +236,7 @@ const mapSvgAll = [
         transform="translate(322 275)"
         writingMode="tb"
       >
-        <tspan x="0" y="0"textLength={30}
+        <tspan x="0" y="0" textLength={30}
         lengthAdjust={"spacing"}>
           ジュース
         </tspan>
@@ -263,7 +264,7 @@ const mapSvgAll = [
         transform="translate(335.5 601)"
         writingMode="tb"
       >
-        <tspan x="0" y="0"textLength={45}
+        <tspan x="0" y="0" textLength={45}
         lengthAdjust={"spacing"}>
           お土産販売
         </tspan>
@@ -288,7 +289,7 @@ const mapSvgAll = [
         transform="translate(128.56 371.05)"
         writingMode="tb"
       >
-        <tspan x="0" y="-2"textLength={35}
+        <tspan x="0" y="-2" textLength={35}
         lengthAdjust={"spacing"}>
           図書委員会
         </tspan>
@@ -300,7 +301,7 @@ const mapSvgAll = [
         transform="translate(56.21 457.96)"
         writingMode="tb"
       >
-        <tspan x="0" y="0"textLength={65}
+        <tspan x="0" y="0" textLength={65}
         lengthAdjust={"spacing"}>
           食堂地下１階へ
         </tspan>
@@ -324,7 +325,7 @@ const mapSvgAll = [
         transform="translate(25.62 452.96)"
         writingMode="tb"
       >
-        <tspan x="0" y="0"textLength={70}
+        <tspan x="0" y="0" textLength={70}
         lengthAdjust={"spacing"}>
           鉄道研究部
         </tspan>
@@ -412,8 +413,10 @@ const mapSvgAll = [
     <path className={boxFS} d="M.51 296.81h42.56v119.65H.51z" id="audiovisual" />
     <path className={boxFS} d="M228.26 27.15h43.9v37.63h-43.9z" id="h3-1" />
     <path className={boxFS} d="M184.36 27.15h43.9v37.63h-43.9z" id="h3-2" />
-    <path className={boxF_} d="M184.36 27.15 h -43.9 v 37.63 h 43.9 v -37.63 z" id="h3-3" />
-    <path className={boxF_} d="M140.46 27.15 h -43.9 v 37.63 h 43.9 v -37.63 z" id="h3-4" />
+    <g id="lego" className={boxF_}>
+      <path d="M184.36 27.15 h -43.9 v 37.63 h 43.9 v -37.63 z" id="h3-3" />
+      <path d="M140.46 27.15 h -43.9 v 37.63 h 43.9 v -37.63 z" id="h3-4" />
+    </g>
     <path className={boxF_} d="M55.36 187.38 h 15.47 v 30.72 h -15.47 z" id="kingcrab" />
     <path className={boxFS} d="M282.06 285.51h59.6v48.53h-59.6z" id="lecture" />
     <path className={boxFS} d="M198.51 187.46h39.04v30.64h-39.04z" id="m1-1" />
@@ -427,7 +430,15 @@ const mapSvgAll = [
     <path className={boxFS} d="M.51 187.38h39.38v30.72H.51z" id="studentcouncil" />
     <path className={boxFS} d="M.51 232.43h39.38v38.22H.51z" id="syodo" />
     <path className={boxFS} d="M288.88 60.75h52.78v114.22h-52.78z" id="teachersroom" />
-    <path className={boxFS} d="M345.19 168.4h48.54v51.05h-48.54z" id="training" />
+    <g>
+      <path className={boxF_} d="M345.19 168.4h48.54v51.05h-48.54z" />
+      <g className={box__} id="training">
+        <path d="M345.19 168.4h48.54v51.05h-48.54z" id="tabletennis" />
+        <path d="M345.19 168.4h48.54v51.05h-48.54z" id="shorinji" />
+        <path d="M345.19 168.4h48.54v51.05h-48.54z" id="classicculture" />
+      </g>
+      <path className={box_S} d="M345.19 168.4h48.54v51.05h-48.54z" />
+    </g>
     <g>
       <g>
         <path fill="#004d85" stroke="none" d="M81.35 247.75h20.75v15.32H81.35z" />
@@ -506,7 +517,7 @@ const mapSvgAll = [
         transform="translate(274.6 286)"
         writingMode="tb"
       >
-        <tspan x="0" y="0"textLength={66}
+        <tspan x="0" y="0" textLength={66}
         lengthAdjust={"spacing"}>
           スロープ１階へ
         </tspan>
@@ -523,7 +534,7 @@ const mapSvgAll = [
         transform="translate(316 83)"
         writingMode="tb"
       >
-        <tspan x="0" y="0"textLength={70}
+        <tspan x="0" y="0" textLength={70}
         lengthAdjust={"spacing"}>
           職員室
         </tspan>
@@ -535,7 +546,7 @@ const mapSvgAll = [
         transform="translate(22 300)"
         writingMode="tb"
       >
-        <tspan x="0" y="0"textLength={110}
+        <tspan x="0" y="0" textLength={110}
         lengthAdjust={"spacing"}>
           視聴覚ステージ
         </tspan>
@@ -589,7 +600,7 @@ const mapSvgAll = [
         transform="translate(63 188)"
         writingMode="tb"
       >
-        <tspan x="0" y="0"textLength={32}
+        <tspan x="0" y="0" textLength={32}
         lengthAdjust={"spacing"}>
           タラバガニ
         </tspan>
@@ -656,7 +667,7 @@ const mapSvgAll = [
         transform="translate(110 188)"
         writingMode="tb"
       >
-        <tspan x="0" y="0"textLength={32}
+        <tspan x="0" y="0" textLength={32}
         lengthAdjust={"spacing"}>
           生徒会の間
         </tspan>
@@ -668,7 +679,7 @@ const mapSvgAll = [
         transform="translate(90.6 188)"
         writingMode="tb"
       >
-        <tspan x="0" y="0"textLength={32}
+        <tspan x="0" y="0" textLength={32}
         lengthAdjust={"spacing"}>
           東北企画
         </tspan>
@@ -699,7 +710,12 @@ const mapSvgAll = [
     <path className={boxFS} d="M132.69 179.79h-25.37v39.82h50.74v-39.82h-25.37z" id="m2-3" />
     <path className={boxFS} d="M 56.44 179.79 v 39.82 h 50.74 v -39.82 h -50.74 z" id="m2-4" />
     <path className={boxF_} d="M259.39 179.8h38.69v39.81h-38.69z" id="m2open" />
-    <path className={boxF_} d="M 326.09 179.72 h 49.397 v 73.95 h -49.397 v -73.95 z" id="socialstudies2" />
+    <g id="socialstudies2" className={boxF_}>
+      <path d="M 326.09 179.72 h 49.397 v 73.95 h -49.397 v -73.95 z" id="socialstudies2" />
+      <path d="M 326.09 179.72 h 49.397 v 37.02 h -49.397 v -37.02 z" id="geography" />
+      <path d="M 326.09 216.74 h 49.397 v 18.46 h -49.397 v -18.46 z" id="society" />
+      <path d="M 326.09 235.2 h 49.397 v 18.47 h -49.397 v -18.47 z" id="urbandevelopment" />
+    </g>
     <g>
       <g>
         <path fill="#e50020" className={boxStroke} d="M 271.2 258.13 h 26.89 v 19.91 h -26.89 z" />
@@ -747,7 +763,7 @@ const mapSvgAll = [
         transform="translate(360 80)"
         writingMode="tb"
       >
-        <tspan x="0" y="-20"textLength={105}
+        <tspan x="0" y="-20" textLength={105}
         lengthAdjust={"spacing"}>
           化学研究部
         </tspan>
@@ -806,11 +822,11 @@ const mapSvgAll = [
         transform="translate(237.08 18)"
         writingMode="tb"
       >
-        <tspan x="0" y="-5"textLength={45}
+        <tspan x="0" y="-5" textLength={45}
         lengthAdjust={"spacing"}>
           ポケモン
         </tspan>
-        <tspan x="-8.63" y="-5"textLength={45}
+        <tspan x="-8.63" y="-5" textLength={45}
         lengthAdjust={"spacing"}>
           サークル
         </tspan>
@@ -822,11 +838,11 @@ const mapSvgAll = [
         transform="translate(211 13.5)"
         writingMode="tb"
       >
-        <tspan x="0" y="0"textLength={50}
+        <tspan x="0" y="0" textLength={50}
         lengthAdjust={"spacing"}>
           文化祭からの
         </tspan>
-        <tspan x="-12" y="6.5"textLength={35}
+        <tspan x="-12" y="6.5" textLength={35}
         lengthAdjust={"spacing"}>
           脱出
         </tspan>
@@ -877,7 +893,7 @@ const mapSvgAll = [
         transform="translate(181 17)"
         writingMode="tb"
       >
-        <tspan x="0" y="0"textLength={45}
+        <tspan x="0" y="0" textLength={45}
         lengthAdjust={"spacing"}>
           にこやか
         </tspan>
@@ -900,7 +916,7 @@ const mapSvgAll = [
         transform="translate(142.84 15)"
         writingMode="tb"
       >
-        <tspan x="0" y="0"textLength={45}
+        <tspan x="0" y="0" textLength={45}
         lengthAdjust={"spacing"}>
           折り紙
         </tspan>
@@ -912,7 +928,7 @@ const mapSvgAll = [
         transform="translate(217 185)"
         writingMode="tb"
       >
-        <tspan x="0" y="-6"textLength={40}
+        <tspan x="0" y="-6" textLength={40}
         lengthAdjust={"spacing"}>
           パズル
         </tspan>
@@ -924,11 +940,11 @@ const mapSvgAll = [
         transform="translate(246 182)"
         writingMode="tb"
       >
-        <tspan x="0" y="0"textLength={39}
+        <tspan x="0" y="0" textLength={39}
         lengthAdjust={"spacing"}>
           ドラえもん
         </tspan>
-        <tspan x="-8.63" y="1.19"textLength={35}
+        <tspan x="-8.63" y="1.19" textLength={35}
         lengthAdjust={"spacing"}>
           同好会
         </tspan>
@@ -953,6 +969,8 @@ const mapSvgAll = [
     <path className={boxFS} d="M129.99 180.83h-24.85v39.02h49.71v-39.02z" id="m3-2" />
     <path className={boxF_} d="M 55.46 180.751 h 49.74 v 38.814 h -49.74 v -38.814 z" id="m3-3"/>
     <path className={boxF_} d="M 5.72 180.751 h 49.74 v 38.814 h -49.74 v -38.814 z" id="m3-4" />
+    <path className={box__} d="M 5.72 180.751 h 74.76 v 38.814 h -74.76 v -38.814 z" id="amateurradio" />
+    <path className={box__} d="M 80.48 180.751 h 24.72 v 38.814 h -24.72 v -38.814 z" id="conan" />
     <path className={boxF_} d="M204.41 180.83h41.13v38.814h-41.13v-38.814z" id="m3open" />
     <path className={boxFS}  d="M 340.3 59.89 h 49.61 v 35.08 h -49.61 z" id="multipurpose" />
     <path className={boxFS} d="M 322.71 94.97 h 67.2 v 69.97 h -67.2 z" id="physics" />
@@ -986,7 +1004,7 @@ const mapSvgAll = [
         writingMode="tb"
         fontSize="13px"
       >
-        <tspan x="0" y="0"textLength={69}
+        <tspan x="0" y="0" textLength={69}
         lengthAdjust={"spacing"}>
           物理研究部
         </tspan>
@@ -1056,11 +1074,11 @@ const mapSvgAll = [
         text-orientation="upright"
         writingMode="tb"
       >
-        <tspan x="1" y="0"textLength={35}
+        <tspan x="1" y="0" textLength={35}
         lengthAdjust={"spacing"}>
           コナン
         </tspan>
-        <tspan x="-8" y="1"textLength={39}
+        <tspan x="-8" y="1" textLength={39}
         lengthAdjust={"spacing"}>
           サークル
         </tspan>
@@ -1076,17 +1094,6 @@ const mapSvgAll = [
     </g>
 </svg>,
 ];
-
-export const mapIdAll = Object.fromEntries(
-  mapSvgAll
-    .map((mapSvg, i) => {
-      return expandChildren(cloneElement(mapSvg)).map((elm: JSX.Element) => {
-        return [elm.props?.id, i];
-      });
-    })
-    .flat()
-    .filter((mapId) => mapId[0])
-);
 
 export const Maps: FC<Props> = ({ mapIdList, className, floorNumber }) => {
   useFocusMap(mapIdList);

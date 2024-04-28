@@ -1,6 +1,7 @@
 "use client";
 import { Header } from "@/components/Header";
-import { Maps, mapIdAll } from "@/components/maps/Maps";
+import { Maps } from "@/components/maps/Maps";
+import { mapIdDict } from "@/lib/data/maps";
 import { useSearchParams } from "next/navigation";
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import { Keyboard, Pagination, Navigation } from "swiper/modules";
@@ -24,7 +25,8 @@ export default function Page() {
       .filter(Boolean)
       .map((mapId) => mapId.trim()) || [];
   useEffect(() => {
-    swiperRef?.current?.swiper.slideTo(mapIdAll[mapIdList[0]] || 0, 500);
+    swiperRef?.current?.swiper.slideTo(mapIdDict[mapIdList[0]] || 0, 500);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <>
