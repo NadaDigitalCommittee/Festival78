@@ -1,15 +1,14 @@
 import Link from "next/link";
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 
 type Props = {
   events: {
     eventId: string;
     eventName: string;
   }[];
-  stickyItems?: ReactNode;
 };
 
-export const EventColumn: FC<Props> = ({ events, stickyItems }) => {
+export const EventColumn: FC<Props> = ({ events }) => {
   return (
     <div className="sticky left-0 z-20 mt-[50px]">
       {events.map((event, i) => {

@@ -14,6 +14,7 @@ export type Place =
   | "H1";
 
 type PlaceString = {
+  // eslint-disable-next-line unused-imports/no-unused-vars
   [key in Place]: string;
 };
 

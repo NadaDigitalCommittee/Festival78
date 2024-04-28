@@ -161,7 +161,6 @@ export default function Page() {
           defaultScrollX={scrollX}
           defaultScrollY={scrollY}
           events={events_[stageIndex]}
-          stickyItems={stickyItems}
         >
           {
             [
@@ -188,7 +187,6 @@ export default function Page() {
       ) : (
         <BaseTimetableDesktop
           events={events_[stageIndex]}
-          stickyItems={stickyItems}
         >
           {
             [

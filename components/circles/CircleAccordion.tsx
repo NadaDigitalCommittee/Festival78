@@ -1,5 +1,5 @@
 "use client";
-import { data as data_ } from "@/lib/data/circles";
+import { data } from "@/lib/data/circles";
 import { MediaType, useResponsive } from "@/lib/hooks/useResponsive";
 import { Accordion } from "@chakra-ui/accordion";
 import { ChakraProvider } from "@chakra-ui/provider";
@@ -14,13 +14,6 @@ export const CircleAcordion: FC = () => {
     setDefaultId(window.location.hash.replace("#", "") ?? "");
   }, [defaultId]);
 
-  const data = useMemo(() => {
-    if (media === MediaType.Desktop) {
-      return arrayOddAndEven(data_);
-    }
-    return data_;
-  }, [media]);
-
   useEffect(() => {
     if (!defaultId) return;
     setTimeout(() => {
@@ -29,7 +22,7 @@ export const CircleAcordion: FC = () => {
         ?.scrollIntoView({ behavior: "smooth" });
     }, 600);
     setIndex(data.findIndex((circle) => circle.id === defaultId));
-  }, [data, defaultId]);
+  }, [defaultId]);
 
   const halfLength = useMemo(() => Math.ceil(data.length / 2), []);
   return (
@@ -95,12 +88,12 @@ export const CircleAcordion: FC = () => {
   );
 };
 
-function arrayOddAndEven<T>(array: T[]): T[] {
-  const a: T[][] = [[], []];
-  return array
-    .reduce((acc, cur, i) => {
-      acc[i % 2].push(cur);
-      return acc;
-    }, a)
-    .flat();
-}
+// function arrayOddAndEven<T>(array: T[]): T[] {
+//   const a: T[][] = [[], []];
+//   return array
+//     .reduce((acc, cur, i) => {
+//       acc[i % 2].push(cur);
+//       return acc;
+//     }, a)
+//     .flat();
+// }

@@ -1,11 +1,11 @@
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 import { Now } from "./Now";
 
 type Props = {
-  stickyItems?: ReactNode;
+  
 };
 
-export const TimeColumn: FC<Props> = ({ stickyItems }) => {
+export const TimeColumn: FC<Props> = () => {
   return (
     <div className="sticky left-0 z-20 mt-[85px] min-w-[60px]">
       <Now />

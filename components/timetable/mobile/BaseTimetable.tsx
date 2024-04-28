@@ -11,7 +11,6 @@ type Props = {
     eventName: string;
   }[];
   children?: ReactNode;
-  stickyItems?: ReactNode;
   defaultScrollX?: number;
   defaultScrollY?: number;
 };
@@ -19,7 +18,6 @@ type Props = {
 export const BaseTimetableMobile: FC<Props> = ({
   children,
   events,
-  stickyItems,
   defaultScrollX = 0,
   defaultScrollY = 0,
 }) => {
@@ -31,13 +29,13 @@ export const BaseTimetableMobile: FC<Props> = ({
       left: defaultScrollX,
       behavior: "smooth",
     });
-  }, [defaultScrollX]);
+  }, [defaultScrollX, defaultScrollY]);
 
   return (
     <div className="relative mt-4 overflow-x-scroll">
       <div className="absolute z-40 h-[81px] w-[60px] bg-white" />
       <div className="flex h-screen overflow-y-scroll" ref={timetableRef}>
-        <TimeColumn stickyItems={stickyItems} />
+        <TimeColumn />
         <div className="relative">
           <EventsRow events={events} />
           <BorderRows eventCount={events.length}>
