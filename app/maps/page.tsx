@@ -29,7 +29,7 @@ export default function Page() {
   return (
     <>
       <Header path="/maps">Maps</Header>
-      <main className="m-auto w-full max-w-[1024px] p-1 font-zen_kaku_gothic_new">
+      <main className="m-auto w-full max-w-[768px] p-1 font-zen_kaku_gothic_new">
         <ol className="flex w-full items-center justify-center px-4 py-2">
           {[...new Array(4)].map((_, i) => {
             return (

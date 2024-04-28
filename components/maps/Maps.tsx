@@ -59,9 +59,7 @@ const mapSvgAll = [
       0 - padding,
       396.85 + 2 * padding,
       847.91 + 2 * padding,
-    ].join(" ")}
-    className="font-zen_kaku_gothic_new"
-  >
+    ].join(" ")}>
     {/*<path fill="#edeef0" d="M367.81 129.14 h 0 v 27.57 h -38.28 v 43.16 h -260.78 v -70.73 h 299.06 z m-322.23 191.1 h 284.16 v 86.13 h -284.16 v -86.13 z" />*/}
     <path className={boxFS} d="M329.54 250.57h32.01v21.91h-32.01z" id="broadcasting" />
     <path className={boxFS} d="M315.14 305.48v-33h14.4v33z" id="broadcasting_juice" />
@@ -268,7 +266,7 @@ const mapSvgAll = [
           お土産販売
         </tspan>
       </text>
-      <text fill="#fff" fontSize="8" transform="translate(230 600)">
+      <text fill="#fff" fontSize="8" transform="translate(230 600.5)">
         <tspan x="3" y="1">
           キャンパス
         </tspan>
@@ -353,7 +351,7 @@ const mapSvgAll = [
           金券
         </tspan>
       </text>
-      <text fill="#fff" fontSize="9" transform="translate(306 45.89)">
+      <text fill="#fff" fontSize="9" transform="translate(305 45.89)">
         <tspan x="0" y="0">
           キックターゲット
         </tspan>
@@ -404,9 +402,7 @@ const mapSvgAll = [
       0 - padding,
       396.85 + 2 * padding,
       423.77 + 2 * padding,
-    ].join(" ")}
-    className="font-zen_kaku_gothic_new"
-  >
+    ].join(" ")}>
     <path className={boxFS} d="M.51 296.81h42.56v119.65H.51z" id="audiovisual" />
     <path className={boxFS} d="M228.26 27.15h43.9v37.63h-43.9z" id="h3-1" />
     <path className={boxFS} d="M184.36 27.15h43.9v37.63h-43.9z" id="h3-2" />
@@ -675,9 +671,7 @@ const mapSvgAll = [
       0 - padding,
       396.85 + 2 * padding,
       388.94 + 2 * padding,
-    ].join(" ")}
-    className="font-zen_kaku_gothic_new"
-  >
+    ].join(" ")}>
     <path className={boxF_} d="M 319.487 295.98 h 74.723 v 35.67 h -74.723 v -35.67" id="biology" />
     <path className={boxF_} d="M 326.09 253.67 h 49.397 v 36.84 h -49.397 v -36.84 z" id="biologysub" />
     <path className={boxF_} d="M326.09 56.45h68.59v107.11h-68.59z" id="chemistry" />
@@ -927,8 +921,7 @@ const mapSvgAll = [
     0 - padding,
     396.85 + 2 * padding,
     283.34 + 2 * padding,
-  ].join(" ")}
-  className="font-zen_kaku_gothic_new">
+  ].join(" ")}>
     <path className={boxFS} d="M268.96 221.07h53.72v56.03h-53.72z" id="earthscience" />
     <path className={boxFS} d="M292.12 17.25h-46.58v47.9h55.89v-47.9z" id="h1-1" />
     <path className={boxFS} d="M236.15 17.25h-46.58v47.9h55.9v-47.9z" id="h1-2" />
@@ -1074,7 +1067,7 @@ export const Maps: FC<Props> = ({ mapIdList, className, floorNumber }) => {
   useFocusMap(mapIdList);
   return mapSvgAll.map((mapSvg) => {
     return cloneElement(mapSvg, {
-      className: `${mapSvg.props.className} ${className}`,
+      className: `font-zen_kaku_gothic_new font-bold ${className}`,
     });
   })[floorNumber - 1];
 };
