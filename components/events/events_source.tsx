@@ -7,13 +7,13 @@ type EventsPageSourceType = {
   name: string;
   description: React.ReactNode;
   map_id?: string;
+  hasLogo?: boolean;
 };
 
 type EventsPageSourceTypes = {
   map_id: string;
   events: EventsPageSourceType[];
 };
-/*筋肉王、格付け、ブラバン、ボクシンク→赤、N1→オレンジ、IPPON→黄色、授業→緑、灘中に入る前と後→黄色、ESS→青、オーロラ→ピンク */
 
 export const EVENTS_PAGE_SOURCE: [
   EventsPageSourceTypes,
@@ -30,6 +30,7 @@ export const EVENTS_PAGE_SOURCE: [
         color: "red",
         name: "ODORIBA",
         event_id: "odoriba",
+        hasLogo:true,
         description: (
           <>
             ODORIBAを見ずして灘校文化祭は語れない。
@@ -44,6 +45,7 @@ export const EVENTS_PAGE_SOURCE: [
         color: "blue",
         name: "Ms.灘コンテスト",
         event_id: "mscontest",
+        hasLogo:true,
         description: (
           <>
             ステージ企画最高級の大人気大盛り上がり企画!!
@@ -72,13 +74,6 @@ export const EVENTS_PAGE_SOURCE: [
                 />
               ))}
             />
-            <Image
-              src={"/img/events/mscontest/logo.webp"}
-              className="mx-auto"
-              width={400}
-              height={400}
-              alt="ロゴ"
-            />
           </>
         ),
       },
@@ -86,6 +81,7 @@ export const EVENTS_PAGE_SOURCE: [
         color: "red",
         name: "筋肉王",
         event_id: "muscle",
+        hasLogo:true,
         description: (
           <>
             史上最も偉大なボディビルダー、 ロニーコールマンはこう言いました。
@@ -113,13 +109,6 @@ export const EVENTS_PAGE_SOURCE: [
                   height={500}
                 />
               ))}
-            />
-            <Image
-              src={"/img/events/muscle/logo.webp"}
-              className="mx-auto"
-              width={400}
-              height={400}
-              alt="ロゴ"
             />
           </>
         ),
@@ -171,6 +160,7 @@ export const EVENTS_PAGE_SOURCE: [
         color: "orange",
         name: "N1グランプリ2024",
         event_id: "n1",
+        hasLogo:true,
         description: (
           <>
             灘校屈指のお笑いたちがコンビを組み、
@@ -192,8 +182,8 @@ export const EVENTS_PAGE_SOURCE: [
                   src={`/img/events/n1/${i}.webp`}
                   key={i}
                   alt="n1"
-                  width={500}
-                  height={500}
+                  width={300}
+                  height={190}
                 />
               ))}
             />
@@ -209,17 +199,10 @@ export const EVENTS_PAGE_SOURCE: [
                   src={`/img/events/n1/${i}.webp`}
                   key={i}
                   alt="n1"
-                  width={500}
-                  height={500}
+                  width={300}
+                  height={190}
                 />
               ))}
-            />
-            <Image
-              src={"/img/events/n1/logo.webp"}
-              className="mx-auto"
-              width={600}
-              height={600}
-              alt="ロゴ"
             />
           </>
         ),
@@ -228,6 +211,7 @@ export const EVENTS_PAGE_SOURCE: [
         color: "orange",
         name: "IPPONグランプリ",
         event_id: "ippon",
+        hasLogo:true,
         description: (
           <>
             今年も開催!
@@ -235,13 +219,6 @@ export const EVENTS_PAGE_SOURCE: [
             想像のナナメ上を行く本校生の回答にあなたも抱腹絶倒待ったナシ!
             <br />
             灘校の大喜利championを決める熱き闘いを見逃すな!
-            <Image
-              src={"/img/events/ippon/logo.webp"}
-              className="mx-auto mt-4"
-              width={400}
-              height={400}
-              alt="ロゴ"
-            />
           </>
         ),
       },
@@ -249,6 +226,7 @@ export const EVENTS_PAGE_SOURCE: [
         color: "red",
         name: "灘校生格付けチェック",
         event_id: "kakuzuke",
+        hasLogo:true,
         description: (
           <>
             灘校生が自らの感覚を駆使して問題を解き、
@@ -257,13 +235,6 @@ export const EVENTS_PAGE_SOURCE: [
             <br />
             果たして最後まで正解して一流灘校生を維持できる者は現れるのか!?
             <br />
-            <Image
-              src={"/img/events/kakuzuke/logo.webp"}
-              className="mx-auto"
-              width={400}
-              height={400}
-              alt="ロゴ"
-            />
           </>
         ),
       },
@@ -304,6 +275,7 @@ export const EVENTS_PAGE_SOURCE: [
         color: "orange",
         name: "灘中に入る前と後",
         event_id: "maetoato",
+        hasLogo:true,
         description: (
           <>
             人気企画「新中一企画」が、内容をリニューアルして登場!
@@ -337,6 +309,7 @@ export const EVENTS_PAGE_SOURCE: [
       {
         color: "green",
         name: "灘校一受けたい授業",
+        hasLogo:true,
         event_id: "nadaju",
         description: (
           <>
@@ -346,13 +319,6 @@ export const EVENTS_PAGE_SOURCE: [
             <br />
             この機会を見逃すな!
             <br />
-            <Image
-              src={"/img/events/nadaju/logo.webp"}
-              className="mx-auto mt-4"
-              width={400}
-              height={400}
-              alt="ロゴ"
-            />
           </>
         ),
       },
@@ -360,6 +326,7 @@ export const EVENTS_PAGE_SOURCE: [
         color: "pink",
         name: "オーロラサイエンス",
         event_id: "aurorascience",
+        hasLogo:true,
         description: (
           <>
             物理、化学、生物、地学、言語学と、
@@ -389,13 +356,6 @@ export const EVENTS_PAGE_SOURCE: [
             熱い演奏と情熱的な歌声、リズミカルなビートと心揺さぶるメロディー。
             <br />
             Let's enjoy!
-            <Image
-              src={"/img/events/band/logo.webp"}
-              alt="ロゴ"
-              className="mx-auto"
-              width={500}
-              height={500}
-            />
           </>
         ),
       },
@@ -561,13 +521,6 @@ export const EVENTS_PAGE_SOURCE: [
             世界観に虜になること間違いなし!
             <br />
             皆様是非体育館にお越しください!
-            <Image
-              src={"/img/circles/original/ess.png"}
-              alt="ロゴ"
-              width={500}
-              height={500}
-              className="mx-auto mt-4"
-            />
           </>
         ),
       },

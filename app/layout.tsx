@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     locale: "ja_JP",
     images: [
       {
-        url: "https://fest.nada-sc.jp/img/ogp.webp",
+        url: "https://fest.nada-sc.jp/img/og.png",
         width: 2000,
         height: 1125,
       },
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     site: "@nada_festival",
     images: [
       {
-        url: "https://fest.nada-sc.jp/img/ogp.png",
+        url: "https://fest.nada-sc.jp/img/og.png",
         width: 2000,
         height: 1125,
       },
