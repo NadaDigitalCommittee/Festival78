@@ -23,7 +23,7 @@ export const Circle: FC<Props> = ({ circle }) => {
   const eventHrefs = circle.contents
     ?.filter((c) => c.type === "events")
     .map((c) => c.url);
-  const mapHref = `/maps?id=${circle.id}`;
+  const mapHref = `/maps?id=${circle.mapId}`;
   const articles = circle.contents?.filter((c) => c.type === "article");
   const articleHref = articles && `/downloads?id=${id}`;
   const description = circle.description;
