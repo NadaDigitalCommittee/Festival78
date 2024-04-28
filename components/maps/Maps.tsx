@@ -227,12 +227,12 @@ const mapSvgAll = [
       </text>
       <text
         fill="#fff"
-        fontSize="7"
+        fontSize="8"
         glyphOrientationVertical="0deg"
-        transform="translate(322 275)"
+        transform="translate(322 272)"
         writingMode="tb"
       >
-        <tspan x="0" y="0" textLength={30}
+        <tspan x="0" y="0" textLength={33}
         lengthAdjust={"spacing"}>
           ジュース
         </tspan>
@@ -249,7 +249,8 @@ const mapSvgAll = [
         transform="translate(312.06 524)"
         writingMode="tb"
       >
-        <tspan x="0" y="0">
+        <tspan x="0" y="0" textLength={63}
+        lengthAdjust={"spacing"}>
           スロープ２階へ
         </tspan>
       </text>
@@ -257,10 +258,10 @@ const mapSvgAll = [
         fill="#fff"
         fontSize="8"
         glyphOrientationVertical="0deg"
-        transform="translate(335.5 601)"
+        transform="translate(335.5 599)"
         writingMode="tb"
       >
-        <tspan x="0" y="0" textLength={45}
+        <tspan x="0" y="0" textLength={43}
         lengthAdjust={"spacing"}>
           お土産販売
         </tspan>
@@ -282,10 +283,10 @@ const mapSvgAll = [
         fill="#fff"
         fontSize="6.5"
         glyphOrientationVertical="0deg"
-        transform="translate(128.56 371.05)"
+        transform="translate(128.56 372)"
         writingMode="tb"
       >
-        <tspan x="0" y="-2" textLength={35}
+        <tspan x="0" y="-2" textLength={34}
         lengthAdjust={"spacing"}>
           図書委員会
         </tspan>
@@ -294,10 +295,10 @@ const mapSvgAll = [
         fill="#231815"
         fontSize="9"
         glyphOrientationVertical="0deg"
-        transform="translate(56.21 457.96)"
+        transform="translate(56.21 456)"
         writingMode="tb"
       >
-        <tspan x="0" y="0" textLength={65}
+        <tspan x="0" y="0" textLength={66}
         lengthAdjust={"spacing"}>
           食堂地下１階へ
         </tspan>
@@ -306,10 +307,10 @@ const mapSvgAll = [
         fill="#fff"
         fontSize="13"
         glyphOrientationVertical="0deg"
-        transform="translate(79.54 447)"
+        transform="translate(79.54 445)"
         writingMode="tb"
       >
-        <tspan x="0" y="0" textLength={70}
+        <tspan x="0" y="0" textLength={68}
         lengthAdjust={"spacing"}>
           鉄道研究部
         </tspan>
@@ -318,7 +319,7 @@ const mapSvgAll = [
         fill="#fff"
         fontSize="13"
         glyphOrientationVertical="0deg"
-        transform="translate(25.62 452.96)"
+        transform="translate(25.62 450.5)"
         writingMode="tb"
       >
         <tspan x="0" y="0" textLength={70}
@@ -415,6 +416,7 @@ const mapSvgAll = [
     </g>
     <path className={boxF_} d="M55.36 187.38h15.47v30.72h-15.47 z" id="kingcrab" />
     <path className={boxFS} d="M282.06 285.51h59.6v48.53h-59.6z" id="lecture" />
+    <path className={boxF_} d="M237.55 187.46h29.78v30.64h-29.78z" id="m1open" />
     <path className={boxFS} d="M198.51 187.46h39.04v30.64h-39.04z" id="m1-1" />
     <path className={boxFS} d="M159.46 187.46h39.04v30.64h-39.04z" id="m1-2" />
     <path className={boxFS} d="M120.42 187.46h39.04v30.64h-39.04z" id="m1-3" />
@@ -423,7 +425,6 @@ const mapSvgAll = [
       <path d="M 81.38 187.46h19.52v30.64h-19.52v-30.64 z" id="tohoku" />
     </g>
     <path className={box_S} d="M81.38 187.46h39.04v30.64H81.38z" />
-    <path className={boxF_} d="M237.55 187.46h29.78v30.64h-29.78z" id="m1open" />
     <path className={boxF_} d="M128.74 354.93h97.14v64.34h-97.14z" id="mainhall" />
     <path className={boxFS} d="M102.1 232.43h41.01v30.64H102.1z" id="seminar" />
     <path className={boxFS} d="M184.01 232.43h41.33v30.64h-41.33z" id="socialstudies1" />
@@ -543,7 +544,7 @@ const mapSvgAll = [
         fill="#fff"
         fontSize="13"
         glyphOrientationVertical="0deg"
-        transform="translate(22 300)"
+        transform="translate(22 302)"
         writingMode="tb"
       >
         <tspan x="0" y="0" textLength={110}
@@ -597,10 +598,10 @@ const mapSvgAll = [
         fill="#fff"
         fontSize="6"
         glyphOrientationVertical="0deg"
-        transform="translate(63 188)"
+        transform="translate(63 188.1)"
         writingMode="tb"
       >
-        <tspan x="0" y="0" textLength={32}
+        <tspan x="0" y="0" textLength={30}
         lengthAdjust={"spacing"}>
           タラバガニ
         </tspan>
@@ -610,7 +611,7 @@ const mapSvgAll = [
           レゴ同好会
         </tspan>
       </text>
-      <text fill="#fff" fontSize="10" transform="translate(231 49.3)">
+      <text fill="#fff" fontSize="10" transform="translate(230 49.3)">
         <tspan x="0" y="0">
           講義教室
         </tspan>
@@ -652,7 +653,7 @@ const mapSvgAll = [
           フォーゲル部
         </tspan>
       </text>
-      <text fill="#fff" fontSize="8" transform="translate(127 201)">
+      <text fill="#fff" fontSize="9" transform="translate(125 202)">
         <tspan x="1" y="0">
           オセロ
         </tspan>
@@ -664,10 +665,10 @@ const mapSvgAll = [
         fill="#fff"
         fontSize="5.8"
         glyphOrientationVertical="0deg"
-        transform="translate(110 188)"
+        transform="translate(110.5 188)"
         writingMode="tb"
       >
-        <tspan x="0" y="0" textLength={32}
+        <tspan x="0" y="0" textLength={29}
         lengthAdjust={"spacing"}>
           生徒会の間
         </tspan>
@@ -676,10 +677,10 @@ const mapSvgAll = [
         fill="#fff"
         fontSize="7"
         glyphOrientationVertical="0deg"
-        transform="translate(90.6 188)"
+        transform="translate(91 188)"
         writingMode="tb"
       >
-        <tspan x="0" y="0" textLength={32}
+        <tspan x="0" y="0" textLength={29}
         lengthAdjust={"spacing"}>
           東北企画
         </tspan>
@@ -772,10 +773,10 @@ const mapSvgAll = [
         fill="#fff"
         fontSize="13"
         glyphOrientationVertical="0deg"
-        transform="translate(360 80)"
+        transform="translate(360 94)"
         writingMode="tb"
       >
-        <tspan x="0" y="-20" textLength={105}
+        <tspan x="0" y="-20" textLength={75}
         lengthAdjust={"spacing"}>
           化学研究部
         </tspan>
@@ -831,7 +832,7 @@ const mapSvgAll = [
         fill="#fff"
         fontSize="10"
         glyphOrientationVertical="0deg"
-        transform="translate(237.08 18)"
+        transform="translate(237.08 20)"
         writingMode="tb"
       >
         <tspan x="0" y="-5" textLength={45}
@@ -847,14 +848,14 @@ const mapSvgAll = [
         fill="#fff"
         fontSize="8"
         glyphOrientationVertical="0deg"
-        transform="translate(211 13.5)"
+        transform="translate(211 14)"
         writingMode="tb"
       >
-        <tspan x="0" y="0" textLength={50}
+        <tspan x="0" y="-.5" textLength={48}
         lengthAdjust={"spacing"}>
           文化祭からの
         </tspan>
-        <tspan x="-12" y="6.5" textLength={35}
+        <tspan x="-12" y="14" textLength={20}
         lengthAdjust={"spacing"}>
           脱出
         </tspan>
@@ -902,7 +903,7 @@ const mapSvgAll = [
         fill="#fff"
         fontSize="10"
         glyphOrientationVertical="0deg"
-        transform="translate(181 17)"
+        transform="translate(181 15)"
         writingMode="tb"
       >
         <tspan x="0" y="0" textLength={45}
@@ -914,7 +915,7 @@ const mapSvgAll = [
         fill="#fff"
         fontSize="10"
         glyphOrientationVertical="0deg"
-        transform="translate(162.4 32)"
+        transform="translate(162 32)"
         writingMode="tb"
       >
         <tspan x="0" y="0">
@@ -937,26 +938,26 @@ const mapSvgAll = [
         fill="#fff"
         fontSize="10"
         glyphOrientationVertical="0deg"
-        transform="translate(217 185)"
+        transform="translate(217 188)"
         writingMode="tb"
       >
-        <tspan x="0" y="-6" textLength={40}
+        <tspan x="0" y="-6" textLength={35}
         lengthAdjust={"spacing"}>
           パズル
         </tspan>
       </text>
       <text
         fill="#fff"
-        fontSize="7"
+        fontSize="9"
         glyphOrientationVertical="0deg"
-        transform="translate(246 182)"
+        transform="translate(246 180)"
         writingMode="tb"
       >
         <tspan x="0" y="0" textLength={39}
         lengthAdjust={"spacing"}>
           ドラえもん
         </tspan>
-        <tspan x="-8.63" y="1.19" textLength={35}
+        <tspan x="-8.63" y="2" textLength={35}
         lengthAdjust={"spacing"}>
           同好会
         </tspan>
@@ -1009,14 +1010,14 @@ const mapSvgAll = [
     <path className={box_ST} d="M 46.85 28.9h10.57 m -10.57 2.66h10.57 m -10.57 2.66h10.57 m -10.57 2.66h10.57 m -10.57 2.66h10.57 m -10.57 2.66h10.57 m -10.57 2.66h10.57 m -10.57 2.66h10.57 m -10.57 2.66h10.57 m -10.57 2.66h10.57 M 241.83 245.84h13.53 m -13.53 2.66h13.53 m -13.53 2.66h13.53 m -13.53 2.66h13.53 m -13.53 2.66h13.53 m -13.53 2.66h13.53 m -13.53 2.66h13.53 m -13.53 2.66h13.53 M 18.54 243.95h12.82 m -12.82 2.66h12.82 m -12.82 2.66h12.82 m -12.82 2.66h12.82 m -12.82 2.66h12.82 m -12.82 2.66h12.82 m -12.82 2.66h12.82 m -12.82 2.66h12.82 m -12.82 2.66h12.82 M 326.99 23.85v15.15 m 2.66 -15.15v15.15 m 2.66 -15.15v15.15 m 2.66 -15.15v15.15 m 2.66 -15.15v15.15 m 2.66 -15.15v15.15 m 2.66 -15.15v15.15 m 2.66 -15.15v15.15 m 2.66 -15.15v15.15 m 2.66 -15.15v15.15 m 2.56 -15.15v15.15" />
     <g>
       <text
-        transform="translate(356.32 97)"
+        transform="translate(356.5 97)"
         fill="#fff"
         glyphOrientationVertical="0deg"
         text-orientation="upright"
         writingMode="tb"
         fontSize="13px"
       >
-        <tspan x="0" y="0" textLength={69}
+        <tspan x="0" y="0" textLength={65}
         lengthAdjust={"spacing"}>
           物理研究部
         </tspan>
@@ -1079,18 +1080,18 @@ const mapSvgAll = [
         </tspan>
       </text>
       <text
-        transform="translate(96 182)"
+        transform="translate(96 180)"
         fill="#fff"
-        fontSize="9"
+        fontSize="10"
         glyphOrientationVertical="0deg"
         text-orientation="upright"
         writingMode="tb"
       >
-        <tspan x="1" y="0" textLength={35}
+        <tspan x="1" y="6" textLength={30}
         lengthAdjust={"spacing"}>
           コナン
         </tspan>
-        <tspan x="-8" y="1" textLength={39}
+        <tspan x="-8" y="1" textLength={38}
         lengthAdjust={"spacing"}>
           サークル
         </tspan>
