@@ -56,7 +56,7 @@ export const Circle: FC<Props> = ({ circle }) => {
       <AccordionPanel className="px-6 py-3">
         <p className="whitespace-pre-wrap font-medium">{description}</p>
         <div className="mt-4">
-          <div className="flex">
+          <div className="flex text-sm">
             <a
               href={mapHref}
               className="mr-2 flex items-center bg-theme px-3 py-1 text-white"
@@ -80,10 +80,9 @@ export const Circle: FC<Props> = ({ circle }) => {
             {event && (
               <a
                 href={event.url}
-                className="ml-2 flex min-w-[90px] items-center bg-theme px-3 py-1 text-white"
+                className="ml-2 flex min-w-[60px] max-w-[140px] items-center bg-theme  py-1 text-white"
               >
-                <Star1 />
-                <span className="ml-1">イベント</span>
+                <Image src={"/img/star_sm.svg"} alt="" width={100} height={40}/>
               </a>
             )}
           </div>
