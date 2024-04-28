@@ -153,7 +153,7 @@ export default function ContentSection({
           <div className="flex justify-end gap-[15px] pb-[20px]">
             <ContentLabelButton
               href={{
-                pathname: "/map",
+                pathname: "/maps",
                 query: {
                   id: mapId,
                 },
