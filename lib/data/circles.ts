@@ -270,7 +270,7 @@ export const data: Circle[] = [
     description:
       "以下のイベントが行われます。\n・パソコン解体\n・対称性を利用して合同式を得る方法\n・三角形に関する2種類の操作と相似三角形の出現\n・入試模試解説\n・ハッキング実演\n・物理実験ショー\n詳しくは下の「イベント」をご覧ください。",
     place: "H2",
-    mapId: "lecture_h",
+    mapId: "h3-1",
     contents:[{
       type:"events",
       title:"",

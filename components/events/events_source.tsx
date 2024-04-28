@@ -861,7 +861,7 @@ export const EVENTS_PAGE_SOURCE: [
             観覧したい方はオンライン抽選券での応募をしてください。
           </>
         ),
-        map_id: "m3-3",
+        map_id: "conan",
       },
       {
         color: "red",
@@ -909,7 +909,7 @@ export const EVENTS_PAGE_SOURCE: [
             新しい灘の景色を一度楽しんでみませんか？
           </>
         ),
-        map_id: "ground1",
+        map_id: "minitrain",
       },
       {
         color: "green",

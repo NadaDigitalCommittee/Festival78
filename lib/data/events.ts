@@ -35,12 +35,13 @@ export const events: Event[] = [
   },
   {
     id: "mathematics_event2",
-    name: "円に内接する六角形についての小噺",
+    name: "対称性を利用して合同式を得る方法",
     description:
-      "円(二次曲線)に内接する六角形について、射影幾何学の定理を使いながらどのような性質があるかを考えます。",
+      "ある組み合わせの問題を解き、その答えが整数になることを利用して合同式を導きます。",
     category: "lecture_m",
-    mapId: "m3-2",
+    mapId: "m3-1",
   },
+
   {
     id: "othello_event",
     name: "オセロ対抗戦 灘vs京大",
@@ -59,9 +60,9 @@ export const events: Event[] = [
   },
   {
     id: "mathematics_event3",
-    name: "対称性を利用して合同式を得る方法",
+    name: "円に内接する六角形についての小噺",
     description:
-      "ある組み合わせの問題を解き、その答えが整数になることを利用して合同式を導きます。",
+      "円(二次曲線)に内接する六角形について、射影幾何学の定理を使いながらどのような性質があるかを考えます。",
     category: "lecture_h",
     mapId: "h3-1",
   },
@@ -127,7 +128,7 @@ export const events: Event[] = [
     description:
       "常設ブースではペーパークイズ受験と早押しクイズ体験ができます!視聴覚ステージでは他の学校の生徒を招いてクイズ大会を行います!クイズの出題中はお静かにお願いします。",
     category: "others",
-    mapId: "h3-3",
+    mapId: "h1-3",
   },
   {
     id: "library_event",

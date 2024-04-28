@@ -26,7 +26,7 @@ function getMapNameFromId(id: string) {
   if (id === "campustour") return "本館前";
   if (id === "earthscience") return "地学教室";
   if (id === "ground1") return "第一グラウンド";
-  if (id === "chemistry") return "科学教室";
+  if (id === "chemistry") return "化学教室";
 
   if (id === "m3-2") return "中学3-2";
   if (id === "h3-1") return "高校3-1";

@@ -26,6 +26,7 @@ const mapIdAll = [
     "garden",
     "gym",
     "tennis",
+    "library",
   ],
   [
     "tabletennis",
@@ -53,8 +54,7 @@ const mapIdAll = [
     "viewing",
     "socialstudies1",
     "literaryart",
-    "seminar",
-    "library",
+    "seminar",    
     "kingcrab",
     "syodo",
     "mainhall",
