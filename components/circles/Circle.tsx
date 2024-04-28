@@ -10,7 +10,6 @@ import { FC } from "react";
 import type { Circle as CircleType } from "@/lib/data/circles";
 import { Article } from "../svg/Article";
 import { MapPin } from "../svg/MapPin";
-import { Star1 } from "../svg/Star";
 
 type Props = {
   circle: CircleType;
