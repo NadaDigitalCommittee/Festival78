@@ -629,10 +629,10 @@ const mapSvgAll = [
         fill="#231815"
         fontSize="13"
         glyphOrientationVertical="0deg"
-        transform="translate(316 83)"
+        transform="translate(316 96)"
         writingMode="tb"
       >
-        <tspan x="0" y="0" textLength={70} lengthAdjust={"spacing"}>
+        <tspan x="0" y="0" textLength={45} lengthAdjust={"spacing"}>
           職員室
         </tspan>
       </text>
