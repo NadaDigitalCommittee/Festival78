@@ -1,7 +1,9 @@
-export default function Page(){
-  return(
-    <main className="flex items-center justify-center h-screen text-theme">
-        <p className="font-zen_kaku_gothic_new font-bold text-3xl">鋭意制作中！！！！！！！！！</p>
+export default function Page() {
+  return (
+    <main className="flex h-screen items-center justify-center text-theme">
+      <p className="font-zen_kaku_gothic_new text-3xl font-bold">
+        申し訳ございません。現在このページはご利用いただけません。
+      </p>
     </main>
-  )
+  );
 }

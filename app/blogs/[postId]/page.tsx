@@ -1,6 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
-import React, { ReactNode, createElement } from "react";
+import React, { createElement } from "react";
 import { notFound } from "next/navigation";
 import parse, {
   DOMNode,
@@ -184,7 +183,7 @@ export default async function StaticDetailPage({
       </div>
       <nav
         aria-label="パンくずリスト"
-        className="my-2 mx-0 md:mx-2 flex h-max items-center justify-start p-0 text-sm md:text-base w-full md:w-max"
+        className="mx-0 my-2 flex h-max w-full items-center justify-start p-0 text-sm md:mx-2 md:w-max md:text-base"
       >
         <ol
           className="flex"

@@ -1,7 +1,5 @@
-import { MapPin } from "@/components/svg/MapPin";
 import { Place, placeString } from "@/lib/data/circles";
 import {
-  Accordion,
   AccordionButton,
   AccordionIcon,
   AccordionItem,
@@ -9,9 +7,11 @@ import {
 } from "@chakra-ui/accordion";
 import Image from "next/image";
 import { FC } from "react";
-import type { Circle as CircleType, Content } from "@/lib/data/circles";
-import Link from "next/link";
+import type { Circle as CircleType } from "@/lib/data/circles";
 import { Article } from "../svg/Article";
+import { MapPin } from "../svg/MapPin";
+import { Star2 } from "../svg/Star";
+import { PlaceLabelBgColors } from "@/tailwind.config";
 
 type Props = {
   circle: CircleType;
@@ -22,16 +22,15 @@ export const Circle: FC<Props> = ({ circle }) => {
   const logoSrc = `/img/circles/icon/${circle.id}.webp`;
   const place = circle.place;
   const title = circle.name;
-  const eventHrefs = circle.contents
-    ?.filter((c) => c.type === "events")
-    .map((c) => c.url);
-  const mapHref = `/maps?id=${circle.id}`;
+  const event = circle.contents?.filter((c) => c.type === "events").at(0);
+
+  const mapHref = `/maps?id=${circle.mapId}`;
   const articles = circle.contents?.filter((c) => c.type === "article");
   const articleHref = articles && `/downloads?id=${id}`;
   const description = circle.description;
   return (
     <AccordionItem
-      className={`group min-w-[100vw] max-w-[512px] odd:bg-[#FFEFE8] even:bg-white md:min-w-[512px] lg:min-w-[512px]`}
+      className={`group min-w-[100vw] max-w-[512px] odd:bg-[#FFEFE8]/50 even:bg-white/50 md:min-w-[512px] lg:min-w-[512px]`}
     >
       <div id={"#" + id} className=" flex h-[60px] justify-center px-4">
         <AccordionButton className="flex">
@@ -58,30 +57,36 @@ export const Circle: FC<Props> = ({ circle }) => {
       <AccordionPanel className="px-6 py-3">
         <p className="whitespace-pre-wrap font-medium">{description}</p>
         <div className="mt-4">
-          <div>
+          <div className="flex text-sm">
             <a
               href={mapHref}
-              className="mr-2 inline-block bg-theme px-3 py-1 text-white"
+              className="mr-2 flex flex-shrink items-center bg-theme px-3 py-1 text-white"
             >
               <MapPin className={"h-[35px] fill-white"} />
-              <span className="ml-1">マップ</span>
+              <span className="ml-1 flex-shrink">マップ</span>
             </a>
             {articles && articles.length !== 0 && (
               <a
                 href={articleHref}
-                className="inline-block bg-theme px-3 py-1 text-white"
+                className="my-0 flex flex-shrink items-center bg-theme px-3 py-1 text-white"
               >
                 <Article
                   className="inline-block h-[35px] fill-white"
                   width={25}
                   height={25}
                 />
-                <span className="ml-1">部誌・会誌</span>
+                <span className="ml-1 flex-shrink">部誌・会誌</span>
               </a>
             )}
-            {/* {articles && articles.length !== 0 && (
-              <Article articles={articles} />
-            )} */}
+            {event && (
+              <a
+                href={event.url}
+                className="ml-2 flex min-w-[90px] flex-shrink items-center bg-theme px-3 py-1 text-white"
+              >
+                <Star2 className="my-auto inline-block h-[30px] w-auto fill-white" />
+                <span className="ml-1 flex-shrink">イベント</span>
+              </a>
+            )}
           </div>
         </div>
       </AccordionPanel>
@@ -128,35 +133,7 @@ const PlaceLabel: FC<{ place: Place }> = ({ place }) => {
   return (
     <div className="">
       <p
-        className={`mx-4 rounded-full px-2 text-xs text-white ${
-          place == "H4"
-            ? "bg-[#73AFF6]"
-            : place == "H3"
-              ? "bg-[#518ADF]"
-              : place == "H2"
-                ? "bg-[#454AD3]"
-                : place == "M2"
-                  ? "bg-[#D34545]"
-                  : place == "M3"
-                    ? "bg-[#EA536F]"
-                    : place == "M4"
-                      ? "bg-[#F26DC4]"
-                      : place == "East"
-                        ? "bg-[#2DD4DE]"
-                        : place == "Kensyu"
-                          ? "bg-[#FFB82D]"
-                          : place == "G1"
-                            ? "bg-[#27B82D]"
-                            : place == "H1"
-                              ? "bg-[#3C2E90]"
-                              : place == "Kyoei"
-                                ? "bg-[#D227E1]"
-                                : place == "Gym"
-                                  ? "bg-[#2BE127]"
-                                  : place == "NewGarden"
-                                    ? "bg-[#98580D]"
-                                    : "bg-gray-400"
-        }`}
+        className={`mx-4 rounded-full px-2 text-xs text-white bg-${PlaceLabelBgColors[place] || "gray-400"}`}
       >
         {placeString[place]}
       </p>

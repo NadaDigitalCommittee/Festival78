@@ -23,41 +23,69 @@ export default function Page() {
         </>
         <div className="h-8" />
 
+        {/* PC */}
+
         <div className="visible flex justify-center max-md:hidden">
-          <div className="h-[350px] w-[80vw] border-4 border-theme md:w-[550px] flex items-center justify-center gap-6">
-            <Image src={"/img/downloads/pamphlet1.webp"} width={200} height={800} alt="表紙" />
-            <Image src={"/img/downloads/pamphlet2.webp"} width={200} height={800} alt="裏表紙" />
+          <div className="flex h-[350px] w-[80vw] items-center justify-center gap-6 border-4 border-theme bg-white md:w-[550px]">
+            <Image
+              src={"/img/downloads/pamphlet1.webp"}
+              width={200}
+              height={800}
+              alt="表紙"
+            />
+            <Image
+              src={"/img/downloads/pamphlet2.webp"}
+              width={200}
+              height={800}
+              alt="裏表紙"
+            />
           </div>
-          <div className="mt-auto h-[210px] w-[210px] bg-theme p-4 text-center text-sm text-white">
+          <div className="mt-auto w-[210px] bg-theme p-4 text-center text-sm text-white">
             <p className="mt-6">
               文化祭当日配布するパンフレットをダウンロードすることができます。
             </p>
-            <p>※事前の予告なく公開を停止することがございます。</p>
-            <Link href={"/pdf/brochure.pdf"} download={"brochure.pdf"}>
+            <p>
+              ※事前の予告なく公開を停止したり、一部のページに黒塗りまたは差し替えがされていることがございます。
+            </p>
+            <a href={"/pdf/brochure.pdf"} download>
               <div className="mx-auto mt-4 flex h-6 w-[140px] justify-center bg-white text-theme">
                 <RiDownload2Fill size={20} />
                 ダウンロード
               </div>
-            </Link>
+            </a>
           </div>
         </div>
 
+        {/* モバイル */}
+
         <div className=" mx-auto flex w-[80vw] flex-col justify-center md:hidden">
-          <div className=" border-4 border-theme flex items-center justify-center gap-3 py-4">
-            <Image src={"/img/downloads/pamphlet1.webp"} width={100} height={800} alt="表紙" />
-            <Image src={"/img/downloads/pamphlet2.webp"} width={100} height={800} alt="裏表紙" />
+          <div className="flex items-center justify-center gap-3 border-4 border-theme bg-white py-4">
+            <Image
+              src={"/img/downloads/pamphlet1.webp"}
+              width={100}
+              height={800}
+              alt="表紙"
+            />
+            <Image
+              src={"/img/downloads/pamphlet2.webp"}
+              width={100}
+              height={800}
+              alt="裏表紙"
+            />
           </div>
-          <div className="mt-auto flex h-[80px] w-full bg-theme p-1 text-center text-xs text-white">
+          <div className="mt-auto flex w-full bg-theme p-1 text-center text-xs text-white">
             <div className="mx-auto px-3">
               <p>
                 文化祭当日配布するパンフレットをダウンロードすることができます。
               </p>
-              <p>※事前の予告なく公開を停止することがございます。</p>
+              <p>
+                ※事前の予告なく公開を停止したり、一部のページに黒塗りまたは差し替えがされていることがございます。
+              </p>
             </div>
             <Link
               href={"/pdf/brochure.pdf"}
               download={"brochure.pdf"}
-              className="ml-auto"
+              className="my-auto ml-auto"
             >
               <div className="flex h-[70px] w-[75px] flex-col items-center justify-center gap-1 bg-white text-theme">
                 <RiDownload2Fill size={40} />

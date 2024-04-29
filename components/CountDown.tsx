@@ -19,6 +19,10 @@ export const CountDown: FC<Props> = ({ restTime }) => {
     return ("0" + Math.max(num, 0)).slice(-2);
   };
 
+  const isNotStarted = time > 0;
+  const isOpening = -(1830 * 60) < time && time <= 0;
+  const isEnd = time <= -1830 * 60;
+
   const day = to2digit(Math.floor(time / 86400));
   const hour = to2digit(Math.floor((time % 86400) / 3600));
   const minute = to2digit(Math.floor((time % 3600) / 60));
@@ -28,42 +32,55 @@ export const CountDown: FC<Props> = ({ restTime }) => {
 
   return (
     <div className="-skew-y-12 font-limelight text-7xl tracking-wide">
-      <p className="translate-x-4 text-left">
-        <span className="text-xl font-bold">文化祭まであと</span>
-        <br />
-      </p>
-      {responsive === MediaType.Desktop ? (
-        // PC
-        <>
-          <p>
-            <span className="inline-block w-[100px]">{day} </span>
-            <span className="text-2xl font-bold">日</span>
-            <span className="inline-block w-[100px]">{hour}</span>
-            <span className="text-2xl font-bold">時間</span>
+      {isNotStarted && (
+        <p className="translate-x-4 text-left">
+          <span className="text-xl font-bold">文化祭まであと</span>
+          <br />
+        </p>
+      )}
+      {isNotStarted &&
+        (responsive === MediaType.Desktop ? (
+          // PC
+          <>
+            <p>
+              <span className="inline-block w-[100px]">{day} </span>
+              <span className="text-2xl font-bold">日</span>
+              <span className="inline-block w-[100px]">{hour}</span>
+              <span className="text-2xl font-bold">時間</span>
 
-            <span className="inline-block w-[100px]">{minute}</span>
-            <span className="text-2xl font-bold">分 </span>
-            <span className="inline-block w-[100px]">{second}</span>
-            <span className="text-2xl font-bold">秒</span>
-          </p>
-        </>
-      ) : (
-        // スマホ タブレット
-        <>
-          <p>
-            <span className="inline-block w-[100px]">{day} </span>
-            <span className="text-2xl font-bold">日</span>
-            <span className="inline-block w-[100px]">{hour}</span>
-            <span className="text-2xl font-bold">時間</span>
-            <br />
-          </p>
-          <p className="translate-x-4">
-            <span className="inline-block w-[100px]">{minute}</span>
-            <span className="text-2xl font-bold">分 </span>
-            <span className="inline-block w-[100px]">{second}</span>
-            <span className="text-2xl font-bold">秒</span>
-          </p>
-        </>
+              <span className="inline-block w-[100px]">{minute}</span>
+              <span className="text-2xl font-bold">分 </span>
+              <span className="inline-block w-[100px]">{second}</span>
+              <span className="text-2xl font-bold">秒</span>
+            </p>
+          </>
+        ) : (
+          // スマホ タブレット
+          <>
+            <p>
+              <span className="inline-block w-[100px]">{day} </span>
+              <span className="text-2xl font-bold">日</span>
+              <span className="inline-block w-[100px]">{hour}</span>
+              <span className="text-2xl font-bold">時間</span>
+              <br />
+            </p>
+            <p className="translate-x-4">
+              <span className="inline-block w-[100px]">{minute}</span>
+              <span className="text-2xl font-bold">分 </span>
+              <span className="inline-block w-[100px]">{second}</span>
+              <span className="text-2xl font-bold">秒</span>
+            </p>
+          </>
+        ))}
+      {isOpening && (
+        <p className="ml-[0.4em] mt-24 text-3xl font-bold tracking-[0.2em] md:text-6xl">
+          ただいま開催中！
+        </p>
+      )}
+      {isEnd && (
+        <p className="ml-[0.4em] mt-24 text-3xl font-bold tracking-[0.2em] md:text-6xl">
+          お越しいただきありがとうございました！
+        </p>
       )}
     </div>
   );

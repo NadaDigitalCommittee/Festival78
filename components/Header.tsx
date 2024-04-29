@@ -8,8 +8,9 @@ const hrefRequired = ["Blogs"];
 
 export const Header = (props: { children: string; path?: string }) => {
   const { children } = props;
-  props.path ??= `/${children.toLowerCase()}`;
-  const { path } = props;
+  const _props = { ...props };
+  _props.path ??= `/${children.toLowerCase()}`;
+  const { path } = _props;
   const isHrefRequired = hrefRequired.includes(children);
   return (
     <header className="flex flex-col">
@@ -23,11 +24,11 @@ export const Header = (props: { children: string; path?: string }) => {
               "mx-auto my-0 flex w-max justify-center rounded-sm p-0 text-theme outline outline-0 outline-offset-1 outline-body_text focus-visible:outline-2",
           },
           <>
-            <Star1 />
-            <div className="mx-1 mb-0 mt-auto font-south_amsterdam text-6xl md:text-7xl lg:text-9xl">
+            <Star1 className="mb-auto mt-0 h-auto w-5 flex-shrink-0 fill-current md:w-7 lg:w-10" />
+            <div className="mx-1 mb-0 mt-auto font-south_amsterdam text-6xl font-normal md:text-7xl lg:text-9xl">
               {children}
             </div>
-            <Star2 />
+            <Star2 className="mb-0 mt-auto h-auto w-6 flex-shrink-0 fill-current md:w-8 lg:w-12" />
           </>
         )}
       </div>

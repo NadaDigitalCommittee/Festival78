@@ -9,6 +9,7 @@ import { Circle } from "./Circle";
 export const CircleAcordion: FC = () => {
   const [defaultId, setDefaultId] = useState<string | null>(null);
   const [index, setIndex] = useState(0);
+  const media = useResponsive();
   useEffect(() => {
     setDefaultId(window.location.hash.replace("#", "") ?? "");
   }, [defaultId]);
@@ -23,7 +24,6 @@ export const CircleAcordion: FC = () => {
     setIndex(data.findIndex((circle) => circle.id === defaultId));
   }, [defaultId]);
 
-  const media = useResponsive();
   const halfLength = useMemo(() => Math.ceil(data.length / 2), []);
   return (
     <ChakraProvider>
@@ -87,3 +87,13 @@ export const CircleAcordion: FC = () => {
     </ChakraProvider>
   );
 };
+
+// function arrayOddAndEven<T>(array: T[]): T[] {
+//   const a: T[][] = [[], []];
+//   return array
+//     .reduce((acc, cur, i) => {
+//       acc[i % 2].push(cur);
+//       return acc;
+//     }, a)
+//     .flat();
+// }
