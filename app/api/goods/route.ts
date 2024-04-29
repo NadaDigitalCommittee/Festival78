@@ -2,7 +2,7 @@ import { GoogleSpreadsheet } from "google-spreadsheet";
 import { JWT } from "google-auth-library";
 import { NextResponse } from "next/server";
 
-export async function GET() {
+export async function POST() {
   const data = await getData();
   console.log(data)
   return NextResponse.json(data);
@@ -28,5 +28,3 @@ async function getData() {
 
   return { statuses };
 }
-
-export const runtime="edge"

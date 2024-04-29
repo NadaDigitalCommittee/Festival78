@@ -53,7 +53,9 @@ export default function Page() {
 
 const Frame: FC<{ isGoods?: boolean, item: Item; isLarge?: boolean }> = ({ isGoods = false, item: { id, size, name, imageCount, price, description, types }, isLarge = false }) => {
   const fetcher = async (key: string) => {
-    return await fetch(key).then((res) => res.json());
+    return await fetch(key,{
+      method: "POST",
+    }).then((res) => res.json());
   }
   const { data, error, isLoading } = useSWR<{
     statuses: boolean[];
