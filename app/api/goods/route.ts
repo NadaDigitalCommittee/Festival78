@@ -4,6 +4,7 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   const data = await getData();
+  console.log(data)
   return NextResponse.json(data);
 }
 
@@ -27,3 +28,5 @@ async function getData() {
 
   return { statuses };
 }
+
+export const runtime="edge"
