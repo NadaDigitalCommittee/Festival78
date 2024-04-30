@@ -39,7 +39,7 @@ export default function Page() {
                 <button
                   type="button"
                   onClick={() => setIndex(i)}
-                  className={`px-auto h-full w-full rounded-lg border-2 border-theme py-1 text-xl duration-300 ${activeIndex === i ? "bg-theme text-white" : "bg-transparent text-theme"}`}
+                  className={`px-auto h-full w-full rounded-lg border-2 border-theme py-1 text-xl outline-offset-4 duration-300 ${activeIndex === i ? "bg-theme text-white" : "bg-transparent text-theme"}`}
                 >
                   {i + 1}階
                 </button>
