@@ -695,6 +695,13 @@ export const data: Circle[] = [
       "今年はじめてのサークルです。普段から様々なパズルを作成し解いていて、有名どころのパズルから自作のパズルまで、数多く取り揃えています。景品も用意してありますのでぜひぜひ一度、足を運んでみてください！！！",
     place: "M3",
     mapId: "puzzle",
+    contents:[
+      {
+        type: "others",
+        title:"パズル問題集",
+        url: "https://puzzle.nada-sc.jp/",
+      }
+    ]
   },
   {
     id: "baseballfan",
@@ -891,6 +898,11 @@ export const data: Circle[] = [
         title: "物理実験ショー",
         url: "/events?id=physics_event",
       },
+      {
+        type: "article",
+        title: "部誌",
+        url:"/pdf/physics/article.pdf"
+      }
     ],
   },
   {
