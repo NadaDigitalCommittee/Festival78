@@ -9,3 +9,6 @@ declare namespace NodeJS {
     readonly NEXT_PUBLIC_GAID: string;
   }
 }
+interface Element {
+  isContentEditable: boolean;
+}
