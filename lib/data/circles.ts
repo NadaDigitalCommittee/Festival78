@@ -898,6 +898,11 @@ export const data: Circle[] = [
         title: "物理実験ショー",
         url: "/events?id=physics_event",
       },
+      {
+        type: "article",
+        title: "部誌",
+        url:"/pdf/physics/article.pdf"
+      }
     ],
   },
   {
