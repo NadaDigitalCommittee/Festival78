@@ -17,15 +17,17 @@ const paths = [
 ];
 
 export const HamburgerMenu: FC = () => {
-  const hamburgerMenu1stLinkRef = useRef<HTMLAnchorElement>(null);
+  const hamburgerMenuButtonRef = useRef<HTMLButtonElement>(null);
   const [isOpen, setOpen] = useState<boolean>(false);
   const handleMenuOpen = () => {
     setOpen(true);
-    hamburgerMenu1stLinkRef.current?.focus();
+    hamburgerMenuButtonRef.current?.focus();
   };
   const handleMenuClose = () => {
     setOpen(false);
-    (document.activeElement as HTMLElement)?.blur();
+    if(document.activeElement !== hamburgerMenuButtonRef.current) {
+        (document.activeElement as HTMLElement)?.blur();
+    }
   };
   const [hovered, setHovered] = useState<number>(-1);
   const handleLeave = () => {
@@ -73,9 +75,10 @@ export const HamburgerMenu: FC = () => {
           tabIndex={-1}
         ></a>
         <button
+          ref={hamburgerMenuButtonRef}
           onClick={isOpen ? handleMenuClose : handleMenuOpen}
           title={`メニューを${isOpen ? "閉じる" : "開く"} (Alt+M)`}
-          className="absolute right-0 z-50 flex h-[4.5rem] w-[4.5rem] flex-col items-center justify-between bg-theme p-5"
+          className="absolute right-0 z-50 flex h-[4.5rem] w-[4.5rem] flex-col items-center justify-between bg-theme p-5 outline-focus-visible"
         >
           <span
             className={`block h-1 select-none bg-white duration-300 ${isOpen ? "w-10 translate-y-[0.875em] rotate-[.125turn]" : "w-8"}`}
@@ -96,12 +99,11 @@ export const HamburgerMenu: FC = () => {
               <div key={i} className="relative flex h-[3.125rem] px-4 md:px-10">
                 <div className="z-40 flex items-center pb-[2px] font-zen_kaku_gothic_new text-xl font-bold text-white">
                   <Link
-                    ref={i ? undefined : hamburgerMenu1stLinkRef}
                     href={path}
                     onMouseEnter={() => setHovered(i)}
                     onMouseLeave={handleLeave}
                     onClick={handleMenuClose}
-                    className="flex size-full items-center px-2"
+                    className="flex size-full items-center px-2 outline-focus-visible"
                     tabIndex={+isOpen - 1}
                   >
                     {ja}

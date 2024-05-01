@@ -12,3 +12,9 @@
     display: none;
   }
 }
+
+@layer components {
+  .outline-focus-visible {
+    @apply outline-2 rounded-sm outline-transparent focus-visible:outline-body_text outline-offset-4;
+  }
+}

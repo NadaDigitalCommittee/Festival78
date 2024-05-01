@@ -47,7 +47,7 @@ export default function Page() {
             <p>
               ※事前の予告なく公開を停止したり、一部のページに黒塗りまたは差し替えがされていることがございます。
             </p>
-            <a href={"/pdf/brochure.pdf"} download>
+            <a href={"/pdf/brochure.pdf"} className="outline-focus-visible" download>
               <div className="mx-auto mt-4 flex h-6 w-[140px] justify-center bg-white text-theme">
                 <RiDownload2Fill size={20} />
                 ダウンロード

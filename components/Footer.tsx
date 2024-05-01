@@ -37,42 +37,42 @@ export const Footer: FC = () => {
         >
           <div className="flex justify-center">
             <a
-              className="inline-block"
+              className="inline-block outline-focus-visible"
               href="https://twitter.com/nada_festival"
               aria-label="twitter"
             >
               <BsTwitterX />
             </a>
             <a
-              className="inline-block"
+              className="inline-block outline-focus-visible"
               href="https://youtube.com/@nada_schoolfestival"
               aria-label="youtube"
             >
               <FaYoutube />
             </a>
             <a
-              className="inline-block"
+              className="inline-block outline-focus-visible"
               href="https://instagram.com/nada_schoolfestival/"
               aria-label="instagram"
             >
               <FaInstagram />
             </a>
             <a
-              className="inline-block"
+              className="inline-block outline-focus-visible"
               href="https://tiktok.com/@nada_onlinefestival"
               aria-label="tiktok"
             >
               <FaTiktok />
             </a>
             <a
-              className="inline-block"
+              className="inline-block outline-focus-visible"
               href="https://facebook.com/NadaSchoolFestival/"
               aria-label="facebook"
             >
               <FaFacebook />
             </a>
             <a
-              className="inline-block"
+              className="inline-block outline-focus-visible"
               href="https://page.line.me/?accountId=nada_festival"
               aria-label="line"
             >
@@ -89,10 +89,10 @@ export const Footer: FC = () => {
                 key={i}
                 style={{ transform: `translateX(${i * 62 - 620}px)` }}
               >
-                <p className="absolute -translate-y-[60px] -skew-y-[35deg]">
+                <div className="absolute -translate-y-[60px] -skew-y-[35deg]">
                   {"ODYSSEYODYSSEYODYSSEYODYSSEY".slice(i) +
                     "ODYSSEYODYSSEYODYSSEYODYSSEY".slice(0, i)}
-                </p>
+                </div>
               </div>
             );
           });
