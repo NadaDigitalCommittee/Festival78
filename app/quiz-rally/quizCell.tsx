@@ -1,6 +1,7 @@
 "use client";
 
-import { FC, useState } from "react";
+import { useLocalStorage } from "@/lib/hooks/useLocalStorage";
+import { FC, useEffect, useState } from "react";
 
 type Props = {
   content: string;
@@ -12,7 +13,12 @@ type Props = {
 
 export const QuizCell: FC<Props> = ({ className, content, color, rotate, length }) => {
   const random = Math.floor(Math.random() * 255).toString();
-  const [inputValue,setInputValue]=useState("")
+  const {storedValue,setStoredValue}=useLocalStorage(`quizCell-${content}`,"")
+  const [inputValue,setInputValue]=useState(storedValue) 
+
+  useEffect(()=>{
+    setStoredValue(inputValue)
+  },[inputValue, setStoredValue])
   
   return (
     <div className="flex items-center justify-center">
