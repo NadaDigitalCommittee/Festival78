@@ -8,3 +8,5 @@ export async function POST(requset: NextRequest, response: NextResponse) {
     return NextResponse.json({ ok: false })
   }
 }
+
+export const runtime="edge"
