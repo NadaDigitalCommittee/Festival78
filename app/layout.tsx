@@ -37,6 +37,7 @@ export const metadata: Metadata = {
     default: "第78回灘校文化祭 ODYSSEY",
     template: "%s | 第78回灘校文化祭 ODYSSEY",
   },
+  metadataBase:new URL("https://fest.nada-sc.jp"),
   keywords: [
     "灘",
     "灘中学校",
