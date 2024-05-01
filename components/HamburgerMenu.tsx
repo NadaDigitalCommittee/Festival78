@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const paths = [
   { ja: "ホーム", en: "Home", path: "/" },
-  // { ja: "クイズラリー", en: "Quiz Rally", path: "/quiz-rally" },
+  { ja: "クイズラリー", en: "Quiz Rally", path: "/quiz-rally" },
   { ja: "出展サークル", en: "Circles", path: "/circles" },
   { ja: "イベント", en: "Events", path: "/events" },
   { ja: "タイムテーブル", en: "Timetable", path: "/timetable" },
