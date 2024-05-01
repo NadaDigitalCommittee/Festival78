@@ -16,7 +16,7 @@ const limelight = Limelight({
 });
 const zen_kaku_gothic_new = Zen_Kaku_Gothic_New({
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "500", "700"],
   variable: "--font-zen-kaku-gothic-new",
 });
 const alte_din_1451_mittelschrift = localFont({
