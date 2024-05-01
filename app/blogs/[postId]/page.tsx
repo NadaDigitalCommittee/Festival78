@@ -132,8 +132,38 @@ export default async function StaticDetailPage({
               src=""
               {...restAttribs}
               style={styleAttrObject}
-              className={`mx-auto my-4 w-full lg:w-5/6 ${classAttr || ""}`}
+              className={`mx-auto my-4 size-auto md:max-h-[800px] ${classAttr || ""}`}
             />
+          );
+        } else if (name === "ul") {
+          return (
+            <ul
+              {...restAttribs}
+              style={styleAttrObject}
+              className={`mx-10 md:mx-12 my-2 md:my-6 list-disc ${classAttr || ""}`}
+            >
+              {domToReact(children as DOMNode[], options)}
+            </ul>
+          );
+        } else if (name === "ol") {
+          return (
+            <ol
+              {...restAttribs}
+              style={styleAttrObject}
+              className={`mx-10 md:mx-12 my-2 md:my-6 list-decimal ${classAttr || ""}`}
+            >
+              {domToReact(children as DOMNode[], options)}
+            </ol>
+          );
+        } else if (name === "blockquote") {
+          return (
+            <blockquote
+              {...restAttribs}
+              style={styleAttrObject}
+              className={`mx-2 p-4 md:mx-10 my-2 md:my-6 border-l-2 border-l-gray-600 ${classAttr || ""}`}
+            >
+              {domToReact(children as DOMNode[], options)}
+            </blockquote>
           );
         } else if (type === "tag") {
           const voidTags = [
@@ -177,7 +207,7 @@ export default async function StaticDetailPage({
             {publishedAt.month}/{publishedAt.date}
           </div>
         </div>
-        <h1 className="mx-2 my-4 flex items-center justify-center text-3xl font-bold text-body_text md:text-4xl">
+        <h1 className="mx-2 my-4 flex items-center justify-center text-2xl font-bold text-body_text md:text-4xl">
           {post.title}
         </h1>
       </div>
