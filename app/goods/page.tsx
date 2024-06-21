@@ -2,6 +2,7 @@ import { Header } from "@/components/Header";
 import { Items } from "./Items";
 
 export const dynamic = "force-dynamic";
+export const runtime = "edge";
 
 export default async function Page() {
   const res = await fetch(`${process.env.HOST}/api/goods`, {

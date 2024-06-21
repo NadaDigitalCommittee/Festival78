@@ -2,6 +2,7 @@ import { FC } from "react";
 import { Header } from "@/components/Header";
 
 export const dynamic = "force-dynamic";
+export const runtime = "edge";
 
 export default async function Page() {
   const data = await fetch(`${process.env.HOST}/api/crowds`, {
