@@ -10,6 +10,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { useEffect, useRef, useState } from "react";
 import "@/components/maps/swiperPref.scss";
+import { MapsSearch } from "@/components/maps/MapsSearch";
 
 export default function Page() {
   const swiperRef = useRef<SwiperRef>(null);
@@ -17,21 +18,21 @@ export default function Page() {
   useEffect(() => {
     swiperRef?.current?.swiper.slideTo(activeIndex, 500);
   }, [activeIndex]);
-
+  const queryMapIdList = useSearchParams().get("id");
   const mapIdList =
-    useSearchParams()
-      .get("id")
+    queryMapIdList
       ?.split(",")
       .filter(Boolean)
       .map((mapId) => mapId.trim()) || [];
   useEffect(() => {
     swiperRef?.current?.swiper.slideTo(mapIdDict[mapIdList[0]] || 0, 500);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [queryMapIdList]);
   return (
     <>
       <Header path="/maps">Maps</Header>
       <main className="m-auto w-full max-w-[768px] p-1 font-zen_kaku_gothic_new">
+        <MapsSearch />
         <ol className="flex w-full items-center justify-center px-4 py-2">
           {[...new Array(4)].map((_, i) => {
             return (
@@ -39,7 +40,7 @@ export default function Page() {
                 <button
                   type="button"
                   onClick={() => setIndex(i)}
-                  className={`px-auto h-full w-full rounded-lg border-2 border-theme py-1 text-xl duration-300 outline-focus-visible ${activeIndex === i ? "bg-theme text-white" : "bg-transparent text-theme"}`}
+                  className={`px-auto outline-focus-visible h-full w-full rounded-lg border-2 border-theme py-1 text-xl duration-300 ${activeIndex === i ? "bg-theme text-white" : "bg-transparent text-theme"}`}
                 >
                   {i + 1}階
                 </button>

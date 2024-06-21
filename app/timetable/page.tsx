@@ -185,9 +185,7 @@ export default function Page() {
           }
         </BaseTimetableMobile>
       ) : (
-        <BaseTimetableDesktop
-          events={events_[stageIndex]}
-        >
+        <BaseTimetableDesktop events={events_[stageIndex]}>
           {
             [
               <>

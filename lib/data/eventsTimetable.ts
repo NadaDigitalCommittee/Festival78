@@ -13,11 +13,11 @@ export const eventsTimetable: EventTimetable[] = [
   },
   {
     id: "mathematics_event2",
-    time: [{ day: 2, time: new Time(12, 0, 13, 0) }],
+    time: [{ day: 1, time: new Time(11, 0, 12, 0) }],
   },
   {
     id: "mathematics_event3",
-    time: [{ day: 1, time: new Time(11, 0, 12, 0) }],
+    time: [{ day: 2, time: new Time(12, 0, 13, 0) }],
   },
   {
     id: "mathematics_event4",
@@ -389,7 +389,7 @@ export const eventsTimetable: EventTimetable[] = [
     id: "aurorascience",
     time: [
       { day: 1, time: new Time(13, 15, 14, 45) },
-      { day: 2, time: new Time(13, 15, 14, 45) },
+      { day: 2, time: new Time(13, 0, 14, 30) },
     ],
   },
   {

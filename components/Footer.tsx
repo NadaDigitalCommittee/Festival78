@@ -12,6 +12,38 @@ import { IconContext } from "react-icons";
 import { Logo } from "./svg/Logo";
 
 export const Footer: FC = () => {
+  const SNSLinks = [
+    {
+      ariaLabel: "twitter",
+      href: "https://twitter.com/nada_festival",
+      icon: <BsTwitterX />,
+    },
+    {
+      ariaLabel: "youtube",
+      href: "https://youtube.com/@nada_schoolfestival",
+      icon: <FaYoutube />,
+    },
+    {
+      ariaLabel: "instagram",
+      href: "https://instagram.com/nada_schoolfestival/",
+      icon: <FaInstagram />,
+    },
+    {
+      ariaLabel: "tiktok",
+      href: "https://tiktok.com/@nada_onlinefestival",
+      icon: <FaTiktok />,
+    },
+    {
+      ariaLabel: "facebook",
+      href: "https://facebook.com/NadaSchoolFestival/",
+      icon: <FaFacebook />,
+    },
+    {
+      ariaLabel: "line",
+      href: "https://page.line.me/?accountId=nada_festival",
+      icon: <FaLine />,
+    },
+  ];
   return (
     <footer className="relative grid overflow-hidden bg-[#616161] px-3 py-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
       <div className="mx-auto flex">
@@ -36,48 +68,18 @@ export const Footer: FC = () => {
           }}
         >
           <div className="flex justify-center">
-            <a
-              className="inline-block outline-focus-visible"
-              href="https://twitter.com/nada_festival"
-              aria-label="twitter"
-            >
-              <BsTwitterX />
-            </a>
-            <a
-              className="inline-block outline-focus-visible"
-              href="https://youtube.com/@nada_schoolfestival"
-              aria-label="youtube"
-            >
-              <FaYoutube />
-            </a>
-            <a
-              className="inline-block outline-focus-visible"
-              href="https://instagram.com/nada_schoolfestival/"
-              aria-label="instagram"
-            >
-              <FaInstagram />
-            </a>
-            <a
-              className="inline-block outline-focus-visible"
-              href="https://tiktok.com/@nada_onlinefestival"
-              aria-label="tiktok"
-            >
-              <FaTiktok />
-            </a>
-            <a
-              className="inline-block outline-focus-visible"
-              href="https://facebook.com/NadaSchoolFestival/"
-              aria-label="facebook"
-            >
-              <FaFacebook />
-            </a>
-            <a
-              className="inline-block outline-focus-visible"
-              href="https://page.line.me/?accountId=nada_festival"
-              aria-label="line"
-            >
-              <FaLine />
-            </a>
+            {SNSLinks.map(({ ariaLabel, href, icon }) => (
+              <a
+                key={ariaLabel}
+                href={href}
+                aria-label={ariaLabel}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="outline-focus-visible inline-block"
+              >
+                {icon}
+              </a>
+            ))}
           </div>
         </IconContext.Provider>
       </div>

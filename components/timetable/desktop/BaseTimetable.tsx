@@ -12,10 +12,7 @@ type Props = {
   children?: ReactNode;
 };
 
-export const BaseTimetableDesktop: FC<Props> = ({
-  children,
-  events,
-}) => {
+export const BaseTimetableDesktop: FC<Props> = ({ children, events }) => {
   return (
     <div className="">
       <div className="flex h-[700px] w-screen overflow-y-scroll">

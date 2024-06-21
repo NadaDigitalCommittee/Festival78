@@ -102,16 +102,18 @@ export default function Home() {
           {-(1830 * 60) < restTime && (
             <div className="mx-auto my-8 w-[90vw] max-w-[600px] font-zen_kaku_gothic_new text-[#FF0C0C] md:w-[80vw]">
               <p className="my-4 ml-[0.5em] text-2xl font-bold tracking-[0.5em]">
-                ～お願い～
+                ～お知らせ～
               </p>
               <div className="border border-[#FF0C0C] bg-white p-2 font-bold">
                 <p className="text-center text-xl">
-                  当日は、午前<span className="font-futura_pt text-6xl">9</span>
-                  時以降にお越しください。
+                  {/* 当日は、午前<span className="font-futura_pt text-6xl">9</span>
+                  時以降にお越しください。 */}
+                  金券の販売は<span className="text-6xl">一時中止</span>
+                  しております。再開までしばらくお待ちください。
                 </p>
-                <p>
+                {/* <p>
                   文化祭の開催時間は両日共に9:00~15:30です。スムーズにご来場いただくために、ご理解・ご協力のほどよろしくお願いします。
-                </p>
+                </p> */}
               </div>
             </div>
           )}
@@ -152,7 +154,7 @@ export default function Home() {
               コンセプト
             </p>
             <br />
-            <div className=" flex flex-col text-base md:flex-row">
+            <div className=" flex flex-col text-base font-medium md:flex-row">
               <div>
                 <p className="mx-4 indent-4 font-zen_kaku_gothic_new">
                   第78回灘校文化祭テーマ <br />
@@ -191,7 +193,7 @@ export default function Home() {
               <div className="flex flex-col items-center justify-center border-black text-center font-zen_kaku_gothic_new md:border-r">
                 <div>
                   <p className="text-2xl font-bold">灘中学校・灘高等学校</p>
-                  <p className="text-sm">
+                  <p className="text-sm font-medium">
                     <MapPin className="fill-[#616161]" />
                     兵庫県神戸市東灘区魚崎北町8丁目5番1号
                   </p>
@@ -230,7 +232,7 @@ export default function Home() {
             </div>
           </div>
 
-          <p className="mx-auto mb-8 w-[70vw] max-w-[800px] text-center font-zen_kaku_gothic_new text-black/70">
+          <p className="mx-auto mb-8 w-[70vw] max-w-[800px] text-center font-zen_kaku_gothic_new font-medium text-black/70">
             第78回灘校文化祭「ODYSSEY」に関するお問い合わせや疑問点等は以下の公式Xアカウント、FacebookアカウントおよびLINEアカウントへのダイレクトメッセージにお願いします。
           </p>
         </div>
@@ -239,6 +241,7 @@ export default function Home() {
   );
 }
 
+// eslint-disable-next-line unused-imports/no-unused-vars
 const Tweet = () => (
   <div className="my-3">
     <a

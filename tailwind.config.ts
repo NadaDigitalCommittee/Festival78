@@ -43,6 +43,8 @@ const config: Config = {
     },
   },
   plugins: [],
-  safelist: [...Object.values(PlaceLabelBgColors).map((c) => `bg-${c}`)],
+  safelist: [
+    ...Object.values(PlaceLabelBgColors).map((c) => [`bg-${c}`, `text-${c}`]),
+  ].flat(),
 };
 export default config;

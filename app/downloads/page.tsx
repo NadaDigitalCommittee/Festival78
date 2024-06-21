@@ -45,9 +45,13 @@ export default function Page() {
               文化祭当日配布するパンフレットをダウンロードすることができます。
             </p>
             <p>
-              ※事前の予告なく公開を停止したり、一部のページに黒塗りまたは差し替えがされていることがございます。
+              ※事前の予告なく公開を停止したり、一部のページに黒塗りまたは差し替えをしたりすることがございます。
             </p>
-            <a href={"/pdf/brochure.pdf"} className="outline-focus-visible" download>
+            <a
+              href={"/pdf/brochure.pdf"}
+              className="outline-focus-visible"
+              download
+            >
               <div className="mx-auto mt-4 flex h-6 w-[140px] justify-center bg-white text-theme">
                 <RiDownload2Fill size={20} />
                 ダウンロード
@@ -79,7 +83,7 @@ export default function Page() {
                 文化祭当日配布するパンフレットをダウンロードすることができます。
               </p>
               <p>
-                ※事前の予告なく公開を停止したり、一部のページに黒塗りまたは差し替えがされていることがございます。
+                ※事前の予告なく公開を停止したり、一部のページに黒塗りまたは差し替えをしたりすることがございます
               </p>
             </div>
             <Link

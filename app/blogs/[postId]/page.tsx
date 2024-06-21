@@ -140,7 +140,7 @@ export default async function StaticDetailPage({
             <ul
               {...restAttribs}
               style={styleAttrObject}
-              className={`mx-10 md:mx-12 my-2 md:my-6 list-disc ${classAttr || ""}`}
+              className={`mx-10 my-2 list-disc md:mx-12 md:my-6 ${classAttr || ""}`}
             >
               {domToReact(children as DOMNode[], options)}
             </ul>
@@ -150,7 +150,7 @@ export default async function StaticDetailPage({
             <ol
               {...restAttribs}
               style={styleAttrObject}
-              className={`mx-10 md:mx-12 my-2 md:my-6 list-decimal ${classAttr || ""}`}
+              className={`mx-10 my-2 list-decimal md:mx-12 md:my-6 ${classAttr || ""}`}
             >
               {domToReact(children as DOMNode[], options)}
             </ol>
@@ -160,7 +160,7 @@ export default async function StaticDetailPage({
             <blockquote
               {...restAttribs}
               style={styleAttrObject}
-              className={`mx-2 p-4 md:mx-10 my-2 md:my-6 border-l-2 border-l-gray-600 ${classAttr || ""}`}
+              className={`mx-6 my-2 border-l-2 border-l-gray-600 p-3 md:mx-10 md:my-6 ${classAttr || ""}`}
             >
               {domToReact(children as DOMNode[], options)}
             </blockquote>
@@ -239,14 +239,14 @@ export default async function StaticDetailPage({
                     ? { "aria-current": "page", disableLink: true }
                     : {})}
                   spanProps={{
-                    itemprop: "name",
+                    itemProp: "name",
                   }}
                   href={hierarchy[0]}
                   className={`text-body_text ${isCurrentPage ? "" : "text-theme"}`}
-                  itemscope
-                  itemtype="https://schema.org/WebPage"
-                  itemprop="item"
-                  itemid={`https://fest.nada-sc.jp${hierarchy[0]}`}
+                  itemScope
+                  itemType="https://schema.org/WebPage"
+                  itemProp="item"
+                  itemID={`https://fest.nada-sc.jp${hierarchy[0]}`}
                 >
                   {hierarchy[1]}
                 </InlineLink>

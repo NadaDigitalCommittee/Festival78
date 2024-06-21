@@ -15,6 +15,11 @@
 
 @layer components {
   .outline-focus-visible {
-    @apply outline-2 rounded-sm outline-transparent focus-visible:outline-body_text outline-offset-4;
+    @apply rounded-sm outline-2 outline-offset-4 outline-transparent focus-visible:outline-body_text;
+  }
+}
+@layer components {
+  .kbd {
+    @apply mx-1 rounded-md border-2 border-gray-400 bg-gray-200 p-[.2rem] font-mono shadow-md;
   }
 }

@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     default: "第78回灘校文化祭 ODYSSEY",
     template: "%s | 第78回灘校文化祭 ODYSSEY",
   },
-  metadataBase:new URL("https://fest.nada-sc.jp"),
+  metadataBase: new URL("https://fest.nada-sc.jp"),
   keywords: [
     "灘",
     "灘中学校",
@@ -106,7 +106,7 @@ export default function RootLayout({
       >
         <TypekitLoader />
         <HamburgerMenu />
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GAID} />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GAID ?? ""} />
         <div className="relative z-0 min-h-[100lvh] w-[100%] overflow-x-clip">
           {children}
           <div className="fixed top-0 -z-50 w-full">

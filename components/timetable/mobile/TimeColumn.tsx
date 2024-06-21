@@ -1,9 +1,7 @@
 import { FC } from "react";
 import { Now } from "./Now";
 
-type Props = {
-  
-};
+type Props = {};
 
 export const TimeColumn: FC<Props> = () => {
   return (
