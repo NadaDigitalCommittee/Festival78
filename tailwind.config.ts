@@ -32,6 +32,7 @@ const config: Config = {
         south_amsterdam: ["var(--font-south-amsterdam-demo)"],
         times_new_roman: ["var(--font-times-new-roman)"],
         futura_pt: ["futura-pt"],
+        ltc_broadway: ["ltc-broadway"],
       },
       colors: {
         theme: "#ff4d00",
@@ -42,6 +43,8 @@ const config: Config = {
     },
   },
   plugins: [],
-  safelist: [...Object.values(PlaceLabelBgColors).map((c) => `bg-${c}`)],
+  safelist: [
+    ...Object.values(PlaceLabelBgColors).map((c) => [`bg-${c}`, `text-${c}`]),
+  ].flat(),
 };
 export default config;

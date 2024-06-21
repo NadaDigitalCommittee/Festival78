@@ -132,8 +132,38 @@ export default async function StaticDetailPage({
               src=""
               {...restAttribs}
               style={styleAttrObject}
-              className={`mx-auto my-4 w-full lg:w-5/6 ${classAttr || ""}`}
+              className={`mx-auto my-4 size-auto md:max-h-[800px] ${classAttr || ""}`}
             />
+          );
+        } else if (name === "ul") {
+          return (
+            <ul
+              {...restAttribs}
+              style={styleAttrObject}
+              className={`mx-10 my-2 list-disc md:mx-12 md:my-6 ${classAttr || ""}`}
+            >
+              {domToReact(children as DOMNode[], options)}
+            </ul>
+          );
+        } else if (name === "ol") {
+          return (
+            <ol
+              {...restAttribs}
+              style={styleAttrObject}
+              className={`mx-10 my-2 list-decimal md:mx-12 md:my-6 ${classAttr || ""}`}
+            >
+              {domToReact(children as DOMNode[], options)}
+            </ol>
+          );
+        } else if (name === "blockquote") {
+          return (
+            <blockquote
+              {...restAttribs}
+              style={styleAttrObject}
+              className={`mx-6 my-2 border-l-2 border-l-gray-600 p-3 md:mx-10 md:my-6 ${classAttr || ""}`}
+            >
+              {domToReact(children as DOMNode[], options)}
+            </blockquote>
           );
         } else if (type === "tag") {
           const voidTags = [
@@ -177,7 +207,7 @@ export default async function StaticDetailPage({
             {publishedAt.month}/{publishedAt.date}
           </div>
         </div>
-        <h1 className="mx-2 my-4 flex items-center justify-center text-3xl font-bold text-body_text md:text-4xl">
+        <h1 className="mx-2 my-4 flex items-center justify-center text-2xl font-bold text-body_text md:text-4xl">
           {post.title}
         </h1>
       </div>
@@ -209,14 +239,14 @@ export default async function StaticDetailPage({
                     ? { "aria-current": "page", disableLink: true }
                     : {})}
                   spanProps={{
-                    itemprop: "name",
+                    itemProp: "name",
                   }}
                   href={hierarchy[0]}
                   className={`text-body_text ${isCurrentPage ? "" : "text-theme"}`}
-                  itemscope
-                  itemtype="https://schema.org/WebPage"
-                  itemprop="item"
-                  itemid={`https://fest.nada-sc.jp${hierarchy[0]}`}
+                  itemScope
+                  itemType="https://schema.org/WebPage"
+                  itemProp="item"
+                  itemID={`https://fest.nada-sc.jp${hierarchy[0]}`}
                 >
                   {hierarchy[1]}
                 </InlineLink>

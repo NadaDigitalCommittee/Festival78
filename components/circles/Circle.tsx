@@ -23,7 +23,7 @@ export const Circle: FC<Props> = ({ circle }) => {
   const place = circle.place;
   const title = circle.name;
   const event = circle.contents?.filter((c) => c.type === "events").at(0);
-  const other= circle.contents?.filter(c=>c.type==="others").at(0);  
+  const other = circle.contents?.filter((c) => c.type === "others").at(0);
   const mapHref = `/maps?id=${circle.mapId}`;
   const articles = circle.contents?.filter((c) => c.type === "article");
   const articleHref = articles && `/downloads?id=${id}`;
@@ -33,7 +33,7 @@ export const Circle: FC<Props> = ({ circle }) => {
       className={`group min-w-[100vw] max-w-[512px] odd:bg-[#FFEFE8]/50 even:bg-white/50 md:min-w-[512px] lg:min-w-[512px]`}
     >
       <div id={"#" + id} className=" flex h-[60px] justify-center px-4">
-        <AccordionButton className="flex">
+        <AccordionButton className="outline-focus-visible flex">
           <div className="w-[40px]">
             {!circle.noLogo && (
               <Image
@@ -60,7 +60,7 @@ export const Circle: FC<Props> = ({ circle }) => {
           <div className="flex text-sm">
             <a
               href={mapHref}
-              className="mr-2 flex flex-shrink items-center bg-theme px-3 py-1 text-white"
+              className="outline-focus-visible mr-2 flex flex-shrink items-center bg-theme px-3 py-1 text-white"
             >
               <MapPin className={"h-[35px] fill-white"} />
               <span className="ml-1 flex-shrink">マップ</span>
@@ -68,7 +68,7 @@ export const Circle: FC<Props> = ({ circle }) => {
             {articles && articles.length !== 0 && (
               <a
                 href={articleHref}
-                className="my-0 flex flex-shrink items-center bg-theme px-3 py-1 text-white"
+                className="outline-focus-visible my-0 flex flex-shrink items-center bg-theme px-3 py-1 text-white"
               >
                 <Article
                   className="inline-block h-[35px] fill-white"
@@ -81,23 +81,21 @@ export const Circle: FC<Props> = ({ circle }) => {
             {event && (
               <a
                 href={event.url}
-                className="ml-2 flex min-w-[90px] flex-shrink items-center bg-theme px-3 py-1 text-white"
+                className="outline-focus-visible ml-2 flex min-w-[90px] flex-shrink items-center bg-theme px-3 py-1 text-white"
               >
                 <Star2 className="my-auto inline-block h-[30px] w-auto fill-white" />
                 <span className="ml-1 flex-shrink">イベント</span>
               </a>
             )}
-            {
-              other&&(
-                <a
-                  href={other.url}
-                  className="ml-2 flex min-w-[90px] flex-shrink items-center bg-theme px-3 py-1 text-white"
-                >
-                  <Star2 className="my-auto inline-block h-[30px] w-auto fill-white" />
-                  <span className="ml-1 flex-shrink">{other.title}</span>
-                </a>
-              )
-            }
+            {other && (
+              <a
+                href={other.url}
+                className="outline-focus-visible ml-2 flex min-w-[90px] flex-shrink items-center bg-theme px-3 py-1 text-white"
+              >
+                <Star2 className="my-auto inline-block h-[30px] w-auto fill-white" />
+                <span className="ml-1 flex-shrink">{other.title}</span>
+              </a>
+            )}
           </div>
         </div>
       </AccordionPanel>

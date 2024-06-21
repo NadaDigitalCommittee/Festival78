@@ -29,7 +29,8 @@ export const useKey = (
           return e[(key.toLowerCase() + "Key") as keyof KeyboardEvent];
         })
       ) {
-        handler();
+        e.preventDefault();
+        handler(e);
       }
     },
     [disableOnInput, handler, keys]

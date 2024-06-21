@@ -4,6 +4,7 @@ import { FC, useEffect, useMemo, useState } from "react";
 type Props = {
   selects: string[];
   defaultIndex?: number;
+  // eslint-disable-next-line unused-imports/no-unused-vars
   onChange?: (index: number) => void;
   className?: string;
 };

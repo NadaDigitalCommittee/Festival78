@@ -24,7 +24,7 @@ export const Article: FC<Props> = ({ circle }) => {
       className={`group min-w-[100vw] max-w-[512px] odd:bg-[#FFEFE8]/50 even:bg-white/50 md:min-w-[512px] lg:min-w-[512px]`}
     >
       <div id={"#" + id} className=" flex h-[60px] justify-center">
-        <AccordionButton className="flex">
+        <AccordionButton className="outline-focus-visible flex">
           <div className="mx-4 w-[40px]">
             {logoSrc && (
               <Image src={logoSrc} width={40} height={50} alt="サークルロゴ" />
@@ -53,7 +53,7 @@ export const Article: FC<Props> = ({ circle }) => {
             <span className="mr-4">{article.title}</span>
             <a
               href={article.url}
-              className="ml-auto flex h-[30px] min-w-[130px] items-center justify-center gap-2 bg-theme px-2 text-center text-white"
+              className="outline-focus-visible ml-auto flex h-[30px] min-w-[130px] items-center justify-center gap-2 bg-theme px-2 text-center text-white"
               download
             >
               <RiDownload2Fill />

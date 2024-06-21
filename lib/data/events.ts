@@ -38,8 +38,8 @@ export const events: Event[] = [
     name: "対称性を利用して合同式を得る方法",
     description:
       "ある組み合わせの問題を解き、その答えが整数になることを利用して合同式を導きます。",
-    category: "lecture_m",
-    mapId: "m3-1",
+    category: "lecture_h",
+    mapId: "h3-1",
   },
 
   {
@@ -63,8 +63,8 @@ export const events: Event[] = [
     name: "円に内接する六角形についての小噺",
     description:
       "円(二次曲線)に内接する六角形について、射影幾何学の定理を使いながらどのような性質があるかを考えます。",
-    category: "lecture_h",
-    mapId: "h3-1",
+    category: "lecture_m",
+    mapId: "m3-2",
   },
   {
     id: "mathematics_event4",

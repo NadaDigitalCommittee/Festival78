@@ -5,6 +5,7 @@ export type Item = {
   imageCount: number;
   price: number;
   description: string;
+  types?: string[];
 };
 export const goods: Item[] = [
   {
@@ -70,7 +71,17 @@ export const goods: Item[] = [
     name: "Tシャツ",
     imageCount: 7,
     price: 1500,
-    description: "サイズ S・M・L・LL",
+    description: "ライトグレー・ダークグレー\nS・M・L・XL",
+    types: [
+      "ライトグレーS",
+      "ライトグレーM",
+      "ライトグレーL",
+      "ライトグレーXL",
+      "ダークグレーS",
+      "ダークグレーM",
+      "ダークグレーL",
+      "ダークグレーXL",
+    ],
   },
   {
     id: [16],
@@ -87,7 +98,8 @@ export const goods: Item[] = [
     imageCount: 6,
     price: 1300,
     description:
-      "紺・えんじ・深緑・白地 綿製\n灘校書道教師倉橋先生による校是書字",
+      "紺・えんじ・深緑・白 綿製\n灘校書道教師倉橋先生による校是書字",
+    types: ["紺", "えんじ", "深緑", "白"],
   },
   {
     id: [21, 22],
@@ -97,6 +109,7 @@ export const goods: Item[] = [
     price: 1000,
     description:
       "ダークブラウン・紺 約3.3×3.3cm\n本革製校章チャーム 丁寧な手作りチャーム",
+    types: ["ダークブラウン", "紺"],
   },
   {
     id: [23],
@@ -114,6 +127,7 @@ export const goods: Item[] = [
     imageCount: 2,
     price: 800,
     description: "紺・えんじ 約8cm\n灘校オリジナルオーダーのベアストラップ",
+    types: ["紺", "えんじ"],
   },
   {
     id: [26],
@@ -138,7 +152,8 @@ export const goods: Item[] = [
     name: "クリアファイル\nA4無地",
     imageCount: 1,
     price: 100,
-    description: "使いやすい無地",
+    description: "透明・青・緑・黄・ピンク\n使いやすい無地",
+    types: ["透明", "青", "緑", "黄", "ピンク"],
   },
   {
     id: [33],
@@ -164,6 +179,7 @@ export const goods: Item[] = [
     price: 900,
     description:
       "ブラック・レッド・ダークグレー\n灘校生に大人気のスマッシュが灘校グッズに新登場",
+    types: ["ブラック", "レッド", "ダークグレー"],
   },
   {
     id: [38, 39, 40],
@@ -172,6 +188,7 @@ export const goods: Item[] = [
     imageCount: 3,
     price: 500,
     description: "ネイビー・アイスブルー・ライトグレー\nクルトガ大人気モデル",
+    types: ["ネイビー", "アイスブルー", "ライトグレー"],
   },
   {
     id: [41, 42, 43, 44],
@@ -180,6 +197,7 @@ export const goods: Item[] = [
     imageCount: 2,
     price: 100,
     description: "黒・緑・ピンク・青\nお手頃価格だけど書き味抜群",
+    types: ["黒", "緑", "ピンク", "青"],
   },
   {
     id: [45, 46, 47],
@@ -188,6 +206,7 @@ export const goods: Item[] = [
     imageCount: 2,
     price: 500,
     description: "ブラック・ブルーグレー・アイスブルー\n間違えずに黒を出せる",
+    types: ["ブラック", "ブルーグレー", "アイスブルー"],
   },
   {
     id: [48, 49, 50],
@@ -196,6 +215,7 @@ export const goods: Item[] = [
     imageCount: 2,
     price: 150,
     description: "黒・赤・青\nスイスイ書ける単色ゲルインクボールペン",
+    types: ["黒", "赤", "青"],
   },
   {
     id: [51, 52, 53, 54],
@@ -204,7 +224,8 @@ export const goods: Item[] = [
     imageCount: 2,
     price: 700,
     description:
-      "ネイビー・ボルドー・ブラック・ピンク\n最も使用頻度の高い赤・黒ボールペン&シャープペンシルの組み合わせ",
+      "0.7 ネイビー・0.7 ボルドー・0.5 ブラック・0.5 ピンク\n最も使用頻度の高い赤・黒ボールペン&シャープペンシルの組み合わせ",
+    types: ["0.7ネイビー", "0.7ボルドー", "0.5ブラック", "0.5ピンク"],
   },
   {
     id: [55, 56, 57, 58],
@@ -214,6 +235,7 @@ export const goods: Item[] = [
     price: 150,
     description:
       "紺・えんじ・緑・水色\n灘校書道教師倉橋先生による校是書字デザイン",
+    types: ["紺", "えんじ", "緑", "水色"],
   },
   {
     id: [59],
@@ -238,6 +260,7 @@ export const goods: Item[] = [
     imageCount: 1,
     price: 200,
     description: "暗記ペン用にも便利な赤・緑",
+    types: ["赤", "緑"],
   },
   {
     id: [63],
